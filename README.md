@@ -1,2 +1,9 @@
 # ubuntu-base-setup
- A few modules went together to help dudes who had curious with ubuntu
+
+## CLONNING and RUNNING
+
+```sh
+curl https://raw.githubusercontent.com/YurinDoctrine/ubuntu-base-setup/main/ubuntu-base-setup.sh >ubuntu-base-setup.sh &&
+ chmod 755 ubuntu-base-setup.sh &&
+ ./ubuntu-base-setup.sh
+```
