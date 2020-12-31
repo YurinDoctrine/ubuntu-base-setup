@@ -8,6 +8,10 @@ sudo apt update &&
 
 # ------------------------------------------------------------------------
 
+echo -e 'Acquire::Languages "none";' | sudo tee -a /etc/apt/apt.conf.d/00aptitude
+
+# ------------------------------------------------------------------------
+
 # Setting up locales
 echo -e "Setup language to en_GB and set locale"
 sudo sed -i 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
@@ -87,62 +91,62 @@ PKGS=(
     # DISK UTILITIES ------------------------------------------------------
     \
     'android-tools-adb'         # ADB for Android
-    'android-file-transfer' # Android File Transfer
-    'autofs'                # Auto-mounter
-    'btrfs-progs'           # BTRFS Support
-    'dosfstools'            # DOS Support
-    'exfat-utils'           # Mount exFat drives
-    'gparted'               # Disk utility
-    'gvfs'                  # More File System Stuff
-    'nautilus-share'        # File Sharing in Nautilus
-    'ntfs-3g'               # Open source implementation of NTFS file system
-    'parted'                # Disk utility
-    'samba'                 # Samba File Sharing
-    'smartmontools'         # Disk Monitoring
-    'smbclient'             # SMB Connection
-    'xfsprogs'              # XFS Support
+    'android-file-transfer' 	# Android File Transfer
+    'autofs'                	# Auto-mounter
+    'btrfs-progs'           	# BTRFS Support
+    'dosfstools'            	# DOS Support
+    'exfat-utils'           	# Mount exFat drives
+    'gparted'               	# Disk utility
+    'gvfs'                  	# More File System Stuff
+    'nautilus-share'        	# File Sharing in Nautilus
+    'ntfs-3g'               	# Open source implementation of NTFS file system
+    'parted'                	# Disk utility
+    'samba'                 	# Samba File Sharing
+    'smartmontools'         	# Disk Monitoring
+    'smbclient'             	# SMB Connection
+    'xfsprogs'              	# XFS Support
 
     # GENERAL UTILITIES ---------------------------------------------------
     \
-    'flameshot'    # Screenshots
-    'freerdp'      # RDP Connections
-    'libvncserver' # VNC Connections
-    'nautilus'     # Filesystem browser
-    'remmina'      # Remote Connection
-    'veracrypt'    # Disc encryption utility
-    'variety'      # Wallpaper changer
+    'flameshot'    	# Screenshots
+    'freerdp'      	# RDP Connections
+    'libvncserver' 	# VNC Connections
+    'nautilus'     	# Filesystem browser
+    'remmina'      	# Remote Connection
+    'veracrypt'    	# Disc encryption utility
+    'variety'      	# Wallpaper changer
 
     # DEVELOPMENT ---------------------------------------------------------
     \
-    'ccache'   # Compiler cacher
-    'clang'    # C Lang compiler
-    'cmake'    # Cross-platform open-source make system
-    'code'     # Visual Studio Code
-    'electron' # Cross-platform development using Javascript
-    'git'      # Version control system
-    'gcc'      # C/C++ compiler
-    'glibc'    # C libraries
-    'meld'     # File/directory comparison
-    'nodejs'   # Javascript runtime environment
-    'npm'      # Node package manager
-    'python'   # Scripting language
-    'yarn'     # Dependency management (Hyper needs this)
+    'ccache'   	# Compiler cacher
+    'clang'    	# C Lang compiler
+    'cmake'    	# Cross-platform open-source make system
+    'code'     	# Visual Studio Code
+    'electron' 	# Cross-platform development using Javascript
+    'git'      	# Version control system
+    'gcc'      	# C/C++ compiler
+    'glibc'    	# C libraries
+    'meld'     	# File/directory comparison
+    'nodejs'   	# Javascript runtime environment
+    'npm'      	# Node package manager
+    'python'   	# Scripting language
+    'yarn'     	# Dependency management (Hyper needs this)
 
     # MEDIA ---------------------------------------------------------------
     \
-    'kdenlive'   # Movie Render
-    'obs-studio' # Record your screen
-    'celluloid'  # Video player
+    'kdenlive'   	# Movie Render
+    'obs-studio' 	# Record your screen
+    'celluloid'  	# Video player
 
     # GRAPHICS AND DESIGN -------------------------------------------------
     \
-    'gcolor2'   # Colorpicker
-    'gimp'      # GNU Image Manipulation Program
-    'ristretto' # Multi image viewer
+    'gcolor2'   	# Colorpicker
+    'gimp'      	# GNU Image Manipulation Program
+    'ristretto' 	# Multi image viewer
 
     # PRODUCTIVITY --------------------------------------------------------
     \
-    'xpdf' # PDF viewer
+    'xpdf' 	# PDF viewer
 
 )
 
@@ -207,7 +211,7 @@ echo -e "
 "
 
 extra() {
-    curl https://raw.githubusercontent.com/YurinDoctrine/ultra-gaming-setup-wizard/main/ultra-gaming-setup-wizard.sh >ultra-gaming-setup-wizard>
+    curl https://raw.githubusercontent.com/YurinDoctrine/ultra-gaming-setup-wizard/main/ultra-gaming-setup-wizard.sh >ultra-gaming-setup-wizard &&
         chmod 755 ultra-gaming-setup-wizard.sh &&
         ./ultra-gaming-setup-wizard.sh
 }
