@@ -33,6 +33,10 @@ sudo sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/
 echo -e "Installing Base System"
 
 PKGS=(
+    # --- Importants
+    \
+    'ubuntu-restricted-extras'   # add-repository command
+    'software-properties-common' # Same above
 
     # --- Setup Desktop
     \
@@ -45,7 +49,7 @@ PKGS=(
     # --- Networking Setup
     \
     'wpasupplicant'          # Key negotiation for WPA wireless networks
-    'dialog'                 # Enables shell scripts to trigger dialog boxex
+    'dialog'                 # Enables shell scripts to trigger dialog boxes
     'openvpn'                # Open VPN support
     'networkmanager-openvpn' # Open VPN plugin for NM
     'network-manager-applet' # System tray icon/utility for network connectivity
