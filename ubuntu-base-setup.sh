@@ -24,8 +24,8 @@ localectl --no-ask-password set-locale LANG="en_GB.UTF-8" LC_TIME="en_GB.UTF-8"
 # Sudo rights
 echo -e "Add sudo rights"
 sudo sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-echo -e "Add sudo no password rights"
-sudo sed -i 's/^# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+echo -e "Remove no password sudo rights"
+sudo sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 
 # ------------------------------------------------------------------------
 
@@ -193,12 +193,6 @@ sudo sed -i 's|AutoEnable|#AutoEnable|g' /etc/bluetooth/main.conf
 # Prevent stupid error beeps
 sudo rmmod pcspkr
 echo -e "blacklist pcspkr" | sudo tee -a /etc/modprobe.d/nobeep.conf
-
-# ------------------------------------------------------------------------
-
-echo -e "Remove no password sudo rights"
-
-sudo sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 
 # ------------------------------------------------------------------------
 
