@@ -8,7 +8,8 @@ sudo apt update &&
 
 # ------------------------------------------------------------------------
 
-echo -e 'Acquire::Languages "none";' | sudo tee -a /etc/apt/apt.conf.d/00aptitude
+# No acquire languages
+echo -e 'Acquire::Languages "none";' | sudo tee -a /etc/apt/apt.conf.d/90nolanguages
 
 # ------------------------------------------------------------------------
 
@@ -156,7 +157,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
     echo -e "INSTALLING: ${PKG}"
-    sudo apt install --install-recommends -y "$PKG"
+    sudo apt install -y "$PKG"
 done
 
 echo -e "Done!"
