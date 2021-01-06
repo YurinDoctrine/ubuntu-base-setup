@@ -34,14 +34,24 @@ sudo sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/
 echo -e "Installing Base System"
 
 PKGS=(
+
     # --- Importants
     \
     'ubuntu-restricted-extras'   # add-repository command
     'software-properties-common' # Same above
+    'xorg'         # Base Package
+    'xorg-drivers' # Display Drivers
+    'xterm'        # Terminal for TTY
+    'xorg-server'  # XOrg server
+    'xorg-apps'    # XOrg apps group
+    'xorg-xinit'   # XOrg init
+    'xorg-xinput'  # Xorg xinput
+    'mesa'         # Open source version of OpenGL
 
     # --- Setup Desktop
     \
     'xfce4-power-manager' # Power Manager
+    'xfce4-goodies'       # All the extras
     'rofi'                # Menu System
     'picom'               # Translucent Windows
     'xclip'               # System Clipboard
@@ -55,6 +65,9 @@ PKGS=(
     'networkmanager-openvpn' # Open VPN plugin for NM
     'network-manager-applet' # System tray icon/utility for network connectivity
     'libsecret'              # Library for storing passwords
+    'networkmanager-vpnc'    # Open VPN plugin for NM. Probably not needed if networkmanager-openvpn is installed.
+    'network-manager-applet' # System tray icon/utility for network connectivity
+    'dhclient'               # DHCP client
 
     # --- Audio
     \
@@ -64,10 +77,16 @@ PKGS=(
     'pulseaudio-alsa' # ALSA configuration for pulse audio
     'pavucontrol'     # Pulse Audio volume control
     'pnmixer'         # System tray volume control
+    'volumeicon'      # System tray volume control
 
     # --- Bluetooth
     \
     'bluez'                       # Daemons for the bluetooth protocol stack
+    'bluez-libs'		  # Daemons for the bluetooth libraries
+    'bluez-utils'                 # Bluetooth development and debugging utilities
+    'bluez-firmware'       	  # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
+    'blueberry'             	  # Bluetooth configuration tool
+    'pulseaudio-bluetooth'  	  # Bluetooth support for PulseAudio
     'pulseaudio-module-bluetooth' # Bluetooth support for PulseAudio
 
     # TERMINAL UTILITIES --------------------------------------------------
@@ -79,6 +98,8 @@ PKGS=(
     'neofetch'            # Shows system info when you launch terminal
     'ntp'                 # Network Time Protocol to set time via network.
     'openssh'             # SSH connectivity tools
+    'hyper'               # Terminal emulator built on Electron
+    'irssi'               # Terminal based IIRC
     'p7zip'               # 7z compression program
     'rsync'               # Remote file sync utility
     'speedtest-cli'       # Internet speed via terminal
@@ -116,6 +137,7 @@ PKGS=(
     'flameshot'    # Screenshots
     'freerdp'      # RDP Connections
     'libvncserver' # VNC Connections
+    'filezilla'                 # FTP Client
     'nautilus'     # Filesystem browser
     'remmina'      # Remote Connection
     'veracrypt'    # Disc encryption utility
@@ -142,6 +164,7 @@ PKGS=(
     'kdenlive'   # Movie Render
     'obs-studio' # Record your screen
     'celluloid'  # Video player
+    'screenkey'  # Screencast your keypresses
 
     # GRAPHICS AND DESIGN -------------------------------------------------
     \
@@ -151,7 +174,18 @@ PKGS=(
 
     # PRODUCTIVITY --------------------------------------------------------
     \
-    'xpdf' # PDF viewer
+    'xpdf' 		    # PDF viewer
+    'cups'                  # Open source printer drivers
+    'cups-pdf'              # PDF support for cups
+    'ghostscript'           # PostScript interpreter
+    'gsfonts'               # Adobe Postscript replacement fonts
+    'hplip'                 # HP Drivers
+    'system-config-printer' # Printer setup  utility
+
+    # POST PRODUCTION -----------------------------------------------------
+    \
+    'menulibre'                 # Menu editor
+    'gtkhash'                   # Checksum verifier
 
 )
 
@@ -171,8 +205,21 @@ echo -e "FONT=ter-v32b" | sudo tee -a /etc/vconsole.conf
 
 # ------------------------------------------------------------------------
 
-echo -e "Increasing file watcher count"
+echo -e "Setting laptop lid close to suspend"
+sudo sed -i -e 's|[# ]*HandleLidSwitch[ ]*=[ ]*.*|HandleLidSwitch=suspend|g' /etc/systemd/logind.conf
 
+# ------------------------------------------------------------------------
+
+echo "Disabling buggy cursor inheritance"
+# When you boot with multiple monitors the cursor can look huge. This fixes it.
+sudo cat <<EOF > /usr/share/icons/default/index.theme
+[Icon Theme]
+#Inherits=Theme
+EOF
+
+# ------------------------------------------------------------------------
+
+echo -e "Increasing file watcher count"
 # This prevents a "too many files" error in Visual Studio Code
 echo -e fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.d/40-max-user-watches.conf &&
     sudo sysctl --system
@@ -190,8 +237,13 @@ sudo killall -HUP pulseaudio
 # ------------------------------------------------------------------------
 
 echo -e "Disabling bluetooth daemon by comment it"
-
 sudo sed -i 's|AutoEnable|#AutoEnable|g' /etc/bluetooth/main.conf
+
+# ------------------------------------------------------------------------
+
+echo "Enabling the cups service daemon so we can print"
+sudo service org.cups.cupsd.service start
+sudo service org.cups.cupsd.service enable
 
 # ------------------------------------------------------------------------
 
