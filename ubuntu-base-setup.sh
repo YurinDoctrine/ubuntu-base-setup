@@ -201,8 +201,6 @@ echo -e "blacklist pcspkr" | sudo tee -a /etc/modprobe.d/nobeep.conf
 
 # ------------------------------------------------------------------------
 
-clear
-
 echo -e "
 ###############################################################################
 # All done! Would you also mind to run the author's ultra-gaming-setup-wizard?
