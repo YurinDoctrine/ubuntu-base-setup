@@ -17,8 +17,8 @@ echo -e 'Acquire::Languages "none";' | sudo tee -a /etc/apt/apt.conf.d/90nolangu
 echo -e "Setup language to en_GB and set locale"
 sudo sed -i 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
 sudo locale-gen
-sudo timedatectl --no-ask-password set-ntp 1
-localectl --no-ask-password set-locale LANG="en_GB.UTF-8" LC_TIME="en_GB.UTF-8"
+sudo timedatectl set-ntp 1
+sudo localectl set-locale LANG="en_GB.UTF-8" LC_TIME="en_GB.UTF-8"
 
 # ------------------------------------------------------------------------
 
@@ -201,7 +201,7 @@ echo -e "Done!"
 echo -e "FINAL SETUP AND CONFIGURATION"
 
 echo -e "Configuring vconsole.conf to set a larger font for login shell"
-echo -e "FONT=ter-v32b" | sudo tee -a /etc/vconsole.conf
+echo -e "FONT=ter-v32b" | sudo tee /etc/vconsole.conf
 
 # ------------------------------------------------------------------------
 
@@ -211,17 +211,16 @@ sudo sed -i -e 's|[# ]*HandleLidSwitch[ ]*=[ ]*.*|HandleLidSwitch=suspend|g' /et
 # ------------------------------------------------------------------------
 
 echo "Disabling buggy cursor inheritance"
-# When you boot with multiple monitors the cursor can look huge. This fixes it.
-sudo cat <<EOF > /usr/share/icons/default/index.theme
-[Icon Theme]
+# When you boot with multiple monitors the cursor can look huge. This fixes this...
+sudo echo -e "[Icon Theme]
 #Inherits=Theme
-EOF
+" | sudo tee /usr/share/icons/default/index.theme
 
 # ------------------------------------------------------------------------
 
 echo -e "Increasing file watcher count"
 # This prevents a "too many files" error in Visual Studio Code
-echo -e fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.d/40-max-user-watches.conf &&
+echo -e "fs.inotify.max_user_watches=524288" | sudo tee /etc/sysctl.d/40-max-user-watches.conf &&
     sudo sysctl --system
 
 # ------------------------------------------------------------------------
@@ -241,15 +240,9 @@ sudo sed -i 's|AutoEnable|#AutoEnable|g' /etc/bluetooth/main.conf
 
 # ------------------------------------------------------------------------
 
-echo "Enabling the cups service daemon so we can print"
-sudo service org.cups.cupsd.service start
-sudo service org.cups.cupsd.service enable
-
-# ------------------------------------------------------------------------
-
-# Prevent stupid error beeps
+# Prevent stupid error beeps*
 sudo rmmod pcspkr
-echo -e "blacklist pcspkr" | sudo tee -a /etc/modprobe.d/nobeep.conf
+echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 # ------------------------------------------------------------------------
 
