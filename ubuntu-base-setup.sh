@@ -39,14 +39,14 @@ PKGS=(
     \
     'ubuntu-restricted-extras'   # add-repository command
     'software-properties-common' # Same above
-    'xorg'         # Base Package
-    'xorg-drivers' # Display Drivers
-    'xterm'        # Terminal for TTY
-    'xorg-server'  # XOrg server
-    'xorg-apps'    # XOrg apps group
-    'xorg-xinit'   # XOrg init
-    'xorg-xinput'  # Xorg xinput
-    'mesa'         # Open source version of OpenGL
+    'xorg'                       # Base Package
+    'xorg-drivers'               # Display Drivers
+    'xterm'                      # Terminal for TTY
+    'xorg-server'                # XOrg server
+    'xorg-apps'                  # XOrg apps group
+    'xorg-xinit'                 # XOrg init
+    'xorg-xinput'                # Xorg xinput
+    'mesa'                       # Open source version of OpenGL
 
     # --- Setup Desktop
     \
@@ -82,11 +82,11 @@ PKGS=(
     # --- Bluetooth
     \
     'bluez'                       # Daemons for the bluetooth protocol stack
-    'bluez-libs'		  # Daemons for the bluetooth libraries
+    'bluez-libs'                  # Daemons for the bluetooth libraries
     'bluez-utils'                 # Bluetooth development and debugging utilities
-    'bluez-firmware'       	  # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
-    'blueberry'             	  # Bluetooth configuration tool
-    'pulseaudio-bluetooth'  	  # Bluetooth support for PulseAudio
+    'bluez-firmware'              # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
+    'blueberry'                   # Bluetooth configuration tool
+    'pulseaudio-bluetooth'        # Bluetooth support for PulseAudio
     'pulseaudio-module-bluetooth' # Bluetooth support for PulseAudio
 
     # TERMINAL UTILITIES --------------------------------------------------
@@ -137,7 +137,7 @@ PKGS=(
     'flameshot'    # Screenshots
     'freerdp'      # RDP Connections
     'libvncserver' # VNC Connections
-    'filezilla'                 # FTP Client
+    'filezilla'    # FTP Client
     'nautilus'     # Filesystem browser
     'remmina'      # Remote Connection
     'veracrypt'    # Disc encryption utility
@@ -174,7 +174,7 @@ PKGS=(
 
     # PRODUCTIVITY --------------------------------------------------------
     \
-    'xpdf' 		    # PDF viewer
+    'xpdf'                  # PDF viewer
     'cups'                  # Open source printer drivers
     'cups-pdf'              # PDF support for cups
     'ghostscript'           # PostScript interpreter
@@ -184,8 +184,8 @@ PKGS=(
 
     # POST PRODUCTION -----------------------------------------------------
     \
-    'menulibre'                 # Menu editor
-    'gtkhash'                   # Checksum verifier
+    'menulibre' # Menu editor
+    'gtkhash'   # Checksum verifier
 
 )
 
