@@ -13,23 +13,6 @@ echo -e 'Acquire::Languages "none";' | sudo tee -a /etc/apt/apt.conf.d/90nolangu
 
 # ------------------------------------------------------------------------
 
-# Setting up locales
-echo -e "Setup language to en_GB and set locale"
-sudo sed -i 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
-sudo locale-gen
-sudo timedatectl set-ntp 1
-sudo localectl set-locale LANG="en_GB.UTF-8" LC_TIME="en_GB.UTF-8"
-
-# ------------------------------------------------------------------------
-
-# Sudo rights
-echo -e "Add sudo rights"
-sudo sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-echo -e "Remove no password sudo rights"
-sudo sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
-
-# ------------------------------------------------------------------------
-
 # This may take time
 echo -e "Installing Base System"
 
@@ -93,6 +76,7 @@ PKGS=(
     \
     'cron'                # cron jobs
     'file-roller'         # Archive utility
+    'gtop'            # System monitoring via terminal
     'hardinfo'            # Hardware info app
     'htop'                # Process viewer
     'neofetch'            # Shows system info when you launch terminal
@@ -138,8 +122,10 @@ PKGS=(
     'freerdp'      # RDP Connections
     'libvncserver' # VNC Connections
     'filezilla'    # FTP Client
+    'apache2'      # HTTP server
     'nautilus'     # Filesystem browser
     'remmina'      # Remote Connection
+    'net-tools'    # Network utilities
     'veracrypt'    # Disc encryption utility
     'variety'      # Wallpaper changer
 
@@ -148,7 +134,7 @@ PKGS=(
     'ccache'   # Compiler cacher
     'clang'    # C Lang compiler
     'cmake'    # Cross-platform open-source make system
-    'code'     # Visual Studio Code
+    'ninja'    # Small build system with a focus on speed
     'electron' # Cross-platform development using Javascript
     'git'      # Version control system
     'gcc'      # C/C++ compiler
@@ -199,6 +185,23 @@ echo -e "Done!"
 # ------------------------------------------------------------------------
 
 echo -e "FINAL SETUP AND CONFIGURATION"
+
+# Setting up locales
+echo -e "Setup language to en_GB and set locale"
+sudo sed -i 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
+sudo locale-gen
+sudo timedatectl set-ntp 1
+sudo localectl set-locale LANG="en_GB.UTF-8" LC_TIME="en_GB.UTF-8"
+
+# ------------------------------------------------------------------------
+
+# Sudo rights
+echo -e "Add sudo rights"
+sudo sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
+echo -e "Remove no password sudo rights"
+sudo sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
+
+# ------------------------------------------------------------------------
 
 echo -e "Configuring vconsole.conf to set a larger font for login shell"
 echo -e "FONT=ter-v32b" | sudo tee /etc/vconsole.conf
