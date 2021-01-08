@@ -76,7 +76,7 @@ PKGS=(
     \
     'cron'                # cron jobs
     'file-roller'         # Archive utility
-    'gtop'            # System monitoring via terminal
+    'gtop'                # System monitoring via terminal
     'hardinfo'            # Hardware info app
     'htop'                # Process viewer
     'neofetch'            # Shows system info when you launch terminal
@@ -134,7 +134,7 @@ PKGS=(
     'ccache'   # Compiler cacher
     'clang'    # C Lang compiler
     'cmake'    # Cross-platform open-source make system
-    'ninja'    # Small build system with a focus on speed
+    'meson'    # Build system that use python as a front-end language and Ninja as a building backend
     'electron' # Cross-platform development using Javascript
     'git'      # Version control system
     'gcc'      # C/C++ compiler
