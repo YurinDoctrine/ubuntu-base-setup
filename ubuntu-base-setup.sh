@@ -139,6 +139,7 @@ PKGS=(
     'git'      # Version control system
     'gcc'      # C/C++ compiler
     'glibc'    # C libraries
+    'glslang'  # OpenGL and OpenGL ES shader front end and validator
     'meld'     # File/directory comparison
     'nodejs'   # Javascript runtime environment
     'npm'      # Node package manager
