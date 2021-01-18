@@ -4,7 +4,7 @@
 
 # Before hop in
 sudo apt update &&
-    sudo apt install -y git
+    sudo apt install --install-recommends -y git ubuntu-restricted-extras software-properties-common
 
 # ------------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ PKGS=(
 
     # --- Networking Setup
     \
-    'wpa_supplicant'         # Key negotiation for WPA wireless networks
+    'wpasupplicant'          # Key negotiation for WPA wireless networks
     'dialog'                 # Enables shell scripts to trigger dialog boxes
     'openvpn'                # Open VPN support
     'networkmanager-openvpn' # Open VPN plugin for NM
@@ -50,6 +50,7 @@ PKGS=(
     # --- Bluetooth
     \
     'bluez'                       # Daemons for the bluetooth protocol stack
+    'bluez-libs'                  # Daemons for the bluetooth libraries
     'bluez-utils'                 # Bluetooth development and debugging utilities
     'bluez-firmware'              # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
     'blueberry'                   # Bluetooth configuration tool
@@ -74,22 +75,20 @@ PKGS=(
     'unrar'           # RAR compression program
     'unzip'           # Zip compression program
     'wget'            # Remote content retrieval
-    'terminator'      # Terminal emulator
     'vim'             # Terminal Editor
     'zenity'          # Display graphical dialog boxes via shell scripts
     'zip'             # Zip compression program
 
     # DISK UTILITIES ------------------------------------------------------
     \
-    'android-tools'         # ADB for Android
+    'android-tools-adb'     # ADB for Android
     'android-file-transfer' # Android File Transfer
     'autofs'                # Auto-mounter
     'btrfs-progs'           # BTRFS Support
     'dosfstools'            # DOS Support
     'exfat-utils'           # Mount exFat drives
     'gparted'               # Disk utility
-    'gvfs-mtp'              # Read MTP Connected Systems
-    'gvfs-smb'              # More File System Stuff
+    'gvfs'                  # More File System Stuff
     'nautilus-share'        # File Sharing in Nautilus
     'ntfs-3g'               # Open source implementation of NTFS file system
     'parted'                # Disk utility
