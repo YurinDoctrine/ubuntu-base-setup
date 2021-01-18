@@ -17,32 +17,17 @@ echo -e 'Acquire::Languages "none";' | sudo tee -a /etc/apt/apt.conf.d/90nolangu
 echo -e "Installing Base System"
 
 PKGS=(
-
     # --- Importants
-    \
-    'ubuntu-restricted-extras'   # add-repository command
-    'software-properties-common' # Same above
-    'xorg'                       # Base Package
-    'xorg-drivers'               # Display Drivers
-    'xterm'                      # Terminal for TTY
-    'xorg-server'                # XOrg server
-    'xorg-apps'                  # XOrg apps group
-    'xorg-xinit'                 # XOrg init
-    'xorg-xinput'                # Xorg xinput
-    'mesa'                       # Open source version of OpenGL
-
-    # --- Setup Desktop
     \
     'xfce4-power-manager' # Power Manager
     'xfce4-goodies'       # All the extras
     'rofi'                # Menu System
     'picom'               # Translucent Windows
-    'xclip'               # System Clipboard
     'lxappearance'        # Set System Themes
 
     # --- Networking Setup
     \
-    'wpasupplicant'          # Key negotiation for WPA wireless networks
+    'wpa_supplicant'         # Key negotiation for WPA wireless networks
     'dialog'                 # Enables shell scripts to trigger dialog boxes
     'openvpn'                # Open VPN support
     'networkmanager-openvpn' # Open VPN plugin for NM
@@ -65,7 +50,6 @@ PKGS=(
     # --- Bluetooth
     \
     'bluez'                       # Daemons for the bluetooth protocol stack
-    'bluez-libs'                  # Daemons for the bluetooth libraries
     'bluez-utils'                 # Bluetooth development and debugging utilities
     'bluez-firmware'              # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
     'blueberry'                   # Bluetooth configuration tool
@@ -74,38 +58,38 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
     \
-    'cron'                # cron jobs
-    'file-roller'         # Archive utility
-    'gtop'                # System monitoring via terminal
-    'hardinfo'            # Hardware info app
-    'htop'                # Process viewer
-    'neofetch'            # Shows system info when you launch terminal
-    'ntp'                 # Network Time Protocol to set time via network.
-    'openssh'             # SSH connectivity tools
-    'hyper'               # Terminal emulator built on Electron
-    'irssi'               # Terminal based IIRC
-    'p7zip'               # 7z compression program
-    'rsync'               # Remote file sync utility
-    'speedtest-cli'       # Internet speed via terminal
-    'terminus-font'       # Font package with some bigger fonts for login terminal
-    'unrar'               # RAR compression program
-    'unzip'               # Zip compression program
-    'wget'                # Remote content retrieval
-    'terminator'          # Terminal emulator
-    'vim'                 # Terminal Editor
-    'zenity'              # Display graphical dialog boxes via shell scripts
-    'zip'                 # Zip compression program
+    'cronie'          # cron jobs
+    'file-roller'     # Archive utility
+    'gtop'            # System monitoring via terminal
+    'hardinfo'        # Hardware info app
+    'htop'            # Process viewer
+    'neofetch'        # Shows system info when you launch terminal
+    'ntp'             # Network Time Protocol to set time via network.
+    'openssh'         # SSH connectivity tools
+    'irssi'           # Terminal based IIRC
+    'p7zip'           # 7z compression program
+    'rsync'           # Remote file sync utility
+    'speedtest-cli'   # Internet speed via terminal
+    'terminus-font'   # Font package with some bigger fonts for login terminal
+    'unrar'           # RAR compression program
+    'unzip'           # Zip compression program
+    'wget'            # Remote content retrieval
+    'terminator'      # Terminal emulator
+    'vim'             # Terminal Editor
+    'zenity'          # Display graphical dialog boxes via shell scripts
+    'zip'             # Zip compression program
 
     # DISK UTILITIES ------------------------------------------------------
     \
-    'android-tools-adb'     # ADB for Android
+    'android-tools'         # ADB for Android
     'android-file-transfer' # Android File Transfer
     'autofs'                # Auto-mounter
     'btrfs-progs'           # BTRFS Support
     'dosfstools'            # DOS Support
     'exfat-utils'           # Mount exFat drives
     'gparted'               # Disk utility
-    'gvfs'                  # More File System Stuff
+    'gvfs-mtp'              # Read MTP Connected Systems
+    'gvfs-smb'              # More File System Stuff
     'nautilus-share'        # File Sharing in Nautilus
     'ntfs-3g'               # Open source implementation of NTFS file system
     'parted'                # Disk utility
@@ -126,6 +110,7 @@ PKGS=(
     'net-tools'    # Network utilities
     'veracrypt'    # Disc encryption utility
     'variety'      # Wallpaper changer
+    'gtkhash'      # Checksum verifier
 
     # DEVELOPMENT ---------------------------------------------------------
     \
@@ -133,8 +118,6 @@ PKGS=(
     'clang'    # C Lang compiler
     'cmake'    # Cross-platform open-source make system
     'meson'    # Build system that use python as a front-end language and Ninja as a building backend
-    'electron' # Cross-platform development using Javascript
-    'git'      # Version control system
     'gcc'      # C/C++ compiler
     'glibc'    # C libraries
     'glslang'  # OpenGL and OpenGL ES shader front end and validator
@@ -142,22 +125,15 @@ PKGS=(
     'nodejs'   # Javascript runtime environment
     'npm'      # Node package manager
     'python'   # Scripting language
-    'yarn'     # Dependency management (Hyper needs this)
 
-    # MEDIA ---------------------------------------------------------------
-    \
-    'kdenlive'   # Movie Render
-    'obs-studio' # Record your screen
-    'celluloid'  # Video player
-    'screenkey'  # Screencast your keypresses
-
-    # GRAPHICS AND DESIGN -------------------------------------------------
+    # GRAPHICS, VIDEO AND DESIGN -------------------------------------------------
     \
     'gcolor2'   # Colorpicker
     'gimp'      # GNU Image Manipulation Program
     'ristretto' # Multi image viewer
+    'kdenlive'  # Movie Render
 
-    # PRODUCTIVITY --------------------------------------------------------
+    # PRINTING --------------------------------------------------------
     \
     'xpdf'                  # PDF viewer
     'cups'                  # Open source printer drivers
@@ -166,11 +142,6 @@ PKGS=(
     'gsfonts'               # Adobe Postscript replacement fonts
     'hplip'                 # HP Drivers
     'system-config-printer' # Printer setup  utility
-
-    # POST PRODUCTION -----------------------------------------------------
-    \
-    'menulibre' # Menu editor
-    'gtkhash'   # Checksum verifier
 
 )
 
