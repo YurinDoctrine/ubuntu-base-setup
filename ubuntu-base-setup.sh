@@ -60,6 +60,7 @@ PKGS=(
     \
     'cron'            # Cron jobs
     'fish'            # The friendly interactive shell
+    'ftp'             # File transfer protocol
     'hardinfo'        # Hardware info app
     'htop'            # Process viewer
     'neofetch'        # Shows system info when you launch terminal
@@ -110,17 +111,18 @@ PKGS=(
 
     # DEVELOPMENT ---------------------------------------------------------
     \
-    'ccache'   # Compiler cacher
-    'clang'    # C Lang compiler
-    'cmake'    # Cross-platform open-source make system
-    'meson'    # Build system that use python as a front-end language and Ninja as a building backend
-    'gcc'      # C/C++ compiler
-    'glibc'    # C libraries
-    'glslang'  # OpenGL and OpenGL ES shader front end and validator
-    'meld'     # File/directory comparison
-    'nodejs'   # Javascript runtime environment
-    'npm'      # Node package manager
-    'python'   # Scripting language
+    'ccache'         # Compiler cacher
+    'clang'          # C Lang compiler
+    'cmake'          # Cross-platform open-source make system
+    'meson'          # Build system that use python as a front-end language and Ninja as a building backend
+    'gcc'            # C/C++ compiler
+    'glibc'          # C libraries
+    'glslang'        # OpenGL and OpenGL ES shader front end and validator
+    'meld'           # File/directory comparison
+    'mariadb-server' # Commercially supported fork of the MySQL
+    'nodejs'         # Javascript runtime environment
+    'npm'            # Node package manager
+    'php'            # Scripting language
 
     # GRAPHICS, VIDEO AND DESIGN -------------------------------------------------
     \
@@ -206,12 +208,6 @@ sudo killall -HUP pulseaudio
 
 echo -e "Disabling bluetooth daemon by comment it"
 sudo sed -i 's|AutoEnable|#AutoEnable|g' /etc/bluetooth/main.conf
-
-# ------------------------------------------------------------------------
-
-# Prevent stupid error beeps*
-sudo rmmod pcspkr
-echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 # ------------------------------------------------------------------------
 
