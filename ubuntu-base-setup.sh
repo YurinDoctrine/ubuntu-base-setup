@@ -4,7 +4,8 @@
 
 # Before hop in
 sudo apt update &&
-    sudo apt install --install-recommends -y git ubuntu-restricted-extras software-properties-common
+    sudo apt install -y git &&
+    sudo apt install --install-recommends -y ubuntu-restricted-extras software-properties-common
 
 # ------------------------------------------------------------------------
 
@@ -20,7 +21,6 @@ PKGS=(
     # --- Importants
     \
     'xfce4-power-manager' # Power Manager
-    'xfce4-goodies'       # All the extras
     'rofi'                # Menu System
     'picom'               # Translucent Windows
     'lxappearance'        # Set System Themes
@@ -229,6 +229,11 @@ extra() {
         chmod 755 ultra-gaming-setup-wizard.sh &&
         ./ultra-gaming-setup-wizard.sh
 }
+extra2() {
+    curl https://raw.githubusercontent.com/YurinDoctrine/secure-linux/master/secure.sh >secure.sh &&
+        chmod 755 secure.sh &&
+        ./secure.sh
+}
 
 final() {
     read -p $'yes/no >_: ' ans
@@ -237,7 +242,19 @@ final() {
         extra
     elif [[ "$ans" == "no" ]]; then
         echo -e "LEAVING ..."
-        exit 1
+	echo -e ""
+        echo -e "FINAL: DO YOU ALSO WANT TO RUN THE AUTHOR'S secure-linux?"
+	read -p $'yes/no >_: ' noc
+	if [[ "$noc" == "yes" ]]; then
+		echo -e "RUNNING ...\n"
+	        extra2
+	elif [[ "$noc" == "no" ]]; then
+		echo -e "LEAVING ...\n"
+		exit 1
+	else
+		echo -e "INVALID VALUE!\n"
+		final
+	fi
     else
         echo -e "INVALID VALUE!"
         final
