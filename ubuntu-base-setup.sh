@@ -45,7 +45,7 @@ PKGS=(
     'pulseaudio-alsa' # ALSA configuration for pulse audio
     'pavucontrol'     # Pulse Audio volume control
     'pnmixer'         # System tray volume control
-    'volumeicon'      # System tray volume control
+    'volumeicon-alsa' # System tray volume control
 
     # --- Bluetooth
     \
@@ -54,15 +54,12 @@ PKGS=(
     'bluez-utils'                 # Bluetooth development and debugging utilities
     'bluez-firmware'              # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
     'blueberry'                   # Bluetooth configuration tool
-    'pulseaudio-bluetooth'        # Bluetooth support for PulseAudio
     'pulseaudio-module-bluetooth' # Bluetooth support for PulseAudio
 
     # TERMINAL UTILITIES --------------------------------------------------
     \
     'cron'            # Cron jobs
-    'file-roller'     # Archive utility
     'fish'            # The friendly interactive shell
-    'gtop'            # System monitoring via terminal
     'hardinfo'        # Hardware info app
     'htop'            # Process viewer
     'neofetch'        # Shows system info when you launch terminal
@@ -90,7 +87,6 @@ PKGS=(
     'exfat-utils'           # Mount exFat drives
     'gparted'               # Disk utility
     'gvfs'                  # More File System Stuff
-    'nautilus-share'        # File Sharing in Nautilus
     'ntfs-3g'               # Open source implementation of NTFS file system
     'parted'                # Disk utility
     'samba'                 # Samba File Sharing
