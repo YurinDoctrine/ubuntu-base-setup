@@ -59,8 +59,9 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
     \
-    'cronie'          # cron jobs
+    'cron'            # Cron jobs
     'file-roller'     # Archive utility
+    'fish'            # The friendly interactive shell
     'gtop'            # System monitoring via terminal
     'hardinfo'        # Hardware info app
     'htop'            # Process viewer
@@ -239,6 +240,7 @@ final() {
     read -p $'yes/no >_: ' ans
     if [[ "$ans" == "yes" ]]; then
         echo -e "RUNNING ..."
+	chsh -s /usr/bin/fish # Change default shell before leaving.
         extra
     elif [[ "$ans" == "no" ]]; then
         echo -e "LEAVING ..."
@@ -247,9 +249,11 @@ final() {
 	read -p $'yes/no >_: ' noc
 	if [[ "$noc" == "yes" ]]; then
 		echo -e "RUNNING ...\n"
+		chsh -s /usr/bin/fish # Change default shell before leaving.
 	        extra2
 	elif [[ "$noc" == "no" ]]; then
 		echo -e "LEAVING ...\n"
+		chsh -s /usr/bin/fish # Change default shell before leaving.
 		exit 1
 	else
 		echo -e "INVALID VALUE!\n"
