@@ -58,25 +58,25 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
     \
-    'cron'            # Cron jobs
-    'fish'            # The friendly interactive shell
-    'ftp'             # File transfer protocol
-    'hardinfo'        # Hardware info app
-    'htop'            # Process viewer
-    'neofetch'        # Shows system info when you launch terminal
-    'ntp'             # Network Time Protocol to set time via network.
-    'openssh'         # SSH connectivity tools
-    'irssi'           # Terminal based IIRC
-    'p7zip'           # 7z compression program
-    'rsync'           # Remote file sync utility
-    'speedtest-cli'   # Internet speed via terminal
-    'terminus-font'   # Font package with some bigger fonts for login terminal
-    'unrar'           # RAR compression program
-    'unzip'           # Zip compression program
-    'wget'            # Remote content retrieval
-    'vim'             # Terminal Editor
-    'zenity'          # Display graphical dialog boxes via shell scripts
-    'zip'             # Zip compression program
+    'cron'          # Cron jobs
+    'fish'          # The friendly interactive shell
+    'ftp'           # File transfer protocol
+    'hardinfo'      # Hardware info app
+    'htop'          # Process viewer
+    'neofetch'      # Shows system info when you launch terminal
+    'ntp'           # Network Time Protocol to set time via network.
+    'openssh'       # SSH connectivity tools
+    'irssi'         # Terminal based IIRC
+    'p7zip'         # 7z compression program
+    'rsync'         # Remote file sync utility
+    'speedtest-cli' # Internet speed via terminal
+    'terminus-font' # Font package with some bigger fonts for login terminal
+    'unrar'         # RAR compression program
+    'unzip'         # Zip compression program
+    'wget'          # Remote content retrieval
+    'vim'           # Terminal Editor
+    'zenity'        # Display graphical dialog boxes via shell scripts
+    'zip'           # Zip compression program
 
     # DISK UTILITIES ------------------------------------------------------
     \
@@ -232,25 +232,25 @@ final() {
     read -p $'yes/no >_: ' ans
     if [[ "$ans" == "yes" ]]; then
         echo -e "RUNNING ..."
-	chsh -s /usr/bin/fish # Change default shell before leaving.
+        chsh -s /usr/bin/fish # Change default shell before leaving.
         extra
     elif [[ "$ans" == "no" ]]; then
         echo -e "LEAVING ..."
-	echo -e ""
+        echo -e ""
         echo -e "FINAL: DO YOU ALSO WANT TO RUN THE AUTHOR'S secure-linux?"
-	read -p $'yes/no >_: ' noc
-	if [[ "$noc" == "yes" ]]; then
-		echo -e "RUNNING ...\n"
-		chsh -s /usr/bin/fish # Change default shell before leaving.
-	        extra2
-	elif [[ "$noc" == "no" ]]; then
-		echo -e "LEAVING ...\n"
-		chsh -s /usr/bin/fish # Change default shell before leaving.
-		exit 1
-	else
-		echo -e "INVALID VALUE!\n"
-		final
-	fi
+        read -p $'yes/no >_: ' noc
+        if [[ "$noc" == "yes" ]]; then
+            echo -e "RUNNING ...\n"
+            chsh -s /usr/bin/fish # Change default shell before leaving.
+            extra2
+        elif [[ "$noc" == "no" ]]; then
+            echo -e "LEAVING ...\n"
+            chsh -s /usr/bin/fish # Change default shell before leaving.
+            exit 1
+        else
+            echo -e "INVALID VALUE!\n"
+            final
+        fi
     else
         echo -e "INVALID VALUE!"
         final
