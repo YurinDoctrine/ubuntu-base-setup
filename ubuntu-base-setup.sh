@@ -66,7 +66,7 @@ PKGS=(
     'neofetch'      # Shows system info when you launch terminal
     'ntp'           # Network Time Protocol to set time via network.
     'openssh'       # SSH connectivity tools
-    'irssi'         # Terminal based IIRC
+    'irssi'         # Terminal based IRC
     'p7zip'         # 7z compression program
     'rsync'         # Remote file sync utility
     'speedtest-cli' # Internet speed via terminal
@@ -102,7 +102,7 @@ PKGS=(
     'libvncserver' # VNC Connections
     'filezilla'    # FTP Client
     'apache2'      # HTTP server
-    'nautilus'     # Filesystem browser
+    'playerctl'    # Utility to control media players via MPRIS
     'remmina'      # Remote Connection
     'net-tools'    # Network utilities
     'veracrypt'    # Disc encryption utility
