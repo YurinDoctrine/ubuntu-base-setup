@@ -246,7 +246,7 @@ final() {
         elif [[ "$noc" == "no" ]]; then
             echo -e "LEAVING ...\n"
             chsh -s /usr/bin/fish # Change default shell before leaving.
-            exit 1
+            exit 0
         else
             echo -e "INVALID VALUE!\n"
             final
