@@ -108,6 +108,7 @@ PKGS=(
     'veracrypt'    # Disc encryption utility
     'variety'      # Wallpaper changer
     'gtkhash'      # Checksum verifier
+    'zram-config'  # zRAM loader
 
     # DEVELOPMENT ---------------------------------------------------------
     \
@@ -208,6 +209,22 @@ sudo killall -HUP pulseaudio
 
 echo -e "Disabling bluetooth daemon by comment it"
 sudo sed -i 's|AutoEnable|#AutoEnable|g' /etc/bluetooth/main.conf
+
+# ------------------------------------------------------------------------
+
+# Let network-manager handle all network interfaces.
+sudo echo -e "managed=true" | sudo tee -a /etc/NetworkManager/conf.d/10-globally-managed-devices.conf
+
+# ------------------------------------------------------------------------
+
+echo -e "Increase zRAM size"
+sudo sed -i 's/totalmem\ \/\ 2/totalmem\ \/\ 4/' /usr/bin/init-zram-swapping
+
+# ------------------------------------------------------------------------
+
+echo -e "Clear the patches"
+sudo rm -rf /var/cache/apt/archives/*
+sync
 
 # ------------------------------------------------------------------------
 
