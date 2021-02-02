@@ -11,8 +11,8 @@ sudo apt update &&
 
 # Don't reserve space man-pages, locales, licenses.
 echo -e "Remove useless companies"
-find /usr/share/doc -depth -type f ! -name copyright|xargs sudo rm -rf || true
-find /usr/share/doc -empty|xargs sudo rmdir || true
+find /usr/share/doc -depth -type f ! -name copyright | xargs sudo rm -rf || true
+find /usr/share/doc -empty | xargs sudo rmdir || true
 find /usr/share/doc | egrep "\.gz" | xargs sudo rm -rf
 find /usr/share/doc | egrep "\.pdf" | xargs sudo rm -rf
 find /usr/share/doc | egrep "\.tex" | xargs sudo rm -rf
@@ -21,8 +21,8 @@ sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
 sudo rm -rf /usr/share/man/*
 dpkg -l | grep '^ii.*texlive.*doc'
 sudo apt remove --purge \
-  texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-  texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 
 echo -e "path-exclude /usr/share/doc/*
 # we need to keep copyright files for legal reasons
