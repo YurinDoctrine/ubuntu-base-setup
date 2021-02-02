@@ -9,8 +9,31 @@ sudo apt update &&
 
 # ------------------------------------------------------------------------
 
-# No acquire languages
-echo -e 'Acquire::Languages "none";' | sudo tee -a /etc/apt/apt.conf.d/90nolanguages
+# Don't reserve space man-pages, locales, licenses.
+echo -e "Remove useless companies"
+find /usr/share/doc -depth -type f ! -name copyright|xargs sudo rm -rf || true
+find /usr/share/doc -empty|xargs sudo rmdir || true
+find /usr/share/doc | egrep "\.gz" | xargs sudo rm -rf
+find /usr/share/doc | egrep "\.pdf" | xargs sudo rm -rf
+find /usr/share/doc | egrep "\.tex" | xargs sudo rm -rf
+sudo rm -rf /usr/share/groff/* /usr/share/info/*
+sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
+sudo rm -rf /usr/share/man/*
+dpkg -l | grep '^ii.*texlive.*doc'
+sudo apt remove --purge \
+  texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+  texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+
+echo -e "path-exclude /usr/share/doc/*
+# we need to keep copyright files for legal reasons
+path-include /usr/share/doc/*/copyright
+path-exclude /usr/share/man/*
+path-exclude /usr/share/groff/*
+path-exclude /usr/share/info/*
+# lintian stuff is small, but really unnecessary
+path-exclude /usr/share/lintian/*
+path-exclude /usr/share/linda/*" | sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc
+echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguages
 
 # ------------------------------------------------------------------------
 
@@ -213,11 +236,6 @@ sudo sed -i 's|AutoEnable|#AutoEnable|g' /etc/bluetooth/main.conf
 
 # ------------------------------------------------------------------------
 
-# Don't let network-manager handle all network interfaces.
-sudo echo -e "managed=false" | sudo tee -a /etc/NetworkManager/conf.d/10-globally-managed-devices.conf
-
-# ------------------------------------------------------------------------
-
 echo -e "Increase zRAM size"
 sudo sed -i 's/totalmem\ \/\ 2/totalmem\ \/\ 4/' /usr/bin/init-zram-swapping
 
@@ -225,7 +243,37 @@ sudo sed -i 's/totalmem\ \/\ 2/totalmem\ \/\ 4/' /usr/bin/init-zram-swapping
 
 echo -e "Clear the patches"
 sudo rm -rf /var/cache/apt/archives/*
+echo -e "Remove snapd and flatpak garbages"
+sudo systemctl disable --now snapd
+sudo umount /run/snap/ns
+sudo systemctl disable snapd.service
+sudo systemctl disable snapd.socket
+sudo systemctl disable snapd.seeded.service
+sudo systemctl disable snapd.autoimport.service
+sudo systemctl disable snapd.apparmor.service
+sudo rm -rf /etc/apparmor.d/usr.lib.snapd.snap-confine.real
+sudo systemctl start apparmor.service
+
+sudo apt remove --purge snapd -y
+sudo apt-mark hold snapd
+
+sudo rm -rf ~/snap
+sudo rm -rf /snap
+sudo rm -rf /var/snap
+sudo rm -rf /var/lib/snapd
+sudo rm -rf /var/cache/snapd
+sudo rm -rf /usr/lib/snapd
+
+flatpak uninstall --all
+
+sudo apt remove --purge flatpak -y
+sudo apt-mark hold flatpak
 sync
+
+# ------------------------------------------------------------------------
+
+# delete motd ads (really, canonical?)
+sudo rm -rf /etc/update-motd.d/*motd-news
 
 # ------------------------------------------------------------------------
 
