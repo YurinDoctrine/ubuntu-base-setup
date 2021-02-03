@@ -119,19 +119,21 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
     \
-    'flameshot'    # Screenshots
-    'file-roller'  # Create and modify archives
-    'freerdp'      # RDP Connections
-    'libvncserver' # VNC Connections
-    'filezilla'    # FTP Client
-    'apache2'      # HTTP server
-    'playerctl'    # Utility to control media players via MPRIS
-    'remmina'      # Remote Connection
-    'net-tools'    # Network utilities
-    'veracrypt'    # Disc encryption utility
-    'variety'      # Wallpaper changer
-    'gtkhash'      # Checksum verifier
-    'zram-config'  # zRAM loader
+    'flameshot'    	  # Screenshots
+    'file-roller'  	  # Create and modify archives
+    'freerdp'      	  # RDP Connections
+    'libvncserver' 	  # VNC Connections
+    'filezilla'    	  # FTP Client
+    'apache2'      	  # HTTP server
+    'apt-transport-https' # HTTPS download transport for APT
+    'playerctl'    	  # Utility to control media players via MPRIS
+    'remmina'      	  # Remote Connection
+    'net-tools'    	  # Network utilities
+    'veracrypt'    	  # Disc encryption utility
+    'variety'      	  # Wallpaper changer
+    'gnupg'  	   	  # Complete and free implementation of the OpenPGP standard
+    'gtkhash'      	  # Checksum verifier
+    'zram-config'  	  # zRAM loader
 
     # DEVELOPMENT ---------------------------------------------------------
     \
