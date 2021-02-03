@@ -241,6 +241,7 @@ sudo sed -i 's/totalmem\ \/\ 2/totalmem\ \/\ 4/' /usr/bin/init-zram-swapping
 
 # ------------------------------------------------------------------------
 
+sudo rm -rf ~/.cache/thumbnails
 echo -e "Clear the patches"
 sudo rm -rf /var/cache/apt/archives/*
 echo -e "Remove snapd and flatpak garbages"
@@ -306,15 +307,15 @@ final() {
         echo -e "FINAL: DO YOU ALSO WANT TO RUN THE AUTHOR'S secure-linux?"
         read -p $'yes/no >_: ' noc
         if [[ "$noc" == "yes" ]]; then
-            echo -e "RUNNING ...\n"
+            echo -e "RUNNING ..."
             chsh -s /usr/bin/fish # Change default shell before leaving.
             extra2
         elif [[ "$noc" == "no" ]]; then
-            echo -e "LEAVING ...\n"
+            echo -e "LEAVING ..."
             chsh -s /usr/bin/fish # Change default shell before leaving.
             exit 0
         else
-            echo -e "INVALID VALUE!\n"
+            echo -e "INVALID VALUE!"
             final
         fi
     else
