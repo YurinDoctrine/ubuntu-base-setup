@@ -87,7 +87,6 @@ PKGS=(
     'hardinfo'      # Hardware info app
     'htop'          # Process viewer
     'neofetch'      # Shows system info when you launch terminal
-    'ntp'           # Network Time Protocol to set time via network.
     'openssh'       # SSH connectivity tools
     'irssi'         # Terminal based IRC
     'p7zip'         # 7z compression program
@@ -183,9 +182,8 @@ echo -e "FINAL SETUP AND CONFIGURATION"
 # Setting up locales
 echo -e "Setup language to en_GB and set locale"
 sudo sed -i 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
+localectl set-locale LANG="en_GB.UTF-8 UTF-8" LC_TIME="en_GB.UTF-8 UTF-8"
 sudo locale-gen
-sudo timedatectl set-ntp 1
-sudo localectl set-locale LANG="en_GB.UTF-8" LC_TIME="en_GB.UTF-8"
 
 # ------------------------------------------------------------------------
 
