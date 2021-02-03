@@ -139,12 +139,13 @@ PKGS=(
     'ccache'         # Compiler cacher
     'clang'          # C Lang compiler
     'cmake'          # Cross-platform open-source make system
-    'meson'          # Build system that use python as a front-end language and Ninja as a building backend
+    'fakeroot'       # Tool for simulating superuser privileges
     'gcc'            # C/C++ compiler
     'glibc'          # C libraries
     'glslang'        # OpenGL and OpenGL ES shader front end and validator
     'meld'           # File/directory comparison
     'mariadb-server' # Commercially supported fork of the MySQL
+    'meson'          # Build system that use python as a front-end language and Ninja as a building backend
     'nodejs'         # Javascript runtime environment
     'npm'            # Node package manager
     'php'            # Scripting language
