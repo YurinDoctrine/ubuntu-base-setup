@@ -9,6 +9,14 @@ sudo apt update &&
 
 # ------------------------------------------------------------------------
 
+# Setting up locales
+echo -e "Setup language to en_GB and set locale"
+sudo sed -i 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
+sudo locale-gen
+localectl set-locale LANG="en_GB.UTF-8 UTF-8" LC_TIME="en_GB.UTF-8 UTF-8"
+
+# ------------------------------------------------------------------------
+
 # Don't reserve space man-pages, locales, licenses.
 echo -e "Remove useless companies"
 find /usr/share/doc -depth -type f ! -name copyright | xargs sudo rm -rf || true
@@ -180,14 +188,6 @@ echo -e "Done!"
 # ------------------------------------------------------------------------
 
 echo -e "FINAL SETUP AND CONFIGURATION"
-
-# Setting up locales
-echo -e "Setup language to en_GB and set locale"
-sudo sed -i 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
-localectl set-locale LANG="en_GB.UTF-8 UTF-8" LC_TIME="en_GB.UTF-8 UTF-8" LC_ALL="en_GB.UTF-8 UTF-8"
-sudo locale-gen
-
-# ------------------------------------------------------------------------
 
 # Sudo rights
 echo -e "Add sudo rights"
