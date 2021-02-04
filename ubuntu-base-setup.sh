@@ -119,21 +119,21 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
     \
-    'flameshot'    	    # Screenshots
-    'file-roller'  	    # Create and modify archives
-    'freerdp'      	    # RDP Connections
-    'libvncserver' 	    # VNC Connections
-    'filezilla'    	    # FTP Client
-    'apache2'      	    # HTTP server
+    'flameshot'           # Screenshots
+    'file-roller'         # Create and modify archives
+    'freerdp'             # RDP Connections
+    'libvncserver'        # VNC Connections
+    'filezilla'           # FTP Client
+    'apache2'             # HTTP server
     'apt-transport-https' # HTTPS download transport for APT
-    'playerctl'    	    # Utility to control media players via MPRIS
-    'remmina'      	    # Remote Connection
-    'net-tools'    	    # Network utilities
-    'veracrypt'    	    # Disc encryption utility
-    'variety'      	    # Wallpaper changer
-    'gnupg'  	   	    # Complete and free implementation of the OpenPGP standard
-    'gtkhash'      	    # Checksum verifier
-    'zram-config'  	    # zRAM loader
+    'playerctl'           # Utility to control media players via MPRIS
+    'remmina'             # Remote Connection
+    'net-tools'           # Network utilities
+    'veracrypt'           # Disc encryption utility
+    'variety'             # Wallpaper changer
+    'gnupg'               # Complete and free implementation of the OpenPGP standard
+    'gtkhash'             # Checksum verifier
+    'zram-config'         # zRAM loader
 
     # DEVELOPMENT ---------------------------------------------------------
     \
@@ -184,7 +184,7 @@ echo -e "FINAL SETUP AND CONFIGURATION"
 # Setting up locales
 echo -e "Setup language to en_GB and set locale"
 sudo sed -i 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
-localectl set-locale LANG="en_GB.UTF-8 UTF-8" LC_TIME="en_GB.UTF-8 UTF-8"
+localectl set-locale LANG="en_GB.UTF-8 UTF-8" LC_TIME="en_GB.UTF-8 UTF-8" LC_ALL="en_GB.UTF-8 UTF-8"
 sudo locale-gen
 
 # ------------------------------------------------------------------------
