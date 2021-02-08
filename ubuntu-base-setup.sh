@@ -271,6 +271,7 @@ flatpak uninstall --all
 
 sudo apt remove --purge flatpak -y
 sudo apt-mark hold flatpak
+sudo apt autopurge -y
 sync
 
 # ------------------------------------------------------------------------
