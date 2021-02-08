@@ -5,7 +5,8 @@
 # Before hop in
 sudo apt update &&
     sudo apt install -y git &&
-    sudo apt install --install-recommends -y ubuntu-restricted-extras software-properties-common
+    sudo apt install -y apt-cacher dnsmasq trafficserver  &&
+    sudo apt install --install-recommends -y kubuntu-restricted-extras software-properties-common
 
 # ------------------------------------------------------------------------
 
