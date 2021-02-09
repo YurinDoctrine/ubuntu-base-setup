@@ -11,6 +11,7 @@ sudo apt update &&
 # ------------------------------------------------------------------------
 
 # Setting up locales
+echo -e "LANG=en_GB.UTF8" | sudo tee -a /etc/environment
 sudo sed -i 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
 sudo locale-gen
 localectl set-locale LANG=en_GB.UTF-8 LC_TIME=en_GB.UTF-8
