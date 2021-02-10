@@ -1,7 +1,4 @@
 #!/bin/bash
-
-# ------------------------------------------------------------------------
-
 # Before hop in
 sudo apt update &&
     sudo apt install -y git &&
