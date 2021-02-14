@@ -312,6 +312,7 @@ cd /tmp &&
     sudo cp -R .config/.gmrunrc ~ &&
     sudo cp -R .config/.gtkrc-2.0 ~ &&
     sudo cp -R .config/* ~/.config &&
+    sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
     git clone --branch 10 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 10 https://github.com/CBPP/cbpp-ui-theme.git &&
