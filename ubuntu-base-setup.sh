@@ -51,11 +51,16 @@ PKGS=(
     # --- Importants
     \
     'xfce4-power-manager' # Power Manager
+    'xfce4-notifyd'       # Notification indicator
     'xorg-backlight'      # RandR-based backlight control application
-    'rofi'                # Menu System
-    'picom'               # Translucent Windows
-    'policykit-1-gnome'   # A toolkit for defining and handling authorizations
+    'suckless-tools'      # Generic menu for X (dmenu)
+    'compton'             # A compositor for X11
+    'conky'               # A system monitor software for the X Window System
+    'nitrogen'            # A fast and lightweight desktop background browser and setter for X Window
+    'openbox'             # A lightweight, powerful, and highly configurable stacking window manager
+    'lxpolkit'            # A toolkit for defining and handling authorizations
     'lxappearance'        # Set System Themes
+    'qt5-style-plugins'   # Additional style plugins for Qt5
 
     # DEVELOPMENT ---------------------------------------------------------
     \
@@ -238,8 +243,20 @@ sudo sed -i 's|AutoEnable|#AutoEnable|g' /etc/bluetooth/main.conf
 
 # ------------------------------------------------------------------------
 
+# Prevent stupid error beeps*
+sudo rmmod pcspkr
+echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
+
+# ------------------------------------------------------------------------
+
 echo -e "Increase zRAM size"
 sudo sed -i 's/totalmem\ \/\ 2/totalmem\ \/\ 4/' /usr/bin/init-zram-swapping
+
+# ------------------------------------------------------------------------
+
+# Same theme for Qt/KDE applications and GTK applications, and fix missing indicators
+echo -e "XDG_CURRENT_DESKTOP=Unity
+QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
 
 # ------------------------------------------------------------------------
 
@@ -278,6 +295,14 @@ sync
 
 # delete motd ads (really, canonical?)
 sudo rm -rf /etc/update-motd.d/*motd-news
+
+# ------------------------------------------------------------------------
+
+# Implement .config/ files of the openbox
+cd /tmp &&
+    git clone https://github.com/YurinDoctrine/.config.git &&
+    sudo mv .config/* ~.config/ &&
+    cd
 
 # ------------------------------------------------------------------------
 
