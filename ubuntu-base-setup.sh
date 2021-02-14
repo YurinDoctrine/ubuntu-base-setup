@@ -48,6 +48,7 @@ echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguage
 echo -e "Installing Base System"
 
 PKGS=(
+
     # --- Importants
     \
     'xscreensaver'            # A screen saver and locker for the X
@@ -57,6 +58,7 @@ PKGS=(
     'xorg-backlight'          # RandR-based backlight control application
     'suckless-tools'          # Generic menu for X (dmenu)
     'gmrun'                   # A lightweight application launcher
+    'gsimplecal'              # A simple, lightweight calendar
     'ibus'                    # An input method framework
     'compton'                 # A compositor for X11
     'conky'                   # A system monitor software for the X Window System
@@ -307,6 +309,8 @@ sudo rm -rf /etc/update-motd.d/*motd-news
 cd /tmp &&
     git clone https://github.com/YurinDoctrine/.config.git &&
     sudo cp -R .config/.conkyrc ~ &&
+    sudo cp -R .config/.gmrunrc ~ &&
+    sudo cp -R .config/.gtkrc-2.0 ~ &&
     sudo cp -R .config/* ~/.config &&
     git clone --branch 10 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
