@@ -66,6 +66,7 @@ PKGS=(
     'nitrogen'                # A fast and lightweight desktop background browser and setter for X Window
     'openbox'                 # A lightweight, powerful, and highly configurable stacking window manager
     'tint2'                   # A simple, unobtrusive and light panel for Xorg
+    'lxdm'                    # A lightweight display manager
     'lxpolkit'                # A toolkit for defining and handling authorizations
     'lxappearance'            # Set System Themes
     'qt5-style-plugins'       # Additional style plugins for Qt5
@@ -117,26 +118,26 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
     \
-    'cron'          # Cron jobs
-    'fish'          # The friendly interactive shell
-    'vsftpd'        # File transfer protocol
-    'hardinfo'      # Hardware info app
-    'htop'          # Process viewer
-    'neofetch'      # Shows system info when you launch terminal
-    'openssh'       # SSH connectivity tools
-    'irssi'         # Terminal based IRC
-    'p7zip'         # 7z compression program
-    'rsync'         # Remote file sync utility
-    'fonts-roboto'  # Font package
-    'speedtest-cli' # Internet speed via terminal
-    'terminator'    # A terminal emulator
+    'cron'           # Cron jobs
+    'fish'           # The friendly interactive shell
+    'vsftpd'         # File transfer protocol
+    'hardinfo'       # Hardware info app
+    'htop'           # Process viewer
+    'neofetch'       # Shows system info when you launch terminal
+    'openssh'        # SSH connectivity tools
+    'irssi'          # Terminal based IRC
+    'p7zip'          # 7z compression program
+    'rsync'          # Remote file sync utility
+    'fonts-roboto'   # Font package
+    'speedtest-cli'  # Internet speed via terminal
+    'terminator'     # A terminal emulator
     'fonts-terminus' # Font package with some bigger fonts for login terminal
-    'unrar'         # RAR compression program
-    'unzip'         # Zip compression program
-    'wget'          # Remote content retrieval
-    'vim'           # Terminal Editor
-    'zenity'        # Display graphical dialog boxes via shell scripts
-    'zip'           # Zip compression program
+    'unrar'          # RAR compression program
+    'unzip'          # Zip compression program
+    'wget'           # Remote content retrieval
+    'vim'            # Terminal Editor
+    'zenity'         # Display graphical dialog boxes via shell scripts
+    'zip'            # Zip compression program
 
     # DISK UTILITIES ------------------------------------------------------
     \
@@ -313,6 +314,10 @@ cd /tmp &&
     sudo cp -R .config/.conkyrc ~ &&
     sudo cp -R .config/.gmrunrc ~ &&
     sudo cp -R .config/.gtkrc-2.0 ~ &&
+    sudo cp -R .config/.gtkrc-2.0.mine ~ &&
+    sudo cp -R .config/.Xresources ~ &&
+    sudo cp -R .config/.xscreensaver ~ &&
+    sudo cp -R .config/.fonts.conf ~ &&
     sudo cp -R .config/* ~/.config &&
     sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
     git clone --branch 10 https://github.com/CBPP/cbpp-icon-theme.git &&
@@ -327,6 +332,11 @@ cd /tmp &&
     sudo cp -R cbpp-exit/cbpp-exit/data/usr/bin/* /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-pipemenus.git &&
     sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
+    git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
+    sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm &&
+    sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/CBPP/* /usr/share/lxdm/themes &&
+    git clone --branch 10 https://github.com/CBPP/cbpp-configs.git &&
+    sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
     cd
 
 # ------------------------------------------------------------------------
