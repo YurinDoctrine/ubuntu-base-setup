@@ -52,6 +52,7 @@ PKGS=(
     # --- Importants
     \
     'xscreensaver'            # A screen saver and locker for the X
+    'xfce4-goodies'           # Enhancements for the Xfce4
     'xfce4-power-manager'     # Power Manager
     'xfce4-notifyd'           # Notification indicator
     'xfce4-pulseaudio-plugin' # Xfce4 panel plugin icon to control Pulseaudio
@@ -84,6 +85,7 @@ PKGS=(
     'nodejs'         # Javascript runtime environment
     'npm'            # Node package manager
     'php'            # Scripting language
+    'python3-pip'    # The official package installer for Python
 
     # --- Networking Setup
     \
