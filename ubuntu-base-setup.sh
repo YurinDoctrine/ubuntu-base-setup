@@ -90,7 +90,6 @@ PKGS=(
 
     # --- Networking Setup
     \
-    'wpasupplicant'          # Key negotiation for WPA wireless networks
     'dialog'                 # Enables shell scripts to trigger dialog boxes
     'openvpn'                # Open VPN support
     'networkmanager-openvpn' # Open VPN plugin for NM
