@@ -130,7 +130,7 @@ PKGS=(
     'fonts-roboto'  # Font package
     'speedtest-cli' # Internet speed via terminal
     'terminator'    # A terminal emulator
-    'terminus-font' # Font package with some bigger fonts for login terminal
+    'fonts-terminus' # Font package with some bigger fonts for login terminal
     'unrar'         # RAR compression program
     'unzip'         # Zip compression program
     'wget'          # Remote content retrieval
