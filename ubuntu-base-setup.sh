@@ -123,7 +123,7 @@ PKGS=(
     'hardinfo'       # Hardware info app
     'htop'           # Process viewer
     'neofetch'       # Shows system info when you launch terminal
-    'openssh'        # SSH connectivity tools
+    'openssh-server'        # SSH connectivity tools
     'irssi'          # Terminal based IRC
     'p7zip'          # 7z compression program
     'rsync'          # Remote file sync utility
@@ -157,6 +157,7 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
     \
+    'catfish'           # Versatile file searching tool
     'flameshot'           # Screenshots
     'file-roller'         # Create and modify archives
     'freerdp'             # RDP Connections
@@ -164,31 +165,33 @@ PKGS=(
     'filezilla'           # FTP Client
     'apache2'             # HTTP server
     'apt-transport-https' # HTTPS download transport for APT
+    'arandr'             # Provide a simple visual front end for XRandR
     'playerctl'           # Utility to control media players via MPRIS
-    'remmina'             # Remote Connection
+    'putty'             # A port of the popular GUI SSH, Telnet, Rlogin and serial port connection client
     'transmission'        # BitTorrent client
     'net-tools'           # Network utilities
     'veracrypt'           # Disc encryption utility
-    'variety'             # Wallpaper changer
+    'galculator'             # A simple, elegant calculator
     'gnupg'               # Complete and free implementation of the OpenPGP standard
     'gtkhash'             # Checksum verifier
-    'zram-config'         # zRAM loader
 
     # GRAPHICS, VIDEO AND DESIGN -------------------------------------------------
     \
-    'gcolor2'   # Colorpicker
     'gimp'      # GNU Image Manipulation Program
-    'ristretto' # Multi image viewer
+    'viewnior'           # A simple, fast and elegant image viewer
+    'vlc' # A free and open source cross-platform multimedia player and framework
     'kdenlive'  # Movie Render
 
     # PRINTING --------------------------------------------------------
     \
-    'xpdf'                  # PDF viewer
+    'abiword'                  # Fully-featured word processor
+    'atril'                  # PDF viewer
     'cups'                  # Open source printer drivers
     'cups-pdf'              # PDF support for cups
     'ghostscript'           # PostScript interpreter
     'gsfonts'               # Adobe Postscript replacement fonts
     'hplip'                 # HP Drivers
+    'gnumeric'                 # A powerful spreadsheet application
     'system-config-printer' # Printer setup  utility
 
 )
@@ -336,7 +339,7 @@ cd /tmp &&
     sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes &&
     git clone --branch 10 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
-    touch cbpp-configs/cbpp-configs/data/root/DELETEME.md &&
+    sudo touch cbpp-configs/cbpp-configs/data/root/DELETEME.md &&
     sudo cp -R cbpp-configs/cbpp-configs/data/root/* /root &&
     cd
 
