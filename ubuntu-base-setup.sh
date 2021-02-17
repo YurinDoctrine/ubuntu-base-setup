@@ -313,9 +313,6 @@ sudo rm -rf /etc/update-motd.d/*motd-news
 # Implement .config/ files of the openbox
 cd /tmp &&
     git clone https://github.com/YurinDoctrine/.config.git &&
-    git clone https://github.com/YurinDoctrine/H.264.git &&
-    sudo mv H.264/ .config/google-chrome/Default/Extensions/hoghimnlncdmkafpadmegmcnknngikpo/ &&
-    sudo mv H.264/ .config/chromium/Default/Extensions/hoghimnlncdmkafpadmegmcnknngikpo/ &&
     sudo cp -R .config/.conkyrc ~ &&
     sudo cp -R .config/.gmrunrc ~ &&
     sudo cp -R .config/.gtkrc-2.0 ~ &&
