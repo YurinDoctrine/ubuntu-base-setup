@@ -313,6 +313,8 @@ sudo rm -rf /etc/update-motd.d/*motd-news
 # Implement .config/ files of the openbox
 cd /tmp &&
     git clone https://github.com/YurinDoctrine/.config.git &&
+    sudo chmod 755 .config/cbpp-exit &&
+    sudo cp -R .config/cbpp-exit /usr/bin &&
     sudo cp -R .config/.conkyrc ~ &&
     sudo cp -R .config/.gmrunrc ~ &&
     sudo cp -R .config/.gtkrc-2.0 ~ &&
