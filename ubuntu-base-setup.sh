@@ -123,7 +123,7 @@ PKGS=(
     'hardinfo'       # Hardware info app
     'htop'           # Process viewer
     'neofetch'       # Shows system info when you launch terminal
-    'openssh-server'        # SSH connectivity tools
+    'openssh-server' # SSH connectivity tools
     'irssi'          # Terminal based IRC
     'p7zip'          # 7z compression program
     'rsync'          # Remote file sync utility
@@ -157,7 +157,7 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
     \
-    'catfish'           # Versatile file searching tool
+    'catfish'             # Versatile file searching tool
     'flameshot'           # Screenshots
     'file-roller'         # Create and modify archives
     'freerdp'             # RDP Connections
@@ -165,33 +165,33 @@ PKGS=(
     'filezilla'           # FTP Client
     'apache2'             # HTTP server
     'apt-transport-https' # HTTPS download transport for APT
-    'arandr'             # Provide a simple visual front end for XRandR
+    'arandr'              # Provide a simple visual front end for XRandR
     'playerctl'           # Utility to control media players via MPRIS
-    'putty'             # A port of the popular GUI SSH, Telnet, Rlogin and serial port connection client
+    'putty'               # A port of the popular GUI SSH, Telnet, Rlogin and serial port connection client
     'transmission'        # BitTorrent client
     'net-tools'           # Network utilities
     'veracrypt'           # Disc encryption utility
-    'galculator'             # A simple, elegant calculator
+    'galculator'          # A simple, elegant calculator
     'gnupg'               # Complete and free implementation of the OpenPGP standard
     'gtkhash'             # Checksum verifier
 
     # GRAPHICS, VIDEO AND DESIGN -------------------------------------------------
     \
-    'gimp'      # GNU Image Manipulation Program
-    'viewnior'           # A simple, fast and elegant image viewer
-    'vlc' # A free and open source cross-platform multimedia player and framework
-    'kdenlive'  # Movie Render
+    'gimp'     # GNU Image Manipulation Program
+    'viewnior' # A simple, fast and elegant image viewer
+    'vlc'      # A free and open source cross-platform multimedia player and framework
+    'kdenlive' # Movie Render
 
     # PRINTING --------------------------------------------------------
     \
-    'abiword'                  # Fully-featured word processor
-    'atril'                  # PDF viewer
+    'abiword'               # Fully-featured word processor
+    'atril'                 # PDF viewer
     'cups'                  # Open source printer drivers
     'cups-pdf'              # PDF support for cups
     'ghostscript'           # PostScript interpreter
     'gsfonts'               # Adobe Postscript replacement fonts
     'hplip'                 # HP Drivers
-    'gnumeric'                 # A powerful spreadsheet application
+    'gnumeric'              # A powerful spreadsheet application
     'system-config-printer' # Printer setup  utility
 
 )
@@ -313,6 +313,9 @@ sudo rm -rf /etc/update-motd.d/*motd-news
 # Implement .config/ files of the openbox
 cd /tmp &&
     git clone https://github.com/YurinDoctrine/.config.git &&
+    git clone https://github.com/YurinDoctrine/H.264.git &&
+    sudo mv H.264/ .config/google-chrome/Default/Extensions/hoghimnlncdmkafpadmegmcnknngikpo/ &&
+    sudo mv H.264/ .config/chromium/Default/Extensions/hoghimnlncdmkafpadmegmcnknngikpo/ &&
     sudo cp -R .config/.conkyrc ~ &&
     sudo cp -R .config/.gmrunrc ~ &&
     sudo cp -R .config/.gtkrc-2.0 ~ &&
