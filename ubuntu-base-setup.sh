@@ -266,12 +266,6 @@ sudo sed -i 's/totalmem\ \/\ 2/totalmem\ \/\ 4/' /usr/bin/init-zram-swapping
 
 # ------------------------------------------------------------------------
 
-# Same theme for Qt/KDE applications and GTK applications, and fix missing indicators
-echo -e "XDG_CURRENT_DESKTOP=Unity
-QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
-
-# ------------------------------------------------------------------------
-
 sudo rm -rf ~/.cache/thumbnails
 echo -e "Clear the patches"
 sudo rm -rf /var/cache/apt/archives/*
