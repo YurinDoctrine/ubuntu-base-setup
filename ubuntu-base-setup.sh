@@ -3,7 +3,7 @@
 sudo apt update &&
     sudo apt install -y git &&
     sudo apt install -y apt-cacher &&
-    sudo apt install --install-recommends -y kubuntu-restricted-extras software-properties-common
+    sudo apt install --install-recommends -y ubuntu-restricted-extas kubuntu-restricted-extras software-properties-common
 
 # ------------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ PKGS=(
     'xfce4-power-manager'     # Power Manager
     'xfce4-notifyd'           # Notification indicator
     'xfce4-pulseaudio-plugin' # Xfce4 panel plugin icon to control Pulseaudio
-    'xorg-backlight'          # RandR-based backlight control application
+    'xbacklight'              # RandR-based backlight control application
     'suckless-tools'          # Generic menu for X (dmenu)
     'gmrun'                   # A lightweight application launcher
     'gsimplecal'              # A simple, lightweight calendar
@@ -69,7 +69,6 @@ PKGS=(
     'lxdm'                    # A lightweight display manager
     'lxpolkit'                # A toolkit for defining and handling authorizations
     'lxappearance'            # Set System Themes
-    'qt5-style-plugins'       # Additional style plugins for Qt5
 
     # DEVELOPMENT ---------------------------------------------------------
     \
@@ -109,8 +108,6 @@ PKGS=(
     # --- Bluetooth
     \
     'bluez'                       # Daemons for the bluetooth protocol stack
-    'bluez-libs'                  # Daemons for the bluetooth libraries
-    'bluez-utils'                 # Bluetooth development and debugging utilities
     'bluez-firmware'              # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
     'blueberry'                   # Bluetooth configuration tool
     'pulseaudio-module-bluetooth' # Bluetooth support for PulseAudio
@@ -160,8 +157,6 @@ PKGS=(
     'catfish'             # Versatile file searching tool
     'flameshot'           # Screenshots
     'file-roller'         # Create and modify archives
-    'freerdp'             # RDP Connections
-    'libvncserver'        # VNC Connections
     'filezilla'           # FTP Client
     'apache2'             # HTTP server
     'apt-transport-https' # HTTPS download transport for APT
@@ -221,7 +216,7 @@ echo -e "FONT=ter-v32b" | sudo tee /etc/vconsole.conf
 # ------------------------------------------------------------------------
 
 echo -e "Setting laptop lid close to suspend"
-sudo sed -i -e 's|[# ]*HandleLidSwitch[ ]*=[ ]*.*|HandleLidSwitch=suspend|g' /etc/systemd/logind.conf
+sudo sed -i -e 's|#HandleLidSwitch=suspend|HandleLidSwitch=suspend|g' /etc/systemd/logind.conf
 
 # ------------------------------------------------------------------------
 
@@ -245,24 +240,19 @@ sudo killall -9 pulseaudio
 # Pulse audio loads the `esound-protocol` module, which best I can tell is rarely needed.
 # That module creates a file called `.esd_auth` in the home directory which I'd prefer to not be there. So...
 sudo sed -i 's|load-module module-esound-protocol-unix|#load-module module-esound-protocol-unix|g' /etc/pulse/default.pa
-# Start/restart PulseAudio.
+# Restart PulseAudio.
 sudo killall -HUP pulseaudio
 
 # ------------------------------------------------------------------------
 
 echo -e "Disabling bluetooth daemon by comment it"
-sudo sed -i 's|AutoEnable|#AutoEnable|g' /etc/bluetooth/main.conf
+sudo sed -i 's|AutoEnable=true|AutoEnable=false|g' /etc/bluetooth/main.conf
 
 # ------------------------------------------------------------------------
 
 # Prevent stupid error beeps*
 sudo rmmod pcspkr
 echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
-
-# ------------------------------------------------------------------------
-
-echo -e "Increase zRAM size"
-sudo sed -i 's/totalmem\ \/\ 2/totalmem\ \/\ 4/' /usr/bin/init-zram-swapping
 
 # ------------------------------------------------------------------------
 
@@ -294,6 +284,7 @@ flatpak uninstall --all
 
 sudo apt remove --purge flatpak -y
 sudo apt-mark hold flatpak
+
 sudo apt autopurge -y
 sync
 
