@@ -3,7 +3,7 @@
 sudo apt update &&
     sudo apt install -y git &&
     sudo apt install -y apt-cacher &&
-    sudo apt install --install-recommends -y ubuntu-restricted-extas kubuntu-restricted-extras software-properties-common
+    sudo apt install --install-recommends -y ubuntu-restricted-extras kubuntu-restricted-extras software-properties-common
 
 # ------------------------------------------------------------------------
 
