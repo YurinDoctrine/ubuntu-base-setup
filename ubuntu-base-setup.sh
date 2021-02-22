@@ -102,7 +102,7 @@ PKGS=(
     'alsa-plugins'    # ALSA plugins
     'pulseaudio'      # Pulse Audio sound components
     'pulseaudio-alsa' # ALSA configuration for pulse audio
-    'pulseeffects'    # Pulse Audio sound components
+    'pulseeffects'    # Audio Effects for Pulseaudio Applications
     'pavucontrol'     # Pulse Audio volume control
     'pasystray'       # PulseAudio system tray
 
