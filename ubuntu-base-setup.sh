@@ -306,8 +306,9 @@ cd /tmp &&
     sudo cp -R .config/.xscreensaver ~ &&
     sudo cp -R .config/.fonts.conf ~ &&
     sudo cp -R .config/* ~/.config &&
-    sudo chmod 755 ~/.config/cbpp-exit &&
     sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
+    sudo chmod 755 ~/.config/cbpp-exit &&
+    sudo chmod 755 ~/.config/cbpp-help-pipemenu &&
     git clone --branch 10 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 10 https://github.com/CBPP/cbpp-ui-theme.git &&
@@ -320,7 +321,8 @@ cd /tmp &&
     sudo cp -R cbpp-exit/cbpp-exit/data/usr/bin/* /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-pipemenus.git &&
     sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
-    sudo cp -R ~/.config/cbpp-exit /usr/bin &&
+    sudo mv ~/.config/cbpp-exit /usr/bin &&
+    sudo mv ~/.config/cbpp-help-pipemenu /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
     sudo rm -rf /etc/lxdm/*.conf &&
     sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm &&
