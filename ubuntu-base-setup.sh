@@ -61,13 +61,14 @@ PKGS=(
     'gmrun'                   # A lightweight application launcher
     'gsimplecal'              # A simple, lightweight calendar
     'ibus'                    # An input method framework
+    'udiskie'                 # An automounter with optional notifications, tray icon and support for password protected LUKS devices
     'compton'                 # A compositor for X11
     'conky'                   # A system monitor software for the X Window System
     'nitrogen'                # A fast and lightweight desktop background browser and setter for X Window
     'openbox'                 # A lightweight, powerful, and highly configurable stacking window manager
     'tint2'                   # A simple, unobtrusive and light panel for Xorg
     'lxdm'                    # A lightweight display manager
-    'lxpolkit'                # A toolkit for defining and handling authorizations
+    'lxqt-policykit'          # A toolkit for defining and handling authorizations
     'lxappearance'            # Set System Themes
 
     # DEVELOPMENT ---------------------------------------------------------
@@ -103,7 +104,7 @@ PKGS=(
     'pulseaudio'      # Pulse Audio sound components
     'pulseaudio-alsa' # ALSA configuration for pulse audio
     'pulseeffects'    # Audio Effects for Pulseaudio Applications
-    'pavucontrol'     # Pulse Audio volume control
+    'pavucontrol-qt'  # Pulse Audio volume control Qt port
     'pasystray'       # PulseAudio system tray
 
     # --- Bluetooth
