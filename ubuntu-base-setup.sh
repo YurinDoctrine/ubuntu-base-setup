@@ -51,25 +51,24 @@ PKGS=(
 
     # --- Importants
     \
-    'xscreensaver'            # A screen saver and locker for the X
-    'xfce4-goodies'           # Enhancements for the Xfce4
-    'xfce4-power-manager'     # Power Manager
-    'xfce4-notifyd'           # Notification indicator
-    'xfce4-pulseaudio-plugin' # Xfce4 panel plugin icon to control Pulseaudio
-    'xbacklight'              # RandR-based backlight control application
-    'suckless-tools'          # Generic menu for X (dmenu)
-    'gmrun'                   # A lightweight application launcher
-    'gsimplecal'              # A simple, lightweight calendar
-    'ibus'                    # An input method framework
-    'udiskie'                 # An automounter with optional notifications, tray icon and support for password protected LUKS devices
-    'compton'                 # A compositor for X11
-    'conky'                   # A system monitor software for the X Window System
-    'nitrogen'                # A fast and lightweight desktop background browser and setter for X Window
-    'openbox'                 # A lightweight, powerful, and highly configurable stacking window manager
-    'tint2'                   # A simple, unobtrusive and light panel for Xorg
-    'lxdm'                    # A lightweight display manager
-    'lxqt-policykit'          # A toolkit for defining and handling authorizations
-    'lxappearance'            # Set System Themes
+    'xscreensaver'        # A screen saver and locker for the X
+    'xfce4-goodies'       # Enhancements for the Xfce4
+    'xfce4-power-manager' # Power Manager
+    'lxqt-notificationd'  # Notification indicator
+    'xbacklight'          # RandR-based backlight control application
+    'suckless-tools'      # Generic menu for X (dmenu)
+    'gmrun'               # A lightweight application launcher
+    'gsimplecal'          # A simple, lightweight calendar
+    'ibus'                # An input method framework
+    'udiskie'             # An automounter with optional notifications, tray icon and support for password protected LUKS devices
+    'compton'             # A compositor for X11
+    'conky'               # A system monitor software for the X Window System
+    'nitrogen'            # A fast and lightweight desktop background browser and setter for X Window
+    'openbox'             # A lightweight, powerful, and highly configurable stacking window manager
+    'tint2'               # A simple, unobtrusive and light panel for Xorg
+    'lxdm'                # A lightweight display manager
+    'lxqt-policykit'      # A toolkit for defining and handling authorizations
+    'lxappearance'        # Set System Themes
 
     # DEVELOPMENT ---------------------------------------------------------
     \
