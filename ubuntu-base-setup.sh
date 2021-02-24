@@ -66,7 +66,6 @@ PKGS=(
     'nitrogen'            # A fast and lightweight desktop background browser and setter for X Window
     'openbox'             # A lightweight, powerful, and highly configurable stacking window manager
     'tint2'               # A simple, unobtrusive and light panel for Xorg
-    'lxdm'                # A lightweight display manager
     'lxqt-policykit'      # A toolkit for defining and handling authorizations
     'lxappearance'        # Set System Themes
 
