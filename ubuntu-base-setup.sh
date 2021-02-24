@@ -114,61 +114,59 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
     \
-    'cron'           # Cron jobs
-    'fish'           # The friendly interactive shell
-    'vsftpd'         # File transfer protocol
-    'hardinfo'       # Hardware info app
-    'htop'           # Process viewer
-    'neofetch'       # Shows system info when you launch terminal
-    'openssh-server' # SSH connectivity tools
-    'irssi'          # Terminal based IRC
-    'p7zip'          # 7z compression program
-    'rsync'          # Remote file sync utility
-    'fonts-roboto'   # Font package
-    'speedtest-cli'  # Internet speed via terminal
-    'terminator'     # A terminal emulator
-    'fonts-terminus' # Font package with some bigger fonts for login terminal
-    'unrar'          # RAR compression program
-    'unzip'          # Zip compression program
-    'wget'           # Remote content retrieval
-    'vim'            # Terminal Editor
-    'zenity'         # Display graphical dialog boxes via shell scripts
-    'zip'            # Zip compression program
+    'android-tools-adb' # ADB for Android
+    'cron'              # Cron jobs
+    'fish'              # The friendly interactive shell
+    'vsftpd'            # File transfer protocol
+    'hardinfo'          # Hardware info app
+    'htop'              # Process viewer
+    'neofetch'          # Shows system info when you launch terminal
+    'openssh-server'    # SSH connectivity tools
+    'irssi'             # Terminal based IRC
+    'p7zip'             # 7z compression program
+    'rsync'             # Remote file sync utility
+    'fonts-roboto'      # Font package
+    'speedtest-cli'     # Internet speed via terminal
+    'terminator'        # A terminal emulator
+    'fonts-terminus'    # Font package with some bigger fonts for login terminal
+    'unrar'             # RAR compression program
+    'unzip'             # Zip compression program
+    'wget'              # Remote content retrieval
+    'nano'              # A simple console based text editor
+    'zenity'            # Display graphical dialog boxes via shell scripts
+    'zip'               # Zip compression program
 
     # DISK UTILITIES ------------------------------------------------------
     \
-    'android-tools-adb'     # ADB for Android
-    'android-file-transfer' # Android File Transfer
-    'autofs'                # Auto-mounter
-    'btrfs-progs'           # BTRFS Support
-    'dosfstools'            # DOS Support
-    'exfat-utils'           # Mount exFat drives
-    'gparted'               # Disk utility
-    'gvfs'                  # More File System Stuff
-    'ntfs-3g'               # Open source implementation of NTFS file system
-    'parted'                # Disk utility
-    'samba'                 # Samba File Sharing
-    'smartmontools'         # Disk Monitoring
-    'smbclient'             # SMB Connection
-    'xfsprogs'              # XFS Support
+    'autofs'        # Auto-mounter
+    'btrfs-progs'   # BTRFS Support
+    'dosfstools'    # DOS Support
+    'exfat-utils'   # Mount exFat drives
+    'gparted'       # Disk utility
+    'gvfs'          # More File System Stuff
+    'ntfs-3g'       # Open source implementation of NTFS file system
+    'parted'        # Disk utility
+    'samba'         # Samba File Sharing
+    'smartmontools' # Disk Monitoring
+    'xfsprogs'      # XFS Support
 
     # GENERAL UTILITIES ---------------------------------------------------
     \
-    'catfish'             # Versatile file searching tool
-    'flameshot'           # Screenshots
-    'file-roller'         # Create and modify archives
-    'filezilla'           # FTP Client
-    'apache2'             # HTTP server
-    'apt-transport-https' # HTTPS download transport for APT
-    'arandr'              # Provide a simple visual front end for XRandR
-    'playerctl'           # Utility to control media players via MPRIS
-    'putty'               # A port of the popular GUI SSH, Telnet, Rlogin and serial port connection client
-    'transmission'        # BitTorrent client
-    'net-tools'           # Network utilities
-    'veracrypt'           # Disc encryption utility
-    'galculator'          # A simple, elegant calculator
-    'gnupg'               # Complete and free implementation of the OpenPGP standard
-    'gtkhash'             # Checksum verifier
+    'android-file-transfer' # Android File Transfer
+    'catfish'               # Versatile file searching tool
+    'flameshot'             # Screenshots
+    'file-roller'           # Create and modify archives
+    'filezilla'             # FTP Client
+    'apache2'               # HTTP server
+    'apt-transport-https'   # HTTPS download transport for APT
+    'arandr'                # Provide a simple visual front end for XRandR
+    'playerctl'             # Utility to control media players via MPRIS
+    'putty'                 # A port of the popular GUI SSH, Telnet, Rlogin and serial port connection client
+    'transmission'          # BitTorrent client
+    'net-tools'             # Network utilities
+    'veracrypt'             # Disc encryption utility
+    'galculator'            # A simple, elegant calculator
+    'gnupg'                 # Complete and free implementation of the OpenPGP standard
 
     # GRAPHICS, VIDEO AND DESIGN -------------------------------------------------
     \
@@ -323,15 +321,15 @@ cd /tmp &&
     sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
     sudo mv ~/.config/cbpp-exit /usr/bin &&
     sudo mv ~/.config/cbpp-help-pipemenu /usr/bin &&
-    git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
-    sudo rm -rf /etc/lxdm/*.conf &&
-    sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm &&
-    sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes &&
     git clone --branch 10 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
     touch cbpp-configs/cbpp-configs/data/root/DELETEME.md &&
     sudo cp -R cbpp-configs/cbpp-configs/data/root/* /root &&
-    cd
+    git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
+    sudo rm -rf /etc/lxdm/*.conf &&
+    sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm &&
+    sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
+cd
 
 # ------------------------------------------------------------------------
 
