@@ -55,7 +55,6 @@ PKGS=(
     'xfce4-goodies'       # Enhancements for the Xfce4
     'xfce4-power-manager' # Power Manager
     'lxqt-notificationd'  # Notification indicator
-    'xbacklight'          # RandR-based backlight control application
     'suckless-tools'      # Generic menu for X (dmenu)
     'gmrun'               # A lightweight application launcher
     'gsimplecal'          # A simple, lightweight calendar
