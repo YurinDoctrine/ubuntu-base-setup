@@ -325,9 +325,9 @@ cd /tmp &&
     touch cbpp-configs/cbpp-configs/data/root/DELETEME.md &&
     sudo cp -R cbpp-configs/cbpp-configs/data/root/* /root &&
     git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
-    sudo rm -rf /etc/lxdm/*.conf &&
-    sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm &&
-    sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
+    sudo rm -rf /etc/lxdm/*.conf
+sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
+sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
 cd
 
 # ------------------------------------------------------------------------
