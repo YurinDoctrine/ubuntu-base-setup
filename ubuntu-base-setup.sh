@@ -65,7 +65,6 @@ PKGS=(
     'nitrogen'            # A fast and lightweight desktop background browser and setter for X Window
     'openbox'             # A lightweight, powerful, and highly configurable stacking window manager
     'tint2'               # A simple, unobtrusive and light panel for Xorg
-    'lxqt-policykit'      # A toolkit for defining and handling authorizations
     'lxappearance'        # Set System Themes
 
     # DEVELOPMENT ---------------------------------------------------------
@@ -82,15 +81,6 @@ PKGS=(
     'npm'            # Node package manager
     'php'            # Scripting language
     'python3-pip'    # The official package installer for Python
-
-    # --- Networking Setup
-    \
-    'dialog'                 # Enables shell scripts to trigger dialog boxes
-    'openvpn'                # Open VPN support
-    'networkmanager-openvpn' # Open VPN plugin for NM
-    'network-manager-gnome'  # System tray icon/utility for network connectivity
-    'libsecret'              # Library for storing passwords
-    'dhclient'               # DHCP client
 
     # --- Audio
     \
