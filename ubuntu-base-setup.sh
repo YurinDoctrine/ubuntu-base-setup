@@ -28,8 +28,8 @@ sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
 sudo rm -rf /usr/share/man/*
 dpkg -l | grep '^ii.*texlive.*doc'
 sudo apt remove --purge \
-    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 
 echo -e "path-exclude /usr/share/doc/*
 # we need to keep copyright files for legal reasons
@@ -75,8 +75,6 @@ PKGS=(
     'cmake'          # Cross-platform open-source make system
     'fakeroot'       # Tool for simulating superuser privileges
     'gcc'            # C/C++ compiler
-    'glibc'          # C libraries
-    'glslang'        # OpenGL and OpenGL ES shader front end and validator
     'meld'           # File/directory comparison
     'mariadb-server' # Commercially supported fork of the MySQL
     'meson'          # Build system that use python as a front-end language and Ninja as a building backend
