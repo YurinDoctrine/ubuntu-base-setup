@@ -54,7 +54,6 @@ PKGS=(
     'xscreensaver'        # A screen saver and locker for the X
     'xfce4-goodies'       # Enhancements for the Xfce4
     'xfce4-power-manager' # Power Manager
-    'lxqt-notificationd'  # Notification indicator
     'suckless-tools'      # Generic menu for X (dmenu)
     'gmrun'               # A lightweight application launcher
     'gsimplecal'          # A simple, lightweight calendar
@@ -314,6 +313,7 @@ cd /tmp &&
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
 cd
+echo -e "XDG_CURRENT_DESKTOP=Unity" | sudo tee -a /etc/environment
 
 # ------------------------------------------------------------------------
 
