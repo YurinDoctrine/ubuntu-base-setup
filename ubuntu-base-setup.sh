@@ -65,6 +65,7 @@ PKGS=(
     'openbox'             # A lightweight, powerful, and highly configurable stacking window manager
     'tint2'               # A simple, unobtrusive and light panel for Xorg
     'lxappearance'        # Set System Themes
+    'lxpolkit'            # LXDE PolicyKit authentication agent
 
     # DEVELOPMENT ---------------------------------------------------------
     \
@@ -152,6 +153,7 @@ PKGS=(
     'galculator'            # A simple, elegant calculator
     'gnupg'                 # Complete and free implementation of the OpenPGP standard
     'preload'               # Makes applications run faster by prefetching binaries and shared objects
+    'simplescreenrecorder'  # A feature-rich screen recorder that supports X11 and OpenGL
 
     # GRAPHICS, VIDEO AND DESIGN -------------------------------------------------
     \
