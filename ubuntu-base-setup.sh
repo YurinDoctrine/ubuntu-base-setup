@@ -28,8 +28,8 @@ sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
 sudo rm -rf /usr/share/man/*
 dpkg -l | grep '^ii.*texlive.*doc'
 sudo apt remove --purge \
-texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 
 echo -e "path-exclude /usr/share/doc/*
 # we need to keep copyright files for legal reasons
@@ -137,6 +137,7 @@ PKGS=(
     \
     'android-file-transfer' # Android File Transfer
     'catfish'               # Versatile file searching tool
+    'dialog'                # A tool to display dialog boxes from shell scripts
     'flameshot'             # Screenshots
     'file-roller'           # Create and modify archives
     'filezilla'             # FTP Client
