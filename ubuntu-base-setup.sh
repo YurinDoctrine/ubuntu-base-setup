@@ -58,7 +58,6 @@ PKGS=(
     'gmrun'               # A lightweight application launcher
     'gsimplecal'          # A simple, lightweight calendar
     'ibus'                # An input method framework
-    'udiskie'             # An automounter with optional notifications, tray icon and support for password protected LUKS devices
     'compton'             # A compositor for X11
     'conky'               # A system monitor software for the X Window System
     'nitrogen'            # A fast and lightweight desktop background browser and setter for X Window
@@ -74,7 +73,6 @@ PKGS=(
     'cmake'          # Cross-platform open-source make system
     'fakeroot'       # Tool for simulating superuser privileges
     'gcc'            # C/C++ compiler
-    'meld'           # File/directory comparison
     'mariadb-server' # Commercially supported fork of the MySQL
     'meson'          # Build system that use python as a front-end language and Ninja as a building backend
     'nodejs'         # Javascript runtime environment
@@ -86,7 +84,6 @@ PKGS=(
     \
     'alsa-utils'      # Advanced Linux Sound Architecture (ALSA) Components https://alsa.opensrc.org/
     'alsa-plugins'    # ALSA plugins
-    'pulseaudio'      # Pulse Audio sound components
     'pulseaudio-alsa' # ALSA configuration for pulse audio
     'pulseeffects'    # Audio Effects for Pulseaudio Applications
     'pavucontrol-qt'  # Pulse Audio volume control Qt port
@@ -112,7 +109,6 @@ PKGS=(
     'irssi'             # Terminal based IRC
     'p7zip'             # 7z compression program
     'rsync'             # Remote file sync utility
-    'fonts-roboto'      # Font package
     'speedtest-cli'     # Internet speed via terminal
     'terminator'        # A terminal emulator
     'fonts-terminus'    # Font package with some bigger fonts for login terminal
@@ -125,14 +121,8 @@ PKGS=(
 
     # DISK UTILITIES ------------------------------------------------------
     \
-    'autofs'        # Auto-mounter
-    'btrfs-progs'   # BTRFS Support
-    'dosfstools'    # DOS Support
-    'exfat-utils'   # Mount exFat drives
     'gparted'       # Disk utility
-    'ntfs-3g'       # Open source implementation of NTFS file system
     'smartmontools' # Disk Monitoring
-    'xfsprogs'      # XFS Support
 
     # GENERAL UTILITIES ---------------------------------------------------
     \
@@ -150,7 +140,6 @@ PKGS=(
     'putty'                 # A port of the popular GUI SSH, Telnet, Rlogin and serial port connection client
     'transmission'          # BitTorrent client
     'net-tools'             # Network utilities
-    'veracrypt'             # Disc encryption utility
     'galculator'            # A simple, elegant calculator
     'gnupg'                 # Complete and free implementation of the OpenPGP standard
     'preload'               # Makes applications run faster by prefetching binaries and shared objects
@@ -166,13 +155,9 @@ PKGS=(
     \
     'abiword'               # Fully-featured word processor
     'atril'                 # PDF viewer
-    'cups'                  # Open source printer drivers
-    'cups-pdf'              # PDF support for cups
     'ghostscript'           # PostScript interpreter
     'gsfonts'               # Adobe Postscript replacement fonts
-    'hplip'                 # HP Drivers
     'gnumeric'              # A powerful spreadsheet application
-    'system-config-printer' # Printer setup  utility
 
 )
 
@@ -313,8 +298,7 @@ cd /tmp &&
     touch cbpp-configs/cbpp-configs/data/root/DELETEME.md &&
     sudo cp -R cbpp-configs/cbpp-configs/data/root/* /root &&
     git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
-    sudo rm -rf /etc/lxdm/*.conf
-sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
+	sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
 cd
 echo -e "XDG_CURRENT_DESKTOP=Unity" | sudo tee -a /etc/environment
