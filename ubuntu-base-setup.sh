@@ -301,7 +301,8 @@ cd /tmp &&
     sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
 cd
-echo -e "XDG_CURRENT_DESKTOP=Unity" | sudo tee -a /etc/environment
+echo -e "XDG_CURRENT_DESKTOP=Unity
+QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
 
 # ------------------------------------------------------------------------
 
