@@ -153,11 +153,11 @@ PKGS=(
 
     # PRINTING --------------------------------------------------------
     \
-    'abiword'               # Fully-featured word processor
-    'atril'                 # PDF viewer
-    'ghostscript'           # PostScript interpreter
-    'gsfonts'               # Adobe Postscript replacement fonts
-    'gnumeric'              # A powerful spreadsheet application
+    'abiword'     # Fully-featured word processor
+    'atril'       # PDF viewer
+    'ghostscript' # PostScript interpreter
+    'gsfonts'     # Adobe Postscript replacement fonts
+    'gnumeric'    # A powerful spreadsheet application
 
 )
 
@@ -298,7 +298,7 @@ cd /tmp &&
     touch cbpp-configs/cbpp-configs/data/root/DELETEME.md &&
     sudo cp -R cbpp-configs/cbpp-configs/data/root/* /root &&
     git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
-	sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
+    sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
 cd
 echo -e "XDG_CURRENT_DESKTOP=Unity" | sudo tee -a /etc/environment
