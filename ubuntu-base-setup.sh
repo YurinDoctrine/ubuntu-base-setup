@@ -68,17 +68,16 @@ PKGS=(
 
     # DEVELOPMENT ---------------------------------------------------------
     \
-    'ccache'         # Compiler cacher
-    'clang'          # C Lang compiler
-    'cmake'          # Cross-platform open-source make system
-    'fakeroot'       # Tool for simulating superuser privileges
-    'gcc'            # C/C++ compiler
-    'mariadb-server' # Commercially supported fork of the MySQL
-    'meson'          # Build system that use python as a front-end language and Ninja as a building backend
-    'nodejs'         # Javascript runtime environment
-    'npm'            # Node package manager
-    'php'            # Scripting language
-    'python3-pip'    # The official package installer for Python
+    'ccache'      # Compiler cacher
+    'clang'       # C Lang compiler
+    'cmake'       # Cross-platform open-source make system
+    'fakeroot'    # Tool for simulating superuser privileges
+    'gcc'         # C/C++ compiler
+    'meson'       # Build system that use python as a front-end language and Ninja as a building backend
+    'nodejs'      # Javascript runtime environment
+    'npm'         # Node package manager
+    'php'         # Scripting language
+    'python3-pip' # The official package installer for Python
 
     # --- Audio
     \
@@ -93,7 +92,7 @@ PKGS=(
     \
     'bluez'                       # Daemons for the bluetooth protocol stack
     'bluez-firmware'              # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
-    'blueberry'                   # Bluetooth configuration tool
+    'blueman'                     # GTK+ Bluetooth Manager
     'pulseaudio-module-bluetooth' # Bluetooth support for PulseAudio
 
     # TERMINAL UTILITIES --------------------------------------------------
