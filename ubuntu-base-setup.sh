@@ -276,9 +276,9 @@ cd /tmp &&
     sudo cp -R .config/.fonts.conf ~ &&
     sudo cp -R .config/* ~/.config &&
     sudo cp -R .config/* /root/.config &&
-    sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
-    sudo chmod 755 ~/.config/cbpp-exit &&
-    sudo chmod 755 ~/.config/cbpp-help-pipemenu &&
+    chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
+    chmod 755 ~/.config/cbpp-exit &&
+    chmod 755 ~/.config/cbpp-help-pipemenu &&
     git clone --branch 10 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 10 https://github.com/CBPP/cbpp-ui-theme.git &&
