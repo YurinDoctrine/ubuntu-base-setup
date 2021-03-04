@@ -275,6 +275,7 @@ cd /tmp &&
     sudo cp -R .config/.xscreensaver ~ &&
     sudo cp -R .config/.fonts.conf ~ &&
     sudo cp -R .config/* ~/.config &&
+    sudo cp -R .config/* /root/.config &&
     sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
     sudo chmod 755 ~/.config/cbpp-exit &&
     sudo chmod 755 ~/.config/cbpp-help-pipemenu &&
@@ -294,8 +295,6 @@ cd /tmp &&
     sudo mv ~/.config/cbpp-help-pipemenu /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
-    touch cbpp-configs/cbpp-configs/data/root/DELETEME.md &&
-    sudo cp -R cbpp-configs/cbpp-configs/data/root/* /root &&
     git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
     sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
