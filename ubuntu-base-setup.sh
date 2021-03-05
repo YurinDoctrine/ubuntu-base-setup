@@ -273,7 +273,7 @@ cd /tmp &&
     sudo cp -R .config/.xscreensaver ~ &&
     sudo cp -R .config/.fonts.conf ~ &&
     sudo cp -R .config/* ~/.config &&
-    sudo mkdir /root/.config &&
+sudo mkdir /root/.config
     sudo cp -R .config/* /root/.config &&
     sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
     sudo chmod 755 ~/.config/cbpp-exit &&
