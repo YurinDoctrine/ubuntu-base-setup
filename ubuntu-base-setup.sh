@@ -28,8 +28,8 @@ sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
 sudo rm -rf /usr/share/man/*
 dpkg -l | grep '^ii.*texlive.*doc'
 sudo apt remove --purge \
-texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 
 echo -e "path-exclude /usr/share/doc/*
 # we need to keep copyright files for legal reasons
@@ -121,7 +121,7 @@ PKGS=(
 
     # DISK UTILITIES ------------------------------------------------------
     \
-    'gparted'       # Disk utility
+    'gparted' # Disk utility
 
     # GENERAL UTILITIES ---------------------------------------------------
     \
@@ -275,8 +275,8 @@ cd /tmp &&
     sudo cp -R .config/.xscreensaver ~ &&
     sudo cp -R .config/.fonts.conf ~ &&
     sudo cp -R .config/* ~/.config &&
-sudo mkdir /root/.config
-    sudo cp -R .config/* /root/.config &&
+    sudo mkdir /root/.config
+sudo cp -R .config/* /root/.config &&
     sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
     sudo chmod 755 ~/.config/cbpp-exit &&
     sudo chmod 755 ~/.config/cbpp-help-pipemenu &&
@@ -306,14 +306,14 @@ QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
 # ------------------------------------------------------------------------
 
 extra() {
-    curl -fsSL https://raw.githubusercontent.com/YurinDoctrine/ultra-gaming-setup-wizard/main/ultra-gaming-setup-wizard.sh >ultra-gaming-setup-wizard.sh && \
-    chmod 755 ultra-gaming-setup-wizard.sh && \
-    ./ultra-gaming-setup-wizard.sh
+    curl -fsSL https://raw.githubusercontent.com/YurinDoctrine/ultra-gaming-setup-wizard/main/ultra-gaming-setup-wizard.sh >ultra-gaming-setup-wizard.sh &&
+        chmod 755 ultra-gaming-setup-wizard.sh &&
+        ./ultra-gaming-setup-wizard.sh
 }
 extra2() {
-    curl -fsSL https://raw.githubusercontent.com/YurinDoctrine/secure-linux/master/secure.sh >secure.sh && \
-    chmod 755 secure.sh && \
-    ./secure.sh
+    curl -fsSL https://raw.githubusercontent.com/YurinDoctrine/secure-linux/master/secure.sh >secure.sh &&
+        chmod 755 secure.sh &&
+        ./secure.sh
 }
 
 final() {
