@@ -65,6 +65,7 @@ PKGS=(
     'tint2'               # A simple, unobtrusive and light panel for Xorg
     'lxappearance'        # Set System Themes
     'lxpolkit'            # LXDE PolicyKit authentication agent
+    'xfce4-notifyd'       # Notification Daemon
 
     # DEVELOPMENT ---------------------------------------------------------
     \
