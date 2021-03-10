@@ -83,8 +83,8 @@ PKGS=(
 
     # --- Audio
     \
-    'alsa-utils'      # Advanced Linux Sound Architecture (ALSA) Components https://alsa.opensrc.org/
-    'alsa-plugins'    # ALSA plugins
+    'alsa'            # Advanced Linux Sound Architecture (ALSA)
+    'alsa-utils'      # ALSA utils
     'pulseaudio-alsa' # ALSA configuration for pulse audio
     'pavucontrol-qt'  # Pulse Audio volume control Qt port
     'pasystray'       # PulseAudio system tray
@@ -98,17 +98,14 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
     \
-    'android-tools-adb' # ADB for Android
     'cron'              # Cron jobs
     'fish'              # The friendly interactive shell
     'vsftpd'            # File transfer protocol
-    'hardinfo'          # Hardware info app
     'htop'              # Process viewer
     'neofetch'          # Shows system info when you launch terminal
     'openssh-server'    # SSH connectivity tools
     'irssi'             # Terminal based IRC
     'p7zip'             # 7z compression program
-    'rsync'             # Remote file sync utility
     'speedtest-cli'     # Internet speed via terminal
     'terminator'        # A terminal emulator
     'fonts-terminus'    # Font package with some bigger fonts for login terminal
@@ -125,7 +122,6 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
     \
-    'android-file-transfer' # Android File Transfer
     'catfish'               # Versatile file searching tool
     'dialog'                # A tool to display dialog boxes from shell scripts
     'earlyoom'              # Early OOM Daemon for Linux
@@ -225,6 +221,9 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 # ------------------------------------------------------------------------
 
+echo -e "Purge unneccasary packages"
+sudo apt remove --purge -y apport mailutils at avahi-daemon avahi-utils dovecot nfs-kernel-server nfs-common portmap rpcbind autofs snmp \
+telnetd inetutils-telnetd telnetd-ssl whoopsie zeitgeist-core zeitgeist-datahub python3-zeitgeist rhythmbox-plugin-zeitgeist zeitgeist
 sudo rm -rf ~/.cache/thumbnails
 echo -e "Clear the patches"
 sudo rm -rf /var/cache/apt/archives/*
@@ -255,6 +254,7 @@ sudo apt remove --purge flatpak -y
 sudo apt-mark hold flatpak
 
 sudo apt autoremove --purge -y
+sudo apt autoclean -y
 sync
 
 # ------------------------------------------------------------------------
