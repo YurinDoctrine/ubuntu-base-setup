@@ -28,8 +28,8 @@ sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
 sudo rm -rf /usr/share/man/*
 dpkg -l | grep '^ii.*texlive.*doc'
 sudo apt remove --purge \
-    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 
 echo -e "path-exclude /usr/share/doc/*
 # we need to keep copyright files for legal reasons
@@ -98,23 +98,23 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
     \
-    'cron'              # Cron jobs
-    'fish'              # The friendly interactive shell
-    'vsftpd'            # File transfer protocol
-    'htop'              # Process viewer
-    'neofetch'          # Shows system info when you launch terminal
-    'openssh-server'    # SSH connectivity tools
-    'irssi'             # Terminal based IRC
-    'p7zip'             # 7z compression program
-    'speedtest-cli'     # Internet speed via terminal
-    'terminator'        # A terminal emulator
-    'fonts-terminus'    # Font package with some bigger fonts for login terminal
-    'unrar'             # RAR compression program
-    'unzip'             # Zip compression program
-    'wget'              # Remote content retrieval
-    'nano'              # A simple console based text editor
-    'zenity'            # Display graphical dialog boxes via shell scripts
-    'zip'               # Zip compression program
+    'cron'           # Cron jobs
+    'fish'           # The friendly interactive shell
+    'vsftpd'         # File transfer protocol
+    'htop'           # Process viewer
+    'neofetch'       # Shows system info when you launch terminal
+    'openssh-server' # SSH connectivity tools
+    'irssi'          # Terminal based IRC
+    'p7zip'          # 7z compression program
+    'speedtest-cli'  # Internet speed via terminal
+    'terminator'     # A terminal emulator
+    'fonts-terminus' # Font package with some bigger fonts for login terminal
+    'unrar'          # RAR compression program
+    'unzip'          # Zip compression program
+    'wget'           # Remote content retrieval
+    'nano'           # A simple console based text editor
+    'zenity'         # Display graphical dialog boxes via shell scripts
+    'zip'            # Zip compression program
 
     # DISK UTILITIES ------------------------------------------------------
     \
@@ -122,23 +122,23 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
     \
-    'catfish'               # Versatile file searching tool
-    'dialog'                # A tool to display dialog boxes from shell scripts
-    'earlyoom'              # Early OOM Daemon for Linux
-    'flameshot'             # Screenshots
-    'file-roller'           # Create and modify archives
-    'filezilla'             # FTP Client
-    'apache2'               # HTTP server
-    'apt-transport-https'   # HTTPS download transport for APT
-    'arandr'                # Provide a simple visual front end for XRandR
-    'playerctl'             # Utility to control media players via MPRIS
-    'putty'                 # A port of the popular GUI SSH, Telnet, Rlogin and serial port connection client
-    'transmission'          # BitTorrent client
-    'net-tools'             # Network utilities
-    'galculator'            # A simple, elegant calculator
-    'gnupg'                 # Complete and free implementation of the OpenPGP standard
-    'preload'               # Makes applications run faster by prefetching binaries and shared objects
-    'simplescreenrecorder'  # A feature-rich screen recorder that supports X11 and OpenGL
+    'catfish'              # Versatile file searching tool
+    'dialog'               # A tool to display dialog boxes from shell scripts
+    'earlyoom'             # Early OOM Daemon for Linux
+    'flameshot'            # Screenshots
+    'file-roller'          # Create and modify archives
+    'filezilla'            # FTP Client
+    'apache2'              # HTTP server
+    'apt-transport-https'  # HTTPS download transport for APT
+    'arandr'               # Provide a simple visual front end for XRandR
+    'playerctl'            # Utility to control media players via MPRIS
+    'putty'                # A port of the popular GUI SSH, Telnet, Rlogin and serial port connection client
+    'transmission'         # BitTorrent client
+    'net-tools'            # Network utilities
+    'galculator'           # A simple, elegant calculator
+    'gnupg'                # Complete and free implementation of the OpenPGP standard
+    'preload'              # Makes applications run faster by prefetching binaries and shared objects
+    'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
 
     # GRAPHICS, VIDEO AND DESIGN -------------------------------------------------
     \
