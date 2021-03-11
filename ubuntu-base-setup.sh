@@ -142,7 +142,7 @@ PKGS=(
 
     # GRAPHICS, VIDEO AND DESIGN -------------------------------------------------
     \
-    'gimp'     # GNU Image Manipulation Program
+    'pinta'    # A simplified alternative to GIMP
     'viewnior' # A simple, fast and elegant image viewer
     'vlc'      # A free and open source cross-platform multimedia player and framework
 
