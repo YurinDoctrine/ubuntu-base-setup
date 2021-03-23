@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/sh
 # Before hop in
 sudo apt update &&
     sudo apt install -y git &&
@@ -99,6 +99,7 @@ PKGS=(
     # TERMINAL UTILITIES --------------------------------------------------
     \
     'cron'           # Cron jobs
+    'dash'          # A POSIX-compliant shell derived from ash
     'fish'           # The friendly interactive shell
     'vsftpd'         # File transfer protocol
     'htop'           # Process viewer
@@ -327,6 +328,7 @@ final() {
     if [[ "$ans" == "yes" ]]; then
         echo -e "RUNNING ..."
         chsh -s /usr/bin/fish # Change default shell before leaving.
+        ln -sfT dash /usr/bin/sh # Link dash to /usr/bin/sh
         extra
     elif [[ "$ans" == "no" ]]; then
         echo -e "LEAVING ..."
@@ -336,10 +338,12 @@ final() {
         if [[ "$noc" == "yes" ]]; then
             echo -e "RUNNING ..."
             chsh -s /usr/bin/fish # Change default shell before leaving.
+            ln -sfT dash /usr/bin/sh # Link dash to /usr/bin/sh
             extra2
         elif [[ "$noc" == "no" ]]; then
             echo -e "LEAVING ..."
             chsh -s /usr/bin/fish # Change default shell before leaving.
+            ln -sfT dash /usr/bin/sh # Link dash to /usr/bin/sh
             exit 0
         else
             echo -e "INVALID VALUE!"
