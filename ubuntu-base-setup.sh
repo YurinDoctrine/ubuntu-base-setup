@@ -99,7 +99,7 @@ PKGS=(
     # TERMINAL UTILITIES --------------------------------------------------
     \
     'cron'           # Cron jobs
-    'dash'          # A POSIX-compliant shell derived from ash
+    'dash'           # A POSIX-compliant shell derived from ash
     'fish'           # The friendly interactive shell
     'vsftpd'         # File transfer protocol
     'htop'           # Process viewer
