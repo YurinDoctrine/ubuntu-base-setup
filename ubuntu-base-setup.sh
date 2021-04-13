@@ -29,8 +29,8 @@ sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
 sudo rm -rf /usr/share/man/*
 dpkg -l | grep '^ii.*texlive.*doc'
 sudo apt remove --purge \
-texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 
 echo -e "path-exclude /usr/share/doc/*
 # we need to keep copyright files for legal reasons
@@ -51,7 +51,7 @@ echo -e "Installing Base System"
 PKGS=(
 
     # --- Importants
-    \
+
     'xscreensaver'        # A screen saver and locker for the X
     'xfce4-goodies'       # Enhancements for the Xfce4
     'xfce4-power-manager' # Power Manager
@@ -70,7 +70,7 @@ PKGS=(
     'xfce4-notifyd'       # Notification Daemon
 
     # DEVELOPMENT ---------------------------------------------------------
-    \
+
     'ccache'      # Compiler cacher
     'clang'       # C Lang compiler
     'cmake'       # Cross-platform open-source make system
@@ -83,7 +83,7 @@ PKGS=(
     'python3-pip' # The official package installer for Python
 
     # --- Audio
-    \
+
     'alsa'            # Advanced Linux Sound Architecture (ALSA)
     'alsa-utils'      # ALSA utils
     'pulseaudio-alsa' # ALSA configuration for pulse audio
@@ -91,14 +91,14 @@ PKGS=(
     'pasystray'       # PulseAudio system tray
 
     # --- Bluetooth
-    \
+
     'bluez'                       # Daemons for the bluetooth protocol stack
     'bluez-firmware'              # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
     'blueman'                     # GTK+ Bluetooth Manager
     'pulseaudio-module-bluetooth' # Bluetooth support for PulseAudio
 
     # TERMINAL UTILITIES --------------------------------------------------
-    \
+
     'cron'           # Cron jobs
     'dash'           # A POSIX-compliant shell derived from ash
     'fish'           # The friendly interactive shell
@@ -119,11 +119,11 @@ PKGS=(
     'zip'            # Zip compression program
 
     # DISK UTILITIES ------------------------------------------------------
-    \
+
     'gparted' # Disk utility
 
     # GENERAL UTILITIES ---------------------------------------------------
-    \
+
     'catfish'              # Versatile file searching tool
     'dialog'               # A tool to display dialog boxes from shell scripts
     'earlyoom'             # Early OOM Daemon for Linux
@@ -143,13 +143,13 @@ PKGS=(
     'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
 
     # GRAPHICS, VIDEO AND DESIGN -------------------------------------------------
-    \
+
     'pinta'    # A simplified alternative to GIMP
     'viewnior' # A simple, fast and elegant image viewer
     'vlc'      # A free and open source cross-platform multimedia player and framework
 
     # PRINTING --------------------------------------------------------
-    \
+
     'abiword'     # Fully-featured word processor
     'atril'       # PDF viewer
     'ghostscript' # PostScript interpreter
@@ -225,7 +225,7 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 echo -e "Purge unneccasary packages"
 sudo apt remove --purge -y apport mailutils at avahi-daemon avahi-utils dovecot nfs-kernel-server nfs-common portmap rpcbind autofs snmp \
-telnetd inetutils-telnetd telnetd-ssl whoopsie zeitgeist-core zeitgeist-datahub python3-zeitgeist rhythmbox-plugin-zeitgeist zeitgeist
+    telnetd inetutils-telnetd telnetd-ssl whoopsie zeitgeist-core zeitgeist-datahub python3-zeitgeist rhythmbox-plugin-zeitgeist zeitgeist
 sudo rm -rf ~/.cache/thumbnails
 echo -e "Clear the patches"
 sudo rm -rf /var/cache/apt/archives/*
@@ -328,7 +328,7 @@ final() {
     read -p $'yes/no >_: ' ans
     if [[ "$ans" == "yes" ]]; then
         echo -e "RUNNING ..."
-        chsh -s /usr/bin/fish # Change default shell before leaving.
+        chsh -s /usr/bin/fish         # Change default shell before leaving.
         sudo ln -sfT dash /usr/bin/sh # Link dash to /usr/bin/sh
         extra
     elif [[ "$ans" == "no" ]]; then
@@ -338,12 +338,12 @@ final() {
         read -p $'yes/no >_: ' noc
         if [[ "$noc" == "yes" ]]; then
             echo -e "RUNNING ..."
-            chsh -s /usr/bin/fish # Change default shell before leaving.
+            chsh -s /usr/bin/fish         # Change default shell before leaving.
             sudo ln -sfT dash /usr/bin/sh # Link dash to /usr/bin/sh
             extra2
         elif [[ "$noc" == "no" ]]; then
             echo -e "LEAVING ..."
-            chsh -s /usr/bin/fish # Change default shell before leaving.
+            chsh -s /usr/bin/fish         # Change default shell before leaving.
             sudo ln -sfT dash /usr/bin/sh # Link dash to /usr/bin/sh
             exit 0
         else
