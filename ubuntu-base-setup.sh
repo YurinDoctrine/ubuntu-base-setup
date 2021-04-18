@@ -277,11 +277,12 @@ cd /tmp &&
     sudo cp -R .config/.xscreensaver ~ &&
     sudo cp -R .config/.fonts.conf ~ &&
     sudo cp -R .config/* ~/.config &&
-    sudo mkdir /root/.config
-sudo cp -R .config/* /root/.config &&
+    sudo mkdir /root/.config &&
+    sudo cp -R .config/* /root/.config &&
     sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
     sudo chmod 755 ~/.config/cbpp-exit &&
     sudo chmod 755 ~/.config/cbpp-help-pipemenu &&
+    sudo chmod 755 ~/.config/cbpp-compositor &&
     git clone --branch 10 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 10 https://github.com/CBPP/cbpp-ui-theme.git &&
@@ -290,19 +291,18 @@ sudo cp -R .config/* /root/.config &&
     sudo cp -R cbpp-wallpapers/cbpp-wallpapers/data/usr/share/backgrounds/* /usr/share/backgrounds &&
     git clone --branch 10 https://github.com/CBPP/cbpp-slim.git &&
     sudo cp -R cbpp-slim/cbpp-slim/data/usr/bin/* /usr/bin &&
-    git clone --branch 10 https://github.com/CBPP/cbpp-exit.git &&
-    sudo cp -R cbpp-exit/cbpp-exit/data/usr/bin/* /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-pipemenus.git &&
     sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
     sudo mv ~/.config/cbpp-exit /usr/bin &&
     sudo mv ~/.config/cbpp-help-pipemenu /usr/bin &&
+    sudo mv ~/.config/cbpp-compositor /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
     sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
-cd
-echo -e "XDG_CURRENT_DESKTOP=Unity
+cd &&
+    echo -e "XDG_CURRENT_DESKTOP=Unity
 QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
 
 # ------------------------------------------------------------------------
