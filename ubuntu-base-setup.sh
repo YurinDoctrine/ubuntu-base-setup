@@ -282,6 +282,7 @@ sudo cp -R .config/* /root/.config &&
     sudo chmod 755 ~/.config/cbpp-exit &&
     sudo chmod 755 ~/.config/cbpp-help-pipemenu &&
     sudo chmod 755 ~/.config/cbpp-compositor &&
+    sudo chmod 755 ~/.config/cbpp-places-pipemenu &&
     git clone --branch 10 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 10 https://github.com/CBPP/cbpp-ui-theme.git &&
@@ -292,11 +293,12 @@ sudo cp -R .config/* /root/.config &&
     sudo cp -R cbpp-slim/cbpp-slim/data/usr/bin/* /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-pipemenus.git &&
     sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
+    git clone --branch 10 https://github.com/CBPP/cbpp-configs.git &&
+    sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
     sudo mv ~/.config/cbpp-exit /usr/bin &&
     sudo mv ~/.config/cbpp-help-pipemenu /usr/bin &&
     sudo mv ~/.config/cbpp-compositor /usr/bin &&
-    git clone --branch 10 https://github.com/CBPP/cbpp-configs.git &&
-    sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
+    sudo mv ~/.config/cbpp-places-pipemenu /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
     sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
