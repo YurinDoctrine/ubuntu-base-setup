@@ -289,8 +289,6 @@ sudo cp -R .config/* /root/.config &&
     sudo cp -R cbpp-ui-theme/cbpp-ui-theme/data/usr/share/themes/* /usr/share/themes &&
     git clone --branch 10 https://github.com/CBPP/cbpp-wallpapers.git &&
     sudo cp -R cbpp-wallpapers/cbpp-wallpapers/data/usr/share/backgrounds/* /usr/share/backgrounds &&
-    git clone --branch 10 https://github.com/CBPP/cbpp-slim.git &&
-    sudo cp -R cbpp-slim/cbpp-slim/data/usr/bin/* /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-pipemenus.git &&
     sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
     git clone --branch 10 https://github.com/CBPP/cbpp-configs.git &&
