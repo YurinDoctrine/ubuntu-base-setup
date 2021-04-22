@@ -224,9 +224,9 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 echo -e "Purge unneccasary packages"
 sudo apt remove --purge -y apport mailutils evince at avahi-daemon avahi-utils dovecot nfs-kernel-server nfs-common portmap rpcbind autofs snmp \
-    telnetd inetutils-telnetd telnetd-ssl whoopsie zeitgeist-core zeitgeist-datahub python3-zeitgeist rhythmbox-plugin-zeitgeist zeitgeist
-sudo rm -rf ~/.cache/thumbnails
+    telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist
 echo -e "Clear the patches"
+sudo rm -rf ~/.cache/thumbnails
 sudo rm -rf /var/cache/apt/archives/*
 echo -e "Remove snapd and flatpak garbages"
 sudo systemctl disable --now snapd
