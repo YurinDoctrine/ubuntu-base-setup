@@ -223,7 +223,7 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 # ------------------------------------------------------------------------
 
 echo -e "Purge unneccasary packages"
-sudo apt remove --purge -y apport mailutils at avahi-daemon avahi-utils dovecot nfs-kernel-server nfs-common portmap rpcbind autofs snmp \
+sudo apt remove --purge -y apport mailutils evince at avahi-daemon avahi-utils dovecot nfs-kernel-server nfs-common portmap rpcbind autofs snmp \
     telnetd inetutils-telnetd telnetd-ssl whoopsie zeitgeist-core zeitgeist-datahub python3-zeitgeist rhythmbox-plugin-zeitgeist zeitgeist
 sudo rm -rf ~/.cache/thumbnails
 echo -e "Clear the patches"
