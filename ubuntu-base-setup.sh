@@ -27,7 +27,7 @@ sudo rm -rf /usr/share/groff/* /usr/share/info/*
 sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
 sudo rm -rf /usr/share/man/*
 dpkg -l | grep '^ii.*texlive.*doc'
-sudo apt remove --purge \
+sudo apt-get remove --purge \
     texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
     texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 
@@ -221,7 +221,7 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 # ------------------------------------------------------------------------
 
 echo -e "Purge unneccasary packages"
-sudo apt remove --purge -y apport mailutils evince at avahi-daemon avahi-utils dovecot nfs-kernel-server nfs-common portmap rpcbind autofs snmp \
+sudo apt-get remove --purge -y apport mailutils evince at avahi-daemon avahi-utils dovecot nfs-kernel-server nfs-common portmap rpcbind autofs snmp \
     telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist
 echo -e "Clear the patches"
 sudo rm -rf ~/.cache/thumbnails
@@ -237,7 +237,7 @@ sudo systemctl disable snapd.apparmor.service
 sudo rm -rf /etc/apparmor.d/usr.lib.snapd.snap-confine.real
 sudo systemctl start apparmor.service
 
-sudo apt remove --purge snapd -y
+sudo apt-get remove --purge snapd -y
 sudo apt-mark hold snapd
 
 sudo rm -rf ~/snap
@@ -249,11 +249,11 @@ sudo rm -rf /usr/lib/snapd
 
 flatpak uninstall --all
 
-sudo apt remove --purge flatpak -y
+sudo apt-get remove --purge flatpak -y
 sudo apt-mark hold flatpak
 
-sudo apt autoremove --purge -y
-sudo apt autoclean -y
+sudo apt-get autoremove --purge -y
+sudo apt-get autoclean -y
 sync
 
 # ------------------------------------------------------------------------
