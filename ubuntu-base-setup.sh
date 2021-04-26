@@ -71,11 +71,9 @@ PKGS=(
     # DEVELOPMENT ---------------------------------------------------------
 
     'ccache'      # Compiler cacher
-    'clang'       # C Lang compiler
     'cmake'       # Cross-platform open-source make system
     'fakeroot'    # Tool for simulating superuser privileges
     'gcc'         # C/C++ compiler
-    'meson'       # Build system that use python as a front-end language and Ninja as a building backend
     'nodejs'      # Javascript runtime environment
     'npm'         # Node package manager
     'php'         # Scripting language
