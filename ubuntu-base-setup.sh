@@ -275,27 +275,27 @@ cd /tmp &&
     sudo cp -R .config/.fonts.conf ~ &&
     sudo cp -R .config/* ~/.config &&
     sudo mkdir /root/.config
-sudo cp -R .config/* /root/.config &&
-    sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
+sudo cp -R .config/* /root/.config
+sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
     sudo chmod 755 ~/.config/cbpp-exit &&
     sudo chmod 755 ~/.config/cbpp-help-pipemenu &&
     sudo chmod 755 ~/.config/cbpp-compositor &&
     sudo chmod 755 ~/.config/cbpp-places-pipemenu &&
-    git clone --branch 10 https://github.com/CBPP/cbpp-icon-theme.git &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
-    git clone --branch 10 https://github.com/CBPP/cbpp-ui-theme.git &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
     sudo cp -R cbpp-ui-theme/cbpp-ui-theme/data/usr/share/themes/* /usr/share/themes &&
-    git clone --branch 10 https://github.com/CBPP/cbpp-wallpapers.git &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-wallpapers.git &&
     sudo cp -R cbpp-wallpapers/cbpp-wallpapers/data/usr/share/backgrounds/* /usr/share/backgrounds &&
-    git clone --branch 10 https://github.com/CBPP/cbpp-pipemenus.git &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-pipemenus.git &&
     sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
-    git clone --branch 10 https://github.com/CBPP/cbpp-configs.git &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
     sudo mv ~/.config/cbpp-exit /usr/bin &&
     sudo mv ~/.config/cbpp-help-pipemenu /usr/bin &&
     sudo mv ~/.config/cbpp-compositor /usr/bin &&
     sudo mv ~/.config/cbpp-places-pipemenu /usr/bin &&
-    git clone --branch 10 https://github.com/CBPP/cbpp-lxdm-theme.git &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
     sudo rm -rf /usr/share/lxdm/themes/*
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
