@@ -224,7 +224,7 @@ echo -e "Purge unneccasary packages"
 sudo apt-get remove --purge -y apport mailutils evince at avahi-daemon avahi-utils dovecot nfs-kernel-server nfs-common portmap rpcbind autofs snmp \
     telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist
 echo -e "Clear the patches"
-sudo rm -rf ~/.cache/thumbnails
+sudo rm -rf /home/*/.cache/thumbnails
 sudo rm -rf /var/cache/apt/archives/*
 echo -e "Remove snapd and flatpak garbages"
 sudo systemctl disable --now snapd
@@ -240,7 +240,7 @@ sudo systemctl start apparmor.service
 sudo apt-get remove --purge snapd -y
 sudo apt-mark hold snapd
 
-sudo rm -rf ~/snap
+sudo rm -rf /home/*/snap
 sudo rm -rf /snap
 sudo rm -rf /var/snap
 sudo rm -rf /var/lib/snapd
@@ -266,21 +266,21 @@ sudo rm -rf /etc/update-motd.d/*motd-news
 # Implement .config/ files of the openbox
 cd /tmp &&
     git clone https://github.com/YurinDoctrine/.config.git &&
-    sudo cp -R .config/.conkyrc ~ &&
-    sudo cp -R .config/.gmrunrc ~ &&
-    sudo cp -R .config/.gtkrc-2.0 ~ &&
-    sudo cp -R .config/.gtkrc-2.0.mine ~ &&
-    sudo cp -R .config/.Xresources ~ &&
-    sudo cp -R .config/.xscreensaver ~ &&
-    sudo cp -R .config/.fonts.conf ~ &&
-    sudo cp -R .config/* ~/.config &&
+    sudo cp -R .config/.conkyrc /home/* &&
+    sudo cp -R .config/.gmrunrc /home/* &&
+    sudo cp -R .config/.gtkrc-2.0 /home/* &&
+    sudo cp -R .config/.gtkrc-2.0.mine /home/* &&
+    sudo cp -R .config/.Xresources /home/* &&
+    sudo cp -R .config/.xscreensaver /home/* &&
+    sudo cp -R .config/.fonts.conf /home/* &&
+    sudo cp -R .config/* /home/*/.config &&
     sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
-sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
-    sudo chmod 755 ~/.config/cbpp-exit &&
-    sudo chmod 755 ~/.config/cbpp-help-pipemenu &&
-    sudo chmod 755 ~/.config/cbpp-compositor &&
-    sudo chmod 755 ~/.config/cbpp-places-pipemenu &&
+sudo chmod 755 /home/*/.config/dmenu/dmenu-bind.sh &&
+    sudo chmod 755 /home/*/.config/cbpp-exit &&
+    sudo chmod 755 /home/*/.config/cbpp-help-pipemenu &&
+    sudo chmod 755 /home/*/.config/cbpp-compositor &&
+    sudo chmod 755 /home/*/.config/cbpp-places-pipemenu &&
     git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
@@ -291,10 +291,10 @@ sudo chmod 755 ~/.config/dmenu/dmenu-bind.sh &&
     sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
     git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
-    sudo mv ~/.config/cbpp-exit /usr/bin &&
-    sudo mv ~/.config/cbpp-help-pipemenu /usr/bin &&
-    sudo mv ~/.config/cbpp-compositor /usr/bin &&
-    sudo mv ~/.config/cbpp-places-pipemenu /usr/bin &&
+    sudo mv /home/*/.config/cbpp-exit /usr/bin &&
+    sudo mv /home/*/.config/cbpp-help-pipemenu /usr/bin &&
+    sudo mv /home/*/.config/cbpp-compositor /usr/bin &&
+    sudo mv /home/*/.config/cbpp-places-pipemenu /usr/bin &&
     git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
     sudo rm -rf /usr/share/lxdm/themes/*
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
