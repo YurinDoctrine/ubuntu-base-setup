@@ -266,14 +266,14 @@ sudo rm -rf /etc/update-motd.d/*motd-news
 # Implement .config/ files of the openbox
 cd /tmp &&
     git clone https://github.com/YurinDoctrine/.config.git &&
-    sudo cp -R .config/.conkyrc /home/* &&
-    sudo cp -R .config/.gmrunrc /home/* &&
-    sudo cp -R .config/.gtkrc-2.0 /home/* &&
-    sudo cp -R .config/.gtkrc-2.0.mine /home/* &&
-    sudo cp -R .config/.Xresources /home/* &&
-    sudo cp -R .config/.xscreensaver /home/* &&
-    sudo cp -R .config/.fonts.conf /home/* &&
-    sudo cp -R .config/* /home/*/.config &&
+    sudo cp -R .config/.conkyrc /home/*
+    sudo cp -R .config/.gmrunrc /home/*
+    sudo cp -R .config/.gtkrc-2.0 /home/*
+    sudo cp -R .config/.gtkrc-2.0.mine /home/*
+    sudo cp -R .config/.Xresources /home/*
+    sudo cp -R .config/.xscreensaver /home/*
+    sudo cp -R .config/.fonts.conf /home/*
+    sudo cp -R .config/* /home/*/.config
     sudo cp -R .config/.conkyrc /etc/skel &&
     sudo cp -R .config/.gmrunrc /etc/skel &&
     sudo cp -R .config/.gtkrc-2.0 /etc/skel &&
@@ -284,11 +284,12 @@ cd /tmp &&
     sudo cp -R .config/* /etc/skel/.config &&
     sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
-sudo chmod 755 /home/*/.config/dmenu/dmenu-bind.sh &&
-    sudo chmod 755 /home/*/.config/cbpp-exit &&
-    sudo chmod 755 /home/*/.config/cbpp-help-pipemenu &&
-    sudo chmod 755 /home/*/.config/cbpp-compositor &&
-    sudo chmod 755 /home/*/.config/cbpp-places-pipemenu &&
+sudo chmod 755 /home/*/.config/dmenu/dmenu-bind.sh
+sudo chmod 755 /etc/skel/.config/dmenu/dmenu-bind.sh &&
+    sudo chmod 755 /home/*/.config/cbpp-exit
+    sudo chmod 755 /home/*/.config/cbpp-help-pipemenu
+    sudo chmod 755 /home/*/.config/cbpp-compositor
+    sudo chmod 755 /home/*/.config/cbpp-places-pipemenu
     sudo chmod 755 /etc/skel/.config/cbpp-exit &&
     sudo chmod 755 /etc/skel/.config/cbpp-help-pipemenu &&
     sudo chmod 755 /etc/skel/.config/cbpp-compositor &&
@@ -303,10 +304,10 @@ sudo chmod 755 /home/*/.config/dmenu/dmenu-bind.sh &&
     sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
     git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
-    sudo mv /home/*/.config/cbpp-exit /usr/bin &&
-    sudo mv /home/*/.config/cbpp-help-pipemenu /usr/bin &&
-    sudo mv /home/*/.config/cbpp-compositor /usr/bin &&
-    sudo mv /home/*/.config/cbpp-places-pipemenu /usr/bin &&
+    sudo mv /home/*/.config/cbpp-exit /usr/bin
+    sudo mv /home/*/.config/cbpp-help-pipemenu /usr/bin
+    sudo mv /home/*/.config/cbpp-compositor /usr/bin
+    sudo mv /home/*/.config/cbpp-places-pipemenu /usr/bin
     sudo mv /etc/skel/.config/cbpp-exit /usr/bin &&
     sudo mv /etc/skel/.config/cbpp-help-pipemenu /usr/bin &&
     sudo mv /etc/skel/.config/cbpp-compositor /usr/bin &&
