@@ -263,32 +263,32 @@ sudo rm -rf /etc/update-motd.d/*motd-news
 cd /tmp &&
     git clone https://github.com/YurinDoctrine/.config.git &&
     sudo cp -R .config/.conkyrc $HOME
-    sudo cp -R .config/.gmrunrc $HOME
-    sudo cp -R .config/.gtkrc-2.0 $HOME
-    sudo cp -R .config/.gtkrc-2.0.mine $HOME
-    sudo cp -R .config/.Xresources $HOME
-    sudo cp -R .config/.xscreensaver $HOME
-    sudo cp -R .config/.fonts.conf $HOME
-    sudo cp -R .config/* $HOME/.config
-    sudo cp -R .config/.conkyrc /etc/skel
-    sudo cp -R .config/.gmrunrc /etc/skel
-    sudo cp -R .config/.gtkrc-2.0 /etc/skel
-    sudo cp -R .config/.gtkrc-2.0.mine /etc/skel
-    sudo cp -R .config/.Xresources /etc/skel
-    sudo cp -R .config/.xscreensaver /etc/skel
-    sudo cp -R .config/.fonts.conf /etc/skel
-    sudo cp -R .config/* /etc/skel/.config
-    sudo mkdir /root/.config
+sudo cp -R .config/.gmrunrc $HOME
+sudo cp -R .config/.gtkrc-2.0 $HOME
+sudo cp -R .config/.gtkrc-2.0.mine $HOME
+sudo cp -R .config/.Xresources $HOME
+sudo cp -R .config/.xscreensaver $HOME
+sudo cp -R .config/.fonts.conf $HOME
+sudo cp -R .config/* $HOME/.config
+sudo cp -R .config/.conkyrc /etc/skel
+sudo cp -R .config/.gmrunrc /etc/skel
+sudo cp -R .config/.gtkrc-2.0 /etc/skel
+sudo cp -R .config/.gtkrc-2.0.mine /etc/skel
+sudo cp -R .config/.Xresources /etc/skel
+sudo cp -R .config/.xscreensaver /etc/skel
+sudo cp -R .config/.fonts.conf /etc/skel
+sudo cp -R .config/* /etc/skel/.config
+sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
 sudo chmod 755 $HOME/.config/dmenu/dmenu-bind.sh
 sudo chmod 755 /etc/skel/.config/dmenu/dmenu-bind.sh
-    sudo rm -rf /etc/skel/cbpp-*
-    sudo chmod 755 $HOME/.config/cbpp-exit
-    sudo chmod 755 $HOME/.config/cbpp-help-pipemenu
-    sudo chmod 755 $HOME/.config/cbpp-compositor
-    sudo chmod 755 $HOME/.config/cbpp-places-pipemenu
-    sudo chmod 755 $HOME/.config/cbpp-welcome
-    git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
+sudo rm -rf /etc/skel/cbpp-*
+sudo chmod 755 $HOME/.config/cbpp-exit
+sudo chmod 755 $HOME/.config/cbpp-help-pipemenu
+sudo chmod 755 $HOME/.config/cbpp-compositor
+sudo chmod 755 $HOME/.config/cbpp-places-pipemenu
+sudo chmod 755 $HOME/.config/cbpp-welcome
+git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
     sudo cp -R cbpp-ui-theme/cbpp-ui-theme/data/usr/share/themes/* /usr/share/themes &&
@@ -299,11 +299,11 @@ sudo chmod 755 /etc/skel/.config/dmenu/dmenu-bind.sh
     git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
     sudo mv $HOME/.config/cbpp-exit /usr/bin
-    sudo mv $HOME/.config/cbpp-help-pipemenu /usr/bin
-    sudo mv $HOME/.config/cbpp-compositor /usr/bin
-    sudo mv $HOME/.config/cbpp-places-pipemenu /usr/bin
-    sudo mv $HOME/.config/cbpp-welcome /usr/bin
-    git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
+sudo mv $HOME/.config/cbpp-help-pipemenu /usr/bin
+sudo mv $HOME/.config/cbpp-compositor /usr/bin
+sudo mv $HOME/.config/cbpp-places-pipemenu /usr/bin
+sudo mv $HOME/.config/cbpp-welcome /usr/bin
+git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
     sudo rm -rf /usr/share/lxdm/themes/*
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
