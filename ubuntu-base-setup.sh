@@ -70,12 +70,8 @@ PKGS=(
 
     # DEVELOPMENT ---------------------------------------------------------
 
-    'ccache'      # Compiler cacher
-    'cmake'       # Cross-platform open-source make system
     'fakeroot'    # Tool for simulating superuser privileges
     'gcc'         # C/C++ compiler
-    'nodejs'      # Javascript runtime environment
-    'npm'         # Node package manager
     'php'         # Scripting language
     'python3-pip' # The official package installer for Python
 
