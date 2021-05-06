@@ -218,7 +218,7 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 echo -e "Purge unneccasary packages"
 sudo apt-get remove --purge -y apport mailutils clipit evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
-    nfs-common portmap rpcbind autofs snmp telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist
+    nfs-common portmap rpcbind autofs snmp telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist mate-media
 echo -e "Clear the patches"
 sudo rm -rf $HOME/.cache/thumbnails
 sudo rm -rf /var/cache/apt/archives/*
