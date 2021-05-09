@@ -289,18 +289,19 @@ sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
 sudo chmod 755 /etc/skel/.config/dmenu/dmenu-bind.sh
 sudo chmod 755 $HOME/.config/dmenu/dmenu-bind.sh
-sudo chmod 755 $HOME/.config/cbpp-exit
-sudo chmod 755 $HOME/.config/cbpp-help-pipemenu
-sudo chmod 755 $HOME/.config/cbpp-compositor
-sudo chmod 755 $HOME/.config/cbpp-places-pipemenu
-sudo chmod 755 $HOME/.config/cbpp-welcome
-sudo mv $HOME/.config/cbpp-exit /usr/bin
-sudo mv $HOME/.config/cbpp-help-pipemenu /usr/bin
-sudo mv $HOME/.config/cbpp-compositor /usr/bin
-sudo mv $HOME/.config/cbpp-places-pipemenu /usr/bin
-sudo mv $HOME/.config/cbpp-welcome /usr/bin
+sudo chmod 755 /etc/skel/.config/dmenu/dmenu-bind.sh
+sudo chmod 755 /etc/skel/.config/dmenu/dmenu-bind.sh
+sudo chmod 755 /etc/skel/.config/cbpp-exit
+sudo chmod 755 /etc/skel/.config/cbpp-help-pipemenu
+sudo chmod 755 /etc/skel/.config/cbpp-compositor
+sudo chmod 755 /etc/skel/.config/cbpp-places-pipemenu
+sudo chmod 755 /etc/skel/.config/cbpp-welcome
+sudo mv /etc/skel/.config/cbpp-exit /usr/bin
+sudo mv /etc/skel/.config/cbpp-help-pipemenu /usr/bin
+sudo mv /etc/skel/.config/cbpp-compositor /usr/bin
+sudo mv /etc/skel/.config/cbpp-places-pipemenu /usr/bin
+sudo mv /etc/skel/.config/cbpp-welcome /usr/bin
 sudo rm -f /home/$USER/.config/cbpp-*
-sudo rm -f /etc/skel/.config/cbpp-*
 sudo rm -f /root/.config/cbpp-*
 git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
