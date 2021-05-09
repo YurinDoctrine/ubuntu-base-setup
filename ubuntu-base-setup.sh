@@ -269,7 +269,6 @@ sudo cp -R .config/.gtkrc-2.0.mine $HOME
 sudo cp -R .config/.Xresources $HOME
 sudo cp -R .config/.xscreensaver $HOME
 sudo cp -R .config/.fonts.conf $HOME
-sudo cp -R .config/.cbpp-user-setup $HOME
 sudo cp -R .config/* $HOME/.config
 sudo cp -R .config/.conkyrc /etc/skel
 sudo cp -R .config/.gmrunrc /etc/skel
@@ -297,7 +296,6 @@ sudo chmod 755 $HOME/.config/cbpp-help-pipemenu
 sudo chmod 755 $HOME/.config/cbpp-compositor
 sudo chmod 755 $HOME/.config/cbpp-places-pipemenu
 sudo chmod 755 $HOME/.config/cbpp-welcome
-sudo chmod 755 $HOME/.config/.cbpp-user-setup
 git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
