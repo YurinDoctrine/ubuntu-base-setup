@@ -287,8 +287,6 @@ sudo cp -R .config/.fonts.conf /root
 sudo cp -R .config/* /etc/skel/.config
 sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
-sudo rm -rf /etc/skel/.config/cbpp-*
-sudo rm -rf /root/.config/cbpp-*
 sudo chmod 755 /etc/skel/.config/dmenu/dmenu-bind.sh
 sudo chmod 755 $HOME/.config/dmenu/dmenu-bind.sh
 sudo chmod 755 $HOME/.config/cbpp-exit
@@ -296,6 +294,14 @@ sudo chmod 755 $HOME/.config/cbpp-help-pipemenu
 sudo chmod 755 $HOME/.config/cbpp-compositor
 sudo chmod 755 $HOME/.config/cbpp-places-pipemenu
 sudo chmod 755 $HOME/.config/cbpp-welcome
+sudo mv $HOME/.config/cbpp-exit /usr/bin
+sudo mv $HOME/.config/cbpp-help-pipemenu /usr/bin
+sudo mv $HOME/.config/cbpp-compositor /usr/bin
+sudo mv $HOME/.config/cbpp-places-pipemenu /usr/bin
+sudo mv $HOME/.config/cbpp-welcome /usr/bin
+sudo rm -rf /home/$USER/.config/cbpp-*
+sudo rm -rf /etc/skel/.config/cbpp-*
+sudo rm -rf /root/.config/cbpp-*
 git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
@@ -306,12 +312,7 @@ git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
     git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
-    sudo mv $HOME/.config/cbpp-exit /usr/bin
-sudo mv $HOME/.config/cbpp-help-pipemenu /usr/bin
-sudo mv $HOME/.config/cbpp-compositor /usr/bin
-sudo mv $HOME/.config/cbpp-places-pipemenu /usr/bin
-sudo mv $HOME/.config/cbpp-welcome /usr/bin
-git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
     sudo rm -rf /usr/share/lxdm/themes/*
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
