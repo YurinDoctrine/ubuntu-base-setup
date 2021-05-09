@@ -23,9 +23,9 @@ find /usr/share/doc -empty | xargs sudo rmdir || true
 find /usr/share/doc | egrep "\.gz" | xargs sudo rm -f
 find /usr/share/doc | egrep "\.pdf" | xargs sudo rm -f
 find /usr/share/doc | egrep "\.tex" | xargs sudo rm -f
-sudo rm -rf /usr/share/groff/* /usr/share/info/*
-sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
-sudo rm -rf /usr/share/man/*
+sudo rm -f /usr/share/groff/* /usr/share/info/*
+sudo rm -f /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
+sudo rm -f /usr/share/man/*
 dpkg -l | grep '^ii.*texlive.*doc'
 sudo apt-get remove --purge \
     texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
@@ -220,8 +220,8 @@ echo -e "Purge unneccasary packages"
 sudo apt-get remove --purge -y apport mailutils clipit evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
     nfs-common portmap rpcbind autofs snmp telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist mate-media
 echo -e "Clear the patches"
-sudo rm -rf $HOME/.cache/thumbnails
-sudo rm -rf /var/cache/apt/archives/*
+sudo rm -f $HOME/.cache/thumbnails
+sudo rm -f /var/cache/apt/archives/*
 echo -e "Remove snapd and flatpak garbages"
 sudo systemctl disable --now snapd
 sudo umount /run/snap/ns
@@ -230,18 +230,18 @@ sudo systemctl disable snapd.socket
 sudo systemctl disable snapd.seeded.service
 sudo systemctl disable snapd.autoimport.service
 sudo systemctl disable snapd.apparmor.service
-sudo rm -rf /etc/apparmor.d/usr.lib.snapd.snap-confine.real
+sudo rm -f /etc/apparmor.d/usr.lib.snapd.snap-confine.real
 sudo systemctl start apparmor.service
 
 sudo apt-get remove --purge snapd -y
 sudo apt-mark hold snapd
 
-sudo rm -rf $HOME/snap
-sudo rm -rf /snap
-sudo rm -rf /var/snap
-sudo rm -rf /var/lib/snapd
-sudo rm -rf /var/cache/snapd
-sudo rm -rf /usr/lib/snapd
+sudo rm -f $HOME/snap
+sudo rm -f /snap
+sudo rm -f /var/snap
+sudo rm -f /var/lib/snapd
+sudo rm -f /var/cache/snapd
+sudo rm -f /usr/lib/snapd
 
 flatpak uninstall --all
 
@@ -255,7 +255,7 @@ sync
 # ------------------------------------------------------------------------
 
 # delete motd ads (really, canonical?)
-sudo rm -rf /etc/update-motd.d/*motd-news
+sudo rm -f /etc/update-motd.d/*motd-news
 
 # ------------------------------------------------------------------------
 
@@ -299,9 +299,9 @@ sudo mv $HOME/.config/cbpp-help-pipemenu /usr/bin
 sudo mv $HOME/.config/cbpp-compositor /usr/bin
 sudo mv $HOME/.config/cbpp-places-pipemenu /usr/bin
 sudo mv $HOME/.config/cbpp-welcome /usr/bin
-sudo rm -rf /home/$USER/.config/cbpp-*
-sudo rm -rf /etc/skel/.config/cbpp-*
-sudo rm -rf /root/.config/cbpp-*
+sudo rm -f /home/$USER/.config/cbpp-*
+sudo rm -f /etc/skel/.config/cbpp-*
+sudo rm -f /root/.config/cbpp-*
 git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
@@ -313,7 +313,7 @@ git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
     git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
-    sudo rm -rf /usr/share/lxdm/themes/*
+    sudo rm -f /usr/share/lxdm/themes/*
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
 
