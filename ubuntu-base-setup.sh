@@ -281,7 +281,8 @@ sudo cp -R .config/.fonts.conf /etc/skel
 sudo cp -R .config/* /etc/skel/.config
 sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
-sudo rm -rf /etc/skel/cbpp-*
+sudo rm -rf /etc/skel/.config/cbpp-*
+sudo rm -rf /root/.config/cbpp-*
 sudo chmod 755 /etc/skel/.config/dmenu/dmenu-bind.sh
 sudo chmod 755 $HOME/.config/dmenu/dmenu-bind.sh
 sudo chmod 755 $HOME/.config/cbpp-exit
