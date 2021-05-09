@@ -255,7 +255,7 @@ sync
 # ------------------------------------------------------------------------
 
 # delete motd ads (really, canonical?)
-sudo rm -rf /etc/update-motd.d/*motd-news
+sudo rm -f /etc/update-motd.d/*motd-news
 
 # ------------------------------------------------------------------------
 
