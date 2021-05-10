@@ -261,14 +261,14 @@ sudo rm -f /etc/update-motd.d/*motd-news
 # Implement .config/ files of the openbox
 cd /tmp &&
     git clone https://github.com/YurinDoctrine/.config.git &&
-    sudo cp -R .config/.conkyrc $HOME
-sudo cp -R .config/.gmrunrc $HOME
-sudo cp -R .config/.gtkrc-2.0 $HOME
-sudo cp -R .config/.gtkrc-2.0.mine $HOME
-sudo cp -R .config/.Xresources $HOME
-sudo cp -R .config/.xscreensaver $HOME
-sudo cp -R .config/.fonts.conf $HOME
-sudo cp -R .config/* $HOME/.config
+    sudo cp -R .config/.conkyrc /home/$USER
+sudo cp -R .config/.gmrunrc /home/$USER
+sudo cp -R .config/.gtkrc-2.0 /home/$USER
+sudo cp -R .config/.gtkrc-2.0.mine /home/$USER
+sudo cp -R .config/.Xresources /home/$USER
+sudo cp -R .config/.xscreensaver /home/$USER
+sudo cp -R .config/.fonts.conf /home/$USER
+sudo cp -R .config/* /home/$USER/.config
 sudo cp -R .config/.conkyrc /etc/skel
 sudo cp -R .config/.gmrunrc /etc/skel
 sudo cp -R .config/.gtkrc-2.0 /etc/skel
