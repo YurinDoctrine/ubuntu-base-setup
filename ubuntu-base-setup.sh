@@ -51,7 +51,7 @@ PKGS=(
     # --- Importants
 
     'xscreensaver'        # A screen saver and locker for the X
-    'xfce4-goodies'       # Enhancements for the Xfce4
+    'xfburn'		  # A simple CD/DVD burning tool
     'xfce4-power-manager' # Power Manager
     'suckless-tools'      # Generic menu for X (dmenu)
     'gmrun'               # A lightweight application launcher
@@ -59,9 +59,11 @@ PKGS=(
     'ibus'                # An input method framework
     'compton'             # A compositor for X11
     'conky'               # A system monitor software for the X Window System
+    'mousepad'            # Simple text editor
     'nitrogen'            # A fast and lightweight desktop background browser and setter for X Window
     'openbox'             # A lightweight, powerful, and highly configurable stacking window manager
     'udiskie'             # An udisks2 front-end written in python
+    'thunar'		  # Modern file manager
     'tint2'               # A simple, unobtrusive and light panel for Xorg
     'lxappearance'        # Set System Themes
     #'lxdm'               # A lightweight display manager
