@@ -64,6 +64,7 @@ PKGS=(
     'udiskie'             # An udisks2 front-end written in python
     'tint2'               # A simple, unobtrusive and light panel for Xorg
     'lxappearance'        # Set System Themes
+    #'lxdm'               # A lightweight display manager
     'lxpolkit'            # LXDE PolicyKit authentication agent
     'xfce4-notifyd'       # Notification Daemon
 
