@@ -19,10 +19,10 @@ localectl set-locale LANG=en_GB.UTF-8 LC_TIME=en_GB.UTF-8
 # Don't reserve space man-pages, locales, licenses.
 echo -e "Remove useless companies"
 find /usr/share/doc -depth -type f ! -name copyright | xargs sudo rm -f || true
-find /usr/share/doc -empty | xargs sudo rmdir || true
 find /usr/share/doc | egrep "\.gz" | xargs sudo rm -f
 find /usr/share/doc | egrep "\.pdf" | xargs sudo rm -f
 find /usr/share/doc | egrep "\.tex" | xargs sudo rm -f
+find /usr/share/doc -empty | xargs sudo rmdir || true
 sudo rm -rf /usr/share/groff/* /usr/share/info/*
 sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
 sudo rm -rf /usr/share/man/*
