@@ -2,7 +2,7 @@
 # Before hop in
 sudo apt update &&
     sudo apt install -y systemd git apt-cacher &&
-    sudo apt install --install-recommends -y ubuntu-restricted-extras kubuntu-restricted-extras software-properties-common
+    sudo apt install --no-install-recommends -y software-properties-common
 
 # ------------------------------------------------------------------------
 
