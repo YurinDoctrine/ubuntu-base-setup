@@ -253,11 +253,6 @@ sync
 
 # ------------------------------------------------------------------------
 
-# delete motd ads (really, canonical?)
-sudo rm -f /etc/update-motd.d/*motd-news
-
-# ------------------------------------------------------------------------
-
 # Implement .config/ files of the openbox
 cd /tmp &&
     git clone https://github.com/YurinDoctrine/.config.git &&
