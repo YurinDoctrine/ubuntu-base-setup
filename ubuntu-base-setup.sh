@@ -26,7 +26,6 @@ find /usr/share/doc | egrep "\.tex" | xargs sudo rm -f
 sudo rm -rf /usr/share/groff/* /usr/share/info/*
 sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
 sudo rm -rf /usr/share/man/*
-dpkg -l | grep '^ii.*texlive.*doc'
 sudo apt-get remove --purge \
     texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
     texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
