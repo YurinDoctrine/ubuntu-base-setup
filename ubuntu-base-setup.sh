@@ -278,6 +278,7 @@ sudo cp -R .config/.gtkrc-2.0.mine /root
 sudo cp -R .config/.Xresources /root
 sudo cp -R .config/.xscreensaver /root
 sudo cp -R .config/.fonts.conf /root
+sudo mkdir /etc/skel/.config
 sudo cp -R .config/* /etc/skel/.config
 sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
