@@ -273,15 +273,15 @@ cd /tmp &&
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
 git clone https://github.com/YurinDoctrine/.config.git &&
-    sudo cp -R .config/.conkyrc /home/$USER
-sudo cp -R .config/.gmrunrc /home/$USER
-sudo cp -R .config/.gtkrc-2.0 /home/$USER
-sudo cp -R .config/.gtkrc-2.0.mine /home/$USER
-sudo cp -R .config/.Xresources /home/$USER
-sudo cp -R .config/.xscreensaver /home/$USER
-sudo cp -R .config/.fonts.conf /home/$USER
-sudo cp -R .config/.gtk-bookmarks /home/$USER
-sudo cp -R .config/* /home/$USER/.config
+    sudo cp -R .config/.conkyrc $HOME
+sudo cp -R .config/.gmrunrc $HOME
+sudo cp -R .config/.gtkrc-2.0 $HOME
+sudo cp -R .config/.gtkrc-2.0.mine $HOME
+sudo cp -R .config/.Xresources $HOME
+sudo cp -R .config/.xscreensaver $HOME
+sudo cp -R .config/.fonts.conf $HOME
+sudo cp -R .config/.gtk-bookmarks $HOME
+sudo cp -R .config/* $HOME/.config
 sudo cp -R .config/.conkyrc /etc/skel
 sudo cp -R .config/.gmrunrc /etc/skel
 sudo cp -R .config/.gtkrc-2.0 /etc/skel
@@ -302,7 +302,7 @@ sudo mkdir /etc/skel/.config
 sudo cp -R .config/* /etc/skel/.config
 sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
-sudo chmod 0755 /home/$USER/.config/dmenu/dmenu-bind.sh
+sudo chmod 0755 $HOME/.config/dmenu/dmenu-bind.sh
 sudo chmod 0755 /etc/skel/.config/dmenu/dmenu-bind.sh
 sudo chmod 0755 /root/.config/dmenu/dmenu-bind.sh
 sudo chmod 0755 /etc/skel/.config/cbpp-exit
@@ -315,7 +315,7 @@ sudo mv /etc/skel/.config/cbpp-help-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-compositor /usr/bin
 sudo mv /etc/skel/.config/cbpp-places-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-welcome /usr/bin
-sudo rm -f /home/$USER/.config/cbpp-*
+sudo rm -f $HOME/.config/cbpp-*
 sudo rm -f /root/.config/cbpp-*
 
 echo -e "XDG_CURRENT_DESKTOP=Unity
