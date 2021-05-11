@@ -285,14 +285,14 @@ sudo mkdir /etc/skel/.config
 sudo cp -R .config/* /etc/skel/.config
 sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
-sudo chmod 755 /home/$USER/.config/dmenu/dmenu-bind.sh
-sudo chmod 755 /etc/skel/.config/dmenu/dmenu-bind.sh
-sudo chmod 755 /root/.config/dmenu/dmenu-bind.sh
-sudo chmod 755 /etc/skel/.config/cbpp-exit
-sudo chmod 755 /etc/skel/.config/cbpp-help-pipemenu
-sudo chmod 755 /etc/skel/.config/cbpp-compositor
-sudo chmod 755 /etc/skel/.config/cbpp-places-pipemenu
-sudo chmod 755 /etc/skel/.config/cbpp-welcome
+sudo chmod 0755 /home/$USER/.config/dmenu/dmenu-bind.sh
+sudo chmod 0755 /etc/skel/.config/dmenu/dmenu-bind.sh
+sudo chmod 0755 /root/.config/dmenu/dmenu-bind.sh
+sudo chmod 0755 /etc/skel/.config/cbpp-exit
+sudo chmod 0755 /etc/skel/.config/cbpp-help-pipemenu
+sudo chmod 0755 /etc/skel/.config/cbpp-compositor
+sudo chmod 0755 /etc/skel/.config/cbpp-places-pipemenu
+sudo chmod 0755 /etc/skel/.config/cbpp-welcome
 sudo mv /etc/skel/.config/cbpp-exit /usr/bin
 sudo mv /etc/skel/.config/cbpp-help-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-compositor /usr/bin
@@ -322,12 +322,12 @@ QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
 
 extra() {
     curl -fsSL https://raw.githubusercontent.com/YurinDoctrine/ultra-gaming-setup-wizard/main/ultra-gaming-setup-wizard.sh >ultra-gaming-setup-wizard.sh &&
-        chmod 755 ultra-gaming-setup-wizard.sh &&
+        chmod 0755 ultra-gaming-setup-wizard.sh &&
         ./ultra-gaming-setup-wizard.sh
 }
 extra2() {
     curl -fsSL https://raw.githubusercontent.com/YurinDoctrine/secure-linux/master/secure.sh >secure.sh &&
-        chmod 755 secure.sh &&
+        chmod 0755 secure.sh &&
         ./secure.sh
 }
 
