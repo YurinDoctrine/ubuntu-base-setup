@@ -258,7 +258,21 @@ sync
 
 # Implement .config/ files of the openbox
 cd /tmp &&
-    git clone https://github.com/YurinDoctrine/.config.git &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
+    sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
+    sudo cp -R cbpp-ui-theme/cbpp-ui-theme/data/usr/share/themes/* /usr/share/themes &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-wallpapers.git &&
+    sudo cp -R cbpp-wallpapers/cbpp-wallpapers/data/usr/share/backgrounds/* /usr/share/backgrounds &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-pipemenus.git &&
+    sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
+    sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
+    sudo rm -rf /usr/share/lxdm/themes/*
+sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
+sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
+git clone https://github.com/YurinDoctrine/.config.git &&
     sudo cp -R .config/.conkyrc /home/$USER
 sudo cp -R .config/.gmrunrc /home/$USER
 sudo cp -R .config/.gtkrc-2.0 /home/$USER
@@ -300,20 +314,6 @@ sudo mv /etc/skel/.config/cbpp-places-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-welcome /usr/bin
 sudo rm -f /home/$USER/.config/cbpp-*
 sudo rm -f /root/.config/cbpp-*
-git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
-    sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
-    git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
-    sudo cp -R cbpp-ui-theme/cbpp-ui-theme/data/usr/share/themes/* /usr/share/themes &&
-    git clone --branch 11 https://github.com/CBPP/cbpp-wallpapers.git &&
-    sudo cp -R cbpp-wallpapers/cbpp-wallpapers/data/usr/share/backgrounds/* /usr/share/backgrounds &&
-    git clone --branch 11 https://github.com/CBPP/cbpp-pipemenus.git &&
-    sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
-    git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
-    sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
-    git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
-    sudo rm -rf /usr/share/lxdm/themes/*
-sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
-sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
 
 echo -e "XDG_CURRENT_DESKTOP=Unity
 QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
