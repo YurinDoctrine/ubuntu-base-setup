@@ -302,7 +302,7 @@ sudo mkdir /etc/skel/.config
 sudo cp -R .config/* /etc/skel/.config
 sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
-sudo chmod 0755 $HOME/.config/dmenu/dmenu-bind.sh
+sudo chmod 0755 /home/$USER/.config/dmenu/dmenu-bind.sh
 sudo chmod 0755 /etc/skel/.config/dmenu/dmenu-bind.sh
 sudo chmod 0755 /root/.config/dmenu/dmenu-bind.sh
 sudo chmod 0755 /etc/skel/.config/cbpp-exit
@@ -315,7 +315,7 @@ sudo mv /etc/skel/.config/cbpp-help-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-compositor /usr/bin
 sudo mv /etc/skel/.config/cbpp-places-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-welcome /usr/bin
-sudo rm -f $HOME/.config/cbpp-*
+sudo rm -f /home/$USER/.config/cbpp-*
 sudo rm -f /root/.config/cbpp-*
 
 echo -e "XDG_CURRENT_DESKTOP=Unity
