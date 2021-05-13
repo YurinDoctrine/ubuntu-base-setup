@@ -63,7 +63,7 @@ PKGS=(
     'nitrogen'            # A fast and lightweight desktop background browser and setter for X Window
     'openbox'             # A lightweight, powerful, and highly configurable stacking window manager
     'udiskie'             # An udisks2 front-end written in python
-    'pcmanfm-qt'	  # The LXQt file manager
+    'pcmanfm-qt'	    # The LXQt file manager
     'tint2'               # A simple, unobtrusive and light panel for Xorg
     'lxappearance'        # Set System Themes
     #'lxdm'               # A lightweight display manager
