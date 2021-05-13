@@ -62,9 +62,6 @@ PKGS=(
     'featherpad'          # Lightweight Qt plain text editor
     'nitrogen'            # A fast and lightweight desktop background browser and setter for X Window
     'obsession'           # Session Management Helper
-    'obapps'              # A GTK+ based application configuring tool for the Openbox window manager
-    'obconf'              # A GTK+ based configuration tool for the Openbox window manager
-    'obmenu'              # A GTK+ based menu editor for the Openbox window manager
     'openbox'             # A lightweight, powerful, and highly configurable stacking window manager
     'scrot'               # Simple command-line screenshot utility
     'udiskie'             # An udisks2 front-end written in python
