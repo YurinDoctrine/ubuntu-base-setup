@@ -3,6 +3,7 @@
 sudo apt update &&
     sudo apt install --install-recommends -y systemd git apt-cacher &&
     sudo apt install --no-install-recommends -y software-properties-common
+    sudo apt install --no-install-recommends -y kubuntu-restricted-extras
 
 # ------------------------------------------------------------------------
 
