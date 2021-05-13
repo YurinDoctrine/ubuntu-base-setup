@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -y systemd git apt-cacher &&
+    sudo apt install --install-recommends -y systemd git apt-cacher &&
     sudo apt install --no-install-recommends -y software-properties-common
 
 # ------------------------------------------------------------------------
@@ -61,9 +61,12 @@ PKGS=(
     'conky'               # A system monitor software for the X Window System
     'featherpad'          # Lightweight Qt plain text editor
     'nitrogen'            # A fast and lightweight desktop background browser and setter for X Window
+    'obsession'           # Session Management Helper
+    'obconf'              # A GTK+ based configuration tool for the Openbox window manager
     'openbox'             # A lightweight, powerful, and highly configurable stacking window manager
+    'scrot'               # Simple command-line screenshot utility
     'udiskie'             # An udisks2 front-end written in python
-    'pcmanfm-qt'	    # The LXQt file manager
+    'pcmanfm-qt'          # The LXQt file manager
     'tint2'               # A simple, unobtrusive and light panel for Xorg
     'lxappearance'        # Set System Themes
     #'lxdm'               # A lightweight display manager
