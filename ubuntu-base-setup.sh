@@ -2,7 +2,7 @@
 # Before hop in
 sudo apt update &&
     sudo apt install --install-recommends -y systemd git apt-cacher &&
-    sudo apt install --no-install-recommends -y software-properties-common
+    sudo apt install --no-install-recommends -y software-properties-common &&
     sudo apt install --no-install-recommends -y kubuntu-restricted-extras
 
 # ------------------------------------------------------------------------
@@ -52,7 +52,7 @@ PKGS=(
     # --- Importants
 
     'xscreensaver'        # A screen saver and locker for the X
-    'xfburn'		  # A simple CD/DVD burning tool
+    'xfburn'              # A simple CD/DVD burning tool
     'xfce4-power-manager' # Power Manager
     'suckless-tools'      # Generic menu for X (dmenu)
     'gmrun'               # A lightweight application launcher
@@ -70,8 +70,8 @@ PKGS=(
     'tint2'               # A simple, unobtrusive and light panel for Xorg
     'lxappearance'        # Set System Themes
     #'lxdm'               # A lightweight display manager
-    'lxpolkit'            # LXDE PolicyKit authentication agent
-    'xfce4-notifyd'       # Notification Daemon
+    'lxpolkit'      # LXDE PolicyKit authentication agent
+    'xfce4-notifyd' # Notification Daemon
 
     # DEVELOPMENT ---------------------------------------------------------
 
