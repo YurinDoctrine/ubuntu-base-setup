@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install --install-recommends -y systemd git apt-cacher &&
+    sudo apt install --install-recommends -y psmisc systemd git apt-cacher &&
     sudo apt install --no-install-recommends -y software-properties-common &&
     sudo apt install --no-install-recommends -y kubuntu-restricted-extras
 
