@@ -81,12 +81,12 @@ PKGS=(
 
     # --- Audio
 
-    'pavucontrol-qt'  # Pulse Audio volume control Qt port
-    'pasystray'       # PulseAudio system tray
+    'pavucontrol-qt' # Pulse Audio volume control Qt port
+    'pasystray'      # PulseAudio system tray
 
     # --- Bluetooth
 
-    'blueman'                     # GTK+ Bluetooth Manager
+    'blueman' # GTK+ Bluetooth Manager
 
     # TERMINAL UTILITIES --------------------------------------------------
 
@@ -144,7 +144,6 @@ PKGS=(
     'abiword'     # Fully-featured word processor
     'atril'       # PDF viewer
     'ghostscript' # PostScript interpreter
-    'gsfonts'     # Adobe Postscript replacement fonts
     'gnumeric'    # A powerful spreadsheet application
 
 )
