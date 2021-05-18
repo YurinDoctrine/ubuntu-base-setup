@@ -58,7 +58,6 @@ PKGS=(
     'suckless-tools'     # Generic menu for X (dmenu)
     'gmrun'              # A lightweight application launcher
     'gsimplecal'         # A simple, lightweight calendar
-    'ibus'               # An input method framework
     'compton'            # A compositor for X11
     'conky'              # A system monitor software for the X Window System
     'featherpad'         # Lightweight Qt plain text editor
@@ -82,18 +81,12 @@ PKGS=(
 
     # --- Audio
 
-    'alsa'            # Advanced Linux Sound Architecture (ALSA)
-    'alsa-utils'      # ALSA utils
-    'pulseaudio-alsa' # ALSA configuration for pulse audio
     'pavucontrol-qt'  # Pulse Audio volume control Qt port
     'pasystray'       # PulseAudio system tray
 
     # --- Bluetooth
 
-    'bluez'                       # Daemons for the bluetooth protocol stack
-    'bluez-firmware'              # Firmwares for Broadcom BCM203x and STLC2300 Bluetooth chips
     'blueman'                     # GTK+ Bluetooth Manager
-    'pulseaudio-module-bluetooth' # Bluetooth support for PulseAudio
 
     # TERMINAL UTILITIES --------------------------------------------------
 
@@ -112,7 +105,6 @@ PKGS=(
     'unrar'          # RAR compression program
     'unzip'          # Zip compression program
     'wget'           # Remote content retrieval
-    'nocache'        # Minimize caching effects
     'nano'           # A simple console based text editor
     'zenity'         # Display graphical dialog boxes via shell scripts
     'zip'            # Zip compression program
@@ -130,12 +122,12 @@ PKGS=(
     'file-roller'          # Create and modify archives
     'filezilla'            # FTP Client
     'apache2'              # HTTP server
-    'apt-transport-https'  # HTTPS download transport for APT
     'arandr'               # Provide a simple visual front end for XRandR
     'playerctl'            # Utility to control media players via MPRIS
     'putty'                # A port of the popular GUI SSH, Telnet, Rlogin and serial port connection client
     'transmission'         # BitTorrent client
     'net-tools'            # Network utilities
+    'nocache'              # Minimize caching effects
     'galculator'           # A simple, elegant calculator
     'gnupg'                # Complete and free implementation of the OpenPGP standard
     'preload'              # Makes applications run faster by prefetching binaries and shared objects
