@@ -314,7 +314,7 @@ sudo mv /etc/skel/.config/cbpp-welcome /usr/bin
 sudo rm -f /home/$USER/.config/cbpp-*
 sudo rm -f /root/.config/cbpp-*
 
-echo -e "XDG_CURRENT_DESKTOP=GNOME
+echo -e "XDG_CURRENT_DESKTOP=LXDE
 QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
 
 # ------------------------------------------------------------------------
