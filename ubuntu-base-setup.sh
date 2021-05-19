@@ -30,8 +30,7 @@ find /usr/share/doc/ -empty | xargs sudo rmdir || true
 sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
     /usr/share/linda/* /var/cache/man/* /usr/share/man/*
 
-echo -e "
-# we need to keep copyright files for legal reasons
+echo -e "# we need to keep copyright files for legal reasons
 path-include /usr/share/doc/*/copyright
 path-exclude /usr/share/doc/*
 path-exclude /usr/share/man/*
@@ -75,8 +74,6 @@ PKGS=(
     # DEVELOPMENT ---------------------------------------------------------
 
     'fakeroot'    # Tool for simulating superuser privileges
-    'gcc'         # C/C++ compiler
-    'php'         # Scripting language
     'python3-pip' # The official package installer for Python
 
     # --- Audio
