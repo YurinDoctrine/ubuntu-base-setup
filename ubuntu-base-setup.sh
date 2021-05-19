@@ -19,21 +19,21 @@ localectl set-locale LANG=en_GB.UTF-8 LC_TIME=en_GB.UTF-8
 
 # Don't reserve space man-pages, locales, licenses.
 echo -e "Remove useless companies"
+sudo apt-get remove --purge \
+    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 find /usr/share/doc/ -depth -type f ! -name copyright | xargs sudo rm -f || true
 find /usr/share/doc/ | egrep "\.gz" | xargs sudo rm -f
 find /usr/share/doc/ | egrep "\.pdf" | xargs sudo rm -f
 find /usr/share/doc/ | egrep "\.tex" | xargs sudo rm -f
 find /usr/share/doc/ -empty | xargs sudo rmdir || true
-sudo rm -rf /usr/share/groff/* /usr/share/info/*
-sudo rm -rf /usr/share/lintian/* /usr/share/linda/* /var/cache/man/*
-sudo rm -rf /usr/share/man/*
-sudo apt-get remove --purge \
-    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
+    /usr/share/linda/* /var/cache/man/* /usr/share/man/*
 
-echo -e "path-exclude /usr/share/doc/*
+echo -e "
 # we need to keep copyright files for legal reasons
 path-include /usr/share/doc/*/copyright
+path-exclude /usr/share/doc/*
 path-exclude /usr/share/man/*
 path-exclude /usr/share/groff/*
 path-exclude /usr/share/info/*
@@ -218,8 +218,8 @@ sudo apt-get remove --purge -y apport mailutils clipit evince at avahi-daemon av
     nfs-common portmap rpcbind rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist \
     ldap-utils mate-media minetest xinetd pure-ftpd nis xfce4-power-manager
 echo -e "Clear the patches"
-sudo rm -rf $HOME/.cache/thumbnails
-sudo rm -rf /var/cache/apt/archives/*
+sudo rm -rfd $HOME/.cache/thumbnails
+sudo rm -rfd /var/cache/apt/archives/*
 echo -e "Remove snapd and flatpak garbages"
 sudo systemctl disable --now snapd
 sudo umount /run/snap/ns
@@ -228,18 +228,18 @@ sudo systemctl disable snapd.socket
 sudo systemctl disable snapd.seeded.service
 sudo systemctl disable snapd.autoimport.service
 sudo systemctl disable snapd.apparmor.service
-sudo rm -rf /etc/apparmor.d/usr.lib.snapd.snap-confine.real
+sudo rm -f /etc/apparmor.d/usr.lib.snapd.snap-confine.real
 sudo systemctl start apparmor.service
 
 sudo apt-get remove --purge snapd -y
 sudo apt-mark hold snapd
 
-sudo rm -rf $HOME/snap
-sudo rm -rf /snap
-sudo rm -rf /var/snap
-sudo rm -rf /var/lib/snapd
-sudo rm -rf /var/cache/snapd
-sudo rm -rf /usr/lib/snapd
+sudo rm -rfd $HOME/snap
+sudo rm -rfd /snap
+sudo rm -rfd /var/snap
+sudo rm -rfd /var/lib/snapd
+sudo rm -rfd /var/cache/snapd
+sudo rm -rfd /usr/lib/snapd
 
 flatpak uninstall --all
 
@@ -265,7 +265,7 @@ cd /tmp &&
     git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
     sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
     git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
-    sudo rm -rf /usr/share/lxdm/themes/*
+    sudo rm -rfd /usr/share/lxdm/themes/*
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
 git clone https://github.com/YurinDoctrine/.config.git &&
