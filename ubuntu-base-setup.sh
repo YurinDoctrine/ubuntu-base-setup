@@ -311,8 +311,8 @@ sudo mv /etc/skel/.config/cbpp-help-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-compositor /usr/bin
 sudo mv /etc/skel/.config/cbpp-places-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-welcome /usr/bin
-sudo rm -f /home/$USER/.config/cbpp-*
-sudo rm -f /root/.config/cbpp-*
+sudo find /home/$USER/.config/ | egrep "\cbpp-" | xargs sudo rm -f
+sudo find /root/.config/ | egrep "\cbpp-" | xargs sudo rm -f
 
 echo -e "XDG_CURRENT_DESKTOP=LXDE
 QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
