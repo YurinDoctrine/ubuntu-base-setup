@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install --install-recommends -y psmisc systemd git apt-cacher &&
-    sudo apt install --no-install-recommends -y software-properties-common &&
+    sudo apt install -y psmisc systemd git &&
+    sudo apt install -y software-properties-common &&
     sudo apt install --no-install-recommends -y kubuntu-restricted-extras
 
 # ------------------------------------------------------------------------
@@ -112,14 +112,15 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
 
+    'apache2'              # HTTP server
+    'apt-cacher'           # A caching proxy for Debian packages
+    'arandr'               # Provide a simple visual front end for XRandR
     'catfish'              # Versatile file searching tool
     'dialog'               # A tool to display dialog boxes from shell scripts
     'earlyoom'             # Early OOM Daemon for Linux
     'flameshot'            # Screenshots
     'file-roller'          # Create and modify archives
     'filezilla'            # FTP Client
-    'apache2'              # HTTP server
-    'arandr'               # Provide a simple visual front end for XRandR
     'playerctl'            # Utility to control media players via MPRIS
     'putty'                # A port of the popular GUI SSH, Telnet, Rlogin and serial port connection client
     'transmission'         # BitTorrent client
@@ -130,13 +131,13 @@ PKGS=(
     'preload'              # Makes applications run faster by prefetching binaries and shared objects
     'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
 
-    # GRAPHICS, VIDEO AND DESIGN -------------------------------------------------
+    # GRAPHICS, VIDEO AND DESIGN ------------------------------------------
 
     'pinta'    # A simplified alternative to GIMP
     'viewnior' # A simple, fast and elegant image viewer
     'vlc'      # A free and open source cross-platform multimedia player and framework
 
-    # PRINTING --------------------------------------------------------
+    # PRINTING ------------------------------------------------------------
 
     'abiword'     # Fully-featured word processor
     'atril'       # PDF viewer
