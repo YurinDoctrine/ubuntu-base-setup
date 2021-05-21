@@ -73,7 +73,6 @@ PKGS=(
 
     # DEVELOPMENT ---------------------------------------------------------
 
-    'fakeroot'    # Tool for simulating superuser privileges
     'python3-pip' # The official package installer for Python
 
     # --- Audio
@@ -89,7 +88,6 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
 
-    'cron'           # Cron jobs
     'dash'           # A POSIX-compliant shell derived from ash
     'fish'           # The friendly interactive shell
     'vsftpd'         # File transfer protocol
@@ -116,7 +114,6 @@ PKGS=(
     'apache2'              # HTTP server
     'apt-cacher'           # A caching proxy for Debian packages
     'arandr'               # Provide a simple visual front end for XRandR
-    'catfish'              # Versatile file searching tool
     'dialog'               # A tool to display dialog boxes from shell scripts
     'earlyoom'             # Early OOM Daemon for Linux
     'flameshot'            # Screenshots
