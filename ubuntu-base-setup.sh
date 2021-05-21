@@ -148,7 +148,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
     echo -e "INSTALLING: ${PKG}"
-    sudo apt --no-install-recommends install -y "$PKG"
+    sudo apt install --no-install-recommends -y "$PKG"
 done
 
 echo -e "Done!"
