@@ -78,10 +78,10 @@ PKGS=(
 
     # --- Audio
 
-    'alsa-utils'     # Advanced Linux Sound Architecture - Utilities
-    'pavucontrol-qt' # Pulse Audio volume control Qt port
-    'pasystray'      # PulseAudio system tray
-    'pulsemixer'     # CLI and curses mixer for pulseaudio
+    'alsaplayer-common' # A heavily multi-threaded PCM player
+    'pavucontrol-qt'    # Pulse Audio volume control Qt port
+    'pasystray'         # PulseAudio system tray
+    'pulsemixer'        # CLI and curses mixer for pulseaudio
 
     # --- Bluetooth
 
