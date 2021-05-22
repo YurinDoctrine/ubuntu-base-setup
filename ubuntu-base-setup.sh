@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -y psmisc systemd git &&
-    sudo apt install -y software-properties-common &&
+    sudo apt install --no-install-recommends -y kitty psmisc systemd git &&
+    sudo apt install --install-recommends -y software-properties-common &&
     sudo apt install --no-install-recommends -y kubuntu-restricted-extras
 
 # ------------------------------------------------------------------------
@@ -92,7 +92,6 @@ PKGS=(
     'fish'           # The friendly interactive shell
     'vsftpd'         # File transfer protocol
     'htop'           # Process viewer
-    'kitty'         # A modern, hackable, featureful, OpenGL-based terminal emulator
     'neofetch'       # Shows system info when you launch terminal
     'openssh-server' # SSH connectivity tools
     'irssi'          # Terminal based IRC
