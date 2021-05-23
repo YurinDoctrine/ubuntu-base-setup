@@ -53,11 +53,11 @@ PKGS=(
     'xscreensaver'       # A screen saver and locker for the X
     'xfburn'             # A simple CD/DVD burning tool
     'xfce4-notifyd'      # Notification Daemon
+    'xcompmgr'           # A simple composite manager
     'mate-power-manager' # MATE Power Manager
     'suckless-tools'     # Generic menu for X (dmenu)
     'gmrun'              # A lightweight application launcher
     'gsimplecal'         # A simple, lightweight calendar
-    'compton'            # A compositor for X11
     'conky'              # A system monitor software for the X Window System
     'featherpad'         # Lightweight Qt plain text editor
     'nitrogen'           # A fast and lightweight desktop background browser and setter for X Window
