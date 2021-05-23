@@ -248,8 +248,8 @@ sync
 
 # Implement .config/ files of the openbox
 cd /tmp &&
-    git clone --branch 11 https://github.com/CBPP/cbpp-pipemenus.git &&
-    sudo cp -R cbpp-pipemenus/cbpp-pipemenus/data/usr/bin/* /usr/bin &&
+    git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
+    sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
     git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
     git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
