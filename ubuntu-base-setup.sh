@@ -111,8 +111,8 @@ PKGS=(
 
     'apt-cacher'           # A caching proxy for Debian packages
     'arandr'               # Provide a simple visual front end for XRandR
+    'engrampa'             # Archive manipulator for MATE
     'flameshot'            # Screenshots
-    'file-roller'          # Create and modify archives
     'filezilla'            # FTP Client
     'playerctl'            # Utility to control media players via MPRIS
     'transmission'         # BitTorrent client
