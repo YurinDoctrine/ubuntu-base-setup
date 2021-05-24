@@ -205,7 +205,7 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 echo -e "Purge unneccasary packages"
 sudo apt-get remove --purge -y apport mailutils clipit compton evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
     nfs-common portmap rpcbind rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist \
-    ldap-utils mate-media minetest xinetd pure-ftpd nis thunar thunar-data xfce4-power-manager
+    ldap-utils mate-media minetest xinetd pure-ftpd nis terminator thunar thunar-data xfce4-power-manager
 echo -e "Clear the patches"
 sudo rm -rfd $HOME/.cache/thumbnails
 sudo rm -rfd /var/cache/apt/archives/*
