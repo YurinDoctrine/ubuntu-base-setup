@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install --no-install-recommends -y kitty psmisc systemd git &&
+    sudo apt install --no-install-recommends -y kitty psmisc network-manager systemd git &&
     sudo apt install --install-recommends -y software-properties-common &&
     sudo apt install --no-install-recommends -y kubuntu-restricted-extras
 
@@ -51,7 +51,6 @@ PKGS=(
     # --- Importants
 
     'xscreensaver'       # A screen saver and locker for the X
-    'xfburn'             # A simple CD/DVD burning tool
     'xfce4-notifyd'      # Notification Daemon
     'xcompmgr'           # A simple composite manager
     'mate-power-manager' # MATE Power Manager
@@ -114,10 +113,10 @@ PKGS=(
     'engrampa'             # Archive manipulator for MATE
     'flameshot'            # Screenshots
     'filezilla'            # FTP Client
+    'mate-calc'            # Calculator for the MATE
+    'nocache'              # Minimize caching effects
     'playerctl'            # Utility to control media players via MPRIS
     'transmission'         # BitTorrent client
-    'nocache'              # Minimize caching effects
-    'galculator'           # A simple, elegant calculator
     'gnupg'                # Complete and free implementation of the OpenPGP standard
     'preload'              # Makes applications run faster by prefetching binaries and shared objects
     'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
@@ -130,10 +129,11 @@ PKGS=(
 
     # PRINTING ------------------------------------------------------------
 
-    'abiword'     # Fully-featured word processor
-    'atril'       # PDF viewer
-    'ghostscript' # PostScript interpreter
-    'gnumeric'    # A powerful spreadsheet application
+    'abiword'               # Fully-featured word processor
+    'atril'                 # PDF viewer
+    'ghostscript'           # PostScript interpreter
+    'gnumeric'              # A powerful spreadsheet application
+    'system-config-printer' # A CUPS printer configuration tool and status applet
 
 )
 
@@ -205,7 +205,7 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 echo -e "Purge unneccasary packages"
 sudo apt-get remove --purge -y apport mailutils clipit compton evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
     nfs-common portmap rpcbind rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist \
-    ldap-utils mate-media minetest xinetd pure-ftpd nis terminator thunar thunar-data xfce4-power-manager
+    ldap-utils mate-media minetest xinetd pure-ftpd nis file-roller galculator terminator thunar thunar-data xfce4-power-manager xfburn
 echo -e "Clear the patches"
 sudo rm -rfd $HOME/.cache/thumbnails
 sudo rm -rfd /var/cache/apt/archives/*
