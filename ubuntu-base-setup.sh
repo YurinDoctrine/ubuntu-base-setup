@@ -110,7 +110,6 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
 
-    'apache2'              # HTTP server
     'apt-cacher'           # A caching proxy for Debian packages
     'arandr'               # Provide a simple visual front end for XRandR
     'dialog'               # A tool to display dialog boxes from shell scripts
