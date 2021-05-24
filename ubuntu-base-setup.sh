@@ -89,11 +89,10 @@ PKGS=(
     # TERMINAL UTILITIES --------------------------------------------------
 
     'dash'           # A POSIX-compliant shell derived from ash
+    'dialog'         # A tool to display dialog boxes from shell scripts
     'fish'           # The friendly interactive shell
-    'vsftpd'         # File transfer protocol
     'htop'           # Process viewer
     'neofetch'       # Shows system info when you launch terminal
-    'openssh-server' # SSH connectivity tools
     'irssi'          # Terminal based IRC
     'p7zip'          # 7z compression program
     'fonts-terminus' # Font package with some bigger fonts for login terminal
@@ -112,14 +111,11 @@ PKGS=(
 
     'apt-cacher'           # A caching proxy for Debian packages
     'arandr'               # Provide a simple visual front end for XRandR
-    'dialog'               # A tool to display dialog boxes from shell scripts
-    'earlyoom'             # Early OOM Daemon for Linux
     'flameshot'            # Screenshots
     'file-roller'          # Create and modify archives
     'filezilla'            # FTP Client
     'playerctl'            # Utility to control media players via MPRIS
     'transmission'         # BitTorrent client
-    'net-tools'            # Network utilities
     'nocache'              # Minimize caching effects
     'galculator'           # A simple, elegant calculator
     'gnupg'                # Complete and free implementation of the OpenPGP standard
