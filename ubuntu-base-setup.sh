@@ -296,12 +296,14 @@ sudo chmod 0755 /etc/skel/.config/cbpp-exit
 sudo chmod 0755 /etc/skel/.config/cbpp-help-pipemenu
 sudo chmod 0755 /etc/skel/.config/cbpp-compositor
 sudo chmod 0755 /etc/skel/.config/cbpp-places-pipemenu
+sudo chmod 0755 /etc/skel/.config/cbpp-recent-files-pipemenu
 sudo chmod 0755 /etc/skel/.config/cbpp-welcome
 sudo mv /etc/skel/.config/cbpp-exit /usr/bin
 sudo mv /etc/skel/.config/cbpp-help-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-compositor /usr/bin
 sudo mv /etc/skel/.config/cbpp-include.cfg /usr/bin
 sudo mv /etc/skel/.config/cbpp-places-pipemenu /usr/bin
+sudo mv /etc/skel/.config/cbpp-recent-files-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-welcome /usr/bin
 sudo find /home/$USER/.config/ | egrep "\cbpp-" | xargs sudo rm -f
 sudo find /root/.config/ | egrep "\cbpp-" | xargs sudo rm -f
