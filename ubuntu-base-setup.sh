@@ -50,25 +50,25 @@ PKGS=(
 
     # --- Importants
 
-    'xscreensaver'       # A screen saver and locker for the X
-    'xfce4-notifyd'      # Notification Daemon
-    'xcompmgr'           # A simple composite manager
-    'mate-power-manager' # MATE Power Manager
-    'suckless-tools'     # Generic menu for X (dmenu)
-    'gmrun'              # A lightweight application launcher
-    'gsimplecal'         # A simple, lightweight calendar
-    'conky'              # A system monitor software for the X Window System
-    'featherpad'         # Lightweight Qt plain text editor
-    'nitrogen'           # A fast and lightweight desktop background browser and setter for X Window
-    'obsession'          # Session Management Helper
-    'openbox'            # A lightweight, powerful, and highly configurable stacking window manager
-    'scrot'              # Simple command-line screenshot utility
-    'udiskie'            # An udisks2 front-end written in python
-    'pcmanfm-qt'         # The LXQt file manager
-    'tint2'              # A simple, unobtrusive and light panel for Xorg
-    'lxappearance'       # Set System Themes
-    'lxpolkit'           # LXDE PolicyKit authentication agent
-    #'lxdm'               # A lightweight display manager
+    'xscreensaver'             # A screen saver and locker for the X
+    'mate-notification-daemon' # Notification daemon for MATE
+    'xcompmgr'                 # A simple composite manager
+    'mate-power-manager'       # MATE Power Manager
+    'suckless-tools'           # Generic menu for X (dmenu)
+    'gmrun'                    # A lightweight application launcher
+    'gsimplecal'               # A simple, lightweight calendar
+    'conky'                    # A system monitor software for the X Window System
+    'featherpad'               # Lightweight Qt plain text editor
+    'nitrogen'                 # A fast and lightweight desktop background browser and setter for X Window
+    'obsession'                # Session Management Helper
+    'openbox'                  # A lightweight, powerful, and highly configurable stacking window manager
+    'scrot'                    # Simple command-line screenshot utility
+    'udiskie'                  # An udisks2 front-end written in python
+    'pcmanfm-qt'               # The LXQt file manager
+    'tint2'                    # A simple, unobtrusive and light panel for Xorg
+    'lxappearance'             # Set System Themes
+    'lxpolkit'                 # LXDE PolicyKit authentication agent
+    #'lxdm'                     # A lightweight display manager
 
     # DEVELOPMENT ---------------------------------------------------------
 
@@ -205,7 +205,7 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 echo -e "Purge unneccasary packages"
 sudo apt-get remove --purge -y apport mailutils clipit compton evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
     nfs-common portmap rpcbind rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist \
-    ldap-utils mate-media minetest xinetd pure-ftpd nis file-roller galculator terminator thunar thunar-data xfce4-power-manager xfburn
+    ldap-utils mate-media minetest xinetd pure-ftpd nis file-roller galculator terminator thunar thunar-data xfce4-power-manager xfburn xfce4-notifyd
 echo -e "Clear the patches"
 sudo rm -rfd $HOME/.cache/thumbnails
 sudo rm -rfd /var/cache/apt/archives/*
