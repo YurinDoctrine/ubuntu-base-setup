@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install --no-install-recommends -y kitty psmisc network-manager systemd git &&
+    sudo apt install --no-install-recommends -y kitty psmisc pulseaudio network-manager systemd git &&
     sudo apt install --install-recommends -y software-properties-common &&
     sudo apt install --no-install-recommends -y kubuntu-restricted-extras
 
@@ -77,9 +77,9 @@ PKGS=(
     # --- Audio
 
     'alsaplayer-common' # A heavily multi-threaded PCM player
-    'pavucontrol-qt'    # Pulse Audio volume control Qt port
     'pasystray'         # PulseAudio system tray
-    'pulsemixer'        # CLI and curses mixer for pulseaudio
+    'pavucontrol-qt'    # PulseAudio volume control Qt port
+    'pulsemixer'        # CLI and curses mixer for PulseAudio
 
     # --- Bluetooth
 
@@ -91,16 +91,12 @@ PKGS=(
     'dialog'         # A tool to display dialog boxes from shell scripts
     'fish'           # The friendly interactive shell
     'htop'           # Process viewer
+    'nano'           # A simple console based text editor
     'neofetch'       # Shows system info when you launch terminal
     'irssi'          # Terminal based IRC
     'p7zip'          # 7z compression program
     'fonts-terminus' # Font package with some bigger fonts for login terminal
-    'unrar'          # RAR compression program
-    'unzip'          # Zip compression program
-    'wget'           # Remote content retrieval
-    'nano'           # A simple console based text editor
     'zenity'         # Display graphical dialog boxes via shell scripts
-    'zip'            # Zip compression program
 
     # DISK UTILITIES ------------------------------------------------------
 
