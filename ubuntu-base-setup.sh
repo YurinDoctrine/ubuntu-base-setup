@@ -94,7 +94,6 @@ PKGS=(
     'nano'           # A simple console based text editor
     'neofetch'       # Shows system info when you launch terminal
     'irssi'          # Terminal based IRC
-    'p7zip'          # 7z compression program
     'fonts-terminus' # Font package with some bigger fonts for login terminal
     'zenity'         # Display graphical dialog boxes via shell scripts
 
