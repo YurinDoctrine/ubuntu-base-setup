@@ -233,7 +233,7 @@ sudo apt-mark hold flatpak
 
 echo -e "Clear the patches"
 sudo apt-get autoremove --purge -y
-sudo apt-get autoclean -y
+sudo apt-get autoclean
 sudo rm -rfd $HOME/.cache/thumbnails
 sudo rm -rfd /var/cache/apt/archives/*
 sync
@@ -316,6 +316,7 @@ extra() {
         chmod 0755 ultra-gaming-setup-wizard.sh &&
         ./ultra-gaming-setup-wizard.sh
 }
+
 extra2() {
     curl -fsSL https://raw.githubusercontent.com/YurinDoctrine/secure-linux/master/secure.sh >secure.sh &&
         chmod 0755 secure.sh &&
