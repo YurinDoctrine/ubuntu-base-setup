@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install --no-install-recommends -y kitty psmisc pulseaudio network-manager systemd git &&
+    sudo apt install --no-install-recommends -y 9base kitty psmisc pulseaudio network-manager systemd git &&
     sudo apt install --install-recommends -y software-properties-common &&
     sudo apt install --no-install-recommends -y kubuntu-restricted-extras
 
@@ -50,7 +50,6 @@ PKGS=(
 
     # --- Importants
 
-    'xscreensaver'             # A screen saver and locker for the X
     'mate-notification-daemon' # Notification daemon for MATE
     'xcompmgr'                 # A simple composite manager
     'mate-power-manager'       # MATE Power Manager
@@ -109,6 +108,7 @@ PKGS=(
     'filezilla'            # FTP Client
     'mate-calc'            # Calculator for the MATE
     'nocache'              # Minimize caching effects
+    'unclutter'            # A small program for hiding the mouse cursor
     'playerctl'            # Utility to control media players via MPRIS
     'transmission'         # BitTorrent client
     'preload'              # Makes applications run faster by prefetching binaries and shared objects
