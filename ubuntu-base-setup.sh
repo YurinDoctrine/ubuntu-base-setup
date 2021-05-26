@@ -47,7 +47,6 @@ echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguage
 echo -e "Installing Base System"
 
 PKGS=(
-
     # --- Importants
 
     'xcompmgr'           # A simple composite manager
