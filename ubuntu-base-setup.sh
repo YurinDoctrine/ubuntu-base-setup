@@ -90,7 +90,6 @@ PKGS=(
     'dash'           # A POSIX-compliant shell derived from ash
     'dialog'         # A tool to display dialog boxes from shell scripts
     'fish'           # The friendly interactive shell
-    'htop'           # Process viewer
     'nano'           # A simple console based text editor
     'neofetch'       # Shows system info when you launch terminal
     'irssi'          # Terminal based IRC
@@ -112,7 +111,6 @@ PKGS=(
     'nocache'              # Minimize caching effects
     'playerctl'            # Utility to control media players via MPRIS
     'transmission'         # BitTorrent client
-    'gnupg'                # Complete and free implementation of the OpenPGP standard
     'preload'              # Makes applications run faster by prefetching binaries and shared objects
     'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
 
