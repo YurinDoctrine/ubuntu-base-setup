@@ -261,8 +261,6 @@ git clone https://github.com/YurinDoctrine/.config.git &&
 sudo cp -R .config/.gmrunrc $HOME
 sudo cp -R .config/.gtkrc-2.0 $HOME
 sudo cp -R .config/.gtkrc-2.0.mine $HOME
-sudo cp -R .config/.Xresources $HOME
-sudo cp -R .config/.xscreensaver $HOME
 sudo cp -R .config/.fonts.conf $HOME
 sudo cp -R .config/.gtk-bookmarks $HOME
 sudo cp -R .config/* $HOME/.config
@@ -270,16 +268,12 @@ sudo cp -R .config/.conkyrc /etc/skel
 sudo cp -R .config/.gmrunrc /etc/skel
 sudo cp -R .config/.gtkrc-2.0 /etc/skel
 sudo cp -R .config/.gtkrc-2.0.mine /etc/skel
-sudo cp -R .config/.Xresources /etc/skel
-sudo cp -R .config/.xscreensaver /etc/skel
 sudo cp -R .config/.fonts.conf /etc/skel
 sudo cp -R .config/.gtk-bookmarks /etc/skel
 sudo cp -R .config/.conkyrc /root
 sudo cp -R .config/.gmrunrc /root
 sudo cp -R .config/.gtkrc-2.0 /root
 sudo cp -R .config/.gtkrc-2.0.mine /root
-sudo cp -R .config/.Xresources /root
-sudo cp -R .config/.xscreensaver /root
 sudo cp -R .config/.fonts.conf /root
 sudo cp -R .config/.gtk-bookmarks /root
 sudo mkdir /etc/skel/.config
