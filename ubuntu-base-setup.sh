@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install --no-install-recommends -y 9base kitty psmisc pulseaudio network-manager systemd git xorg &&
+    sudo apt install -y --no-install-recommends 9base kitty psmisc pulseaudio network-manager systemd git xorg &&
     sudo apt install --install-recommends -y software-properties-common &&
-    sudo apt install --no-install-recommends -y kubuntu-restricted-extras
+    sudo apt install -y --no-install-recommends kubuntu-restricted-extras
 
 # ------------------------------------------------------------------------
 
@@ -129,7 +129,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
     echo -e "INSTALLING: ${PKG}"
-    sudo apt install --no-install-recommends -y "$PKG"
+    sudo apt install -y --no-install-recommends "$PKG"
 done
 
 echo -e "Done!"
