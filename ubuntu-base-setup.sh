@@ -188,12 +188,12 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 # ------------------------------------------------------------------------
 
 echo -e "Disable bluez daemon(opt-out)"
-sudo systemctl disable bluetooth.service
+sudo systemctl disable --now bluetooth.service
 
-# --------------------------------------------------------------------$
+# ------------------------------------------------------------------------
 
 echo -e "Disable cups daemon(opt-out)"
-sudo systemctl disable cups.service
+sudo systemctl disable --now cups.service
 
 # ------------------------------------------------------------------------
 
@@ -202,7 +202,7 @@ sudo apt-get remove -y --purge apport mailutils clipit compton evince at avahi-d
     nfs-common evolution rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist galculator \
     ldap-utils mate-media minetest xinetd pure-ftpd file-roller catfish obconf terminator thunar thunar-data xfce4-power-manager xfburn xfce4-notifyd \
     deja-dup ibus nis nitrogen samba-common gstreamer1.0-fluendo-mp3 geary rhythmbox rpcbind shotwell thunderbird xfce4-screenshooter xfconf mousepad \
-    xscreensaver
+    xfce4-goodies xscreensaver
 sudo apt-mark hold apport
 echo -e "Remove snapd and flatpak garbages"
 sudo systemctl disable --now snapd
@@ -213,16 +213,14 @@ sudo systemctl disable snapd.seeded.service
 sudo systemctl disable snapd.autoimport.service
 sudo systemctl disable snapd.apparmor.service
 sudo rm -f /etc/apparmor.d/usr.lib.snapd.snap-confine.real
-
-sudo apt-get remove -y --purge snapd
-sudo apt-mark hold snapd
-
 sudo rm -rfd $HOME/snap
 sudo rm -rfd /snap
 sudo rm -rfd /var/snap
 sudo rm -rfd /var/lib/snapd
 sudo rm -rfd /var/cache/snapd
 sudo rm -rfd /usr/lib/snapd
+sudo apt-get remove -y --purge snapd
+sudo apt-mark hold snapd
 
 flatpak uninstall --all
 
