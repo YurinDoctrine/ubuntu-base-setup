@@ -88,6 +88,7 @@ PKGS=(
     'dash'           # A POSIX-compliant shell derived from ash
     'dialog'         # A tool to display dialog boxes from shell scripts
     'fish'           # The friendly interactive shell
+    'htop'           # Interactive process viewer
     'nano'           # A simple console based text editor
     'neofetch'       # Shows system info when you launch terminal
     'irssi'          # Terminal based IRC
@@ -213,14 +214,14 @@ sudo systemctl disable snapd.seeded.service
 sudo systemctl disable snapd.autoimport.service
 sudo systemctl disable snapd.apparmor.service
 sudo rm -f /etc/apparmor.d/usr.lib.snapd.snap-confine.real
+sudo apt-get remove -y --purge snapd
+sudo apt-mark hold snapd
 sudo rm -rfd $HOME/snap
 sudo rm -rfd /snap
 sudo rm -rfd /var/snap
 sudo rm -rfd /var/lib/snapd
 sudo rm -rfd /var/cache/snapd
 sudo rm -rfd /usr/lib/snapd
-sudo apt-get remove -y --purge snapd
-sudo apt-mark hold snapd
 
 flatpak uninstall --all
 
