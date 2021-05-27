@@ -198,10 +198,11 @@ sudo systemctl disable cups.service
 # ------------------------------------------------------------------------
 
 echo -e "Purge unneccasary packages"
-sudo apt-get remove --purge -y apport mailutils clipit compton evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
-    nfs-common rpcbind rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist galculator \
+sudo apt-get remove -y --purge apport mailutils clipit compton evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
+    nfs-common evolution rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist galculator \
     ldap-utils mate-media minetest xinetd pure-ftpd file-roller catfish obconf terminator thunar thunar-data xfce4-power-manager xfburn xfce4-notifyd \
-    evolution deja-dup ibus nis nitrogen samba-common gstreamer1.0-fluendo-mp3 geary rhythmbox shotwell thunderbird xfce4-screenshooter xfconf xscreensaver
+    deja-dup ibus nis nitrogen samba-common gstreamer1.0-fluendo-mp3 geary rhythmbox rpcbind shotwell thunderbird xfce4-screenshooter xfconf mousepad \
+    xscreensaver
 sudo apt-mark hold apport
 echo -e "Remove snapd and flatpak garbages"
 sudo systemctl disable --now snapd
@@ -213,7 +214,7 @@ sudo systemctl disable snapd.autoimport.service
 sudo systemctl disable snapd.apparmor.service
 sudo rm -f /etc/apparmor.d/usr.lib.snapd.snap-confine.real
 
-sudo apt-get remove --purge snapd -y
+sudo apt-get remove -y --purge snapd
 sudo apt-mark hold snapd
 
 sudo rm -rfd $HOME/snap
@@ -225,7 +226,7 @@ sudo rm -rfd /usr/lib/snapd
 
 flatpak uninstall --all
 
-sudo apt-get remove --purge flatpak -y
+sudo apt-get remove -y --purge flatpak
 sudo apt-mark hold flatpak
 
 # ------------------------------------------------------------------------
