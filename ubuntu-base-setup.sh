@@ -181,16 +181,16 @@ sudo killall -HUP pulseaudio
 
 # ------------------------------------------------------------------------
 
-echo -e "Disabling bluetooth daemon by comment it"
-sudo sed -i -e 's|AutoEnable=true|AutoEnable=false|g' /etc/bluetooth/main.conf
-
-# ------------------------------------------------------------------------
-
 # Prevent stupid error beeps*
 sudo rmmod pcspkr
 echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 # ------------------------------------------------------------------------
+
+echo -e "Disable bluez daemon(opt-out)"
+sudo systemctl disable bluetooth.service
+
+# --------------------------------------------------------------------$
 
 echo -e "Disable cups daemon(opt-out)"
 sudo systemctl disable cups.service
