@@ -249,6 +249,7 @@ git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo rm -rfd /usr/share/themes/CBPP
 git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
     sudo cp -R cbpp-ui-theme/cbpp-ui-theme/data/usr/share/themes/* /usr/share/themes &&
+    sudo mkdir /usr/share/backgrounds
     sudo rm -rfd /usr/share/backgrounds/*
 git clone --branch 11 https://github.com/CBPP/cbpp-wallpapers.git &&
     sudo cp -R cbpp-wallpapers/cbpp-wallpapers/data/usr/share/backgrounds/* /usr/share/backgrounds &&
