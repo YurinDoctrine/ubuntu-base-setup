@@ -244,8 +244,6 @@ sync
 
 # Implement .config/ files of the openbox
 cd /tmp &&
-    git clone --branch 11 https://github.com/CBPP/cbpp-configs.git &&
-    sudo cp -R cbpp-configs/cbpp-configs/data/usr/bin/* /usr/bin &&
     sudo rm -rfd /usr/share/icons/CBPP
 git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
     sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
@@ -287,12 +285,16 @@ sudo cp -R .config/* /root/.config
 sudo chmod 0755 /home/$USER/.config/dmenu/dmenu-bind.sh
 sudo chmod 0755 /etc/skel/.config/dmenu/dmenu-bind.sh
 sudo chmod 0755 /root/.config/dmenu/dmenu-bind.sh
+sudo chmod 0755 /etc/skel/.config/conkywonky
+sudo chmod 0755 /etc/skel/.config/tint2restart
 sudo chmod 0755 /etc/skel/.config/cbpp-exit
 sudo chmod 0755 /etc/skel/.config/cbpp-help-pipemenu
 sudo chmod 0755 /etc/skel/.config/cbpp-compositor
 sudo chmod 0755 /etc/skel/.config/cbpp-places-pipemenu
 sudo chmod 0755 /etc/skel/.config/cbpp-recent-files-pipemenu
 sudo chmod 0755 /etc/skel/.config/cbpp-welcome
+sudo mv /etc/skel/.config/conkywonky /usr/bin
+sudo mv /etc/skel/.config/tint2restart /usr/bin
 sudo mv /etc/skel/.config/cbpp-exit /usr/bin
 sudo mv /etc/skel/.config/cbpp-help-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-compositor /usr/bin
