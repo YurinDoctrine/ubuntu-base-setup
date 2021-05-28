@@ -63,6 +63,7 @@ PKGS=(
     'openbox'            # A lightweight, powerful, and highly configurable stacking window manager
     'scrot'              # Simple command-line screenshot utility
     'udiskie'            # An udisks2 front-end written in python
+    'pcmanfm-qt'         # The LXQt file manager
     'ranger'             # A file manager with vi key bindings written in python but with an interface that rocks
     'tint2'              # A simple, unobtrusive and light panel for Xorg
     'lxappearance'       # Set System Themes
@@ -200,7 +201,7 @@ sudo systemctl disable --now cups.service
 
 echo -e "Purge unneccasary packages"
 sudo apt-get remove -y --purge apport mailutils clipit compton evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
-    nfs-common evolution rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist galculator \
+   nfs-common evolution rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist galculator \
     ldap-utils mate-media minetest xinetd pure-ftpd file-roller catfish obconf terminator thunar thunar-data xfce4-power-manager xfburn xfce4-notifyd \
     deja-dup ibus nis nitrogen samba-common gstreamer1.0-fluendo-mp3 geary rhythmbox rpcbind shotwell thunderbird xfce4-screenshooter xfconf mousepad \
     xfce4-goodies xscreensaver
@@ -340,12 +341,12 @@ final() {
         if [[ "$noc" == "yes" ]]; then
             echo -e "RUNNING ..."
             chsh -s /usr/bin/fish         # Change default shell before leaving.
-            sudo ln -sfT dash /usr/bin/sh # Link dash to /usr/bin/sh
+            sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
             extra2
         elif [[ "$noc" == "no" ]]; then
             echo -e "LEAVING ..."
             chsh -s /usr/bin/fish         # Change default shell before leaving.
-            sudo ln -sfT dash /usr/bin/sh # Link dash to /usr/bin/sh
+            sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
             exit 0
         else
             echo -e "INVALID VALUE!"
