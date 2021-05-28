@@ -158,8 +158,8 @@ sudo sed -i -e 's|#HandleLidSwitch=suspend|HandleLidSwitch=suspend|g' /etc/syste
 # ------------------------------------------------------------------------
 
 echo "Disabling buggy cursor inheritance"
-# When you boot with multiple monitors the cursor can look huge. This fixes this...
-sudo echo -e "[Icon Theme]
+# When you boot with multiple monitors the cursor can look huge. This fixes that...
+echo -e "[Icon Theme]
 #Inherits=Theme
 " | sudo tee /usr/share/icons/default/index.theme
 
