@@ -91,7 +91,7 @@ PKGS=(
     'fish'           # The friendly interactive shell
     'htop'           # Interactive process viewer
     'neofetch'       # Shows system info when you launch terminal
-    'neovim'        # Fork of Vim aiming to improve user experience, plugins, and GUIs
+    'neovim'         # Fork of Vim aiming to improve user experience, plugins, and GUIs
     'irssi'          # Terminal based IRC
     'fonts-terminus' # Font package with some bigger fonts for login terminal
 
