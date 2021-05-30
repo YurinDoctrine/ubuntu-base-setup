@@ -70,6 +70,20 @@ PKGS=(
     'lxpolkit'           # LXDE PolicyKit authentication agent
     #'lxdm'               # A lightweight display manager
 
+    # GENERAL UTILITIES ---------------------------------------------------
+
+    'apt-cacher'           # A caching proxy for Debian packages
+    'arandr'               # Provide a simple visual front end for XRandR
+    'bc'                   # An arbitrary precision calculator language
+    'engrampa'             # Archive manipulator for MATE
+    'filezilla'            # FTP Client
+    'nocache'              # Minimize caching effects
+    'unclutter'            # A small program for hiding the mouse cursor
+    'playerctl'            # Utility to control media players via MPRIS
+    'transmission-gtk'     # BitTorrent client
+    'preload'              # Makes applications run faster by prefetching binaries and shared objects
+    'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
+
     # DEVELOPMENT ---------------------------------------------------------
 
     'python3-pip' # The official package installer for Python
@@ -87,31 +101,15 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
 
-    'dialog'         # A tool to display dialog boxes from shell scripts
-    'fish'           # The friendly interactive shell
-    'htop'           # Interactive process viewer
-    'neofetch'       # Shows system info when you launch terminal
-    'neovim'         # Fork of Vim aiming to improve user experience, plugins, and GUIs
-    'irssi'          # Terminal based IRC
-    'fonts-terminus' # Font package with some bigger fonts for login terminal
+    'dialog' # A tool to display dialog boxes from shell scripts
+    'fish'   # The friendly interactive shell
+    'htop'   # Interactive process viewer
+    'neovim' # Fork of Vim aiming to improve user experience, plugins, and GUIs
+    'irssi'  # Terminal based IRC
 
     # DISK UTILITIES ------------------------------------------------------
 
     'gparted' # Disk utility
-
-    # GENERAL UTILITIES ---------------------------------------------------
-
-    'apt-cacher'           # A caching proxy for Debian packages
-    'arandr'               # Provide a simple visual front end for XRandR
-    'bc'                   # An arbitrary precision calculator language
-    'engrampa'             # Archive manipulator for MATE
-    'filezilla'            # FTP Client
-    'nocache'              # Minimize caching effects
-    'unclutter'            # A small program for hiding the mouse cursor
-    'playerctl'            # Utility to control media players via MPRIS
-    'transmission-gtk'     # BitTorrent client
-    'preload'              # Makes applications run faster by prefetching binaries and shared objects
-    'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
 
     # GRAPHICS, VIDEO AND DESIGN ------------------------------------------
 
