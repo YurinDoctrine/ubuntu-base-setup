@@ -307,6 +307,10 @@ sudo mv /etc/skel/.config/cbpp-recent-files-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-welcome /usr/bin
 sudo find /home/$USER/.config/ | egrep "\cbpp-" | xargs sudo rm -f
 sudo find /root/.config/ | egrep "\cbpp-" | xargs sudo rm -f
+sudo find /home/$USER/.config/ | egrep "\conkywonky" | xargs sudo rm -f
+sudo find /root/.config/ | egrep "\conkywonky" | xargs sudo rm -f
+sudo find /home/$USER/.config/ | egrep "\tint2restart" | xargs sudo rm -f
+sudo find /root/.config/ | egrep "\tint2restart" | xargs sudo rm -f
 
 echo -e "XDG_CURRENT_DESKTOP=LXDE
 QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
