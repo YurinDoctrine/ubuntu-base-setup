@@ -72,7 +72,6 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
 
-    'apt-cacher'           # A caching proxy for Debian packages
     'arandr'               # Provide a simple visual front end for XRandR
     'bc'                   # An arbitrary precision calculator language
     'engrampa'             # Archive manipulator for MATE
@@ -161,13 +160,6 @@ echo -e "Disabling buggy cursor inheritance"
 echo -e "[Icon Theme]
 #Inherits=Theme
 " | sudo tee /usr/share/icons/default/index.theme
-
-# ------------------------------------------------------------------------
-
-echo -e "Increasing file watcher count"
-# This prevents a "too many files" error in Visual Studio Code
-echo -e "fs.inotify.max_user_watches=524288" | sudo tee /etc/sysctl.d/40-max-user-watches.conf &&
-    sudo sysctl --system
 
 # ------------------------------------------------------------------------
 
