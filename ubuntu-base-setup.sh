@@ -85,7 +85,7 @@ PKGS=(
 
     # DEVELOPMENT ---------------------------------------------------------
 
-    'python3-pip' # The official package installer for Python
+    'ccache' # Compiler cacher
 
     # --- Audio
 
