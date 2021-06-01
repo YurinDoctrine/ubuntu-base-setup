@@ -23,9 +23,9 @@ sudo apt-get remove --purge \
     texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
     texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 find /usr/share/doc/ -depth -type f ! -name copyright | xargs sudo rm -f || true
-find /usr/share/doc/ | egrep "\.gz" | xargs sudo rm -f
-find /usr/share/doc/ | egrep "\.pdf" | xargs sudo rm -f
-find /usr/share/doc/ | egrep "\.tex" | xargs sudo rm -f
+find /usr/share/doc/ | egrep '\.gz' | xargs sudo rm -f
+find /usr/share/doc/ | egrep '\.pdf' | xargs sudo rm -f
+find /usr/share/doc/ | egrep '\.tex' | xargs sudo rm -f
 find /usr/share/doc/ -empty | xargs sudo rmdir || true
 sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
     /usr/share/linda/* /var/cache/man/* /usr/share/man/*
@@ -295,12 +295,12 @@ sudo mv /etc/skel/.config/cbpp-include.cfg /usr/bin
 sudo mv /etc/skel/.config/cbpp-places-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-recent-files-pipemenu /usr/bin
 sudo mv /etc/skel/.config/cbpp-welcome /usr/bin
-sudo find /home/$USER/.config/ | egrep "\cbpp-" | xargs sudo rm -f
-sudo find /root/.config/ | egrep "\cbpp-" | xargs sudo rm -f
-sudo find /home/$USER/.config/ | egrep "\conkywonky" | xargs sudo rm -f
-sudo find /root/.config/ | egrep "\conkywonky" | xargs sudo rm -f
-sudo find /home/$USER/.config/ | egrep "\tint2restart" | xargs sudo rm -f
-sudo find /root/.config/ | egrep "\tint2restart" | xargs sudo rm -f
+sudo find /home/$USER/.config/ | egrep '\cbpp-' | xargs sudo rm -f
+sudo find /root/.config/ | egrep '\cbpp-' | xargs sudo rm -f
+sudo find /home/$USER/.config/ | egrep '\conkywonky' | xargs sudo rm -f
+sudo find /root/.config/ | egrep '\conkywonky' | xargs sudo rm -f
+sudo find /home/$USER/.config/ | egrep '\tint2restart' | xargs sudo rm -f
+sudo find /root/.config/ | egrep '\tint2restart' | xargs sudo rm -f
 
 echo -e "XDG_CURRENT_DESKTOP=LXDE
 QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
