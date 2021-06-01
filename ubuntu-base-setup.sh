@@ -145,6 +145,11 @@ sudo sed -i -e 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: A
 
 # ------------------------------------------------------------------------
 
+echo -e "Display asterisks when sudo"
+echo -e "Defaults        pwfeedback" | sudo tee -a /etc/sudoers
+
+# ------------------------------------------------------------------------
+
 echo -e "Configuring vconsole.conf to set a larger font for login shell"
 echo -e "FONT=ter-v32b" | sudo tee /etc/vconsole.conf
 
