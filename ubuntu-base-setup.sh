@@ -259,7 +259,7 @@ git clone --branch 11 https://github.com/CBPP/cbpp-wallpapers.git &&
     sudo rm -rfd /usr/share/lxdm/themes/*
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
-sudo rm -rfd /home/$USER/.config
+sudo rm -rfd /home/$USER/.config/*
 git clone https://github.com/YurinDoctrine/.config.git &&
     sudo cp -R .config/.conkyrc $HOME
 sudo cp -R .config/.gmrunrc $HOME
