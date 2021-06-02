@@ -59,7 +59,6 @@ PKGS=(
     'conky'              # A system monitor software for the X Window System
     'dunst'              # Customizable and lightweight notification-daemon
     'featherpad'         # Lightweight Qt plain text editor
-    'obsession'          # Session Management Helper
     'openbox'            # A lightweight, powerful, and highly configurable stacking window manager
     'scrot'              # Simple command-line screenshot utility
     'udiskie'            # An udisks2 front-end written in python
