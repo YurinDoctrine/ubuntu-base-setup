@@ -193,6 +193,12 @@ sudo systemctl disable --now cups.service
 
 # ------------------------------------------------------------------------
 
+# btrfs tweaks if disk is
+sudo btrfs scrub start /
+sudo btrfs balance start -musage=50 -dusage=50 /
+
+# ------------------------------------------------------------------------
+
 echo -e "Purge unneccasary packages"
 sudo apt-get remove -y --purge apport mailutils clipit compton evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
     nfs-common evolution rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist galculator \
@@ -253,6 +259,7 @@ git clone --branch 11 https://github.com/CBPP/cbpp-wallpapers.git &&
     sudo rm -rfd /usr/share/lxdm/themes/*
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
 sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
+sudo rm -rfd /home/$USER/.config
 git clone https://github.com/YurinDoctrine/.config.git &&
     sudo cp -R .config/.conkyrc $HOME
 sudo cp -R .config/.gmrunrc $HOME
