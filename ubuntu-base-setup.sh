@@ -198,6 +198,11 @@ sudo btrfs balance start -musage=50 -dusage=50 /
 
 # ------------------------------------------------------------------------
 
+echo -e "Apply disk tweaks"
+sudo sed -i -e 's|defaults |defaults,noatime,commit=60 |g' /etc/fstab
+
+# ------------------------------------------------------------------------
+
 echo -e "Purge unneccasary packages"
 sudo apt-get remove -y --purge apport mailutils clipit compton evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
     nfs-common evolution rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist galculator \
