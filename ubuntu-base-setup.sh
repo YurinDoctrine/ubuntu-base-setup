@@ -72,7 +72,6 @@ PKGS=(
     # GENERAL UTILITIES ---------------------------------------------------
 
     'arandr'               # Provide a simple visual front end for XRandR
-    'bc'                   # An arbitrary precision calculator language
     'engrampa'             # Archive manipulator for MATE
     'filezilla'            # FTP Client
     'nocache'              # Minimize caching effects
