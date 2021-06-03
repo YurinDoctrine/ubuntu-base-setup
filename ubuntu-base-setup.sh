@@ -76,7 +76,6 @@ PKGS=(
     'engrampa'             # Archive manipulator for MATE
     'filezilla'            # FTP Client
     'nocache'              # Minimize caching effects
-    'unclutter'            # A small program for hiding the mouse cursor
     'playerctl'            # Utility to control media players via MPRIS
     'transmission-gtk'     # BitTorrent client
     'preload'              # Makes applications run faster by prefetching binaries and shared objects
