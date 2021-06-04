@@ -202,9 +202,8 @@ sudo sed -i -e 's|defaults |defaults,noatime,commit=60 |g' /etc/fstab
 
 # ------------------------------------------------------------------------
 
-# Change swappiness value
-echo -e "vm.swappiness=10" | sudo tee /etc/sysctl.d/99-swappi
-ness.conf
+# Tune swappiness value
+echo -e "vm.swappiness=10" | sudo tee /etc/sysctl.d/99-swappiness.conf
 
 # ------------------------------------------------------------------------
 
