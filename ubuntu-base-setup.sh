@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -y --no-install-recommends 9base curl kitty psmisc pulseaudio network-manager systemd git xorg &&
+    sudo apt install -y --no-install-recommends 9base curl kitty procps psmisc pulseaudio network-manager systemd git xorg &&
     sudo apt install --install-recommends -y software-properties-common &&
     sudo apt install -y --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
 
@@ -77,6 +77,7 @@ PKGS=(
     'nocache'              # Minimize caching effects
     'playerctl'            # Utility to control media players via MPRIS
     'transmission-gtk'     # BitTorrent client
+    'powertop'             # A tool to diagnose issues with power consumption and power management
     'preload'              # Makes applications run faster by prefetching binaries and shared objects
     'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
 
@@ -197,12 +198,19 @@ sudo btrfs balance start -musage=50 -dusage=50 /
 # ------------------------------------------------------------------------
 
 echo -e "Apply disk tweaks"
-sudo sed -i -e 's|defaults |defaults,noatime,commit=60 |g' /etc/fstab
+sudo sed -i -e 's|defaults|defaults,noatime,commit=60|g' /etc/fstab
+sudo sed -i -e 's|errors=remount-ro 0|noatime,commit=60,errors=remount-ro 0|g' /etc/fstab
 
 # ------------------------------------------------------------------------
 
 # Tune swappiness value
 echo -e "vm.swappiness=10" | sudo tee /etc/sysctl.d/99-swappiness.conf
+
+# ------------------------------------------------------------------------
+
+echo -e "Apply powertop tunes"
+sudo powertop --auto-tune
+sudo systemctl enable --now powertop.service
 
 # ------------------------------------------------------------------------
 
