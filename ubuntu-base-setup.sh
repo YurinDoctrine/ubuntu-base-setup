@@ -102,6 +102,7 @@ PKGS=(
     'htop'   # Interactive process viewer
     'neovim' # Fork of Vim aiming to improve user experience, plugins, and GUIs
     'irssi'  # Terminal based IRC
+    'xsel'   # A command-line program for getting and setting the contents of the X selection
 
     # DISK UTILITIES ------------------------------------------------------
 
