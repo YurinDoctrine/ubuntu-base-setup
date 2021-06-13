@@ -49,37 +49,40 @@ echo -e "Installing Base System"
 PKGS=(
     # --- Importants
 
-    'xcompmgr'           # A simple composite manager
-    'xwallpaper'         # A lightweight and simple desktop background setter for X Window
-    'mate-power-manager' # MATE Power Manager
-    'mksh'               # MirBSD Korn Shell
-    'suckless-tools'     # Generic menu for X (dmenu)
-    'gmrun'              # A lightweight application launcher
-    'gsimplecal'         # A simple, lightweight calendar
-    'conky'              # A system monitor software for the X Window System
-    'dunst'              # Customizable and lightweight notification-daemon
-    'featherpad'         # Lightweight Qt plain text editor
-    'openbox'            # A lightweight, powerful, and highly configurable stacking window manager
-    'scrot'              # Simple command-line screenshot utility
-    'udiskie'            # An udisks2 front-end written in python
-    'pcmanfm-qt'         # The LXQt file manager
-    'ranger'             # A file manager with vi key bindings written in python but with an interface that rocks
-    'tint2'              # A simple, unobtrusive and light panel for Xorg
-    'lxappearance'       # Set System Themes
-    'lxpolkit'           # LXDE PolicyKit authentication agent
-    #'lxdm'               # A lightweight display manager
+    'arandr'               # Provide a simple visual front end for XRandR
+    'engrampa'             # Archive manipulator for MATE
+    'mate-power-manager'   # MATE Power Manager
+    'mksh'                 # MirBSD Korn Shell
+    'suckless-tools'       # Generic menu for X (dmenu)
+    'gmrun'                # A lightweight application launcher
+    'gsimplecal'           # A simple, lightweight calendar
+    'conky'                # A system monitor software for the X Window System
+    'dunst'                # Customizable and lightweight notification-daemon
+    'featherpad'           # Lightweight Qt plain text editor
+    'openbox'              # A lightweight, powerful, and highly configurable stacking window manager
+    'scrot'                # Simple command-line screenshot utility
+    'udiskie'              # An udisks2 front-end written in python
+    'pcmanfm-qt'           # The LXQt file manager
+    'ranger'               # A file manager with vi key bindings written in python but with an interface that rocks
+    'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
+    'tint2'                # A simple, unobtrusive and light panel for Xorg
+    'xwallpaper'           # A lightweight and simple desktop background setter for X Window
+    'xcompmgr'             # A simple composite manager
+    'lxappearance'         # Set System Themes
+    'lxpolkit'             # LXDE PolicyKit authentication agent
+    #'lxdm'                 # A lightweight display manager
+
+    # --- Network
+
+    'filezilla'        # FTP Client
+    'irssi'            # Terminal based IRC
+    'transmission-gtk' # BitTorrent client
 
     # GENERAL UTILITIES ---------------------------------------------------
 
-    'arandr'               # Provide a simple visual front end for XRandR
-    'engrampa'             # Archive manipulator for MATE
-    'filezilla'            # FTP Client
-    'nocache'              # Minimize caching effects
-    'playerctl'            # Utility to control media players via MPRIS
-    'transmission-gtk'     # BitTorrent client
-    'powertop'             # A tool to diagnose issues with power consumption and power management
-    'preload'              # Makes applications run faster by prefetching binaries and shared objects
-    'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
+    'nocache'  # Minimize caching effects
+    'powertop' # A tool to diagnose issues with power consumption and power management
+    'preload'  # Makes applications run faster by prefetching binaries and shared objects
 
     # DEVELOPMENT ---------------------------------------------------------
 
@@ -89,6 +92,7 @@ PKGS=(
 
     'alsaplayer-common' # A heavily multi-threaded PCM player
     'pasystray'         # PulseAudio system tray
+    'playerctl'         # Utility to control media players via MPRIS
     'pulsemixer'        # CLI and curses mixer for PulseAudio
 
     # --- Bluetooth
@@ -100,8 +104,6 @@ PKGS=(
     'fish'   # The friendly interactive shell
     'htop'   # Interactive process viewer
     'neovim' # Fork of Vim aiming to improve user experience, plugins, and GUIs
-    'irssi'  # Terminal based IRC
-    'xsel'   # A command-line program for getting and setting the contents of the X selection
 
     # DISK UTILITIES ------------------------------------------------------
 
