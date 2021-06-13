@@ -97,7 +97,6 @@ PKGS=(
 
     # TERMINAL UTILITIES --------------------------------------------------
 
-    'dialog' # A tool to display dialog boxes from shell scripts
     'fish'   # The friendly interactive shell
     'htop'   # Interactive process viewer
     'neovim' # Fork of Vim aiming to improve user experience, plugins, and GUIs
