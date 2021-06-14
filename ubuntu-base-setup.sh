@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -y --no-install-recommends 9base curl kitty procps psmisc pulseaudio network-manager systemd git xorg &&
+    sudo apt install -y --no-install-recommends 9base build-essential curl kitty procps psmisc pulseaudio network-manager systemd git xorg &&
     sudo apt install --install-recommends -y software-properties-common &&
     sudo apt install -y --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
 
@@ -53,7 +53,7 @@ PKGS=(
     'engrampa'             # Archive manipulator for MATE
     'mate-power-manager'   # MATE Power Manager
     'mksh'                 # MirBSD Korn Shell
-    'suckless-tools'       # Generic menu for X (dmenu)
+    'suckless-tools'       # Simple commands for minimalistic window managers
     'gmrun'                # A lightweight application launcher
     'gsimplecal'           # A simple, lightweight calendar
     'conky'                # A system monitor software for the X Window System
