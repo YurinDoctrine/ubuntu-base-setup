@@ -303,18 +303,6 @@ sudo mkdir /etc/skel/.config
 sudo cp -R .config/* /etc/skel/.config
 sudo mkdir /root/.config
 sudo cp -R .config/* /root/.config
-sudo chmod 0755 /home/$USER/.config/dmenu/dmenu-bind.sh
-sudo chmod 0755 /etc/skel/.config/dmenu/dmenu-bind.sh
-sudo chmod 0755 /root/.config/dmenu/dmenu-bind.sh
-sudo chmod 0755 /etc/skel/.config/conkywonky
-sudo chmod 0755 /etc/skel/.config/tint2restart
-sudo chmod 0755 /etc/skel/.config/cbpp-exit
-sudo chmod 0755 /etc/skel/.config/cbpp-gksudo
-sudo chmod 0755 /etc/skel/.config/cbpp-help-pipemenu
-sudo chmod 0755 /etc/skel/.config/cbpp-compositor
-sudo chmod 0755 /etc/skel/.config/cbpp-places-pipemenu
-sudo chmod 0755 /etc/skel/.config/cbpp-recent-files-pipemenu
-sudo chmod 0755 /etc/skel/.config/cbpp-welcome
 sudo mv /etc/skel/.config/conkywonky /usr/bin
 sudo mv /etc/skel/.config/tint2restart /usr/bin
 sudo mv /etc/skel/.config/cbpp-exit /usr/bin
