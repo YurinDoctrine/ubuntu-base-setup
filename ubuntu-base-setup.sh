@@ -320,8 +320,8 @@ sudo find /root/.config/ | egrep '\conkywonky' | xargs sudo rm -f
 sudo find /home/$USER/.config/ | egrep '\tint2restart' | xargs sudo rm -f
 sudo find /root/.config/ | egrep '\tint2restart' | xargs sudo rm -f
 
-echo -e "export XDG_CURRENT_DESKTOP=LXDE
-export QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
+echo -e "XDG_CURRENT_DESKTOP=LXDE
+QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
 
 # ------------------------------------------------------------------------
 
