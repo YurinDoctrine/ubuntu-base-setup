@@ -49,78 +49,13 @@ echo -e "Installing Base System"
 PKGS=(
     # --- Importants
 
-    'arandr'               # Provide a simple visual front end for XRandR
-    'engrampa'             # Archive manipulator for MATE
-    'mate-power-manager'   # MATE Power Manager
     'mksh'                 # MirBSD Korn Shell
-    'suckless-tools'       # Simple commands for minimalistic window managers
-    'gmrun'                # A lightweight application launcher
-    'gsimplecal'           # A simple, lightweight calendar
-    'conky'                # A system monitor software for the X Window System
-    'dunst'                # Customizable and lightweight notification-daemon
-    'featherpad'           # Lightweight Qt plain text editor
-    'openbox'              # A lightweight, powerful, and highly configurable stacking window manager
-    'scrot'                # Simple command-line screenshot utility
-    'udiskie'              # An udisks2 front-end written in python
-    'pcmanfm-qt'           # The LXQt file manager
-    'ranger'               # A file manager with vi key bindings written in python but with an interface that rocks
-    'simplescreenrecorder' # A feature-rich screen recorder that supports X11 and OpenGL
-    'tint2'                # A simple, unobtrusive and light panel for Xorg
-    'xwallpaper'           # A lightweight and simple desktop background setter for X Window
-    'xcompmgr'             # A simple composite manager
-    'lxappearance'         # Set System Themes
-    'lxpolkit'             # LXDE PolicyKit authentication agent
-    #'lxdm'                 # A lightweight display manager
-
-    # --- Network
-
-    'filezilla'        # FTP Client
-    'irssi'            # Terminal based IRC
-    'transmission-gtk' # BitTorrent client
 
     # GENERAL UTILITIES ---------------------------------------------------
 
     'nocache'  # Minimize caching effects
     'powertop' # A tool to diagnose issues with power consumption and power management
     'preload'  # Makes applications run faster by prefetching binaries and shared objects
-
-    # DEVELOPMENT ---------------------------------------------------------
-
-    # (Empty)
-
-    # --- Audio
-
-    'alsaplayer-common' # A heavily multi-threaded PCM player
-    'pasystray'         # PulseAudio system tray
-    'playerctl'         # Utility to control media players via MPRIS
-    'pulsemixer'        # CLI and curses mixer for PulseAudio
-
-    # --- Bluetooth
-
-    'blueman' # GTK+ Bluetooth Manager
-
-    # TERMINAL UTILITIES --------------------------------------------------
-
-    'fish'   # The friendly interactive shell
-    'htop'   # Interactive process viewer
-
-    # DISK UTILITIES ------------------------------------------------------
-
-    'gparted' # Disk utility
-
-    # GRAPHICS, VIDEO AND DESIGN ------------------------------------------
-
-    'pinta'    # A simplified alternative to GIMP
-    'viewnior' # A simple, fast and elegant image viewer
-    'vlc'      # A free and open source cross-platform multimedia player and framework
-
-    # PRINTING ------------------------------------------------------------
-
-    'abiword'               # Fully-featured word processor
-    'atril'                 # PDF viewer
-    'cups'                  # The CUPS Printing System - daemon package
-    'gnumeric'              # A powerful spreadsheet application
-    'system-config-printer' # A CUPS printer configuration tool and status applet
 
 )
 
@@ -182,16 +117,6 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 # ------------------------------------------------------------------------
 
-echo -e "Disable bluez daemon(opt-out)"
-sudo systemctl disable --now bluetooth.service
-
-# ------------------------------------------------------------------------
-
-echo -e "Disable cups daemon(opt-out)"
-sudo systemctl disable --now cups.service
-
-# ------------------------------------------------------------------------
-
 # btrfs tweaks if disk is
 sudo btrfs scrub start /
 sudo btrfs balance start -musage=50 -dusage=50 /
@@ -215,41 +140,6 @@ sudo systemctl enable --now powertop.service
 
 # ------------------------------------------------------------------------
 
-echo -e "Purge unneccasary packages"
-sudo apt-get remove -y --purge apport mailutils clipit compton evince at avahi-daemon avahi-utils geany gigolo gimp hexchat dovecot nfs-kernel-server \
-    nfs-common evolution rsh-client rsh-redone-client autofs snmp talk telnetd inetutils-telnetd zeitgeist-core zeitgeist-datahub zeitgeist galculator \
-    ldap-utils mate-media minetest xinetd pure-ftpd file-roller catfish obconf terminator thunar thunar-data xfce4-power-manager xfburn xfce4-notifyd \
-    deja-dup ibus nis nitrogen samba-common gstreamer1.0-fluendo-mp3 geary rhythmbox rpcbind shotwell thunderbird xfce4-screenshooter xfconf mousepad \
-    libreoffice libreoffice-base-core libreoffice-core obsession pavucontrol xfce4-goodies xscreensaver xtightvncviewer
-sudo apt-mark hold apport
-echo -e "Remove snapd and flatpak garbages"
-sudo systemctl disable --now snapd
-sudo umount /run/snap/ns
-sudo systemctl disable snapd.service
-sudo systemctl disable snapd.socket
-sudo systemctl disable snapd.seeded.service
-sudo systemctl disable snapd.autoimport.service
-sudo systemctl disable snapd.apparmor.service
-
-sudo rm -f /etc/apparmor.d/usr.lib.snapd.snap-confine.real
-
-sudo apt-get remove -y --purge snapd
-sudo apt-mark hold snapd
-
-sudo rm -rfd $HOME/snap
-sudo rm -rfd /snap
-sudo rm -rfd /var/snap
-sudo rm -rfd /var/lib/snapd
-sudo rm -rfd /var/cache/snapd
-sudo rm -rfd /usr/lib/snapd
-
-flatpak uninstall --all
-
-sudo apt-get remove -y --purge flatpak
-sudo apt-mark hold flatpak
-
-# ------------------------------------------------------------------------
-
 echo -e "Clear the patches"
 sudo apt-get autoremove -y --purge
 sudo apt-get autoclean
@@ -257,70 +147,6 @@ sudo apt-get clean
 sudo rm -rfd $HOME/.cache/thumbnails
 sudo rm -rfd /var/cache/apt/archives/*
 sync
-
-# ------------------------------------------------------------------------
-
-# Implement .config/ files of the openbox
-cd /tmp &&
-    sudo rm -rfd /usr/share/icons/CBPP
-git clone --branch 11 https://github.com/CBPP/cbpp-icon-theme.git &&
-    sudo cp -R cbpp-icon-theme/cbpp-icon-theme/data/usr/share/icons/* /usr/share/icons &&
-    sudo rm -rfd /usr/share/themes/CBPP
-git clone --branch 11 https://github.com/CBPP/cbpp-ui-theme.git &&
-    sudo cp -R cbpp-ui-theme/cbpp-ui-theme/data/usr/share/themes/* /usr/share/themes &&
-    sudo mkdir /usr/share/backgrounds
-sudo rm -rfd /usr/share/backgrounds/*
-git clone --branch 11 https://github.com/CBPP/cbpp-wallpapers.git &&
-    sudo cp -R cbpp-wallpapers/cbpp-wallpapers/data/usr/share/backgrounds/* /usr/share/backgrounds &&
-    git clone --branch 11 https://github.com/CBPP/cbpp-lxdm-theme.git &&
-    sudo rm -rfd /usr/share/lxdm/themes/*
-sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/etc/lxdm/* /etc/lxdm
-sudo cp -R cbpp-lxdm-theme/cbpp-lxdm-theme/data/usr/share/lxdm/themes/* /usr/share/lxdm/themes
-sudo rm -rfd /home/$USER/.config/*
-sudo rm -rfd /etc/skel/.config/*
-git clone https://github.com/YurinDoctrine/.config.git &&
-    sudo cp -R .config/.conkyrc $HOME
-sudo cp -R .config/.gmrunrc $HOME
-sudo cp -R .config/.gtkrc-2.0 $HOME
-sudo cp -R .config/.gtkrc-2.0.mine $HOME
-sudo cp -R .config/.fonts.conf $HOME
-sudo cp -R .config/.gtk-bookmarks $HOME
-sudo cp -R .config/* $HOME/.config
-sudo cp -R .config/.conkyrc /etc/skel
-sudo cp -R .config/.gmrunrc /etc/skel
-sudo cp -R .config/.gtkrc-2.0 /etc/skel
-sudo cp -R .config/.gtkrc-2.0.mine /etc/skel
-sudo cp -R .config/.fonts.conf /etc/skel
-sudo cp -R .config/.gtk-bookmarks /etc/skel
-sudo cp -R .config/.conkyrc /root
-sudo cp -R .config/.gmrunrc /root
-sudo cp -R .config/.gtkrc-2.0 /root
-sudo cp -R .config/.gtkrc-2.0.mine /root
-sudo cp -R .config/.fonts.conf /root
-sudo cp -R .config/.gtk-bookmarks /root
-sudo mkdir /etc/skel/.config
-sudo cp -R .config/* /etc/skel/.config
-sudo mkdir /root/.config
-sudo cp -R .config/* /root/.config
-sudo mv /etc/skel/.config/conkywonky /usr/bin
-sudo mv /etc/skel/.config/tint2restart /usr/bin
-sudo mv /etc/skel/.config/cbpp-exit /usr/bin
-sudo mv /etc/skel/.config/cbpp-gksudo /usr/bin
-sudo mv /etc/skel/.config/cbpp-help-pipemenu /usr/bin
-sudo mv /etc/skel/.config/cbpp-compositor /usr/bin
-sudo mv /etc/skel/.config/cbpp-include.cfg /usr/bin
-sudo mv /etc/skel/.config/cbpp-places-pipemenu /usr/bin
-sudo mv /etc/skel/.config/cbpp-recent-files-pipemenu /usr/bin
-sudo mv /etc/skel/.config/cbpp-welcome /usr/bin
-sudo find /home/$USER/.config/ | egrep '\cbpp-' | xargs sudo rm -f
-sudo find /root/.config/ | egrep '\cbpp-' | xargs sudo rm -f
-sudo find /home/$USER/.config/ | egrep '\conkywonky' | xargs sudo rm -f
-sudo find /root/.config/ | egrep '\conkywonky' | xargs sudo rm -f
-sudo find /home/$USER/.config/ | egrep '\tint2restart' | xargs sudo rm -f
-sudo find /root/.config/ | egrep '\tint2restart' | xargs sudo rm -f
-
-echo -e "export XDG_CURRENT_DESKTOP=LXDE
-export QT_QPA_PLATFORMTHEME=gtk2" | sudo tee -a /etc/environment
 
 # ------------------------------------------------------------------------
 
@@ -348,7 +174,6 @@ final() {
     read -p $'yes/no >_: ' ans
     if [[ "$ans" == "yes" ]]; then
         echo -e "RUNNING ..."
-        chsh -s /usr/bin/fish         # Change default shell before leaving.
         sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
         extra
     elif [[ "$ans" == "no" ]]; then
@@ -358,12 +183,10 @@ final() {
         read -p $'yes/no >_: ' noc
         if [[ "$noc" == "yes" ]]; then
             echo -e "RUNNING ..."
-            chsh -s /usr/bin/fish         # Change default shell before leaving.
             sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
             extra2
         elif [[ "$noc" == "no" ]]; then
             echo -e "LEAVING ..."
-            chsh -s /usr/bin/fish         # Change default shell before leaving.
             sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
             exit 0
         else
