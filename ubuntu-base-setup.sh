@@ -49,7 +49,7 @@ echo -e "Installing Base System"
 PKGS=(
     # --- Importants
 
-    'mksh'                 # MirBSD Korn Shell
+    'mksh' # MirBSD Korn Shell
 
     # GENERAL UTILITIES ---------------------------------------------------
 
