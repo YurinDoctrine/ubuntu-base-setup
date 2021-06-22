@@ -338,7 +338,7 @@ extra2() {
 
 final() {
 
-    sleep 0.3 && clear
+    clear
     echo -e "
 ###############################################################################
 # All Done! Would you also mind to run the author's ultra-gaming-setup-wizard?
