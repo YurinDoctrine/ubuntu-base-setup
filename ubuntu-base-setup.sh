@@ -144,6 +144,7 @@ echo -e "Clear the patches"
 sudo apt-get autoremove -y --purge
 sudo apt-get autoclean
 sudo apt-get clean
+rm -rfd /tmp/*
 sudo rm -rfd $HOME/.cache/thumbnails
 sudo rm -rfd /var/cache/apt/archives/*
 sudo rm -rfd /var/lib/dpkg/info
