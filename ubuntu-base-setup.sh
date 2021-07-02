@@ -148,7 +148,7 @@ rm -rfd /tmp/*
 sudo rm -rfd $HOME/.cache/thumbnails
 sudo rm -rfd /var/cache/apt/archives/*
 sudo rm -rfd /var/lib/dpkg/info
-sudo rm -rfd /var/lib/dpkg/info
+sudo mkdir /var/lib/dpkg/info
 sudo dpkg --configure -a
 sync
 
