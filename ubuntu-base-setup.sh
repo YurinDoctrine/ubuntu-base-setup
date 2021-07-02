@@ -178,7 +178,7 @@ final() {
         elif [[ "$noc" == "no" ]]; then
             echo -e "LEAVING ..."
             sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
-            exit 0
+            return 0
         else
             echo -e "INVALID VALUE!"
             final
