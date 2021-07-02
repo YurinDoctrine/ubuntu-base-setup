@@ -140,20 +140,6 @@ sudo systemctl enable --now powertop.service
 
 # ------------------------------------------------------------------------
 
-echo -e "Clear the patches"
-sudo apt-get autoremove -y --purge
-sudo apt-get autoclean
-sudo apt-get clean
-rm -rfd /tmp/*
-sudo rm -rfd $HOME/.cache/thumbnails
-sudo rm -rfd /var/cache/apt/archives/*
-sudo rm -rfd /var/lib/dpkg/info
-sudo mkdir /var/lib/dpkg/info
-sudo dpkg --configure -a
-sync
-
-# ------------------------------------------------------------------------
-
 extra() {
     curl -fsSL https://raw.githubusercontent.com/YurinDoctrine/ultra-gaming-setup-wizard/main/ultra-gaming-setup-wizard.sh >ultra-gaming-setup-wizard.sh &&
         chmod 0755 ultra-gaming-setup-wizard.sh &&
@@ -203,3 +189,18 @@ final() {
     fi
 }
 final
+
+# ------------------------------------------------------------------------
+
+echo -e "Clear the patches"
+sudo apt-get autoremove -y --purge
+sudo apt-get autoclean
+sudo apt-get clean
+rm -rfd /tmp/*
+sudo rm -rfd $HOME/.cache/thumbnails
+sudo rm -rfd /var/cache/apt/archives/*
+sudo rm -rfd /var/lib/dpkg/info
+sudo mkdir /var/lib/dpkg/info
+sudo dpkg --configure -a
+sync
+
