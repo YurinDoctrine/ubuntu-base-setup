@@ -146,6 +146,8 @@ sudo apt-get autoclean
 sudo apt-get clean
 sudo rm -rfd $HOME/.cache/thumbnails
 sudo rm -rfd /var/cache/apt/archives/*
+sudo rm -rfd /var/lib/dpkg/info
+sudo dpkg --configure -a
 sync
 
 # ------------------------------------------------------------------------
