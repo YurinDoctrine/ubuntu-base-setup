@@ -141,12 +141,14 @@ sudo systemctl enable --now powertop.service
 # ------------------------------------------------------------------------
 
 extra() {
+    cd /tmp
     curl -fsSL https://raw.githubusercontent.com/YurinDoctrine/ultra-gaming-setup-wizard/main/ultra-gaming-setup-wizard.sh >ultra-gaming-setup-wizard.sh &&
         chmod 0755 ultra-gaming-setup-wizard.sh &&
         ./ultra-gaming-setup-wizard.sh
 }
 
 extra2() {
+    cd /tmp
     curl -fsSL https://raw.githubusercontent.com/YurinDoctrine/secure-linux/master/secure.sh >secure.sh &&
         chmod 0755 secure.sh &&
         ./secure.sh
