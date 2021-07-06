@@ -54,7 +54,6 @@ PKGS=(
     # GENERAL UTILITIES ---------------------------------------------------
 
     'nocache'  # Minimize caching effects
-    'powertop' # A tool to diagnose issues with power consumption and power management
     'preload'  # Makes applications run faster by prefetching binaries and shared objects
 
 )
@@ -131,12 +130,6 @@ sudo sed -i -e 's| errors=remount-ro 0 | noatime,commit=60,errors=remount-ro 0 |
 
 # Tune swappiness value
 echo -e "vm.swappiness=10" | sudo tee /etc/sysctl.d/99-swappiness.conf
-
-# ------------------------------------------------------------------------
-
-echo -e "Apply powertop tunes"
-sudo powertop --auto-tune
-sudo systemctl enable --now powertop.service
 
 # ------------------------------------------------------------------------
 
