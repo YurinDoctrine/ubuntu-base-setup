@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -y 9base curl git nano network-manager procps psmisc systemd vim xorg &&
-    sudo apt install -y software-properties-common &&
-    sudo apt install -y --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
+    sudo apt install -fy 9base curl git nano network-manager procps psmisc systemd vim xorg &&
+    sudo apt install -fy software-properties-common &&
+    sudo apt install -fy --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
 
 # ------------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
     echo -e "INSTALLING: ${PKG}"
-    sudo apt install -y --no-install-recommends "$PKG"
+    sudo apt install -fy --no-install-recommends "$PKG"
 done
 
 echo -e "Done!"
@@ -117,7 +117,6 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 # ------------------------------------------------------------------------
 
 # btrfs tweaks if disk is
-sudo btrfs scrub start /
 sudo btrfs balance start -musage=50 -dusage=50 /
 
 # ------------------------------------------------------------------------
