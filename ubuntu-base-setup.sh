@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -fy 9base curl git nano network-manager procps psmisc systemd vim xorg &&
-    sudo apt install -fy software-properties-common &&
-    sudo apt install -fy --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
+    sudo apt install -fy --assume-yes 9base curl git nano network-manager procps psmisc systemd vim xorg &&
+    sudo apt install -fy --assume-yes software-properties-common &&
+    sudo apt install -fy --assume-yes --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
 
 # ------------------------------------------------------------------------
 
@@ -60,7 +60,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
     echo -e "INSTALLING: ${PKG}"
-    sudo apt install -fy --no-install-recommends "$PKG"
+    sudo apt install -fy --assume-yes --no-install-recommends "$PKG"
 done
 
 echo -e "Done!"
@@ -192,6 +192,7 @@ sudo rm -rfd $HOME/.cache/thumbnails
 sudo rm -rfd /var/cache/apt/archives/*
 sudo rm -rfd /var/lib/dpkg/info/*.postinst
 sudo dpkg --configure -a
+sudo apt-get remove -y --purge $(/bin/dpkg -l | /bin/egrep "^rc" | /bin/awk '{print $2}')
 sudo apt-get autoremove -y --purge
 sudo apt-get autoclean
 sudo apt-get clean
