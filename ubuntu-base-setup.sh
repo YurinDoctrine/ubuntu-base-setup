@@ -195,5 +195,10 @@ sudo dpkg --configure -a
 sudo apt-get autoremove -y --purge
 sudo apt-get autoclean
 sudo apt-get clean
+
+# ------------------------------------------------------------------------
+
+echo -e "Clean archived journal"
+journalctl --rotate --vacuum-size=1M
 sync
 
