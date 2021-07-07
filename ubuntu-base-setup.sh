@@ -200,6 +200,6 @@ sudo apt-get clean
 # ------------------------------------------------------------------------
 
 echo -e "Clean archived journal"
-journalctl --rotate --vacuum-size=1M
+sudo journalctl --rotate --vacuum-size=1M
 sync
 
