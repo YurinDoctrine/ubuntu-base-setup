@@ -87,11 +87,6 @@ echo -e "FONT=ter-v32b" | sudo tee /etc/vconsole.conf
 
 # ------------------------------------------------------------------------
 
-echo -e "Setting laptop lid close to suspend"
-sudo sed -i -e 's|#HandleLidSwitch=suspend|HandleLidSwitch=suspend|g' /etc/systemd/logind.conf
-
-# ------------------------------------------------------------------------
-
 echo -e "Disabling buggy cursor inheritance"
 # When you boot with multiple monitors the cursor can look huge. This fixes that...
 echo -e "[Icon Theme]
