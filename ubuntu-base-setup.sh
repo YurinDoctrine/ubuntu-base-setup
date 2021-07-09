@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -fy --assume-yes 9base curl git nano network-manager procps psmisc systemd vim xorg &&
+    sudo apt install -fy --assume-yes 9base curl git procps &&
     sudo apt install -fy --assume-yes software-properties-common &&
     sudo apt install -fy --assume-yes --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
 
