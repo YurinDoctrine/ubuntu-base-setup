@@ -72,8 +72,6 @@ echo -e "FINAL SETUP AND CONFIGURATION"
 # Sudo rights
 echo -e "Add sudo rights"
 sudo sed -i -e 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
-echo -e "Remove no password sudo rights"
-sudo sed -i -e 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/' /etc/sudoers
 
 # ------------------------------------------------------------------------
 
