@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -fy --assume-yes 9base curl git &&
-    sudo apt install -fy --assume-yes software-properties-common &&
-    sudo apt install -fy --assume-yes --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
+    sudo apt install -f --assume-yes 9base curl firmware-linux git &&
+    sudo apt install -f --assume-yes software-properties-common &&
+    sudo apt install -f --assume-yes --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
 
 # ------------------------------------------------------------------------
 
@@ -59,7 +59,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
     echo -e "INSTALLING: ${PKG}"
-    sudo apt install -fy --assume-yes --no-install-recommends "$PKG"
+    sudo apt install -f --assume-yes --no-install-recommends "$PKG"
 done
 
 echo -e "Done!"
@@ -121,6 +121,11 @@ sudo sed -i -e 's| errors=remount-ro 0 | noatime,commit=60,errors=remount-ro 0 |
 
 # Tune swappiness value
 echo -e "vm.swappiness=10" | sudo tee /etc/sysctl.d/99-swappiness.conf
+
+# ------------------------------------------------------------------------
+
+# Enable trim
+sudo systemctl start fstrim.timer
 
 # ------------------------------------------------------------------------
 
