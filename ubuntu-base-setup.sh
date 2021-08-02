@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -f --assume-yes 9base curl firmware-linux git &&
+    sudo apt install -f --assume-yes 9base curl git &&
     sudo apt install -f --assume-yes software-properties-common &&
     sudo apt install -f --assume-yes --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
 
