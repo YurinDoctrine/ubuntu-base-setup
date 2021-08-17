@@ -108,6 +108,11 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 # ------------------------------------------------------------------------
 
+# Suppress the task timeout messages Ubuntu spams
+echo -e 0 | sudo tee /proc/sys/kernel/hung_task_timeout_secs
+
+# ------------------------------------------------------------------------
+
 # btrfs tweaks if disk is
 sudo btrfs balance start -musage=50 -dusage=50 /
 
