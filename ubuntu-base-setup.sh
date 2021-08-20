@@ -7,13 +7,14 @@ sudo apt update &&
 
 # ------------------------------------------------------------------------
 
-# Setting up locales
+# Setting up locales & timezones
 echo -e "LANG=en_GB.UTF8" | sudo tee -a /etc/locale.conf
 echo -e "LANG=en_GB.UTF8" | sudo tee -a /etc/environment
 echo -e "LC_ALL=en_GB.UTF8" | sudo tee -a /etc/environment
 sudo sed -i -e 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
 sudo locale-gen en_GB.UTF-8
 localectl set-locale LANG=en_GB.UTF-8 LC_TIME=en_GB.UTF-8
+timedatectl set-timezone Europe/Moscow
 
 # ------------------------------------------------------------------------
 
