@@ -141,6 +141,14 @@ sudo sed -i -e '/floppy/d' /etc/fstab
 
 # ------------------------------------------------------------------------
 
+## Tmpfs RAM
+echo -e "
+tmpfs /dev/shm tmpfs nodev,nosuid,noexec 0 0
+tmpfs /tmp tmpfs nodev,nosuid,size=512M 0 0
+/tmp /var/tmp none bind 0 0" | sudo tee -a /etc/fstab
+
+# ------------------------------------------------------------------------
+
 extra() {
     cd /tmp
     curl --tlsv1.2 -fsSL https://raw.githubusercontent.com/YurinDoctrine/ultra-gaming-setup-wizard/main/ultra-gaming-setup-wizard.sh >ultra-gaming-setup-wizard.sh &&
