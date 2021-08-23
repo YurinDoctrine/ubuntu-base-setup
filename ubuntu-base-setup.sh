@@ -156,6 +156,12 @@ tmpfs /tmp tmpfs nodev,nosuid,size=512M 0 0
 
 # ------------------------------------------------------------------------
 
+## GRUB timeout
+sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+sudo update-grub
+
+# ------------------------------------------------------------------------
+
 extra() {
     cd /tmp
     curl --tlsv1.2 -fsSL https://raw.githubusercontent.com/YurinDoctrine/ultra-gaming-setup-wizard/main/ultra-gaming-setup-wizard.sh >ultra-gaming-setup-wizard.sh &&
