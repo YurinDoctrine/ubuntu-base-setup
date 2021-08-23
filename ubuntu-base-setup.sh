@@ -116,6 +116,12 @@ echo -e 0 | sudo tee /proc/sys/kernel/hung_task_timeout_secs
 
 # ------------------------------------------------------------------------
 
+# Prevent motd news*
+sudo sed -i -e 's/ENABLED=.*/ENABLED=0/' /etc/default/motd-news
+sudo systemctl mask motd-news.timer
+
+# ------------------------------------------------------------------------
+
 # btrfs tweaks if disk is
 sudo btrfs balance start -musage=50 -dusage=50 /
 
