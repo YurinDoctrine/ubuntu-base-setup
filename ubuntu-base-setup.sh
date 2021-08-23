@@ -13,8 +13,8 @@ echo -e "LANG=en_GB.UTF8" | sudo tee -a /etc/locale.conf
 echo -e "LANG=en_GB.UTF8" | sudo tee -a /etc/environment
 echo -e "LC_ALL=en_GB.UTF8" | sudo tee -a /etc/environment
 sudo sed -i -e 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
-sudo locale-gen en_GB.UTF-8
-localectl set-locale LANG=en_GB.UTF-8 LC_TIME=en_GB.UTF-8
+sudo apt install --reinstall --purge -y locales
+timedatectl set-ntp true
 timedatectl set-timezone Europe/Moscow
 
 # ------------------------------------------------------------------------
@@ -143,8 +143,9 @@ sudo systemctl start fstrim.timer
 
 # ------------------------------------------------------------------------
 
-## Mount and FSTAB
+## Remove floppy cdrom
 sudo sed -i -e '/\/floppy/d' /etc/fstab
+sudo sed -i -e '/\/sr/d' /etc/fstab
 
 # ------------------------------------------------------------------------
 
@@ -159,6 +160,13 @@ tmpfs /tmp tmpfs nodev,nosuid,size=512M 0 0
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo update-grub
+
+# ------------------------------------------------------------------------
+
+## DPKG keep current versions of configs
+echo -e "
+force-confdef
+force-confold" | sudo tee -a /etc/dpkg/dpkg.cfg
 
 # ------------------------------------------------------------------------
 
@@ -215,14 +223,13 @@ extra2() {
 
 echo -e "Clear the patches"
 rm -rfd /{tmp,var/tmp}/{.*,*}
-sudo rm -rfd $HOME/.cache/thumbnails
 sudo rm -rfd /var/cache/apt/archives/*
 sudo rm -rfd /var/lib/dpkg/info/*.postinst
-sudo apt-get remove -y --purge $(/bin/dpkg -l | /bin/egrep "^rc" | /bin/awk '{print $2}')
 sudo dpkg --configure -a
+sudo apt-get clean -y
+sudo apt-get autoclean -y
+sudo apt-get remove -y --purge $(/bin/dpkg -l | /bin/egrep "^rc" | /bin/awk '{print $2}')
 sudo apt-get autoremove -y --purge
-sudo apt-get autoclean
-sudo apt-get clean
 
 # ------------------------------------------------------------------------
 
