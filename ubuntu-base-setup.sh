@@ -144,7 +144,7 @@ sudo systemctl start fstrim.timer
 # ------------------------------------------------------------------------
 
 ## Mount and FSTAB
-sudo sed -i -e '/floppy/d' /etc/fstab
+sudo sed -i -e '/\/floppy/d' /etc/fstab
 
 # ------------------------------------------------------------------------
 
