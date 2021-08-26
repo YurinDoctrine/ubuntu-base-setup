@@ -149,14 +149,6 @@ sudo sed -i -e '/\/sr/d' /etc/fstab
 
 # ------------------------------------------------------------------------
 
-## Tmpfs RAM
-echo -e "
-tmpfs /dev/shm tmpfs nodev,nosuid,noexec 0 0
-tmpfs /tmp tmpfs nodev,nosuid,size=512M 0 0
-/tmp /var/tmp none bind 0 0" | sudo tee -a /etc/fstab
-
-# ------------------------------------------------------------------------
-
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo update-grub
