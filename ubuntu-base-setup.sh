@@ -221,7 +221,7 @@ sudo dpkg --configure -a
 sudo apt-get clean -y
 sudo apt-get autoclean -y
 sudo apt-get remove -y --purge $(/bin/dpkg -l | /bin/egrep "^rc" | /bin/awk '{print $2}')
-#sudo apt-get remove -y --purge $(/bin/dpkg -l | /bin/egrep "\-doc" | /bin/awk '{print $2}')
+sudo apt-get remove -y --purge $(/bin/dpkg -l | /bin/egrep "\-doc " | /bin/awk '{print $2}')
 sudo apt-get autoremove -y --purge
 sudo apt-get install -f --assume-yes
 
