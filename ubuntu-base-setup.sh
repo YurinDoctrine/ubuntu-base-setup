@@ -136,7 +136,7 @@ sudo sed -i -e 's| errors=remount-ro 0 | noatime,commit=60,errors=remount-ro 0 |
 # ------------------------------------------------------------------------
 
 # Tune swappiness value
-echo -e "vm.swappiness=10" | sudo tee /etc/sysctl.d/99-swappiness.conf
+echo -e "vm.swappiness=5" | sudo tee /etc/sysctl.d/99-swappiness.conf
 
 # ------------------------------------------------------------------------
 
