@@ -14,10 +14,10 @@ echo -e "LANG=en_GB.UTF8" | sudo tee -a /etc/environment
 echo -e "LC_ALL=en_GB.UTF8" | sudo tee -a /etc/environment
 sudo sed -i -e 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
 sudo apt install --reinstall --purge -y locales
-sudo dpkg-reconfigure -f locales
+sudo dpkg-reconfigure -f noninteractive locales
 timedatectl set-ntp true
 timedatectl set-timezone Europe/Moscow
-sudo dpkg-reconfigure -f tzdata
+sudo dpkg-reconfigure -f noninteractive tzdata
 
 # ------------------------------------------------------------------------
 
