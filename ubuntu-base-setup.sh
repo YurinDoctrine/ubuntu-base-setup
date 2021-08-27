@@ -17,6 +17,7 @@ sudo apt install --reinstall --purge -y locales
 sudo dpkg-reconfigure -f locales
 timedatectl set-ntp true
 timedatectl set-timezone Europe/Moscow
+sudo dpkg-reconfigure -f tzdata
 
 # ------------------------------------------------------------------------
 
