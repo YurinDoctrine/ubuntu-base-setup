@@ -1,10 +1,23 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -f --assume-yes 9base curl git wget &&
+    sudo apt install -f --assume-yes 9base curl git software-properties-common wget &&
     sudo apt install -f --assume-yes ubuntu-drivers-common &&
-    sudo apt install -f --assume-yes software-properties-common &&
     sudo apt install -f --assume-yes --no-install-recommends kubuntu-restricted-extras kubuntu-restricted-addons
+
+# ------------------------------------------------------------------------
+
+echo -e "# we need to keep copyright files for legal reasons
+path-include /usr/share/doc/*/copyright
+path-exclude /usr/share/doc/*
+path-exclude /usr/share/man/*
+path-exclude /usr/share/groff/*
+path-exclude /usr/share/info/*
+# lintian stuff is small, but really unnecessary
+path-exclude /usr/share/lintian/*
+path-exclude /usr/share/linda/*" | sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc
+echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguages
+echo -e 'Acquire::Languages "none";' | sudo tee /etc/dpkg/dpkg.cfg.d/90nolanguages
 
 # ------------------------------------------------------------------------
 
@@ -17,7 +30,6 @@ sudo apt install --reinstall --purge -y locales
 sudo dpkg-reconfigure -f noninteractive locales
 timedatectl set-ntp true
 timedatectl set-timezone Europe/Moscow
-sudo dpkg-reconfigure -f noninteractive tzdata
 
 # ------------------------------------------------------------------------
 
@@ -33,17 +45,6 @@ find /usr/share/doc/ | egrep '\.tex' | xargs sudo rm -f
 find /usr/share/doc/ -empty | xargs sudo rmdir || true
 sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
     /usr/share/linda/* /var/cache/man/* /usr/share/man/*
-
-echo -e "# we need to keep copyright files for legal reasons
-path-include /usr/share/doc/*/copyright
-path-exclude /usr/share/doc/*
-path-exclude /usr/share/man/*
-path-exclude /usr/share/groff/*
-path-exclude /usr/share/info/*
-# lintian stuff is small, but really unnecessary
-path-exclude /usr/share/lintian/*
-path-exclude /usr/share/linda/*" | sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc
-echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguages
 
 # ------------------------------------------------------------------------
 
@@ -225,8 +226,8 @@ sudo apt-get clean -y
 sudo apt-get autoclean -y
 sudo apt-get remove -y --purge $(/bin/dpkg -l | /bin/egrep "^rc" | /bin/awk '{print $2}')
 sudo apt-get remove -y --purge $(/bin/dpkg -l | /bin/egrep "\-doc " | /bin/awk '{print $2}')
-sudo apt-get autoremove -y --purge
 sudo apt-get install -f --assume-yes
+sudo apt-get autoremove -y --purge
 
 # ------------------------------------------------------------------------
 
