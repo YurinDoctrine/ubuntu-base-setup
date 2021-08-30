@@ -178,40 +178,40 @@ extra2() {
         ./secure.sh
 }
 
-    sleep 1s
-    clear
-    echo -e "
+sleep 1s
+clear
+echo -e "
 ###############################################################################
 # All Done! Would you also mind to run the author's ultra-gaming-setup-wizard?
 ###############################################################################
 "
 
-    read -p $'yes/no >_: ' ans
-    if [[ "$ans" == "yes" ]]; then
+read -p $'yes/no >_: ' ans
+if [[ "$ans" == "yes" ]]; then
+    echo -e "RUNNING ..."
+    sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
+    extra
+elif [[ "$ans" == "no" ]]; then
+    echo -e "LEAVING ..."
+    echo -e ""
+    echo -e "FINAL: DO YOU ALSO WANT TO RUN THE AUTHOR'S secure-linux?"
+    read -p $'yes/no >_: ' noc
+    if [[ "$noc" == "yes" ]]; then
         echo -e "RUNNING ..."
         sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
-        extra
-    elif [[ "$ans" == "no" ]]; then
+        extra2
+    elif [[ "$noc" == "no" ]]; then
         echo -e "LEAVING ..."
-        echo -e ""
-        echo -e "FINAL: DO YOU ALSO WANT TO RUN THE AUTHOR'S secure-linux?"
-        read -p $'yes/no >_: ' noc
-        if [[ "$noc" == "yes" ]]; then
-            echo -e "RUNNING ..."
-            sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
-            extra2
-        elif [[ "$noc" == "no" ]]; then
-            echo -e "LEAVING ..."
-            sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
-            return 0
-        else
-            echo -e "INVALID VALUE!"
-            final
-        fi
+        sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
+        return 0
     else
         echo -e "INVALID VALUE!"
         final
     fi
+else
+    echo -e "INVALID VALUE!"
+    final
+fi
 cd
 
 # ------------------------------------------------------------------------
