@@ -17,7 +17,6 @@ path-exclude /usr/share/info/*
 path-exclude /usr/share/lintian/*
 path-exclude /usr/share/linda/*" | sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc
 echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguages
-echo -e 'Acquire::Languages "none";' | sudo tee /etc/dpkg/dpkg.cfg.d/90nolanguages
 
 # ------------------------------------------------------------------------
 
