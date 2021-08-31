@@ -23,6 +23,7 @@ echo -e 'Acquire::Languages "none";' | sudo tee /etc/dpkg/dpkg.cfg.d/90nolanguag
 
 # Setting up locales & timezones
 echo -e "LANG=en_GB.UTF8" | sudo tee -a /etc/environment
+echo -e "LANGUAGE=en_GB.UTF8" | sudo tee -a /etc/environment
 echo -e "LC_ALL=en_GB.UTF8" | sudo tee -a /etc/environment
 sudo apt install --reinstall --purge -y locales
 sudo sed -i -e 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
