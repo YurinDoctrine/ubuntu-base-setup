@@ -158,9 +158,10 @@ sudo update-grub
 # ------------------------------------------------------------------------
 
 ## DPKG keep current versions of configs
-echo -e "
-force-confdef
-force-confold" | sudo tee -a /etc/dpkg/dpkg.cfg
+echo -e 'Dpkg::Options {
+   "--force-confold";
+   "--force-confdef";
+};' | sudo tee /etc/apt/apt.conf.d/71debconf
 
 # ------------------------------------------------------------------------
 
