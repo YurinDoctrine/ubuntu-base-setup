@@ -89,14 +89,6 @@ echo -e "FONT=ter-v32b" | sudo tee /etc/vconsole.conf
 
 # ------------------------------------------------------------------------
 
-echo -e "Disabling buggy cursor inheritance"
-# When you boot with multiple monitors the cursor can look huge. This fixes that...
-echo -e "[Icon Theme]
-#Inherits=Theme
-" | sudo tee /usr/share/icons/default/index.theme
-
-# ------------------------------------------------------------------------
-
 echo -e "Disabling Pulse .esd_auth module"
 sudo killall -9 pulseaudio
 # Pulse audio loads the `esound-protocol` module, which best I can tell is rarely needed.
