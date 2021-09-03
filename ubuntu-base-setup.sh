@@ -156,6 +156,11 @@ ulimit -c unlimited
 
 # ------------------------------------------------------------------------
 
+echo -e "Disable wait online services"
+sudo systemctl disable NetworkManager-wait-online.service
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo update-grub
