@@ -143,9 +143,8 @@ sudo sed -i -e '/\/sr/d' /etc/fstab
 
 # ------------------------------------------------------------------------
 
-## GRUB timeout
-sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
-sudo update-grub
+echo -e "Optimize systemd"
+sudo systemctl set-default multi-user.target
 
 # ------------------------------------------------------------------------
 
@@ -154,6 +153,17 @@ echo -e 'Dpkg::Options {
    "--force-confold";
    "--force-confdef";
 };' | sudo tee /etc/apt/apt.conf.d/71debconf
+
+# ------------------------------------------------------------------------
+
+## Set ulimit to unlimited
+ulimit -c unlimited
+
+# ------------------------------------------------------------------------
+
+## GRUB timeout
+sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+sudo update-grub
 
 # ------------------------------------------------------------------------
 
@@ -223,12 +233,12 @@ sudo apt-get autoremove -y --purge
 
 # ------------------------------------------------------------------------
 
-echo -e "Clean archived journal"
-sudo journalctl --rotate --vacuum-size=1M
-sudo sed -i -e 's/^#ForwardToSyslog=yes/ForwardToSyslog=no/' /etc/systemd/journald.conf
+## Optimize font cache
+mkfontscale && mkfontdir && fc-cache -fv
 
 # ------------------------------------------------------------------------
 
-## Optimize font cache
-mkfontscale && mkfontdir && fc-cache -fv
+echo -e "Clean archived journal"
+sudo journalctl --rotate --vacuum-size=1M
+sudo sed -i -e 's/^#ForwardToSyslog=yes/ForwardToSyslog=no/' /etc/systemd/journald.conf
 sync
