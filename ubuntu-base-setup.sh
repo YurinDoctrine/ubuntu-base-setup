@@ -143,11 +143,6 @@ sudo sed -i -e '/\/sr/d' /etc/fstab
 
 # ------------------------------------------------------------------------
 
-echo -e "Optimize systemd"
-sudo systemctl set-default multi-user.target
-
-# ------------------------------------------------------------------------
-
 ## DPKG keep current versions of configs
 echo -e 'Dpkg::Options {
    "--force-confold";
