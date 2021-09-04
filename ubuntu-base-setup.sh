@@ -161,6 +161,11 @@ sudo systemctl disable NetworkManager-wait-online.service
 
 # ------------------------------------------------------------------------
 
+echo -e "Disable SELINUX"
+echo -e "SELINUX=disabled" | sudo tee /etc/selinux/config
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo update-grub
