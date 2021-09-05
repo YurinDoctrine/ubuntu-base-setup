@@ -128,8 +128,14 @@ sudo sed -i -e 's| errors=remount-ro 0 | noatime,commit=60,errors=remount-ro 0 |
 # ------------------------------------------------------------------------
 
 # Tune swappiness value
-sudo sed -i -e '/\/swappiness/d' /etc/sysctl.conf
-echo -e "vm.swappiness=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
+sudo sed -i -e '/^\/\/swappiness/d' /etc/sysctl.conf
+echo -e "vm.swappiness=1
+vm.vfs_cache_pressure=50
+vm.overcommit_memory = 1
+vm.dirty_background_ratio = 5
+vm.dirty_ratio = 10
+vm.dirty_expire_centisecs = 1000
+dev.rtc.max-user-freq = 1024" | sudo tee /etc/sysctl.d/99-swappiness.conf
 
 # ------------------------------------------------------------------------
 
@@ -139,8 +145,8 @@ sudo systemctl start fstrim.timer
 # ------------------------------------------------------------------------
 
 ## Remove floppy cdrom
-sudo sed -i -e '/\/floppy/d' /etc/fstab
-sudo sed -i -e '/\/sr/d' /etc/fstab
+sudo sed -i -e '/^\/\/floppy/d' /etc/fstab
+sudo sed -i -e '/^\/\/sr/d' /etc/fstab
 
 # ------------------------------------------------------------------------
 
