@@ -135,7 +135,8 @@ vm.overcommit_memory = 1
 vm.dirty_background_ratio = 5
 vm.dirty_ratio = 10
 vm.dirty_expire_centisecs = 1000
-dev.rtc.max-user-freq = 1024" | sudo tee /etc/sysctl.d/99-swappiness.conf
+dev.rtc.max-user-freq = 1024
+net.ipv4.tcp_low_latency=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
 
 # ------------------------------------------------------------------------
 
