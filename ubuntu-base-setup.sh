@@ -139,8 +139,7 @@ vm.dirty_ratio = 10
 dev.rtc.max-user-freq = 1024
 net.ipv4.tcp_frto=1
 net.ipv4.tcp_frto_response=2
-net.ipv4.tcp_low_latency=1
-net.ipv4.tcp_mtu_probing=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
+net.ipv4.tcp_low_latency=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
 
 # ------------------------------------------------------------------------
 
