@@ -174,7 +174,7 @@ echo -e "SELINUX=disabled" | sudo tee /etc/selinux/config
 # ------------------------------------------------------------------------
 
 ## GRUB timeout
-sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub
+sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo update-grub
 
 # ------------------------------------------------------------------------
