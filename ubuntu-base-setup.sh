@@ -131,6 +131,7 @@ sudo sed -i -e 's| errors=remount-ro 0 | noatime,commit=60,errors=remount-ro 0 |
 sudo sed -i -e '/^\/\/swappiness/d' /etc/sysctl.conf
 echo -e "vm.swappiness=1
 vm.vfs_cache_pressure=50
+vm.mmap_min_addr = 4096
 vm.overcommit_memory = 1
 vm.overcommit_ratio = 50
 vm.dirty_background_ratio = 5
