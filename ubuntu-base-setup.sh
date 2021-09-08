@@ -145,6 +145,8 @@ net.ipv4.tcp_low_latency=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
 
 # Enable trim
 sudo systemctl start fstrim.timer
+echo -e "Run fstrim"
+sudo fstrim -Av
 
 # ------------------------------------------------------------------------
 
@@ -259,8 +261,3 @@ echo -e "Clean archived journal"
 sudo journalctl --rotate --vacuum-size=1M
 sudo sed -i -e 's/^#ForwardToSyslog=yes/ForwardToSyslog=no/' /etc/systemd/journald.conf
 sync
-
-# ------------------------------------------------------------------------
-
-echo -e "Run fstrim"
-sudo fstrim -av
