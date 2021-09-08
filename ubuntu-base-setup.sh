@@ -155,10 +155,12 @@ sudo sed -i -e '/^\/\/sr/d' /etc/fstab
 # ------------------------------------------------------------------------
 
 ## DPKG keep current versions of configs
-echo -e 'Dpkg::Options {
+echo -e 'DPkg::Options {
    "--force-confold";
    "--force-confdef";
 };' | sudo tee /etc/apt/apt.conf.d/71debconf
+## APT no install suggests
+echo -e 'APT::Get::Install-Suggests "false";' | sudo tee /etc/apt/apt.conf.d/95suggests
 
 # ------------------------------------------------------------------------
 
