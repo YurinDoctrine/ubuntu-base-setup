@@ -257,6 +257,8 @@ mkfontscale && mkfontdir && fc-cache -fv
 
 # ------------------------------------------------------------------------
 
+echo -e "Clean crash log"
+sudo rm -rfd /var/crash/*
 echo -e "Clean archived journal"
 sudo journalctl --rotate --vacuum-size=1M
 sudo sed -i -e 's/^#ForwardToSyslog=yes/ForwardToSyslog=no/' /etc/systemd/journald.conf
