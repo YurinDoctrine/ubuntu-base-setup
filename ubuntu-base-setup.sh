@@ -140,8 +140,7 @@ dev.rtc.max-user-freq = 1024
 net.ipv4.tcp_frto=1
 net.ipv4.tcp_frto_response=2
 net.ipv4.tcp_low_latency=1
-net.ipv4.tcp_timestamps=0
-net.ipv4.tcp_sack=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
+net.ipv4.tcp_no_metrics_save=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
 
 # ------------------------------------------------------------------------
 
