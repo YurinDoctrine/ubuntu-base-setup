@@ -173,7 +173,7 @@ ulimit -c unlimited
 # ------------------------------------------------------------------------
 
 echo -e "Disable wait online services"
-sudo systemctl disable NetworkManager-wait-online.service
+sudo systemctl mask NetworkManager-wait-online.service >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
