@@ -141,6 +141,11 @@ net.ipv4.tcp_frto=1
 net.ipv4.tcp_frto_response=2
 net.ipv4.tcp_low_latency=1
 net.ipv4.tcp_no_metrics_save=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
+echo -e "Restart swap"
+echo -e 1 | sudo tee /proc/sys/vm/drop_caches
+echo -e 2 | sudo tee /proc/sys/vm/drop_caches
+echo -e 3 | sudo tee /proc/sys/vm/drop_caches
+sudo swapoff -av && sudo swapon -av
 
 # ------------------------------------------------------------------------
 
@@ -184,6 +189,11 @@ echo -e "SELINUX=disabled" | sudo tee /etc/selinux/config
 
 echo -e "Disable CONCURRENCY"
 echo -e "CONCURRENCY=none" | sudo tee /etc/init.d/rc
+
+# ------------------------------------------------------------------------
+
+## Don't autostart .desktop
+sudo sed -i -e 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
 # ------------------------------------------------------------------------
 
@@ -259,13 +269,13 @@ sudo apt-get autoremove -y --purge
 # ------------------------------------------------------------------------
 
 ## Optimize font cache
-mkfontscale && mkfontdir && fc-cache -fv
+mkfontscale && mkfontdir && fc-cache -fv && fc-cache ~/.fonts
 
 # ------------------------------------------------------------------------
 
 echo -e "Clean crash log"
 sudo rm -rfd /var/crash/*
 echo -e "Clean archived journal"
-sudo journalctl --rotate --vacuum-size=1M
+sudo journalctl --rotate --vacuum-time=0.1 --vacuum-size=1M
 sudo sed -i -e 's/^#ForwardToSyslog=yes/ForwardToSyslog=no/' /etc/systemd/journald.conf
 sync
