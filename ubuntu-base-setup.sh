@@ -182,6 +182,11 @@ echo -e "SELINUX=disabled" | sudo tee /etc/selinux/config
 
 # ------------------------------------------------------------------------
 
+echo -e "Disable CONCURRENCY"
+echo -e "CONCURRENCY=none" | sudo tee /etc/init.d/rc
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo update-grub
