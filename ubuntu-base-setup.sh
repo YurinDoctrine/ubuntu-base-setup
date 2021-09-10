@@ -197,6 +197,17 @@ sudo sed -i -e 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
 # ------------------------------------------------------------------------
 
+echo -e "Enable tmpfs ramdisk"
+sudo sed -i -e '/^\/\/tmpfs/d' /etc/fstab
+echo -e "tmpfs /tmp tmpfs noatime,nosuid 0 0" | sudo tee -a /etc/fstab
+
+# ------------------------------------------------------------------------
+
+## Disable resume from hibernate
+echo -e "#" | sudo tee /etc/initramfs-tools/conf.d/resume
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo update-grub
