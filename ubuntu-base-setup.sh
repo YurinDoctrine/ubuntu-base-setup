@@ -140,7 +140,6 @@ kernel.sysrq = 0
 kernel.nmi_watchdog = 0
 kernel.timer_migration = 0
 kernel.core_uses_pid = 1
-dev.rtc.max-user-freq = 1024
 net.ipv4.tcp_frto=1
 net.ipv4.tcp_frto_response=2
 net.ipv4.tcp_low_latency=1
