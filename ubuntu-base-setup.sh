@@ -143,7 +143,6 @@ kernel.timer_migration = 0
 kernel.core_uses_pid = 1
 kernel.sched_rt_runtime_us = -1
 kernel.sched_rt_period_us = -1
-kernel.hung_task_timeout_secs = 120
 net.ipv4.tcp_frto=1
 net.ipv4.tcp_frto_response=2
 net.ipv4.tcp_low_latency=1
