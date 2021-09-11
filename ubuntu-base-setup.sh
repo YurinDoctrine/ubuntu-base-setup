@@ -142,11 +142,11 @@ kernel.hung_task_timeout_secs = 0
 kernel.sched_rt_runtime_us = -1
 kernel.sched_rt_period_us = -1
 kernel.sched_child_runs_first = 1
-kernel.softlockup_all_cpu_backtrace = 1
 net.ipv4.tcp_frto=1
 net.ipv4.tcp_frto_response=2
 net.ipv4.tcp_low_latency=1
-net.ipv4.tcp_no_metrics_save=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
+net.ipv4.tcp_no_metrics_save=1
+net.ipv4.tcp_slow_start_after_idle=0" | sudo tee /etc/sysctl.d/99-swappiness.conf
 echo -e "Restart swap"
 echo -e 1 | sudo tee /proc/sys/vm/drop_caches
 echo -e 2 | sudo tee /proc/sys/vm/drop_caches
