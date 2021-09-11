@@ -132,11 +132,13 @@ sudo sed -i -e '/^\/\/swappiness/d' /etc/sysctl.conf
 echo -e "vm.swappiness=1
 vm.vfs_cache_pressure=50
 vm.mmap_min_addr = 4096
-vm.overcommit_memory = 1
+vm.overcommit_memory = 2
 vm.overcommit_ratio = 50
 vm.dirty_background_ratio = 5
 vm.dirty_ratio = 10
 kernel.sysrq = 0
+kernel.nmi_watchdog = 0
+kernel.timer_migration = 0
 kernel.core_uses_pid = 1
 dev.rtc.max-user-freq = 1024
 net.ipv4.tcp_frto=1
