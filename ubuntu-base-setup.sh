@@ -127,7 +127,6 @@ sudo sed -i -e 's| errors=remount-ro 0 | noatime,nodiratime,commit=60,errors=rem
 sudo sed -i -e '/^\/\/swappiness/d' /etc/sysctl.conf
 echo -e "vm.swappiness=1
 vm.vfs_cache_pressure=50
-vm.mmap_min_addr = 4096
 vm.overcommit_memory = 2
 vm.overcommit_ratio = 50
 vm.dirty_background_ratio = 5
@@ -147,10 +146,7 @@ net.ipv4.tcp_frto_response=2
 net.ipv4.tcp_low_latency=1
 net.ipv4.tcp_no_metrics_save=1
 net.ipv4.tcp_slow_start_after_idle=0
-net.ipv4.tcp_window_scaling=1
-net.ipv4.tcp_keepalive_time=300
-net.ipv4.tcp_keepalive_probes=5
-net.ipv4.tcp_keepalive_intvl=15" | sudo tee /etc/sysctl.d/99-swappiness.conf
+net.ipv4.tcp_window_scaling=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
 echo -e "Restart swap"
 echo -e 1 | sudo tee /proc/sys/vm/drop_caches
 echo -e 2 | sudo tee /proc/sys/vm/drop_caches
