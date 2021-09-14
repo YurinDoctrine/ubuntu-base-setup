@@ -146,7 +146,10 @@ net.ipv4.tcp_frto_response=2
 net.ipv4.tcp_low_latency=1
 net.ipv4.tcp_no_metrics_save=1
 net.ipv4.tcp_slow_start_after_idle=0
-net.ipv4.tcp_window_scaling=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
+net.ipv4.tcp_window_scaling=1
+net.ipv4.tcp_keepalive_time=300
+net.ipv4.tcp_keepalive_probes=5
+net.ipv4.tcp_keepalive_intvl=15" | sudo tee /etc/sysctl.d/99-swappiness.conf
 echo -e "Restart swap"
 echo -e 1 | sudo tee /proc/sys/vm/drop_caches
 echo -e 2 | sudo tee /proc/sys/vm/drop_caches
