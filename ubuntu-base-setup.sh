@@ -53,7 +53,8 @@ echo -e "Installing Base System"
 PKGS=(
     # --- Importants
 
-    'mksh' # MirBSD Korn Shell
+    'dbus-broker' # Linux D-Bus Message Broker
+    'mksh'        # MirBSD Korn Shell
 
     # GENERAL UTILITIES ---------------------------------------------------
 
