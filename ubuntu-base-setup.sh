@@ -108,7 +108,7 @@ echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
 
 # Prevent motd news*
 sudo sed -i -e 's/ENABLED=.*/ENABLED=0/' /etc/default/motd-news
-sudo systemctl mask motd-news.timer
+sudo systemctl mask motd-news.timer >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
