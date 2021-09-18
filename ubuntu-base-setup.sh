@@ -24,7 +24,7 @@ echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguage
 echo -e "LANG=en_GB.UTF8" | sudo tee -a /etc/environment
 echo -e "LANGUAGE=en_GB.UTF8" | sudo tee -a /etc/environment
 echo -e "LC_ALL=en_GB.UTF8" | sudo tee -a /etc/environment
-sudo apt install --reinstall --purge -y locales
+sudo apt install --reinstall --purge -yy locales
 sudo sed -i -e 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
 sudo locale-gen en_GB.UTF-8
 sudo timedatectl set-ntp true
@@ -289,8 +289,8 @@ sudo dpkg --configure -a
 sudo apt-get clean -y
 sudo apt-get autoclean -y
 sudo apt-get install -f --assume-yes
-sudo apt-get remove -y --purge $(/bin/dpkg -l | /bin/egrep "^rc" | /bin/awk '{print $2}')
-sudo apt-get autoremove -y --purge
+sudo apt-get remove -yy --purge $(/bin/dpkg -l | /bin/egrep "^rc" | /bin/awk '{print $2}')
+sudo apt-get autoremove -yy --purge
 
 # ------------------------------------------------------------------------
 
