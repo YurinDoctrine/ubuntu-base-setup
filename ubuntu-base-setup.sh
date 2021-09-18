@@ -55,11 +55,11 @@ PKGS=(
 
     'dbus-broker' # Linux D-Bus Message Broker
     'mksh'        # MirBSD Korn Shell
+    'preload'     # Makes applications run faster by prefetching binaries and shared objects
 
     # GENERAL UTILITIES ---------------------------------------------------
 
     'irqbalance' # IRQ balancing daemon for SMP systems
-    'preload'    # Makes applications run faster by prefetching binaries and shared objects
 
 )
 
