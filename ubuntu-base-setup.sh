@@ -217,6 +217,12 @@ echo -e "#" | sudo tee /etc/initramfs-tools/conf.d/resume
 
 # ------------------------------------------------------------------------
 
+echo -e "Enable dbus-broker"
+sudo systemctl enable dbus-broker.service
+sudo systemctl --global enable dbus-broker.service
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo update-grub
