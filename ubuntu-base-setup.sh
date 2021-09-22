@@ -144,6 +144,7 @@ kernel.sched_autogroup_enabled = 1
 kernel.sched_child_runs_first = 1
 kernel.sched_tunable_scaling = 0
 kernel.sched_schedstats = 0
+kernel.numa_balancing = 1
 net.ipv4.tcp_frto=1
 net.ipv4.tcp_frto_response=2
 net.ipv4.tcp_low_latency=1
