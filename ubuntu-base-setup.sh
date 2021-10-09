@@ -214,11 +214,6 @@ echo -e "SELINUX=disabled" | sudo tee /etc/selinux/config
 
 # ------------------------------------------------------------------------
 
-echo -e "Disable CONCURRENCY"
-echo -e "CONCURRENCY=none" | sudo tee /etc/init.d/rc
-
-# ------------------------------------------------------------------------
-
 ## Don't autostart .desktop
 sudo sed -i -e 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
@@ -226,7 +221,8 @@ sudo sed -i -e 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
 echo -e "Enable tmpfs ramdisk"
 sudo sed -i -e '/^\/\/tmpfs/d' /etc/fstab
-echo -e "tmpfs /tmp tmpfs noatime,nosuid 0 0" | sudo tee -a /etc/fstab
+echo -e "tmpfs /tmp tmpfs noatime,nosuid,size=100m 0 0
+tmpfs /var/tmp tmpfs noatime,nosuid,size=20m 0 0" | sudo tee -a /etc/fstab
 
 # ------------------------------------------------------------------------
 
