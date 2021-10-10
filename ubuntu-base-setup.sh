@@ -222,8 +222,8 @@ sudo sed -i -e 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 echo -e "Enable tmpfs ramdisk"
 sudo sed -i -e '/^\/\/tmpfs/d' /etc/fstab
 echo -e "tmpfs /tmp tmpfs noatime,nosuid,size=100m 0 0
-tmpfs /var/run tmpfs noatime,nosuid 0 0
 tmpfs /var/tmp tmpfs noatime,nosuid 0 0
+tmpfs /var/run tmpfs noatime,nosuid,size=2m 0 0
 tmpfs /var/log tmpfs noatime,nosuid,size=20m 0 0" | sudo tee -a /etc/fstab
 
 # ------------------------------------------------------------------------
