@@ -209,8 +209,8 @@ sudo systemctl mask NetworkManager-wait-online.service >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
-echo -e "Disable SELINUX"
-echo -e "SELINUX=disabled" | sudo tee /etc/selinux/config
+## Disable SELINUX
+sudo sed -i -e 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 
 # ------------------------------------------------------------------------
 
