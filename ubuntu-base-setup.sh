@@ -35,15 +35,15 @@ sudo timedatectl set-timezone Europe/Moscow
 # Don't reserve space man-pages, locales, licenses.
 echo -e "Remove useless companies"
 sudo apt-get remove --purge \
-    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 find /usr/share/doc/ -depth -type f ! -name copyright | xargs sudo rm -f || true
 find /usr/share/doc/ | egrep '\.gz' | xargs sudo rm -f
 find /usr/share/doc/ | egrep '\.pdf' | xargs sudo rm -f
 find /usr/share/doc/ | egrep '\.tex' | xargs sudo rm -f
 find /usr/share/doc/ -empty | xargs sudo rmdir || true
 sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
-    /usr/share/linda/* /var/cache/man/* /usr/share/man/*
+/usr/share/linda/* /var/cache/man/* /usr/share/man/*
 
 # ------------------------------------------------------------------------
 
