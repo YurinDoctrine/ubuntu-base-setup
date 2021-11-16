@@ -118,8 +118,8 @@ sudo btrfs balance start -musage=50 -dusage=50 /
 # ------------------------------------------------------------------------
 
 echo -e "Apply disk tweaks"
-sudo sed -i -e 's| defaults | noatime,nodiratime,commit=60 |g' /etc/fstab
-sudo sed -i -e 's| errors=remount-ro 0 | noatime,nodiratime,commit=60,errors=remount-ro 0 |g' /etc/fstab
+sudo sed -i -e 's| defaults | defaults,noatime,commit=60 |g' /etc/fstab
+sudo sed -i -e 's| errors=remount-ro 0 | defaults,noatime,commit=60,errors=remount-ro 0 |g' /etc/fstab
 
 # ------------------------------------------------------------------------
 
@@ -221,10 +221,10 @@ sudo sed -i -e 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
 echo -e "Enable tmpfs ramdisk"
 sudo sed -i -e '/^\/\/tmpfs/d' /etc/fstab
-echo -e "tmpfs /tmp tmpfs noatime,nosuid,size=100m 0 0
-tmpfs /var/tmp tmpfs noatime,nosuid 0 0
-tmpfs /var/run tmpfs noatime,nosuid,size=2m 0 0
-tmpfs /var/log tmpfs noatime,nosuid,size=20m 0 0" | sudo tee -a /etc/fstab
+echo -e "tmpfs /tmp tmpfs nodiratime,nosuid,size=100m 0 0
+tmpfs /var/tmp tmpfs nodiratime,nosuid 0 0
+tmpfs /var/run tmpfs nodiratime,nosuid,size=2m 0 0
+tmpfs /var/log tmpfs nodiratime,nosuid,size=20m 0 0" | sudo tee -a /etc/fstab
 
 # ------------------------------------------------------------------------
 
