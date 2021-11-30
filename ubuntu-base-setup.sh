@@ -239,6 +239,14 @@ sudo systemctl --global enable dbus-broker.service
 
 # ------------------------------------------------------------------------
 
+echo -e "Disable systemd-timesync daemon"
+sudo systemctl disable systemd-timesyncd.service
+sudo systemctl --global disable systemd-timesyncd.service
+## Enable chronyd instead
+sudo systemctl --global enable chrony
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo update-grub
