@@ -318,7 +318,7 @@ sudo apt-get autoremove -yy --purge
 # ------------------------------------------------------------------------
 
 ## Optimize font cache
-fc-cache -fv && fc-cache ~/.fonts
+fc-cache -fv ~/.fonts
 
 # ------------------------------------------------------------------------
 
