@@ -183,7 +183,7 @@ echo -e 'DPkg::Options {
    "--force-confdef";
 };' | sudo tee /etc/apt/apt.conf.d/71debconf
 ## APT no install suggests
-echo -e 'APT::Get::Install-Suggests "false";' | sudo tee /etc/apt/apt.conf.d/95suggests
+echo -e 'APT::Get::Install-Suggests "false";' | sudo tee /etc/apt/apt.conf.d/95-no-suggests
 
 # ------------------------------------------------------------------------
 
