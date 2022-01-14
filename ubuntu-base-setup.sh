@@ -243,7 +243,7 @@ echo -e "Disable systemd-timesync daemon"
 sudo systemctl disable systemd-timesyncd.service
 sudo systemctl --global disable systemd-timesyncd.service
 ## Enable chrony instead
-sudo systemctl enable chrony
+sudo systemctl enable chronyd
 
 # ------------------------------------------------------------------------
 
@@ -319,7 +319,7 @@ sudo apt-get autoremove -yy --purge
 # ------------------------------------------------------------------------
 
 ## Optimize font cache
-fc-cache -fv
+fc-cache -rfv
 
 # ------------------------------------------------------------------------
 
