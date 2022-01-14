@@ -52,6 +52,7 @@ echo -e "Installing Base System"
 PKGS=(
     # --- Importants
 
+    'chrony'      # Versatile implementation of the Network Time Protocol
     'dbus-broker' # Linux D-Bus Message Broker
     'mksh'        # MirBSD Korn Shell
     'preload'     # Makes applications run faster by prefetching binaries and shared objects
