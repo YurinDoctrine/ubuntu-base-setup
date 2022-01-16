@@ -243,7 +243,7 @@ echo -e "Disable systemd-timesync daemon"
 sudo systemctl disable systemd-timesyncd.service
 sudo systemctl --global disable systemd-timesyncd.service
 ## Enable chrony instead
-sudo systemctl enable chronyd
+sudo systemctl enable chrony
 
 # ------------------------------------------------------------------------
 
