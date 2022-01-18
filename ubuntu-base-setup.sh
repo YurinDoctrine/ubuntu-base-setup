@@ -34,15 +34,15 @@ sudo timedatectl set-timezone Europe/Moscow
 # Don't reserve space man-pages, locales, licenses.
 echo -e "Remove useless companies"
 sudo apt-get remove --purge \
-texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 find /usr/share/doc/ -depth -type f ! -name copyright | xargs sudo rm -f || true
 find /usr/share/doc/ | egrep '\.gz' | xargs sudo rm -f
 find /usr/share/doc/ | egrep '\.pdf' | xargs sudo rm -f
 find /usr/share/doc/ | egrep '\.tex' | xargs sudo rm -f
 find /usr/share/doc/ -empty | xargs sudo rmdir || true
 sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
-/usr/share/linda/* /var/cache/man/* /usr/share/man/*
+    /usr/share/linda/* /var/cache/man/* /usr/share/man/*
 
 # ------------------------------------------------------------------------
 
@@ -268,40 +268,40 @@ extra2() {
 }
 
 final() {
-sleep 1s
-clear
-echo -e "
+    sleep 1s
+    clear
+    echo -e "
 ###############################################################################
 # All Done! Would you also mind to run the author's ultra-gaming-setup-wizard?
 ###############################################################################
 "
 
-read -p $'yes/no >_: ' ans
-if [[ "$ans" == "yes" ]]; then
-    echo -e "RUNNING ..."
-    sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
-    extra
-elif [[ "$ans" == "no" ]]; then
-    echo -e "LEAVING ..."
-    echo -e ""
-    echo -e "FINAL: DO YOU ALSO WANT TO RUN THE AUTHOR'S secure-linux?"
-    read -p $'yes/no >_: ' noc
-    if [[ "$noc" == "yes" ]]; then
+    read -p $'yes/no >_: ' ans
+    if [[ "$ans" == "yes" ]]; then
         echo -e "RUNNING ..."
         sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
-        extra2
-    elif [[ "$noc" == "no" ]]; then
+        extra
+    elif [[ "$ans" == "no" ]]; then
         echo -e "LEAVING ..."
-        sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
-        return 0
+        echo -e ""
+        echo -e "FINAL: DO YOU ALSO WANT TO RUN THE AUTHOR'S secure-linux?"
+        read -p $'yes/no >_: ' noc
+        if [[ "$noc" == "yes" ]]; then
+            echo -e "RUNNING ..."
+            sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
+            extra2
+        elif [[ "$noc" == "no" ]]; then
+            echo -e "LEAVING ..."
+            sudo ln -sfT mksh /usr/bin/sh # Link mksh to /usr/bin/sh
+            return 0
+        else
+            echo -e "INVALID VALUE!"
+            final
+        fi
     else
         echo -e "INVALID VALUE!"
         final
     fi
-else
-    echo -e "INVALID VALUE!"
-    final
-fi
 }
 final
 cd
