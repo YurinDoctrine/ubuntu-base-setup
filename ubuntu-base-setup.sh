@@ -267,6 +267,7 @@ extra2() {
         ./secure.sh
 }
 
+final() {
 sleep 1s
 clear
 echo -e "
@@ -301,6 +302,8 @@ else
     echo -e "INVALID VALUE!"
     final
 fi
+}
+final
 cd
 
 # ------------------------------------------------------------------------
