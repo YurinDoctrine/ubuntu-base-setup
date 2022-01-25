@@ -247,6 +247,12 @@ sudo systemctl enable chrony
 
 # ------------------------------------------------------------------------
 
+echo -e "Optimize writes to the disk"
+sudo sed -i -e s"/\#Storage.*/Storage=volatile/"g /etc/systemd/journald.conf
+sudo sed -i -e s"/\#Seal.*/Seal=no/"g /etc/systemd/journald.conf
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo update-grub
