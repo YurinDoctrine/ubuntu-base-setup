@@ -132,6 +132,7 @@ vm.overcommit_ratio = 50
 vm.dirty_background_ratio = 5
 vm.dirty_ratio = 10
 vm.stat_interval = 10
+vm.page-cluster = 0
 kernel.sysrq = 0
 kernel.watchdog_thresh = 30
 kernel.nmi_watchdog = 0
