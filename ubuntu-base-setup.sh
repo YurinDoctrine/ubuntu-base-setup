@@ -251,10 +251,20 @@ sudo sed -i -e s"/\#Seal.*/Seal=no/"g /etc/systemd/journald.conf
 
 # ------------------------------------------------------------------------
 
+## Enable ALPM
+if [[ -e /etc/pm/config.d ]]; then
+echo -e "SATA_ALPM_ENABLE=true" | sudo tee /etc/pm/config.d/sata_alpm
+else
+sudo mkdir /etc/pm/config.d
+echo -e "SATA_ALPM_ENABLE=true" | sudo tee /etc/pm/config.d/sata_alpm
+fi
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 ## Change GRUB defaults
-sudo sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet i915.lvds_downclock=1 drm.vblankoffdelay=1"/' /etc/default/grub
+sudo sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet i915.i915_enable_fbc=1 i915.lvds_downclock=1 drm.vblankoffdelay=1"/' /etc/default/grub
 sudo update-grub
 
 # ------------------------------------------------------------------------
