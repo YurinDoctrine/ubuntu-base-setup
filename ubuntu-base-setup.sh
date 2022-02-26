@@ -253,6 +253,8 @@ sudo sed -i -e s"/\#Seal.*/Seal=no/"g /etc/systemd/journald.conf
 
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
+## Change GRUB defaults
+sudo sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i915.lvds_downclock=1 drm.vblankoffdelay=1"/' /etc/default/grub
 sudo update-grub
 
 # ------------------------------------------------------------------------
