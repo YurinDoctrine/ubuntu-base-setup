@@ -266,6 +266,7 @@ sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 ## Change GRUB defaults
 sudo sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet i915.i915_enable_fbc=1 i915.lvds_downclock=1 drm.vblankoffdelay=1"/' /etc/default/grub
 sudo update-grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # ------------------------------------------------------------------------
 
