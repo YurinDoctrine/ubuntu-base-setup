@@ -134,6 +134,7 @@ vm.dirty_ratio = 10
 vm.stat_interval = 10
 vm.page-cluster = 0
 vm.dirty_expire_centisecs = 1000
+vm.oom_kill_allocating_task = 1
 kernel.sysrq = 0
 kernel.watchdog_thresh = 30
 kernel.nmi_watchdog = 0
