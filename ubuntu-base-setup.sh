@@ -133,6 +133,7 @@ vm.dirty_background_ratio = 5
 vm.dirty_ratio = 10
 vm.stat_interval = 10
 vm.page-cluster = 0
+vm.dirty_expire_centisecs = 1000
 kernel.sysrq = 0
 kernel.watchdog_thresh = 30
 kernel.nmi_watchdog = 0
@@ -148,6 +149,7 @@ kernel.sched_schedstats = 0
 kernel.numa_balancing = 1
 kernel.panic = 0
 kernel.panic_on_oops = 0
+fs.lease-break-time = 10
 net.ipv4.tcp_frto=1
 net.ipv4.tcp_frto_response=2
 net.ipv4.tcp_low_latency=1
@@ -158,10 +160,10 @@ net.ipv4.tcp_keepalive_probes=5
 net.ipv4.tcp_keepalive_intvl=15
 net.ipv4.tcp_ecn=1
 net.ipv4.tcp_fastopen=3" | sudo tee /etc/sysctl.d/99-swappiness.conf
+echo -e "Drop caches"
+sudo sysctl -w vm.drop_caches=3
+sudo sysctl -w vm.drop_caches=2
 echo -e "Restart swap"
-echo -e 1 | sudo tee /proc/sys/vm/drop_caches
-echo -e 2 | sudo tee /proc/sys/vm/drop_caches
-echo -e 3 | sudo tee /proc/sys/vm/drop_caches
 sudo swapoff -av && sudo swapon -av
 
 # ------------------------------------------------------------------------
