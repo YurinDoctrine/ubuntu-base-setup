@@ -46,6 +46,65 @@ sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
 
 # ------------------------------------------------------------------------
 
+# ===========================================================================
+# GNOME - GSETTINGS
+# ===========================================================================
+
+# Privacy
+gsettings set org.gnome.system.location enabled true ;
+sudo -u gdm dbus-launch gsettings set org.gnome.system.location enabled true ;
+
+gsettings set org.gnome.desktop.privacy disable-camera false ;
+sudo -u gdm dbus-launch gsettings set org.gnome.desktop.privacy disable-camera false ;
+
+gsettings set org.gnome.desktop.privacy disable-microphone false ;
+sudo -u gdm dbus-launch gsettings set org.gnome.desktop.privacy disable-microphone false ;
+
+gsettings set org.gnome.desktop.privacy remember-recent-files false ;
+sudo -u gdm dbus-launch gsettings set org.gnome.desktop.privacy remember-recent-files false ;
+
+gsettings set org.gnome.desktop.screensaver lock-enabled false ;
+sudo -u gdm dbus-launch gsettings set org.gnome.desktop.screensaver lock-enabled false ;
+
+gsettings set org.gnome.desktop.screensaver user-switch-enabled false ;
+sudo -u gdm dbus-launch gsettings set org.gnome.desktop.screensaver user-switch-enabled false ;
+
+# Security
+gsettings set org.gnome.login-screen allowed-failures 100 ;
+sudo -u gdm dbus-launch gsettings set org.gnome.login-screen allowed-failures 100 ;
+
+# Media
+gsettings set org.gnome.desktop.sound event-sounds false ;
+sudo -u gdm dbus-launch gsettings set org.gnome.desktop.sound event-sounds false ;
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys max-screencast-length 0 ;
+sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.media-keys max-screencast-length 0 ;
+
+
+# Power
+gsettings set org.gnome.desktop.session idle-delay 0 ;
+sudo -u gdm dbus-launch gsettings set org.gnome.desktop.session idle-delay 0 ;
+
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing' ;
+sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing' ;
+
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing' ;
+sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing' ;
+
+gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive' ;
+sudo -u gdm dbus-launch gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'nothing' ;
+
+gsettings set org.gnome.SessionManager auto-save-session true ;
+sudo -u gdm dbus-launch gsettings set org.gnome.SessionManager auto-save-session true ;
+
+gsettings set org.gnome.SessionManager auto-save-session-one-shot true ;
+sudo -u gdm dbus-launch gsettings set org.gnome.SessionManager auto-save-session-one-shot true ;
+
+# Theme
+gsettings set org.gnome.shell app-picker-layout "[]" ;
+
+# ------------------------------------------------------------------------
+
 # This may take time
 echo -e "Installing Base System"
 
