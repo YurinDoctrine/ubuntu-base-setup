@@ -331,6 +331,12 @@ sudo sed -i -e 's/#HandleLidSwitch=.*/HandleLidSwitch=suspend/' /etc/systemd/log
 
 # ------------------------------------------------------------------------
 
+echo -e "Disable bluetooth autostart"
+sudo sed -i -e 's/AutoEnable.*/AutoEnable=false/' /etc/bluetooth/main.conf
+sudo sed -i -e 's/#FastConnectable.*/FastConnectable = false/' /etc/bluetooth/main.conf
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 ## Change GRUB defaults
