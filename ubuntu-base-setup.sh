@@ -47,8 +47,8 @@ sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
 # ------------------------------------------------------------------------
 
 # GNOME settings
-sudo rm -rfd /etc/gdm/custom.conf
-sudo rm -rfd /etc/dconf/db/gdm.d/01-logo
+sudo rm -rfd /etc/gdm3/custom.conf
+sudo rm -rfd /etc/dconf/db/gdm3.d/01-logo
 
 # Privacy
 gsettings set org.gnome.system.location enabled false ;
@@ -69,9 +69,6 @@ gsettings set org.gnome.desktop.session idle-delay 0 ;
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing' ;
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing' ;
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive' ;
-
-# Theme
-gsettings set org.gnome.shell app-picker-layout "[]" ;
 
 # ------------------------------------------------------------------------
 
