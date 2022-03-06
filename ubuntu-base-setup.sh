@@ -78,7 +78,6 @@ echo -e "Installing Base System"
 PKGS=(
     # --- Importants
 
-    'anacron'     # cron-like program that doesn't go by time
     'chrony'      # Versatile implementation of the Network Time Protocol
     'dbus-broker' # Linux D-Bus Message Broker
     'mksh'        # MirBSD Korn Shell
