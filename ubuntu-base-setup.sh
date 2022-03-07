@@ -86,7 +86,6 @@ PKGS=(
     # GENERAL UTILITIES ---------------------------------------------------
 
     'irqbalance'  # IRQ balancing daemon for SMP systems
-    'pipewire'    # Low-latency audio/video router and processor
     'wireplumber' # Modular session / policy manager for PipeWire
 
     # DEVELOPMENT ---------------------------------------------------------
