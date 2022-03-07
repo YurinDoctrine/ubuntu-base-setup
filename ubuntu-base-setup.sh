@@ -311,6 +311,14 @@ sudo sed -i -e 's/#FastConnectable.*/FastConnectable = false/' /etc/bluetooth/ma
 
 # ------------------------------------------------------------------------
 
+echo -e "Disable systemd radio service/socket"
+sudo systemctl disable systemd-rfkill.service
+sudo systemctl --global disable systemd-rfkill.service
+sudo systemctl disable systemd-rfkill.socket
+sudo systemctl --global disable systemd-rfkill.socket
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 ## Change GRUB defaults
