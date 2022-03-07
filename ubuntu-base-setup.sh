@@ -82,6 +82,7 @@ PKGS=(
     'dbus-broker' # Linux D-Bus Message Broker
     'mksh'        # MirBSD Korn Shell
     'preload'     # Makes applications run faster by prefetching binaries and shared objects
+    'tumbler'     # D-Bus service for applications to request thumbnails
 
     # GENERAL UTILITIES ---------------------------------------------------
 
