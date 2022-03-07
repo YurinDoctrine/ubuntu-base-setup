@@ -284,10 +284,12 @@ sudo sed -i -e s"/\#Seal.*/Seal=no/"g /etc/systemd/journald.conf
 
 ## Enable ALPM
 if [[ -e /etc/pm/config.d ]]; then
-    echo -e "SATA_ALPM_ENABLE=true" | sudo tee /etc/pm/config.d/sata_alpm
+    echo -e "SATA_ALPM_ENABLE=true
+SATA_LINKPWR_ON_BAT=min_power" | sudo tee /etc/pm/config.d/sata_alpm
 else
     sudo mkdir /etc/pm/config.d
-    echo -e "SATA_ALPM_ENABLE=true" | sudo tee /etc/pm/config.d/sata_alpm
+    echo -e "SATA_ALPM_ENABLE=true
+SATA_LINKPWR_ON_BAT=min_power" | sudo tee /etc/pm/config.d/sata_alpm
 fi
 
 # ------------------------------------------------------------------------
