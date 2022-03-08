@@ -338,6 +338,9 @@ echo -e "bfq" | sudo tee /etc/modules-load.d/bfq.conf
 echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*", ATTR{queue/rotational}=="1", ATTR{queue/iosched/low_latency}="1", ATTR{queue/scheduler}="bfq"' | sudo tee /etc/udev/rules.d/60-scheduler.rules
 sudo update-grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+echo -e "Enable z3fold"
+echo -e "z3fold" | sudo tee -a /etc/initramfs-tools/modules
+sudo update-initramfs -u
 
 # ------------------------------------------------------------------------
 
