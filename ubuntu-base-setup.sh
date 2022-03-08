@@ -235,7 +235,11 @@ root hard nproc unlimited
 * soft core unlimited
 * hard core unlimited
 root soft core unlimited
-root hard core unlimited" | sudo tee /etc/security/limits.conf
+root hard core unlimited
+* soft sigpending unlimited
+* hard sigpending unlimited
+root soft sigpending unlimited
+root hard sigpending unlimited" | sudo tee /etc/security/limits.conf
 
 # ------------------------------------------------------------------------
 
