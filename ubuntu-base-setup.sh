@@ -144,7 +144,7 @@ sudo systemctl mask motd-news.timer >/dev/null 2>&1
 # ------------------------------------------------------------------------
 
 # btrfs tweaks if disk is
-sudo btrfs balance start -musage=50 -dusage=50 /
+sudo btrfs balance start -musage=0 -dusage=50 /
 
 # ------------------------------------------------------------------------
 
