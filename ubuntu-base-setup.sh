@@ -34,15 +34,15 @@ sudo timedatectl set-timezone Europe/Moscow
 # Don't reserve space man-pages, locales, licenses.
 echo -e "Remove useless companies"
 sudo apt-get remove --purge \
-texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
+    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
 find /usr/share/doc/ -depth -type f ! -name copyright | xargs sudo rm -f || true
 find /usr/share/doc/ | egrep '\.gz' | xargs sudo rm -f
 find /usr/share/doc/ | egrep '\.pdf' | xargs sudo rm -f
 find /usr/share/doc/ | egrep '\.tex' | xargs sudo rm -f
 find /usr/share/doc/ -empty | xargs sudo rmdir || true
 sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
-/usr/share/linda/* /var/cache/man/* /usr/share/man/*
+    /usr/share/linda/* /var/cache/man/* /usr/share/man/*
 
 # ------------------------------------------------------------------------
 
@@ -51,24 +51,24 @@ sudo rm -rfd /etc/gdm{3}/custom.conf
 sudo rm -rfd /etc/dconf/db/gdm{3}.d/01-logo
 
 # Privacy
-gsettings set org.gnome.system.location enabled false ;
-gsettings set org.gnome.desktop.privacy disable-camera true ;
-gsettings set org.gnome.desktop.privacy disable-microphone true ;
-gsettings set org.gnome.desktop.privacy remember-recent-files false ;
+gsettings set org.gnome.system.location enabled false
+gsettings set org.gnome.desktop.privacy disable-camera true
+gsettings set org.gnome.desktop.privacy disable-microphone true
+gsettings set org.gnome.desktop.privacy remember-recent-files false
 
 # Security
-gsettings set org.gnome.login-screen allowed-failures 100 ;
-gsettings set org.gnome.desktop.screensaver user-switch-enabled false ;
+gsettings set org.gnome.login-screen allowed-failures 100
+gsettings set org.gnome.desktop.screensaver user-switch-enabled false
 
 # Media
-gsettings set org.gnome.desktop.sound event-sounds false ;
-gsettings set org.gnome.settings-daemon.plugins.media-keys max-screencast-length 0 ;
+gsettings set org.gnome.desktop.sound event-sounds false
+gsettings set org.gnome.settings-daemon.plugins.media-keys max-screencast-length 0
 
 # Power
-gsettings set org.gnome.desktop.session idle-delay 0 ;
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing' ;
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing' ;
-gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive' ;
+gsettings set org.gnome.desktop.session idle-delay 0
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 
 # ------------------------------------------------------------------------
 
