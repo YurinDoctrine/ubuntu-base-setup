@@ -287,7 +287,7 @@ sudo systemctl --global disable systemd-timesyncd.service
 # ------------------------------------------------------------------------
 
 echo -e "Optimize writes to the disk"
-sudo sed -i -e s"/\#Storage.*/Storage=volatile/"g /etc/systemd/journald.conf
+sudo sed -i -e s"/\#Storage.*/Storage=none/"g /etc/systemd/journald.conf
 sudo sed -i -e s"/\#Seal.*/Seal=no/"g /etc/systemd/journald.conf
 
 # ------------------------------------------------------------------------
