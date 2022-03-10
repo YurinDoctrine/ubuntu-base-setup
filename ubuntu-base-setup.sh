@@ -234,14 +234,14 @@ root hard memlock unlimited
 * hard nproc unlimited
 root soft nproc unlimited
 root hard nproc unlimited
-* soft core unlimited
-* hard core unlimited
-root soft core unlimited
-root hard core unlimited
 * soft sigpending unlimited
 * hard sigpending unlimited
 root soft sigpending unlimited
-root hard sigpending unlimited" | sudo tee /etc/security/limits.conf
+root hard sigpending unlimited
+* soft stack unlimited
+* hard stack unlimited
+root soft stack unlimited
+root hard stack unlimited" | sudo tee /etc/security/limits.conf
 
 # ------------------------------------------------------------------------
 
@@ -250,7 +250,7 @@ sudo systemctl mask NetworkManager-wait-online.service >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
-## Disable SELINUX
+echo -e "Disable SELINUX"
 sudo sed -i -e 's/^SELINUX=.*/SELINUX=disabled/g' /etc/selinux/config
 
 # ------------------------------------------------------------------------
@@ -310,7 +310,7 @@ wifi.powersave = 1" | sudo tee /etc/NetworkManager/conf.d/default-wifi-powersave
 
 # ------------------------------------------------------------------------
 
-# Suspend when lid is closed
+## Suspend when lid is closed
 sudo sed -i -e 's/#HandleLidSwitch=.*/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
 
 # ------------------------------------------------------------------------
@@ -329,6 +329,17 @@ sudo systemctl --global disable systemd-rfkill.socket
 
 # ------------------------------------------------------------------------
 
+## Fix connecting local devices
+sudo sed -i -e 's/resolve [!UNAVAIL=return]/mdns4_minimal [NOTFOUND=return] resolve [!UNAVAIL=return]/' /etc/nsswitch.conf
+
+# ------------------------------------------------------------------------
+
+echo -e "Reduce systemd timeout"
+sudo sed -i -e 's/#DefaultTimeoutStartSec.*/DefaultTimeoutStartSec=15s/g' /etc/systemd/system.conf
+sudo sed -i -e 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/g' /etc/systemd/system.conf
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 ## Change GRUB defaults
@@ -341,6 +352,10 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 echo -e "Enable z3fold"
 echo -e "z3fold" | sudo tee -a /etc/initramfs-tools/modules
 sudo update-initramfs -u
+## Enable lz4 compression on mkinitcpio
+echo -e 'COMPRESSION="lz4"
+COMPRESSION_OPTION="-q --best"' | sudo tee /etc/mkinitcpio.d/12-compression.conf
+sudo mkinitcpio
 
 # ------------------------------------------------------------------------
 
