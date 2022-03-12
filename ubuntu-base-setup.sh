@@ -262,8 +262,8 @@ sudo sed -i -e 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
 echo -e "Enable tmpfs ramdisk"
 sudo sed -i -e '/^\/\/tmpfs/d' /etc/fstab
-echo -e "tmpfs /tmp tmpfs nodiratime,nosuid 0 0
-tmpfs /var/tmp tmpfs nodiratime,noexec,nosuid 0 0
+echo -e "tmpfs /tmp tmpfs nodiratime,nodev,nosuid 0 0
+tmpfs /var/tmp tmpfs nodiratime,noexec,nodev,nosuid 0 0
 tmpfs /var/run tmpfs nodiratime,nosuid,size=2m 0 0
 tmpfs /var/log tmpfs nodiratime,nosuid,size=20m 0 0" | sudo tee -a /etc/fstab
 
