@@ -55,6 +55,9 @@ gsettings set org.gnome.system.location enabled false
 gsettings set org.gnome.desktop.privacy disable-camera true
 gsettings set org.gnome.desktop.privacy disable-microphone true
 gsettings set org.gnome.desktop.privacy remember-recent-files false
+gsettings set org.gnome.desktop.privacy hide-identity true
+gsettings set org.gnome.desktop.privacy report-technical-problems false
+gsettings set org.gnome.desktop.privacy send-software-usage-stats false
 
 # Security
 gsettings set org.gnome.login-screen allowed-failures 100
@@ -69,6 +72,10 @@ gsettings set org.gnome.desktop.session idle-delay 0
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
+
+# Keyboard
+gsettings set org.gnome.desktop.peripherals.keyboard delay 150
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 3
 
 # ------------------------------------------------------------------------
 
