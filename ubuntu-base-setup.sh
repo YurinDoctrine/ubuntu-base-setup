@@ -338,6 +338,12 @@ sudo sed -i -e 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/g' /etc/sys
 
 # ------------------------------------------------------------------------
 
+echo -e "Enable NetworkManager dispatcher"
+sudo systemctl enable NetworkManager-dispatcher.service
+sudo systemctl --global enable NetworkManager-dispatcher.service
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 ## Change GRUB defaults
