@@ -74,8 +74,7 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 
 # Keyboard
-gsettings set org.gnome.desktop.peripherals.keyboard delay 150
-gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 3
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 0
 
 # ------------------------------------------------------------------------
 
