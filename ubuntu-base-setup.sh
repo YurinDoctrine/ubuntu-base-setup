@@ -79,6 +79,13 @@ gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 100
 
 # ------------------------------------------------------------------------
 
+# Set environment variables
+echo -e "HISTSIZE=0
+LESSHISTSIZE=-
+LESSHISTFILE=-" | sudo tee -a /etc/environment
+
+# ------------------------------------------------------------------------
+
 # This may take time
 echo -e "Installing Base System"
 
