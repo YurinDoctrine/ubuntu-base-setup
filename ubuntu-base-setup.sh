@@ -81,8 +81,8 @@ gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 100
 
 # Set environment variables
 echo -e "HISTSIZE=0
-LESSHISTSIZE=-
-LESSHISTFILE=-" | sudo tee -a /etc/environment
+LESSHISTFILE=-
+LESSHISTSIZE=0" | sudo tee -a /etc/environment
 
 # ------------------------------------------------------------------------
 
