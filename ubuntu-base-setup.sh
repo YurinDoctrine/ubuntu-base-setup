@@ -91,7 +91,9 @@ gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "WINIT_HIDPI_FACTOR=2
+echo -e "VAAPI_MPEG4_ENABLED=1
+SDL_VIDEO_YUV_HWACCEL=1
+WINIT_HIDPI_FACTOR=2
 PIPEWIRE_LATENCY=512/48000
 PIPEWIRE_LINK_PASSIVE=1
 HISTSIZE=0
