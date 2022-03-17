@@ -63,6 +63,7 @@ gsettings set org.gnome.desktop.privacy send-software-usage-stats false
 gsettings set org.gnome.login-screen allowed-failures 100
 gsettings set org.gnome.desktop.screensaver user-switch-enabled false
 gsettings set org.gnome.SessionManager logout-prompt false
+gsettings set org.gnome.desktop.media-handling autorun-never true
 
 # Media
 gsettings set org.gnome.desktop.sound event-sounds false
@@ -74,7 +75,11 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'no
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 gsettings set org.gnome.desktop.interface enable-animations false
+
+# Display
 gsettings set org.gnome.desktop.interface scaling-factor 1
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.2
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer', 'x11-randr-fractional-scaling']"
 
 # Keyboard
 gsettings set org.gnome.desktop.peripherals.keyboard delay 500
