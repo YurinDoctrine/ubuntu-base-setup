@@ -91,7 +91,8 @@ gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "PIPEWIRE_LATENCY=512/48000
+echo -e "WINIT_HIDPI_FACTOR=2
+PIPEWIRE_LATENCY=512/48000
 HISTSIZE=0
 LESSHISTFILE=-
 LESSHISTSIZE=0
