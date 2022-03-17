@@ -85,6 +85,9 @@ gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffe
 gsettings set org.gnome.desktop.peripherals.keyboard delay 500
 gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 100
 
+# Mouse
+gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
+
 # ------------------------------------------------------------------------
 
 # Set environment variables
