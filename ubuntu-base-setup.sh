@@ -74,6 +74,7 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
 gsettings set org.gnome.SessionManager logout-prompt false
 gsettings set org.gnome.desktop.interface enable-animations false
+gsettings set org.gnome.desktop.interface scaling-factor 1
 
 # Keyboard
 gsettings set org.gnome.desktop.peripherals.keyboard delay 500
