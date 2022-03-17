@@ -62,6 +62,7 @@ gsettings set org.gnome.desktop.privacy send-software-usage-stats false
 # Security
 gsettings set org.gnome.login-screen allowed-failures 100
 gsettings set org.gnome.desktop.screensaver user-switch-enabled false
+gsettings set org.gnome.SessionManager logout-prompt false
 
 # Media
 gsettings set org.gnome.desktop.sound event-sounds false
@@ -72,7 +73,6 @@ gsettings set org.gnome.desktop.session idle-delay 0
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'interactive'
-gsettings set org.gnome.SessionManager logout-prompt false
 gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.interface scaling-factor 1
 
