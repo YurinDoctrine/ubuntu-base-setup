@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -f --assume-yes 9base base-files binutils fonts-terminus git gnupg2 haveged kmod libinput-dev pkgconf psmisc software-properties-common ufw zstd wget xdg-utils &&
+    sudo apt install -f --assume-yes 9base base-files binutils git gnupg2 haveged kmod libinput-dev pkgconf psmisc software-properties-common ufw zstd wget xdg-utils &&
     sudo apt install -f --assume-yes ubuntu-drivers-common &&
     sudo apt install -f --assume-yes kubuntu-restricted-addons
 
@@ -368,6 +368,12 @@ sudo sed -i -e 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/g' /etc/sys
 echo -e "Enable NetworkManager dispatcher"
 sudo systemctl enable NetworkManager-dispatcher.service
 sudo systemctl --global enable NetworkManager-dispatcher.service
+
+# ------------------------------------------------------------------------
+
+echo -e "Disable systemd avahi daemon service"
+sudo systemctl disable avahi-daemon.service
+sudo systemctl --global disable avahi-daemon.service
 
 # ------------------------------------------------------------------------
 
