@@ -148,12 +148,6 @@ echo -e "Defaults        pwfeedback" | sudo tee -a /etc/sudoers
 
 # ------------------------------------------------------------------------
 
-echo -e "Configuring vconsole.conf to set a larger font for login shell"
-echo -e "FONT=ter-v22b
-FONT_MAP=8859-2" | sudo tee /etc/vconsole.conf
-
-# ------------------------------------------------------------------------
-
 echo -e "Disabling Pulse .esd_auth module"
 sudo killall -9 pulseaudio
 # Pulse audio loads the `esound-protocol` module, which best I can tell is rarely needed.
