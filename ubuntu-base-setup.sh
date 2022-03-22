@@ -80,6 +80,8 @@ gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.interface scaling-factor 1
 gsettings set org.gnome.desktop.interface text-scaling-factor 1.2
 gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling'"', '"'scale-monitor-framebuffer']"
+gsettings set org.gnome.settings-daemon.plugins.xsettings antialiasing 'rgba'
+gsettings set org.gnome.settings-daemon.plugins.xsettings hinting 'slight'
 
 # Keyboard
 gsettings set org.gnome.desktop.peripherals.keyboard delay 500
