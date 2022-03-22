@@ -91,8 +91,9 @@ gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "DISABLE_RTKIT=1
-VAAPI_MPEG4_ENABLED=1
+echo -e "WGL_SWAP_INTERVAL=1
+DISABLE_RTKIT=1
+VAAPI_MPEG4_ENABLED=true
 SDL_VIDEO_YUV_HWACCEL=1
 WINIT_HIDPI_FACTOR=2
 PIPEWIRE_LATENCY=512/48000
