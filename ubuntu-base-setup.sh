@@ -382,6 +382,11 @@ sudo systemctl --global disable avahi-daemon.service
 
 # ------------------------------------------------------------------------
 
+## Set zram
+sudo sed -i -e 's/#PERCENT.*/PERCENT=25/g' /etc/default/zramswap
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 ## Change GRUB defaults
