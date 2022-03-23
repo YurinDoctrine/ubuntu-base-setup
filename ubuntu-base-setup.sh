@@ -393,6 +393,9 @@ echo -e "bfq" | sudo tee /etc/modules-load.d/bfq.conf
 echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*", ATTR{queue/rotational}=="1", ATTR{queue/iosched/low_latency}="1", ATTR{queue/scheduler}="bfq"' | sudo tee /etc/udev/rules.d/60-scheduler.rules
 echo -e "Enable z3fold"
 echo -e "z3fold" | sudo tee -a /etc/initramfs-tools/modules
+## Enable lz4 compression
+sudo sed -i -e 's/MODULES=most/MODULES=dep/g' /etc/initramfs-tools/initramfs.conf
+sudo sed -i -e 's/COMPRESS=gzip/COMPRESS=lz4/g' /etc/initramfs-tools/initramfs.conf
 sudo update-initramfs -u
 
 # ------------------------------------------------------------------------
