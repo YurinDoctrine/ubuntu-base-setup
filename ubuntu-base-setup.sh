@@ -384,7 +384,7 @@ sudo systemctl --global disable avahi-daemon.service
 
 ## Set zram
 sudo sed -i -e 's/#ALGO.*/ALGO=lz4/g' /etc/default/zramswap
-sudo sed -i -e 's/#PERCENT.*/PERCENT=25/g' /etc/default/zramswap
+sudo sed -i -e 's/PERCENT.*/PERCENT=25/g' /etc/default/zramswap
 
 # ------------------------------------------------------------------------
 
