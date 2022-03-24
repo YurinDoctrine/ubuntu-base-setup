@@ -389,6 +389,11 @@ sudo sed -i -e 's/PERCENT.*/PERCENT=25/g' /etc/default/zramswap
 
 # ------------------------------------------------------------------------
 
+## Flush bluetooth
+sudo rm -rfd /var/lib/bluetooth/*
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo sed -i -e 's/GRUB_RECORDFAIL_TIMEOUT=.*/GRUB_RECORDFAIL_TIMEOUT=0/' /etc/default/grub
