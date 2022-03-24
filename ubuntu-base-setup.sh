@@ -183,8 +183,8 @@ sudo btrfs balance start -musage=0 -dusage=50 /
 # ------------------------------------------------------------------------
 
 echo -e "Apply disk tweaks"
-sudo sed -i -e 's| defaults| defaults,relatime,commit=60|g' /etc/fstab
-sudo sed -i -e 's| errors=remount-ro| defaults,relatime,commit=60,errors=remount-ro|g' /etc/fstab
+sudo sed -i -e 's| defaults| rw,relatime,commit=60|g' /etc/fstab
+sudo sed -i -e 's| errors=remount-ro| rw,relatime,commit=60,errors=remount-ro|g' /etc/fstab
 
 # ------------------------------------------------------------------------
 
@@ -396,7 +396,7 @@ sudo update-grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 echo -e "Enable BFQ scheduler"
 echo -e "bfq" | sudo tee /etc/modules-load.d/bfq.conf
-echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*", ATTR{queue/rotational}=="1", ATTR{queue/iosched/low_latency}="1", ATTR{queue/scheduler}="bfq"' | sudo tee /etc/udev/rules.d/60-scheduler.rules
+echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*|mmcblk[0-9]*|nvme[0-9]*", ATTR{queue/rotational}=="1", ATTR{queue/iosched/low_latency}="1", ATTR{queue/scheduler}="bfq"' | sudo tee /etc/udev/rules.d/60-scheduler.rules
 echo -e "Enable z3fold"
 echo -e "z3fold" | sudo tee -a /etc/initramfs-tools/modules
 ## Enable lz4 compression
