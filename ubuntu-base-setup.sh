@@ -49,7 +49,7 @@ sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
 # GNOME settings
 sudo rm -rfd /etc/gdm{3}/custom.conf
 sudo rm -rfd /etc/dconf/db/gdm{3}.d/01-logo
-
+sudo rm -rfd /var/lib/gdm{3}/.cache/*
 # Privacy
 gsettings set org.gnome.system.location enabled false
 gsettings set org.gnome.desktop.privacy disable-camera true
@@ -102,6 +102,7 @@ SDL_VIDEO_YUV_HWACCEL=1
 WINIT_HIDPI_FACTOR=2
 PIPEWIRE_LATENCY=512/48000
 PIPEWIRE_LINK_PASSIVE=1
+HISTCONTROL=ignoreboth
 HISTSIZE=0
 LESSHISTFILE=-
 LESSHISTSIZE=0
@@ -390,7 +391,9 @@ sudo sed -i -e 's/PERCENT.*/PERCENT=25/g' /etc/default/zramswap
 
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
+sudo sed -i -e 's/GRUB_RECORDFAIL_TIMEOUT=.*/GRUB_RECORDFAIL_TIMEOUT=0/' /etc/default/grub
 ## Change GRUB defaults
+sudo sed -i -e 's/GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=true/' /etc/default/grub
 sudo sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet nouveau.modeset=1 nvidia-drm.modeset=1 amdgpu.modeset=1 amdgpu.dpm=1 amdgpu.audio=1 amdgpu.dc=1 i915.modeset=1 i915.enable_ppgtt=3 i915.fastboot=1 i915.enable_fbc=1 i915.enable_guc=2 i915.lvds_downclock=1 i915.semaphores=1 snd-hda-intel.power_save=1 snd-hda-intel.enable_msi=1 pcie_aspm=off drm.vblankoffdelay=1 vt.global_cursor_default=0 scsi_mod.use_blk_mq=1 mitigations=off zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=z3fold plymouth.ignore-serial-consoles loglevel=0 rd.systemd.show_status=auto rd.udev.log_level=0 udev.log_priority=3 audit=0 no_timer_check cryptomgr.notests intel_iommu=igfx_off kvm-intel.nested=1 iwlmvm_power_scheme=2 intel_pstate=disable intel_idle.max_cstate=0 noreplace-smp page_poison=1 page_alloc.shuffle=1 rcupdate.rcu_expedited=1 tsc=reliable nowatchdog idle=poll noatime pti=on init_on_free=1 acpi=force acpi_enforce_resources=lax acpi_backlight=vendor processor.max_cstate=1 skew_tick=1 mce=ignore_ce"/' /etc/default/grub
 sudo update-grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -401,7 +404,7 @@ echo -e "Enable z3fold"
 echo -e "z3fold" | sudo tee -a /etc/initramfs-tools/modules
 ## Enable lz4 compression
 sudo sed -i -e 's/MODULES=most/MODULES=dep/g' /etc/initramfs-tools/initramfs.conf
-sudo sed -i -e 's/COMPRESS=gzip/COMPRESS=lz4/g' /etc/initramfs-tools/initramfs.conf
+sudo sed -i -e 's/COMPRESS=.*/COMPRESS=lz4/g' /etc/initramfs-tools/initramfs.conf
 sudo update-initramfs -u
 
 # ------------------------------------------------------------------------
