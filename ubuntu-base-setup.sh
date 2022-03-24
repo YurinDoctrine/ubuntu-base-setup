@@ -394,6 +394,16 @@ sudo rm -rfd /var/lib/bluetooth/*
 
 # ------------------------------------------------------------------------
 
+echo -e "Disable plymouth"
+sudo systemctl mask plymouth-quit-wait.service >/dev/null 2>&1
+
+# ------------------------------------------------------------------------
+
+echo -e "Disable remote-fs"
+sudo systemctl mask remote-fs.target >/dev/null 2>&1
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo sed -i -e 's/GRUB_RECORDFAIL_TIMEOUT=.*/GRUB_RECORDFAIL_TIMEOUT=0/' /etc/default/grub
