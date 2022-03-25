@@ -120,6 +120,7 @@ PKGS=(
     'chrony'      # Versatile implementation of the Network Time Protocol
     'dbus-broker' # Linux D-Bus Message Broker
     'mksh'        # MirBSD Korn Shell
+    'numad'       # Simple NUMA policy support
     'preload'     # Makes applications run faster by prefetching binaries and shared objects
     'tumbler'     # D-Bus service for applications to request thumbnails
 
