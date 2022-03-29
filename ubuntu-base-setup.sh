@@ -406,6 +406,16 @@ sudo systemctl mask remote-fs.target >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
+## Some powersavings
+echo -e "min_power" | sudo tee /sys/class/scsi_host/host0/link_power_management_policy
+echo -e "min_power" | sudo tee /sys/class/scsi_host/host1/link_power_management_policy
+echo -e "min_power" | sudo tee /sys/class/scsi_host/host2/link_power_management_policy
+echo -e "min_power" | sudo tee /sys/class/scsi_host/host3/link_power_management_policy
+echo -e "1" | sudo tee /sys/module/snd_hda_intel/parameters/power_save
+echo -e "auto" | sudo tee /sys/bus/pci/devices//0000:01:00.0/power/control
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo sed -i -e 's/GRUB_RECORDFAIL_TIMEOUT=.*/GRUB_RECORDFAIL_TIMEOUT=0/' /etc/default/grub
