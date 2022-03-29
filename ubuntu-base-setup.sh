@@ -414,7 +414,6 @@ echo -e "min_power" | sudo tee /sys/class/scsi_host/host3/link_power_management_
 echo -e "1" | sudo tee /sys/module/snd_hda_intel/parameters/power_save
 echo -e "auto" | sudo tee /sys/bus/i2c/devices/i2c-0/device/power/control
 echo -e "auto" | sudo tee /sys/bus/pci/devices/0000:00:00.0/power/control
-echo -e "auto" | sudo tee /sys/bus/pci/devices/0000:01:00.0/power/control
 
 # ------------------------------------------------------------------------
 
