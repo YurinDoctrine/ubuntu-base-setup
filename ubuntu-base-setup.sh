@@ -93,9 +93,9 @@ gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "LIBGL_ALWAYS_SOFTWARE=1
-INTEL_BATCH=1
+echo -e "INTEL_BATCH=1
 WL_OUTPUT_SUBPIXEL_NONE=none
+LIBGL_ALWAYS_SOFTWARE=1
 LIBGL_THROTTLE_REFRESH=1
 WGL_SWAP_INTERVAL=1
 DISABLE_RTKIT=1
