@@ -509,8 +509,8 @@ rm -rfd /{tmp,var/tmp}/{.*,*}
 sudo rm -rfd /var/cache/apt/archives/*
 sudo rm -rfd /var/lib/dpkg/info/*.postinst
 sudo dpkg --configure -a
-sudo apt-get remove -yy --purge $(/bin/dpkg -l | /bin/egrep "^rc" | /bin/awk '{print $2}')
-sudo apt-get autoremove -yy --purge
+sudo apt-get remove -yy --purge --ignore-missing $(/bin/dpkg -l | /bin/egrep "^rc" | /bin/awk '{print $2}')
+sudo apt-get autoremove -yy --purge --ignore-missing
 sudo apt-get clean -y
 sudo apt-get autoclean -y
 sudo apt-get install -f --assume-yes
