@@ -173,9 +173,11 @@ sudo killall -HUP pulseaudio
 
 # ------------------------------------------------------------------------
 
-# Prevent stupid error beeps*
-sudo rmmod pcspkr
-echo -e "blacklist pcspkr" | sudo tee /etc/modprobe.d/nobeep.conf
+# Prevent stupid feedbacks et cetera
+echo -e "blacklist pcspkr
+blacklist snd_pcsp
+blacklist lpc_ich
+blacklist gpio-ich" | sudo tee /etc/modprobe.d/nomisc.conf
 
 # ------------------------------------------------------------------------
 
@@ -330,8 +332,10 @@ sudo systemctl --global disable systemd-timesyncd.service
 # ------------------------------------------------------------------------
 
 echo -e "Optimize writes to the disk"
-sudo sed -i -e s"/\#Storage.*/Storage=none/"g /etc/systemd/journald.conf
-sudo sed -i -e s"/\#Seal.*/Seal=no/"g /etc/systemd/journald.conf
+sudo sed -i -e s"/\Storage=.*/Storage=none/"g /etc/systemd/coredump.conf
+sudo sed -i -e s"/\Seal=.*/Seal=no/"g /etc/systemd/coredump.conf
+sudo sed -i -e s"/\Storage=.*/Storage=none/"g /etc/systemd/journald.conf
+sudo sed -i -e s"/\Seal=.*/Seal=no/"g /etc/systemd/journald.conf
 
 # ------------------------------------------------------------------------
 
