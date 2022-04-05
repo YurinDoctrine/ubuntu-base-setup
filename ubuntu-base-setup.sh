@@ -432,6 +432,11 @@ echo -e "auto" | sudo tee /sys/bus/{i2c,pci}/devices/*/power/control
 
 # ------------------------------------------------------------------------
 
+## Disable file indexer
+balooctl disable
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo sed -i -e 's/GRUB_RECORDFAIL_TIMEOUT=.*/GRUB_RECORDFAIL_TIMEOUT=0/' /etc/default/grub
