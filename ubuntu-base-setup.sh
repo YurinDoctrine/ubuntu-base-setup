@@ -93,7 +93,8 @@ gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "GST_VAAPI_ALL_DRIVERS=1
+echo -e "KEYTIMEOUT=1
+GST_VAAPI_ALL_DRIVERS=1
 DRAW_USE_LLVM=1
 SOFTPIPE_USE_LLVM=1
 INTEL_BATCH=1
