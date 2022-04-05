@@ -306,14 +306,14 @@ sudo sed -i -e 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
 echo -e "Enable tmpfs ramdisk"
 sudo sed -i -e '/^\/\/tmpfs/d' /etc/fstab
-echo -e "tmpfs /var/tmp tmpfs nodiratime,nodev,nosuid,mode=1777,size=30m 0 0
-tmpfs /var/run tmpfs nodiratime,nodev,nosuid,mode=1777,size=30m 0 0
-tmpfs /var/lock tmpfs nodiratime,nodev,nosuid,mode=1777,size=30m 0 0
-tmpfs /var/cache tmpfs nodiratime,nodev,nosuid,mode=1777 0 0
-tmpfs /var/volatile tmpfs nodiratime,nodev,nosuid,mode=1777,size=30m 0 0
-tmpfs /var/log tmpfs nodiratime,nodev,nosuid,mode=1777,size=30m 0 0
-tmpfs /dev/shm tmpfs nodiratime,nodev,nosuid,mode=1777,size=30m 0 0
-tmpfs /media/ram tmpfs nodiratime,nodev,nosuid,mode=1777,size=30m 0 0" | sudo tee -a /etc/fstab
+echo -e "tmpfs /var/tmp tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
+tmpfs /var/run tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
+tmpfs /var/lock tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
+tmpfs /var/cache tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
+tmpfs /var/volatile tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
+tmpfs /var/log tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
+tmpfs /dev/shm tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
+tmpfs /media/ram tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0" | sudo tee -a /etc/fstab
 
 # ------------------------------------------------------------------------
 
