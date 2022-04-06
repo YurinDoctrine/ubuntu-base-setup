@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -f --assume-yes 9base base-files binutils git gnupg2 haveged kmod libinput-dev lz4 pkgconf psmisc ufw wget xdg-utils &&
+    sudo apt install -f --assume-yes 9base base-files binutils git gnupg2 haveged hwloc kmod libinput-dev lz4 pkgconf psmisc ufw wget xdg-utils &&
     sudo apt install -f --assume-yes software-properties-common ubuntu-drivers-common &&
     sudo apt install -f --assume-yes kubuntu-restricted-addons
 
