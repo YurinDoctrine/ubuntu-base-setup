@@ -139,7 +139,7 @@ PKGS=(
     'wireplumber'    # Modular session / policy manager for PipeWire
 
     # DEVELOPMENT ---------------------------------------------------------
-    'clang'       # C language family frontend for LLVM
+    'clang' # C language family frontend for LLVM
 
 )
 
