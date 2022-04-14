@@ -90,6 +90,10 @@ gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 100
 # Mouse
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 
+# Misc
+gsettings set org.gtk.Settings.FileChooser show-hidden true
+gsettings set org.gnome.shell.overrides attach-modal-dialogs false
+
 # ------------------------------------------------------------------------
 
 # Set environment variables
@@ -380,6 +384,9 @@ sudo systemctl disable systemd-rfkill.service
 sudo systemctl --global disable systemd-rfkill.service
 sudo systemctl disable systemd-rfkill.socket
 sudo systemctl --global disable systemd-rfkill.socket
+echo -e "Disable ModemManager"
+sudo systemctl disable ModemManager
+sudo systemctl --global disable ModemManager
 
 # ------------------------------------------------------------------------
 
