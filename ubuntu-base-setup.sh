@@ -136,7 +136,7 @@ PKGS=(
     'irqbalance'     # IRQ balancing daemon for SMP systems
     'libwayland-dev' # A computer display server protocol - development files
     'numad'          # Simple NUMA policy support
-    'unscd'       # Micro Name Service Caching Daemon
+    'unscd'          # Micro Name Service Caching Daemon
     'wireplumber'    # Modular session / policy manager for PipeWire
 
     # DEVELOPMENT ---------------------------------------------------------
