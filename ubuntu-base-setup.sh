@@ -92,7 +92,10 @@ gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat
 
 # Misc
 gsettings set org.gtk.Settings.FileChooser show-hidden true
+gsettings set org.gnome.mutter attach-modal-dialogs false
 gsettings set org.gnome.shell.overrides attach-modal-dialogs false
+gsettings set org.gnome.shell.overrides edge-tiling true
+gsettings set org.gnome.mutter edge-tiling true
 
 # ------------------------------------------------------------------------
 
