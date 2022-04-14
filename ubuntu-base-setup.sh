@@ -196,9 +196,8 @@ sudo btrfs balance start -musage=0 -dusage=50 /
 
 # ------------------------------------------------------------------------
 
-echo -e "Apply disk tweaks"
-sudo sed -i -e 's| defaults| rw,lazytime,relatime,commit=600|g' /etc/fstab
-sudo sed -i -e 's| errors=remount-ro| rw,lazytime,relatime,commit=600,errors=remount-ro|g' /etc/fstab
+sudo sed -i -e 's| defaults| rw,lazytime,relatime,commit=600,data=writeback|g' /etc/fstab
+sudo sed -i -e 's| errors=remount-ro| rw,lazytime,relatime,commit=600,data=writeback,errors=remount-ro|g' /etc/fstab
 
 # ------------------------------------------------------------------------
 
@@ -266,7 +265,7 @@ echo -e 'DPkg::Options {
    "--force-confdef";
 };' | sudo tee /etc/apt/apt.conf.d/71debconf
 ## APT no install suggests
-echo -e 'APT::Get::Install-Suggests "false";' | sudo tee /etc/apt/apt.conf.d/95-no-suggests
+echo -e 'APT::Get::Install-Suggests "false";' | sudo tee /etc/apt/apt.conf.d/95nosuggests
 
 # ------------------------------------------------------------------------
 
