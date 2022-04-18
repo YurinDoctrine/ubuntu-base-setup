@@ -450,7 +450,7 @@ balooctl disable
 # ------------------------------------------------------------------------
 
 echo -e "Enable write cache"
-echo -e "write back" | sudo tee /sys/block/sda/queue/write_cache
+echo -e "write back" | sudo tee /sys/block/*/queue/write_cache
 
 # ------------------------------------------------------------------------
 
