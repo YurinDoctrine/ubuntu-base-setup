@@ -449,6 +449,11 @@ balooctl disable
 
 # ------------------------------------------------------------------------
 
+echo -e "Enable write cache"
+echo -e "write back" | sudo tee /sys/block/sda/queue/write_cache
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo sed -i -e 's/GRUB_RECORDFAIL_TIMEOUT=.*/GRUB_RECORDFAIL_TIMEOUT=0/' /etc/default/grub
