@@ -134,8 +134,8 @@ PKGS=(
     'chrony'      # Versatile implementation of the Network Time Protocol
     'dbus-broker' # Linux D-Bus Message Broker
     'mksh'        # MirBSD Korn Shell
+    'powertop'    # A tool to diagnose issues with power consumption and power management
     'preload'     # Makes applications run faster by prefetching binaries and shared objects
-    'tlp'         # Linux Advanced Power Management
     'tumbler'     # D-Bus service for applications to request thumbnails
 
     # GENERAL UTILITIES ---------------------------------------------------
@@ -446,6 +446,7 @@ sudo systemctl mask remote-fs.target >/dev/null 2>&1
 echo -e "min_power" | sudo tee /sys/class/scsi_host/*/link_power_management_policy
 echo -e "1" | sudo tee /sys/module/snd_hda_intel/parameters/power_save
 echo -e "auto" | sudo tee /sys/bus/{i2c,pci}/devices/*/power/control
+sudo powertop --auto-tune
 
 # ------------------------------------------------------------------------
 
