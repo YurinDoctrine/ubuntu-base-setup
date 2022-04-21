@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    sudo apt install -f --assume-yes 9base base-files binutils git gnupg haveged kmod libinput-dev lz4 libx11-dev pkgconf psmisc ufw wget xdg-utils &&
-    sudo apt install -f --assume-yes software-properties-common ubuntu-drivers-common &&
-    sudo apt install -f --assume-yes kubuntu-restricted-addons
+    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes 9base base-files binutils git gnupg haveged kmod libinput-dev lz4 libx11-dev pkgconf psmisc ufw wget xdg-utils &&
+    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes software-properties-common ubuntu-drivers-common &&
+    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes kubuntu-restricted-addons
 
 # ------------------------------------------------------------------------
 
@@ -135,6 +135,7 @@ PKGS=(
     'dbus-broker' # Linux D-Bus Message Broker
     'mksh'        # MirBSD Korn Shell
     'preload'     # Makes applications run faster by prefetching binaries and shared objects
+    'tlp'         # Linux Advanced Power Management
     'tumbler'     # D-Bus service for applications to request thumbnails
 
     # GENERAL UTILITIES ---------------------------------------------------
@@ -153,7 +154,7 @@ PKGS=(
 
 for PKG in "${PKGS[@]}"; do
     echo -e "INSTALLING: ${PKG}"
-    sudo apt install -f --assume-yes --no-install-recommends "$PKG"
+    sudo apt install -f --assume-yes --install-recommends "$PKG"
 done
 
 echo -e "Done!"
