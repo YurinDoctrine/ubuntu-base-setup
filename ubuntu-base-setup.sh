@@ -550,6 +550,8 @@ sudo apt-get install -f --assume-yes
 
 ## Optimize font cache
 fc-cache -rfv
+## Optimize icon cache
+gtk-update-icon-cache
 
 # ------------------------------------------------------------------------
 
