@@ -288,6 +288,10 @@ echo -e "* soft memlock unlimited
 * hard memlock unlimited
 root soft memlock unlimited
 root hard memlock unlimited
+* soft core unlimited
+* hard core unlimited
+root soft core unlimited
+root hard core unlimited
 * soft nproc unlimited
 * hard nproc unlimited
 root soft nproc unlimited
