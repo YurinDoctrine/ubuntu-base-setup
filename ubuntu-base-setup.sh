@@ -286,8 +286,8 @@ echo -e 'APT::Get::Install-Suggests "false";' | sudo tee /etc/apt/apt.conf.d/95n
 ## Set some ulimits to unlimited
 echo -e "* soft as unlimited
 * hard as unlimited
-root as unlimited
-root as unlimited
+root soft as unlimited
+root hard as unlimited
 * soft nofile 32768
 * hard nofile 32768
 root soft nofile 32768
