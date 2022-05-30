@@ -262,7 +262,7 @@ net.ipv4.tcp_keepalive_probes=5
 net.ipv4.tcp_keepalive_intvl=15
 net.ipv4.tcp_ecn=1
 net.ipv4.tcp_fastopen=3
-net.ipv4.tcp_early_retrans=1" | sudo tee /etc/sysctl.d/99-swappiness.conf
+net.ipv4.tcp_early_retrans=2" | sudo tee /etc/sysctl.d/99-swappiness.conf
 echo -e "Drop caches"
 sudo sysctl -w vm.compact_memory=1 && sudo sysctl -w vm.drop_caches=3 && sudo sysctl -w vm.drop_caches=2
 echo -e "Restart swap"
