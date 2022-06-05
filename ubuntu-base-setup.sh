@@ -140,12 +140,12 @@ PKGS=(
 
     # GENERAL UTILITIES ---------------------------------------------------
 
-    'acpid'          # A daemon for delivering ACPI power management events with netlink support
-    'irqbalance'     # IRQ balancing daemon for SMP systems
-    'libwayland-dev' # A computer display server protocol - development files
-    'numad'          # Simple NUMA policy support
-    'unscd'          # Micro Name Service Caching Daemon
-    'wireplumber'    # Modular session / policy manager for PipeWire
+    'acpid'                  # A daemon for delivering ACPI power management events with netlink support
+    'irqbalance'             # IRQ balancing daemon for SMP systems
+    'libwayland-dev'         # A computer display server protocol - development files
+    'numad'                  # Simple NUMA policy support
+    'pipewire-media-session' # Session Manager for PipeWire
+    'unscd'                  # Micro Name Service Caching Daemon
 
     # DEVELOPMENT ---------------------------------------------------------
     'clang' # C language family frontend for LLVM
