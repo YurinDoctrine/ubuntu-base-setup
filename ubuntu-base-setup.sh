@@ -100,7 +100,8 @@ gsettings set org.gnome.mutter edge-tiling true
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "KEYTIMEOUT=1
+echo -e "EGL_PLATFORM=x11
+KEYTIMEOUT=1
 GST_VAAPI_ALL_DRIVERS=1
 DRAW_USE_LLVM=1
 SOFTPIPE_USE_LLVM=1
