@@ -100,7 +100,9 @@ gsettings set org.gnome.mutter edge-tiling true
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "VDPAU_DRIVER=va_gl
+echo -e "GDK_GL=gles
+CLUTTER_BACKEND=x11
+VDPAU_DRIVER=va_gl
 EGL_PLATFORM=x11
 KEYTIMEOUT=1
 GST_VAAPI_ALL_DRIVERS=1
