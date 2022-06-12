@@ -100,7 +100,8 @@ gsettings set org.gnome.mutter edge-tiling true
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "WLR_RENDERER=vulkan
+echo -e "DRAW_NO_FSE=1
+WLR_RENDERER=vulkan
 GDK_GL=gles
 CLUTTER_BACKEND=x11
 VDPAU_DRIVER=va_gl
