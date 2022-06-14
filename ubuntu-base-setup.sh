@@ -513,7 +513,7 @@ echo -e "z3fold" | sudo tee -a /etc/initramfs-tools/modules
 ## Enable lz4 compression
 sudo sed -i -e 's/MODULES=most/MODULES=dep/g' /etc/initramfs-tools/initramfs.conf
 sudo sed -i -e 's/COMPRESS=.*/COMPRESS=lz4/g' /etc/initramfs-tools/initramfs.conf
-sudo update-initramfs -u
+sudo update-initramfs -u -k all
 
 # ------------------------------------------------------------------------
 
