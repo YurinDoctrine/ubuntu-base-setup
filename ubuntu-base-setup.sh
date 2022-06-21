@@ -100,7 +100,8 @@ gsettings set org.gnome.mutter edge-tiling true
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "QT_GRAPHICSSYSTEM=raster
+echo -e "GLSLC=glslc
+QT_GRAPHICSSYSTEM=raster
 DRI_NO_MSAA=1
 LIBGL_ALWAYS_INDIRECT=1
 DRAW_NO_FSE=1
