@@ -100,7 +100,8 @@ gsettings set org.gnome.mutter edge-tiling true
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "QT_WEBENGINE_DISABLE_WAYLAND_WORKAROUND=1
+echo -e "WLR_DRM_NO_MODIFIERS=1
+QT_WEBENGINE_DISABLE_WAYLAND_WORKAROUND=1
 PIPEWIRE_PROFILE_MODULES=default,rtkit
 GST_AUDIO_RESAMPLER_QUALITY_DEFAULT=9
 GLSLC=glslc
