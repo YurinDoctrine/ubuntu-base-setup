@@ -43,6 +43,7 @@ find /usr/share/doc/ | egrep '\.tex' | xargs sudo rm -f
 find /usr/share/doc/ -empty | xargs sudo rmdir || true
 sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
     /usr/share/linda/* /var/cache/man/* /usr/share/man/*
+sudo rm -rfd /usr/share/locale/!(en)
 
 # ------------------------------------------------------------------------
 
@@ -96,6 +97,7 @@ gsettings set org.gnome.mutter attach-modal-dialogs false
 gsettings set org.gnome.shell.overrides attach-modal-dialogs false
 gsettings set org.gnome.shell.overrides edge-tiling true
 gsettings set org.gnome.mutter edge-tiling true
+gsettings set org.gnome.desktop.background color-shading-type vertical
 
 # ------------------------------------------------------------------------
 
@@ -513,7 +515,7 @@ sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo sed -i -e 's/GRUB_RECORDFAIL_TIMEOUT=.*/GRUB_RECORDFAIL_TIMEOUT=0/' /etc/default/grub
 ## Change GRUB defaults
 sudo sed -i -e 's/GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=true/' /etc/default/grub
-sudo sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet nouveau.modeset=0 nvidia-drm.modeset=1 amdgpu.modeset=1 amdgpu.dpm=1 amdgpu.audio=1 amdgpu.dc=1 i915.modeset=1 i915.enable_ppgtt=3 i915.fastboot=1 i915.enable_fbc=1 i915.enable_guc=2 i915.lvds_downclock=1 i915.semaphores=1 snd-hda-intel.power_save=1 snd-hda-intel.enable_msi=1 pcie_aspm=off drm.vblankoffdelay=1 vt.global_cursor_default=0 scsi_mod.use_blk_mq=1 mitigations=off zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=zsmalloc plymouth.ignore-serial-consoles loglevel=0 rd.systemd.show_status=auto rd.udev.log_level=0 udev.log_priority=3 audit=0 no_timer_check cryptomgr.notests iommu=soft amd_iommu=on intel_iommu=igfx_off kvm-intel.nested=1 iwlmvm_power_scheme=2 intel_pstate=disable intel_idle.max_cstate=0 noreplace-smp page_poison=1 page_alloc.shuffle=1 rcupdate.rcu_expedited=1 tsc=reliable nowatchdog idle=poll noatime pti=on init_on_free=1 acpi=force acpi_enforce_resources=lax acpi_backlight=vendor processor.max_cstate=1 skew_tick=1 nosoftlockup mce=ignore_ce mem_sleep_default=deep elevator=noop enable_mtrr_cleanup mtrr_spare_reg_nr=1 clearcpuid=514 random.trust_cpu=on nopti no_stf_barrier nokaslr norandmaps mds=off l1tf=off noibrs noibpb nospectre_v2 nospectre_v1 kpti=off nopcid srbds=off hardened_usercopy=off ssbd=force-off nohz=on nohz_full=all rcu_nocbs=all irqaffinity=0 msr.allow_writes=on enforcing=0 module.sig_unenforce init_on_alloc=0 ahci.mobile_lpm_policy=0 processor.nocst=1 ftrace_enabled=0 fsck.mode=skip"/' /etc/default/grub
+sudo sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet net.ifnames=0 biosdevname=0 nouveau.modeset=0 nvidia-drm.modeset=1 amdgpu.modeset=1 amdgpu.dpm=1 amdgpu.audio=1 amdgpu.dc=1 i915.modeset=1 i915.enable_ppgtt=3 i915.fastboot=1 i915.enable_fbc=1 i915.enable_guc=2 i915.lvds_downclock=1 i915.semaphores=1 snd-hda-intel.power_save=1 snd-hda-intel.enable_msi=1 pcie_aspm=off drm.vblankoffdelay=1 vt.global_cursor_default=0 scsi_mod.use_blk_mq=1 mitigations=off zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=zsmalloc plymouth.ignore-serial-consoles loglevel=0 rd.systemd.show_status=auto rd.udev.log_level=0 udev.log_priority=3 audit=0 no_timer_check cryptomgr.notests iommu=soft amd_iommu=on intel_iommu=igfx_off kvm-intel.nested=1 iwlmvm_power_scheme=2 intel_pstate=disable intel_idle.max_cstate=0 noreplace-smp page_poison=1 page_alloc.shuffle=1 rcupdate.rcu_expedited=1 tsc=reliable nowatchdog idle=poll noatime pti=on init_on_free=1 acpi=force acpi_enforce_resources=lax acpi_backlight=vendor processor.max_cstate=1 skew_tick=1 nosoftlockup mce=ignore_ce mem_sleep_default=deep elevator=noop enable_mtrr_cleanup mtrr_spare_reg_nr=1 clearcpuid=514 random.trust_cpu=on nopti no_stf_barrier nokaslr norandmaps mds=off l1tf=off noibrs noibpb nospectre_v2 nospectre_v1 kpti=off nopcid srbds=off hardened_usercopy=off ssbd=force-off nohz=on nohz_full=all rcu_nocbs=all irqaffinity=0 msr.allow_writes=on enforcing=0 module.sig_unenforce init_on_alloc=0 ahci.mobile_lpm_policy=0 processor.nocst=1 ftrace_enabled=0 fsck.mode=skip"/' /etc/default/grub
 sudo update-grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 echo -e "Enable BFQ scheduler"
@@ -523,6 +525,7 @@ echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*|mmcblk[0-9]*|nvme[0-9]*", 
 sudo sed -i -e 's/MODULES=most/MODULES=dep/g' /etc/initramfs-tools/initramfs.conf
 sudo sed -i -e 's/COMPRESS=.*/COMPRESS=lz4/g' /etc/initramfs-tools/initramfs.conf
 sudo update-initramfs -u -k all
+sudo mkinitramfs -c lz4 -o /boot/initrd.img-*
 
 # ------------------------------------------------------------------------
 
@@ -582,6 +585,7 @@ cd
 # ------------------------------------------------------------------------
 
 echo -e "Clear the patches"
+sudo dd bs=4k if=/dev/zero of=/var/tmp/dummy || sudo rm -rfd /var/tmp/dummy
 rm -rfd /{tmp,var/tmp}/{.*,*}
 sudo rm -rfd /var/cache/apt/archives/*
 sudo rm -rfd /var/lib/dpkg/info/*.postinst
@@ -606,4 +610,6 @@ sudo rm -rfd /var/crash/*
 echo -e "Clean archived journal"
 sudo journalctl --rotate --vacuum-time=0.1
 sudo sed -i -e 's/^#ForwardToSyslog=yes/ForwardToSyslog=no/' /etc/systemd/journald.conf
-sync
+echo -e "Scrub free space and sync"
+sudo dd bs=4k if=/dev/zero of=/var/tmp/dummy || sudo rm -rfd /var/tmp/dummy
+sync -f
