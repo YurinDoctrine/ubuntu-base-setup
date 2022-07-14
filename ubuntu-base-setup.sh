@@ -585,7 +585,6 @@ cd
 # ------------------------------------------------------------------------
 
 echo -e "Clear the patches"
-sudo dd bs=4k if=/dev/zero of=/var/tmp/dummy || sudo rm -rfd /var/tmp/dummy
 rm -rfd /{tmp,var/tmp}/{.*,*}
 sudo rm -rfd /var/cache/apt/archives/*
 sudo rm -rfd /var/lib/dpkg/info/*.postinst
