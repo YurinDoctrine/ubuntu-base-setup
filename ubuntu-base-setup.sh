@@ -519,8 +519,6 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 echo -e "Enable BFQ scheduler"
 echo -e "bfq" | sudo tee /etc/modules-load.d/bfq.conf
 echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*|mmcblk[0-9]*|nvme[0-9]*", ATTR{queue/rotational}=="1", ATTR{queue/iosched/low_latency}="1", ATTR{queue/scheduler}="bfq"' | sudo tee /etc/udev/rules.d/60-scheduler.rules
-echo -e "Enable z3fold"
-echo -e "z3fold" | sudo tee -a /etc/initramfs-tools/modules
 ## Enable lz4 compression
 sudo sed -i -e 's/MODULES=most/MODULES=dep/g' /etc/initramfs-tools/initramfs.conf
 sudo sed -i -e 's/COMPRESS=.*/COMPRESS=lz4/g' /etc/initramfs-tools/initramfs.conf
