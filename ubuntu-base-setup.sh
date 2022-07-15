@@ -275,6 +275,7 @@ kernel.perf_cpu_time_max_percent = 15
 kernel.printk_devkmsg = off
 fs.leases-enable = 1
 fs.lease-break-time = 5
+fs.dir-notify-enable = 0
 net.ipv4.tcp_frto=1
 net.ipv4.tcp_frto_response=2
 net.ipv4.tcp_low_latency=1
