@@ -273,6 +273,7 @@ kernel.panic = 0
 kernel.panic_on_oops = 0
 kernel.perf_cpu_time_max_percent = 15
 kernel.printk_devkmsg = off
+fs.leases-enable = 1
 fs.lease-break-time = 5
 net.ipv4.tcp_frto=1
 net.ipv4.tcp_frto_response=2
