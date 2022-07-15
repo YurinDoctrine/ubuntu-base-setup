@@ -244,6 +244,7 @@ vm.page-cluster = 0
 vm.dirty_expire_centisecs = 1000
 vm.oom_kill_allocating_task = 1
 vm.extfrag_threshold = 750
+vm.block_dump = 0
 kernel.sysrq = 0
 kernel.watchdog_thresh = 30
 kernel.nmi_watchdog = 0
