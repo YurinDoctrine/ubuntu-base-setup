@@ -102,7 +102,8 @@ gsettings set org.gnome.desktop.background color-shading-type vertical
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "WLR_DRM_NO_ATOMIC=1
+echo -e "ELM_ACCEL=opengl
+WLR_DRM_NO_ATOMIC=1
 VGL_READBACK=pbo
 SDL_VIDEO_X11_DGAMOUSE=0
 SDL_VIDEO_FULLSCREEN_HEAD=0
