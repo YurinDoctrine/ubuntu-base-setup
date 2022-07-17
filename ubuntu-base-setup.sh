@@ -276,6 +276,7 @@ kernel.perf_cpu_time_max_percent = 10
 kernel.printk_devkmsg = off
 kernel.random.urandom_min_reseed_secs = 120
 kernel.perf_event_paranoid = -1
+kernel.kptr_restrict = 0
 debug.exception-trace = 0
 fs.leases-enable = 1
 fs.lease-break-time = 5
