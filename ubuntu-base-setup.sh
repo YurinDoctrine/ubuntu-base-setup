@@ -620,6 +620,10 @@ sudo rm -rfd /var/crash/*
 echo -e "Clean archived journal"
 sudo journalctl --rotate --vacuum-time=0.1
 sudo sed -i -e 's/^#ForwardToSyslog=yes/ForwardToSyslog=no/' /etc/systemd/journald.conf
+sudo sed -i -e 's/^#ForwardToKMsg=yes/ForwardToKMsg=no/' /etc/systemd/journald.conf
+sudo sed -i -e 's/^#ForwardToConsole=yes/ForwardToConsole=no/' /etc/systemd/journald.conf
+sudo sed -i -e 's/^#ForwardToWall=yes/ForwardToWall=no/' /etc/systemd/journald.conf
 echo -e "Scrub free space and sync"
+echo -e "kernel.core_pattern=/dev/null" | sudo tee /etc/sysctl.d/50-coredump.conf
 sudo dd bs=4k if=/dev/zero of=/var/tmp/dummy || sudo rm -rfd /var/tmp/dummy
 sync -f
