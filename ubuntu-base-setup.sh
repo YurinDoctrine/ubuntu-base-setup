@@ -431,6 +431,7 @@ wifi.powersave = 1" | sudo tee /etc/NetworkManager/conf.d/default-wifi-powersave
 
 ## Suspend when lid is closed
 sudo sed -i -e 's/#HandleLidSwitch=.*/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
+sudo sed -i -e 's/#HandleLidSwitchDocked=.*/HandleLidSwitchDocked=suspend/' /etc/systemd/logind.conf
 
 # ------------------------------------------------------------------------
 
