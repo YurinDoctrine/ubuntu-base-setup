@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes 9base base-files binutils git gnupg haveged kmod libc-bin libglvnd-dev libinput-dev libx11-dev lz4 pkgconf psmisc ufw wget xdg-utils &&
+    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes 9base base-files binutils git gnupg haveged kmod libc-bin libglvnd-dev libinput-dev libx11-dev lz4 pkgconf psmisc ufw wget xdg-utils xserver-xorg-video-vesa &&
     DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes software-properties-common ubuntu-drivers-common &&
     DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes kubuntu-restricted-addons
 
@@ -168,6 +168,8 @@ PKGS=(
     'numad'                  # Simple NUMA policy support
     'pipewire-media-session' # Session Manager for PipeWire
     'unscd'                  # Micro Name Service Caching Daemon
+    'upx-ucl'                # An advanced executable file compressor
+    'woff2'                  # Web Open Font Format 2
 
     # DEVELOPMENT ---------------------------------------------------------
     'clang' # C language family frontend for LLVM
@@ -517,6 +519,11 @@ echo -e "write back" | sudo tee /sys/block/*/queue/write_cache
 
 # ------------------------------------------------------------------------
 
+echo -e "Compress .local/bin"
+upx ~/.local/bin/*
+
+# ------------------------------------------------------------------------
+
 ## Default target graphical user
 sudo systemctl set-default graphical.target
 
@@ -609,6 +616,9 @@ sudo apt-get install -f --assume-yes
 
 # ------------------------------------------------------------------------
 
+echo -e "Compress fonts"
+woff2_compress /usr/share/fonts/opentype/*/*ttf
+woff2_compress /usr/share/fonts/truetype/*/*ttf
 ## Optimize font cache
 fc-cache -rfv
 ## Optimize icon cache
