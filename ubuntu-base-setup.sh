@@ -36,6 +36,7 @@ echo -e "LC_ALL=en_GB.UTF8" | sudo tee -a /etc/environment
 sudo apt install --reinstall --purge -yy locales
 sudo sed -i -e 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
 sudo locale-gen en_GB.UTF-8
+sudo localectl set-locale LANG=en_GB.UTF-8
 sudo timedatectl set-timezone Europe/Moscow
 
 # ------------------------------------------------------------------------
