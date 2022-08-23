@@ -26,6 +26,8 @@ path-include /usr/share/locale/en_GB.UTF-8/*
 # we need to keep copyright files for legal reasons
 path-include /usr/share/doc/*/copyright" | sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc
 echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguages
+# Compress indexes
+echo -e 'Acquire::CompressionTypes::Order:: "lz4";' | sudo tee /etc/apt/apt.conf.d/02compress-indexes
 
 # ------------------------------------------------------------------------
 
@@ -336,6 +338,11 @@ echo -e 'DPkg::Options {
 };' | sudo tee /etc/apt/apt.conf.d/71debconf
 ## APT no install suggests
 echo -e 'APT::Get::Install-Suggests "false";' | sudo tee /etc/apt/apt.conf.d/95nosuggests
+## Disable APT caches
+echo -e 'Dir::Cache {
+   srcpkgcache "";
+   pkgcache "";
+};' | sudo tee /etc/apt/apt.conf.d/02nocache
 
 # ------------------------------------------------------------------------
 
