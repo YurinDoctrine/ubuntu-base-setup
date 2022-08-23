@@ -18,7 +18,7 @@ path-exclude /usr/share/omf/*/*-*.emf
 # lintian stuff is small, but really unnecessary
 path-exclude /usr/share/lintian/*
 path-exclude /usr/share/linda/*
-# Paths to keep
+# paths to keep
 path-include /usr/share/locale/locale.alias
 path-include /usr/share/locale/en/*
 path-include /usr/share/locale/en_GB/*
