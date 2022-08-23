@@ -7,14 +7,7 @@ sudo apt update &&
 
 # ------------------------------------------------------------------------
 
-echo -e "# Paths to keep
-path-include=/usr/share/locale/locale.alias
-path-include=/usr/share/locale/en/*
-path-include=/usr/share/locale/en_GB/*
-path-include=/usr/share/locale/en_GB.UTF-8/*
-# we need to keep copyright files for legal reasons
-path-include /usr/share/doc/*/copyright
-path-exclude /usr/share/doc/*
+echo -e "path-exclude /usr/share/doc/*
 path-exclude /usr/share/man/*
 path-exclude /usr/share/groff/*
 path-exclude /usr/share/info/*
@@ -24,7 +17,14 @@ path-exclude /usr/share/doc/kde/HTML/*/*
 path-exclude /usr/share/omf/*/*-*.emf
 # lintian stuff is small, but really unnecessary
 path-exclude /usr/share/lintian/*
-path-exclude /usr/share/linda/*" | sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc
+path-exclude /usr/share/linda/*
+# Paths to keep
+path-include /usr/share/locale/locale.alias
+path-include /usr/share/locale/en/*
+path-include /usr/share/locale/en_GB/*
+path-include /usr/share/locale/en_GB.UTF-8/*
+# we need to keep copyright files for legal reasons
+path-include /usr/share/doc/*/copyright" | sudo tee /etc/dpkg/dpkg.cfg.d/01_nodoc
 echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguages
 
 # ------------------------------------------------------------------------
