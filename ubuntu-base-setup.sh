@@ -28,7 +28,7 @@ path-include /usr/share/doc/*/copyright" | sudo tee /etc/dpkg/dpkg.cfg.d/01_nodo
 echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguages
 # Compress indexes
 echo -e 'Acquire::CompressionTypes::lz4 "lz4";' | sudo tee /etc/apt/apt.conf.d/02compress-indexes
-# Disable APT terminal log
+# Disable APT terminal logging
 echo -e 'Dir::Log::Terminal "";' | sudo tee /etc/apt/apt.conf.d/01disable-log
 
 # ------------------------------------------------------------------------
