@@ -180,6 +180,7 @@ PKGS=(
     'irqbalance'             # IRQ balancing daemon for SMP systems
     'ksmtuned'               # Kernel Samepage Merging
     'libwayland-dev'         # A computer display server protocol - development files
+    'linux-cpupower'         # A tool to examine and tune power saving related features of your processor
     'numad'                  # Simple NUMA policy support
     'pipewire-media-session' # Session Manager for PipeWire
     'unscd'                  # Micro Name Service Caching Daemon
@@ -527,6 +528,7 @@ echo -e "min_power" | sudo tee /sys/class/scsi_host/*/link_power_management_poli
 echo -e "1" | sudo tee /sys/module/snd_hda_intel/parameters/power_save
 echo -e "auto" | sudo tee /sys/bus/{i2c,pci}/devices/*/power/control
 sudo powertop --auto-tune && sudo powertop --auto-tune
+sudo cpupower frequency-set -g powersave
 
 # ------------------------------------------------------------------------
 
