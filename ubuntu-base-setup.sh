@@ -529,6 +529,7 @@ echo -e "1" | sudo tee /sys/module/snd_hda_intel/parameters/power_save
 echo -e "auto" | sudo tee /sys/bus/{i2c,pci}/devices/*/power/control
 sudo powertop --auto-tune && sudo powertop --auto-tune
 sudo cpupower frequency-set -g powersave
+sudo cpupower set --perf-bias 9
 
 # ------------------------------------------------------------------------
 
