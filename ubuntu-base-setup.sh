@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes 9base base-files binutils git gnupg haveged kmod libc-bin libglvnd-dev libinput-dev libx11-dev lz4 pkgconf psmisc rtkit ufw wget xdg-utils xserver-xorg-video-vesa &&
+    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes 9base base-files binutils git gnupg haveged kmod libc-bin libglvnd-dev libinput-dev libx11-dev lm-sensors lz4 pkgconf psmisc rtkit ufw wget xdg-utils xserver-xorg-video-vesa &&
     DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes software-properties-common ubuntu-drivers-common &&
     DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes kubuntu-restricted-addons
 
@@ -37,6 +37,7 @@ echo -e 'Dir::Log::Terminal "";' | sudo tee /etc/apt/apt.conf.d/01disable-log
 echo -e "LANG=en_GB.UTF8" | sudo tee -a /etc/environment
 echo -e "LANGUAGE=en_GB.UTF8" | sudo tee -a /etc/environment
 echo -e "LC_ALL=en_GB.UTF8" | sudo tee -a /etc/environment
+echo -e "LC_COLLATE=C" | sudo tee -a /etc/environment
 sudo apt install --reinstall --purge -yy locales
 sudo sed -i -e 's/^#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/' /etc/locale.gen
 sudo locale-gen en_GB.UTF-8
@@ -528,6 +529,7 @@ echo -e "auto" | sudo tee /sys/bus/{i2c,pci}/devices/*/power/control
 sudo powertop --auto-tune && sudo powertop --auto-tune
 sudo cpupower frequency-set -g powersave
 sudo cpupower set --perf-bias 9
+sudo sensors-detect --auto
 
 # ------------------------------------------------------------------------
 
