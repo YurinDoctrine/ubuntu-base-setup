@@ -537,6 +537,7 @@ sudo sensors-detect --auto
 ## Disable file indexer
 balooctl suspend
 balooctl disable
+
 # ------------------------------------------------------------------------
 
 echo -e "Enable write cache"
