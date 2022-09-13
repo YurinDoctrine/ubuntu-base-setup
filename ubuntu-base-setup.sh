@@ -240,6 +240,8 @@ sudo systemctl mask motd-news.timer >/dev/null 2>&1
 # ------------------------------------------------------------------------
 
 # btrfs tweaks if disk is
+systemctl enable btrfs-scrub@home.timer 
+systemctl enable btrfs-scrub@-.timer 
 sudo btrfs balance start -musage=0 -dusage=50 /
 
 # ------------------------------------------------------------------------
