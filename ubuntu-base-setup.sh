@@ -552,6 +552,11 @@ upx ~/.local/bin/*
 
 # ------------------------------------------------------------------------
 
+echo -e "Improve I/O throughput"
+echo 32 | sudo tee /sys/block/sd*[!0-9]/queue/iosched/fifo_batch
+
+# ------------------------------------------------------------------------
+
 ## Default target graphical user
 sudo systemctl set-default graphical.target
 
