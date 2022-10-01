@@ -117,7 +117,8 @@ gsettings set org.gnome.desktop.background color-shading-type vertical
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "COGL_ATLAS_DEFAULT_BLIT_MODE=framebuffer
+echo -e "KIRIGAMI_LOWPOWER_HARDWARE=1
+COGL_ATLAS_DEFAULT_BLIT_MODE=framebuffer
 ELM_ACCEL=opengl
 WLR_DRM_NO_ATOMIC=1
 VGL_READBACK=pbo
