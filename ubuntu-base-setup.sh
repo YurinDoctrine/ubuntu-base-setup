@@ -117,7 +117,8 @@ gsettings set org.gnome.desktop.background color-shading-type vertical
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "SDL_VIDEODRIVER=wayland
+echo -e "KWIN_TRIPLE_BUFFER=1
+SDL_VIDEODRIVER=wayland
 KIRIGAMI_LOWPOWER_HARDWARE=1
 COGL_ATLAS_DEFAULT_BLIT_MODE=framebuffer
 ELM_ACCEL=opengl
