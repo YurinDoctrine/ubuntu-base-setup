@@ -566,6 +566,12 @@ sudo systemctl set-default graphical.target
 
 # ------------------------------------------------------------------------
 
+echo -e "Disable systemd foo service"
+sudo systemctl disable foo.service
+sudo systemctl --global disable foo.service
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo sed -i -e 's/GRUB_RECORDFAIL_TIMEOUT=.*/GRUB_RECORDFAIL_TIMEOUT=0/' /etc/default/grub
