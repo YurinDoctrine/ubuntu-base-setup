@@ -309,6 +309,7 @@ kernel.perf_event_paranoid = -1
 kernel.kptr_restrict = 0
 dev.i915.perf_stream_paranoid = 0
 debug.exception-trace = 0
+debug.kprobes-optimization = 1
 fs.leases-enable = 1
 fs.lease-break-time = 5
 fs.dir-notify-enable = 0
@@ -574,6 +575,11 @@ sudo systemctl set-default graphical.target
 echo -e "Disable systemd foo service"
 sudo systemctl disable foo.service
 sudo systemctl --global disable foo.service
+
+# ------------------------------------------------------------------------
+
+## Improve wifi
+echo -e "options iwlwifi 11n_disable=8" | sudo tee /etc/modprobe.d/iwlwifi-speed.conf
 
 # ------------------------------------------------------------------------
 
