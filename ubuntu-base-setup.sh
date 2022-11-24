@@ -117,7 +117,8 @@ gsettings set org.gnome.desktop.background color-shading-type vertical
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "KDE_DEBUG=0
+echo -e "KDE_NOUNLOAD=1
+KDE_DEBUG=0
 LIBGL_DEBUG=0
 PLASMA_PRELOAD_POLICY=agressive
 XLIB_SKIP_ARGB_VISUALS=0
