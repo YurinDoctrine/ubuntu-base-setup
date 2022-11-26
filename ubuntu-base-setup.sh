@@ -277,6 +277,7 @@ vm.extfrag_threshold = 750
 vm.block_dump = 0
 vm.reap_mem_on_sigkill = 1
 vm.panic_on_oom = 0
+vm.zone_reclaim_mode = 0
 kernel.sysrq = 0
 kernel.watchdog_thresh = 60
 kernel.nmi_watchdog = 0
@@ -313,6 +314,15 @@ kernel.exec-shield = 0
 dev.i915.perf_stream_paranoid = 0
 debug.exception-trace = 0
 debug.kprobes-optimization = 1
+fs.quota.allocated_dquots = 0
+fs.quota.cache_hits = 0
+fs.quota.drops = 0
+fs.quota.free_dquots = 0
+fs.quota.lookups = 0
+fs.quota.reads = 0
+fs.quota.syncs = 0
+fs.quota.warnings = 0
+fs.quota.writes = 0
 fs.leases-enable = 1
 fs.lease-break-time = 5
 fs.dir-notify-enable = 0
@@ -328,7 +338,8 @@ net.ipv4.tcp_ecn=1
 net.ipv4.tcp_fastopen=3
 net.ipv4.tcp_early_retrans=2
 net.ipv4.tcp_thin_dupack=1
-net.ipv4.tcp_autocorking=0" | sudo tee /etc/sysctl.d/99-swappiness.conf
+net.ipv4.tcp_autocorking=0
+net.ipv4.tcp_reordering=3" | sudo tee /etc/sysctl.d/99-swappiness.conf
 echo -e "Drop caches"
 sudo sysctl -w vm.compact_memory=1 && sudo sysctl -w vm.drop_caches=3 && sudo sysctl -w vm.drop_caches=2
 echo -e "Restart swap"
