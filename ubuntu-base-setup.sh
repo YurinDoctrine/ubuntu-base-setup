@@ -597,6 +597,12 @@ echo -e "options iwlwifi 11n_disable=8" | sudo tee /etc/modprobe.d/iwlwifi-speed
 
 # ------------------------------------------------------------------------
 
+echo -e "Enable HDD write caching"
+sudo hdparm -W 1 /dev/sd*
+sudo hdparm -W 1 /dev/nvme*
+
+# ------------------------------------------------------------------------
+
 ## GRUB timeout
 sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo sed -i -e 's/GRUB_RECORDFAIL_TIMEOUT=.*/GRUB_RECORDFAIL_TIMEOUT=0/' /etc/default/grub
