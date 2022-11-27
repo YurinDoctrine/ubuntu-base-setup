@@ -439,6 +439,8 @@ tmpfs /media tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0" | sudo tee -
 
 ## Disable resume from hibernate
 echo -e "#" | sudo tee /etc/initramfs-tools/conf.d/resume
+echo -e "Disable hibernate/hybrid-sleep service"
+sudo systemctl mask hibernate.target hybrid-sleep.target
 
 # ------------------------------------------------------------------------
 
