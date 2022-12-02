@@ -504,6 +504,12 @@ sudo systemctl --global disable systemd-rfkill.socket
 echo -e "Disable ModemManager"
 sudo systemctl disable ModemManager
 sudo systemctl --global disable ModemManager
+echo -e "Disable speech-dispatcher"
+sudo systemctl disable speech-dispatcher
+sudo systemctl --global disable speech-dispatcher
+echo -e "Disable smartmontools"
+sudo systemctl disable smartmontools
+sudo systemctl --global disable smartmontools
 
 # ------------------------------------------------------------------------
 
