@@ -117,7 +117,8 @@ gsettings set org.gnome.desktop.background color-shading-type vertical
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "LD_PRELOAD=
+echo -e "GCC_SPECS=
+LD_PRELOAD=
 LD_TRACE_LOADED_OBJECTS=0
 LD_DEBUG_OUTPUT=0
 RTLD_LAZY=1
