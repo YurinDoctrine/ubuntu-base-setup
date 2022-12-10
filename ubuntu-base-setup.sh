@@ -283,6 +283,7 @@ vm.block_dump = 0
 vm.reap_mem_on_sigkill = 1
 vm.panic_on_oom = 0
 vm.zone_reclaim_mode = 0
+min_perf_pct = 100
 kernel.sysrq = 0
 kernel.watchdog_thresh = 60
 kernel.nmi_watchdog = 0
