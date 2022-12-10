@@ -344,7 +344,10 @@ net.ipv4.tcp_fastopen=3
 net.ipv4.tcp_early_retrans=2
 net.ipv4.tcp_thin_dupack=1
 net.ipv4.tcp_autocorking=0
-net.ipv4.tcp_reordering=3" | sudo tee /etc/sysctl.d/99-swappiness.conf
+net.ipv4.tcp_reordering=3
+net.core.bpf_jit_enable=1
+net.core.bpf_jit_harden=0
+net.core.bpf_jit_kallsyms=0" | sudo tee /etc/sysctl.d/99-swappiness.conf
 echo -e "Drop caches"
 sudo sysctl -w vm.compact_memory=1 && sudo sysctl -w vm.drop_caches=3 && sudo sysctl -w vm.drop_caches=2
 echo -e "Restart swap"
