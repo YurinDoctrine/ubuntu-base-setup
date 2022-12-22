@@ -289,6 +289,7 @@ vm.page_lock_unfairness = 1
 vm.percpu_pagelist_high_fraction = 0
 vm.pagecache = 1
 min_perf_pct = 100
+kernel.task_delayacct = 0
 kernel.sysrq = 0
 kernel.watchdog_thresh = 60
 kernel.nmi_watchdog = 0
