@@ -118,10 +118,14 @@ gsettings set org.gnome.desktop.background color-shading-type vertical
 # ------------------------------------------------------------------------
 
 # KDE tweaks
+kwriteconfig5 --file kwinrc --group Compositing --key "Enabled" --type bool true
+kwriteconfig5 --file kwinrc --group Compositing --key "AnimationSpeed" 3
+kwriteconfig5 --file kdeglobals --group KDE --key "AnimationDurationFactor" 0.125
 kwriteconfig5 --file ksplashrc --group KSplash --key Engine "none"
 kwriteconfig5 --file ksplashrc --group KSplash --key Theme "none"
-kwriteconfig5 --file klaunchrc --group BusyCursorSettings --key "Bouncing" --type bool false
 kwriteconfig5 --file klaunchrc --group FeedbackStyle --key "BusyCursor" --type bool false
+kwriteconfig5 --file klaunchrc --group BusyCursorSettings --key "Blinking" --type bool false
+kwriteconfig5 --file klaunchrc --group BusyCursorSettings --key "Bouncing" --type bool false
 kwriteconfig5 --file kwalletrc --group Wallet --key "Enabled" --type bool false
 
 # ------------------------------------------------------------------------
