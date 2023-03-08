@@ -122,6 +122,7 @@ kwriteconfig5 --file ksplashrc --group KSplash --key Engine "none"
 kwriteconfig5 --file ksplashrc --group KSplash --key Theme "none"
 kwriteconfig5 --file klaunchrc --group BusyCursorSettings --key "Bouncing" --type bool false
 kwriteconfig5 --file klaunchrc --group FeedbackStyle --key "BusyCursor" --type bool false
+kwriteconfig5 --file kwalletrc --group Wallet --key "Enabled" --type bool false
 
 # ------------------------------------------------------------------------
 
