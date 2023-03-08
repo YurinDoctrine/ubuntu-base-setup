@@ -62,10 +62,11 @@ sudo rm -rfd /usr/share/locale/!\(en_GB\)
 
 # ------------------------------------------------------------------------
 
-# GNOME settings
+# GNOME tweaks
 sudo rm -rfd /etc/gdm{3}/custom.conf
 sudo rm -rfd /etc/dconf/db/gdm{3}.d/01-logo
 sudo rm -rfd /var/lib/gdm{3}/.cache/*
+
 # Privacy
 gsettings set org.gnome.system.location enabled false
 gsettings set org.gnome.desktop.privacy disable-camera true
@@ -113,6 +114,14 @@ gsettings set org.gnome.shell.overrides attach-modal-dialogs false
 gsettings set org.gnome.shell.overrides edge-tiling true
 gsettings set org.gnome.mutter edge-tiling true
 gsettings set org.gnome.desktop.background color-shading-type vertical
+
+# ------------------------------------------------------------------------
+
+# KDE tweaks
+kwriteconfig5 --file ksplashrc --group KSplash --key Engine "none"
+kwriteconfig5 --file ksplashrc --group KSplash --key Theme "none"
+kwriteconfig5 --file klaunchrc --group BusyCursorSettings --key "Bouncing" --type bool false
+kwriteconfig5 --file klaunchrc --group FeedbackStyle --key "BusyCursor" --type bool false
 
 # ------------------------------------------------------------------------
 
@@ -618,6 +627,7 @@ sudo sensors-detect --auto
 ## Disable file indexer
 balooctl suspend
 balooctl disable
+balooctl purge
 
 # ------------------------------------------------------------------------
 
