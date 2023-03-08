@@ -243,7 +243,39 @@ sudo killall -HUP pulseaudio
 echo -e "blacklist pcspkr
 blacklist snd_pcsp
 blacklist lpc_ich
-blacklist gpio-ich" | sudo tee /etc/modprobe.d/nomisc.conf
+blacklist gpio-ich
+blacklist iTCO_wdt
+blacklist joydev
+blacklist mousedev
+blacklist mac_hid
+blacklist uvcvideo
+blacklist parport_pc
+blacklist parport
+blacklist lp
+blacklist ppdev
+blacklist sunrpc
+blacklist floppy
+blacklist arkfb
+blacklist aty128fb
+blacklist atyfb
+blacklist radeonfb
+blacklist cirrusfb
+blacklist cyber2000fb
+blacklist kyrofb
+blacklist matroxfb_base
+blacklist mb862xxfb
+blacklist neofb
+blacklist pm2fb
+blacklist pm3fb
+blacklist s3fb
+blacklist savagefb
+blacklist sisfb
+blacklist tdfxfb
+blacklist tridentfb
+blacklist vt8623fb
+blacklist sp5100-tco
+blacklist pcmcia
+blacklist yenta_socket" | sudo tee /etc/modprobe.d/nomisc.conf
 
 # ------------------------------------------------------------------------
 
