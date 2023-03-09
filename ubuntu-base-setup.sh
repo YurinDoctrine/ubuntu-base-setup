@@ -293,6 +293,7 @@ blacklist vt8623fb
 blacklist sp5100-tco
 blacklist pcmcia
 blacklist yenta_socket
+blacklist btusb
 blacklist dccp
 blacklist sctp
 blacklist rds
