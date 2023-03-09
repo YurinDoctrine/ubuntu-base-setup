@@ -292,7 +292,32 @@ blacklist tridentfb
 blacklist vt8623fb
 blacklist sp5100-tco
 blacklist pcmcia
-blacklist yenta_socket" | sudo tee /etc/modprobe.d/nomisc.conf
+blacklist yenta_socket
+blacklist dccp
+blacklist sctp
+blacklist rds
+blacklist tipc
+blacklist n-hdlc
+blacklist ax25
+blacklist netrom
+blacklist x25
+blacklist rose
+blacklist decnet
+blacklist econet
+blacklist af_802154
+blacklist ipx
+blacklist appletalk
+blacklist psnap
+blacklist p8022
+blacklist p8023
+blacklist llc
+blacklist cramfs
+blacklist freevxfs
+blacklist jffs2
+blacklist hfs
+blacklist hfsplus
+blacklist squashfs
+blacklist udf" | sudo tee /etc/modprobe.d/nomisc.conf
 
 # ------------------------------------------------------------------------
 
