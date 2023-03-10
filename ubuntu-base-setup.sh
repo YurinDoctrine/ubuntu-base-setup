@@ -119,6 +119,7 @@ gsettings set org.gnome.desktop.background color-shading-type vertical
 
 # KDE tweaks
 kwriteconfig5 --file kwinrc --group Compositing --key "Enabled" --type bool true
+kwriteconfig5 --file kwinrc --group Compositing --key "LatencyPolicy" "ExtremelyLow"
 kwriteconfig5 --file kwinrc --group Compositing --key "AnimationSpeed" 3
 kwriteconfig5 --file kwinrc --group Windows --key "AutoRaiseInterval" 125
 kwriteconfig5 --file kwinrc --group Windows --key "DelayFocusInterval" 125
