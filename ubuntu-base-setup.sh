@@ -319,6 +319,8 @@ blacklist hfs
 blacklist hfsplus
 blacklist squashfs
 blacklist udf" | sudo tee /etc/modprobe.d/nomisc.conf
+# Disable bios limit
+echo -e "options processor ignore_ppc=1" | sudo tee /etc/modprobe.d/ignore_ppc.conf
 
 # ------------------------------------------------------------------------
 
