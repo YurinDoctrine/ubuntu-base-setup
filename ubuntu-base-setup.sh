@@ -313,6 +313,11 @@ blacklist psnap
 blacklist p8022
 blacklist p8023
 blacklist llc
+blacklist i2400m
+blacklist i2400m_usb
+blacklist wimax
+blacklist parport
+blacklist parport_pc
 blacklist cramfs
 blacklist freevxfs
 blacklist jffs2
