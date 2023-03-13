@@ -587,8 +587,8 @@ sudo sed -i -e 's/#HandleLidSwitchDocked=.*/HandleLidSwitchDocked=suspend/' /etc
 # ------------------------------------------------------------------------
 
 echo -e "Disable bluetooth autostart"
-sudo sed -i -e 's/AutoEnable.*/AutoEnable=false/' /etc/bluetooth/main.conf
-sudo sed -i -e 's/#FastConnectable.*/FastConnectable = false/' /etc/bluetooth/main.conf
+sudo sed -i -e 's/AutoEnable.*/AutoEnable = false/' /etc/bluetooth/main.conf
+sudo sed -i -e 's/FastConnectable.*/FastConnectable = false/' /etc/bluetooth/main.conf
 sudo sed -i -e 's/ReconnectAttempts.*/ReconnectAttempts = 1/' /etc/bluetooth/main.conf
 sudo sed -i -e 's/ReconnectIntervals.*/ReconnectIntervals = 1/' /etc/bluetooth/main.conf
 
@@ -656,6 +656,17 @@ sudo systemctl mask remote-fs.target >/dev/null 2>&1
 # ------------------------------------------------------------------------
 
 ## Some powersavings
+echo "options cec debug=0
+options kvm mmu_audit=0
+options nfs enable_ino64=1
+options pstore backend=null
+options libahci ignore_sss=1
+options snd_ac97_codec power_save=1
+options uhci-hcd debug=0
+options usbhid mousepoll=4
+options usb-storage quirks=p
+options usbcore usbfs_snoop=0
+options usbcore autosuspend=5" | tee /etc/modprobe.d/powersavings.conf
 echo -e "min_power" | sudo tee /sys/class/scsi_host/*/link_power_management_policy
 echo -e "1" | sudo tee /sys/module/snd_hda_intel/parameters/power_save
 echo -e "auto" | sudo tee /sys/bus/{i2c,pci}/devices/*/power/control
@@ -700,13 +711,29 @@ sudo systemctl --global disable foo.service
 # ------------------------------------------------------------------------
 
 ## Improve wifi
-echo -e "options iwlwifi 11n_disable=8" | sudo tee /etc/modprobe.d/iwlwifi-speed.conf
+if ip -o link | grep -q wlan ; then
+    echo -e "options iwlwifi 11n_disable=8" | sudo tee /etc/modprobe.d/iwlwifi-speed.conf
+    echo -e "options rfkill default_state=0 master_switch_mode=1" | sudo tee /etc/modprobe.d/wlanextra.conf
+fi
 
 # ------------------------------------------------------------------------
 
 echo -e "Enable HDD write caching"
 sudo hdparm -W 1 /dev/sd*
-sudo hdparm -W 1 /dev/nvme*
+
+# ------------------------------------------------------------------------
+
+echo -e "Enable compose cache on disk"
+sudo mkdir -p /var/cache/libx11/compose
+mkdir -p $HOME/.compose-cache
+touch $HOME/.XCompose
+
+# ------------------------------------------------------------------------
+
+## Improve NVME
+if $(find /sys/block/nvme*) ; then
+    echo -e "options nvme_core default_ps_max_latency_us=0" | sudo tee /etc/modprobe.d/nvme.conf
+fi
 
 # ------------------------------------------------------------------------
 
@@ -718,6 +745,8 @@ sudo sed -i -e 's/GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=true/' /etc/d
 sudo sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet rootfstype=ext4,btrfs,xfs,f2fs biosdevname=0 nouveau.modeset=0 nvidia-drm.modeset=1 nvidia-uvm.modeset=1 amdgpu.modeset=1 amdgpu.dpm=1 amdgpu.audio=1 amdgpu.dc=1 i915.enable_ppgtt=3 i915.fastboot=0 i915.enable_fbc=1 i915.enable_guc=3 i915.lvds_downclock=1 i915.semaphores=1 i915.reset=0 i915.enable_dc=2 i915.enable_psr=0 i915.enable_cmd_parser=1 i915.enable_rc6=1 i915.lvds_use_ssc=0 i915.use_mmio_flip=1 i915.disable_power_well=1 i915.powersave=1 snd-hda-intel.power_save=1 snd-hda-intel.enable_msi=1 pcie_aspm=off pci=noaer drm.vblankoffdelay=1 vt.global_cursor_default=0 scsi_mod.use_blk_mq=1 mitigations=off zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=zsmalloc plymouth.ignore-serial-consoles loglevel=0 rd.systemd.show_status=auto rd.udev.log_level=0 udev.log_priority=3 audit=0 hpet=disable no_timer_check cryptomgr.notests iommu=soft amd_iommu=on intel_iommu=igfx_off kvm-intel.nested=1 iwlmvm_power_scheme=2 intel_pstate=disable intel_idle.max_cstate=0 noreplace-smp page_poison=1 page_alloc.shuffle=1 rcupdate.rcu_expedited=1 tsc=reliable nowatchdog idle=nomwait noatime pti=on init_on_free=0 boot_delay=0 io_delay=none rootdelay=0 cpu_init_udelay=1 acpi=force acpi_enforce_resources=lax acpi_backlight=vendor processor.max_cstate=0 skew_tick=1 nosoftlockup mce=ignore_ce mem_sleep_default=deep elevator=noop enable_mtrr_cleanup mtrr_spare_reg_nr=1 clearcpuid=514 random.trust_cpu=on no_entry_flush  no_uaccess_flush nopti no_stf_barrier nokaslr norandmaps mds=off l1tf=off noibrs noibpb nospectre_v2 nospectre_v1 kpti=off nopcid srbds=off hardened_usercopy=off ssbd=force-off nohz=on nohz_full=all highres=off rcu_nocbs=all rcu_nocb_poll=1 irqpoll irqaffinity=0 isolcpus kthread_cpus=0 hugepages=0 msr.allow_writes=on enforcing=0 module.sig_unenforce no_hash_pointers init_on_alloc=0 ahci.mobile_lpm_policy=0 processor.nocst=1 ftrace_enabled=0 fsck.mode=skip apparmor=0 cgroup_disable=memory cgroup_no_v1=all noautogroup noresume"/' /etc/default/grub
 sudo update-grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+echo -e "Disable GPU polling"
+echo -e "options drm_kms_helper poll=0" | sudo tee /etc/modprobe.d/disable-gpu-polling.conf
 echo -e "Enable BFQ scheduler"
 echo -e "bfq" | sudo tee /etc/modules-load.d/bfq.conf
 echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*|mmcblk[0-9]*|nvme[0-9]*", ATTR{queue/rotational}=="1", ATTR{queue/iosched/low_latency}="1", ATTR{queue/scheduler}="bfq"' | sudo tee /etc/udev/rules.d/60-scheduler.rules
