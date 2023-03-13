@@ -731,7 +731,7 @@ touch $HOME/.XCompose
 # ------------------------------------------------------------------------
 
 ## Improve NVME
-if $(find /sys/block/nvme*) ; then
+if $(find /sys/block/nvme* | grep -q nvme) ; then
     echo -e "options nvme_core default_ps_max_latency_us=0" | sudo tee /etc/modprobe.d/nvme.conf
 fi
 
