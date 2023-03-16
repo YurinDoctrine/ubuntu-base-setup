@@ -366,6 +366,9 @@ kernel.acpi_video_flags = 0
 dev.i915.perf_stream_paranoid = 0
 debug.exception-trace = 0
 debug.kprobes-optimization = 1
+fs.inotify.max_user_watches = 1048576
+fs.inotify.max_user_instances = 1048576
+fs.inotify.max_queued_events = 1048576
 fs.quota.allocated_dquots = 0
 fs.quota.cache_hits = 0
 fs.quota.drops = 0
@@ -512,10 +515,10 @@ sudo systemctl --global disable systemd-timesyncd.service
 # ------------------------------------------------------------------------
 
 echo -e "Optimize writes to the disk"
-sudo sed -i -e s"/\Storage=.*/Storage=none/"g /etc/systemd/coredump.conf
-sudo sed -i -e s"/\Seal=.*/Seal=no/"g /etc/systemd/coredump.conf
-sudo sed -i -e s"/\Storage=.*/Storage=none/"g /etc/systemd/journald.conf
-sudo sed -i -e s"/\Seal=.*/Seal=no/"g /etc/systemd/journald.conf
+sudo sed -i -e s"/\#Storage=.*/Storage=none/"g /etc/systemd/coredump.conf
+sudo sed -i -e s"/\#Seal=.*/Seal=no/"g /etc/systemd/coredump.conf
+sudo sed -i -e s"/\#Storage=.*/Storage=none/"g /etc/systemd/journald.conf
+sudo sed -i -e s"/\#Seal=.*/Seal=no/"g /etc/systemd/journald.conf
 
 # ------------------------------------------------------------------------
 
@@ -807,6 +810,9 @@ sudo sed -i -e 's/^#ForwardToSyslog=yes/ForwardToSyslog=no/' /etc/systemd/journa
 sudo sed -i -e 's/^#ForwardToKMsg=yes/ForwardToKMsg=no/' /etc/systemd/journald.conf
 sudo sed -i -e 's/^#ForwardToConsole=yes/ForwardToConsole=no/' /etc/systemd/journald.conf
 sudo sed -i -e 's/^#ForwardToWall=yes/ForwardToWall=no/' /etc/systemd/journald.conf
+echo -e "Compress log files"
+sudo sed -i -e 's/^#Compress=yes/Compress=yes/' /etc/systemd/journald.conf
+sudo sed -i -e 's/^#compress/compress/' /etc/logrotate.conf
 echo -e "Scrub free space and sync"
 echo -e "kernel.core_pattern=/dev/null" | sudo tee /etc/sysctl.d/50-coredump.conf
 sudo dd bs=4k if=/dev/null of=/var/tmp/dummy || sudo rm -rfd /var/tmp/dummy
