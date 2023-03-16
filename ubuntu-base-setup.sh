@@ -438,10 +438,10 @@ echo -e "* soft as unlimited
 * hard as unlimited
 root soft as unlimited
 root hard as unlimited
-* soft nofile 32768
-* hard nofile 32768
-root soft nofile 32768
-root hard nofile 32768
+* soft nofile 524288
+* hard nofile 524288
+root soft nofile 524288
+root hard nofile 524288
 * soft memlock unlimited
 * hard memlock unlimited
 root soft memlock unlimited
