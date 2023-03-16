@@ -418,8 +418,6 @@ sudo sed -i -e '/^\/\/sr/d' /etc/fstab
 
 ## DPKG keep current versions of configs
 echo -e 'DPkg::Options {
-   "--force-overwrite";
-   "--force-confnew";
    "--force-confdef";
 };' | sudo tee /etc/apt/apt.conf.d/71debconf
 ## APT no install suggests
