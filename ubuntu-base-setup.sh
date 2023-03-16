@@ -466,7 +466,7 @@ root hard stack unlimited" | sudo tee /etc/security/limits.conf
 
 # ------------------------------------------------------------------------
 
-echo -e "Disable wait online services"
+echo -e "Disable wait online service"
 sudo systemctl mask NetworkManager-wait-online.service >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
@@ -698,6 +698,11 @@ touch $HOME/.XCompose
 if $(find /sys/block/nvme* | grep -q nvme) ; then
     echo -e "options nvme_core default_ps_max_latency_us=0" | sudo tee /etc/modprobe.d/nvme.conf
 fi
+
+# ------------------------------------------------------------------------
+
+echo -e "Disable syslog service"
+sudo systemctl mask syslog.service >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
