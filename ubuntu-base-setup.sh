@@ -135,9 +135,7 @@ kwriteconfig5 --file kwalletrc --group Wallet --key "First Use" --type bool fals
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "GCC_SPECS=
-LD_PRELOAD=
-LD_TRACE_LOADED_OBJECTS=0
+echo -e "LD_TRACE_LOADED_OBJECTS=0
 LD_DEBUG_OUTPUT=0
 RTLD_LAZY=1
 KDE_NOUNLOAD=1
