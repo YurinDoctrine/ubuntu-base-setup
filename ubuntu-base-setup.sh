@@ -701,8 +701,10 @@ fi
 
 # ------------------------------------------------------------------------
 
-echo -e "Disable syslog service"
+echo -e "Disable journaling services"
 sudo systemctl mask syslog.service >/dev/null 2>&1
+sudo systemctl mask rsyslog.service >/dev/null 2>&1
+sudo systemctl mask systemd-journald.service >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
