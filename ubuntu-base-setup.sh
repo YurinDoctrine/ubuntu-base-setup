@@ -30,6 +30,9 @@ echo -e 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/90nolanguage
 echo -e 'Acquire::CompressionTypes::lz4 "lz4";' | sudo tee /etc/apt/apt.conf.d/02compress-indexes
 # Disable APT terminal logging
 echo -e 'Dir::Log::Terminal "";' | sudo tee /etc/apt/apt.conf.d/01disable-log
+# Disable APT timers
+sudo systemctl mask apt-daily.timer >/dev/null 2>&1
+sudo systemctl mask apt-daily-upgrade.timer >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
@@ -48,9 +51,7 @@ sudo timedatectl set-timezone Europe/Moscow
 
 # Don't reserve space man-pages, locales, licenses.
 echo -e "Remove useless companies"
-sudo apt-get remove --purge \
-    texlive-fonts-recommended-doc texlive-latex-base-doc texlive-latex-extra-doc \
-    texlive-latex-recommended-doc texlive-pictures-doc texlive-pstricks-doc
+sudo apt-get remove --purge *texlive* -yy
 find /usr/share/doc/ -depth -type f ! -name copyright | xargs sudo rm -f || true
 find /usr/share/doc/ | egrep '\.gz' | xargs sudo rm -f
 find /usr/share/doc/ | egrep '\.pdf' | xargs sudo rm -f
@@ -486,6 +487,7 @@ tmpfs /var/run tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /var/lock tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /var/cache tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /var/volatile tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
+tmpfs /var/spool tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /var/log tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /dev/shm tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /media tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0" | sudo tee -a /etc/fstab
@@ -574,8 +576,8 @@ sudo sed -i -e 's/resolve [!UNAVAIL=return]/mdns4_minimal [NOTFOUND=return] reso
 # ------------------------------------------------------------------------
 
 echo -e "Reduce systemd timeout"
-sudo sed -i -e 's/#DefaultTimeoutStartSec.*/DefaultTimeoutStartSec=15s/g' /etc/systemd/system.conf
-sudo sed -i -e 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=10s/g' /etc/systemd/system.conf
+sudo sed -i -e 's/#DefaultTimeoutStartSec.*/DefaultTimeoutStartSec=5s/g' /etc/systemd/system.conf
+sudo sed -i -e 's/#DefaultTimeoutStopSec.*/DefaultTimeoutStopSec=5s/g' /etc/systemd/system.conf
 
 # ------------------------------------------------------------------------
 
@@ -603,6 +605,9 @@ sudo rm -rfd /var/lib/bluetooth/*
 # ------------------------------------------------------------------------
 
 echo -e "Disable plymouth"
+sudo systemctl mask plymouth-read-write.service >/dev/null 2>&1
+sudo systemctl mask plymouth-start.service >/dev/null 2>&1
+sudo systemctl mask plymouth-quit.service >/dev/null 2>&1
 sudo systemctl mask plymouth-quit-wait.service >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
@@ -653,6 +658,7 @@ upx ~/.local/bin/*
 
 echo -e "Improve I/O throughput"
 echo 32 | sudo tee /sys/block/sd*[!0-9]/queue/iosched/fifo_batch
+echo 32 | sudo tee /sys/block/nvme*/queue/iosched/fifo_batch
 
 # ------------------------------------------------------------------------
 
@@ -676,7 +682,7 @@ fi
 # ------------------------------------------------------------------------
 
 echo -e "Enable HDD write caching"
-sudo hdparm -W 1 /dev/sd*
+sudo hdparm -W 1 /dev/sd*[!0-9]
 
 # ------------------------------------------------------------------------
 
