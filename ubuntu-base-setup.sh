@@ -681,7 +681,7 @@ sudo systemctl --global disable foo.service
 # ------------------------------------------------------------------------
 
 ## Improve wifi
-if ip -o link | grep -q wlan ; then
+if ip -o link | egrep -q wlan ; then
     echo -e "options iwlwifi 11n_disable=8" | sudo tee /etc/modprobe.d/iwlwifi-speed.conf
     echo -e "options rfkill default_state=0 master_switch_mode=1" | sudo tee /etc/modprobe.d/wlanextra.conf
 fi
@@ -701,7 +701,7 @@ touch $HOME/.XCompose
 # ------------------------------------------------------------------------
 
 ## Improve NVME
-if $(find /sys/block/nvme* | grep -q nvme) ; then
+if $(find /sys/block/nvme* | egrep -q nvme) ; then
     echo -e "options nvme_core default_ps_max_latency_us=0" | sudo tee /etc/modprobe.d/nvme.conf
 fi
 
