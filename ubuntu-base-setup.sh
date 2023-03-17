@@ -220,6 +220,7 @@ blacklist snd_pcsp
 blacklist lpc_ich
 blacklist gpio-ich
 blacklist iTCO_wdt
+blacklist iTCO_vendor_support
 blacklist joydev
 blacklist mousedev
 blacklist mac_hid
@@ -249,6 +250,7 @@ blacklist tdfxfb
 blacklist tridentfb
 blacklist vt8623fb
 blacklist sp5100-tco
+blacklist sp5100_tco
 blacklist pcmcia
 blacklist yenta_socket
 blacklist btusb
