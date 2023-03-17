@@ -464,7 +464,11 @@ root hard sigpending unlimited
 * soft stack unlimited
 * hard stack unlimited
 root soft stack unlimited
-root hard stack unlimited" | sudo tee /etc/security/limits.conf
+root hard stack unlimited
+* soft data unlimited
+* hard data unlimited
+root soft data unlimited
+root hard data unlimited" | sudo tee /etc/security/limits.conf
 
 # ------------------------------------------------------------------------
 
