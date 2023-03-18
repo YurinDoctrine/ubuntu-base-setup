@@ -475,6 +475,8 @@ root hard data unlimited" | sudo tee /etc/security/limits.conf
 # ------------------------------------------------------------------------
 
 echo -e "Disable wait online service"
+echo -e "[connectivity]
+enabled=false" | sudo tee /etc/NetworkManager/conf.d/20-connectivity.conf
 sudo systemctl mask NetworkManager-wait-online.service >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
@@ -652,6 +654,7 @@ sudo sensors-detect --auto
 balooctl suspend
 balooctl disable
 balooctl purge
+sudo systemctl disable plasma-baloorunner
 
 # ------------------------------------------------------------------------
 
@@ -717,6 +720,7 @@ sudo systemctl mask systemd-journal-catalog-update.service >/dev/null 2>&1
 sudo systemctl mask systemd-journald.service >/dev/null 2>&1
 sudo systemctl mask systemd-journald.socket >/dev/null 2>&1
 sudo systemctl mask systemd-journald-dev-log.socket >/dev/null 2>&1
+sudo systemctl mask systemd-journald-audit.socket >/dev/null 2>&1
 sudo systemctl mask logrotate.service >/dev/null 2>&1
 sudo systemctl mask logrotate.timer >/dev/null 2>&1
 
