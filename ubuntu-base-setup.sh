@@ -713,6 +713,7 @@ fi
 # ------------------------------------------------------------------------
 
 echo -e "Disable journaling services"
+sudo systemctl mask dev-mqueue.mount >/dev/null 2>&1
 sudo systemctl mask syslog.service >/dev/null 2>&1
 sudo systemctl mask rsyslog.service >/dev/null 2>&1
 sudo systemctl mask systemd-journal-flush.service >/dev/null 2>&1
