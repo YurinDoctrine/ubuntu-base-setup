@@ -333,6 +333,7 @@ vm.page_lock_unfairness = 1
 vm.percpu_pagelist_high_fraction = 0
 vm.pagecache = 1
 vm.watermark_scale_factor = 1
+vm.memory_failure_recovery = 0
 min_perf_pct = 100
 kernel.io_delay_type = 3
 kernel.task_delayacct = 0
