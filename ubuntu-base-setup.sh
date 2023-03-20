@@ -31,6 +31,8 @@ echo -e 'Acquire::CompressionTypes::lz4 "lz4";' | sudo tee /etc/apt/apt.conf.d/0
 # Disable APT terminal logging
 echo -e 'Dir::Log::Terminal "";' | sudo tee /etc/apt/apt.conf.d/01disable-log
 # Disable APT timers
+sudo systemctl mask apt-daily.service >/dev/null 2>&1
+sudo systemctl mask apt-daily-upgrade.service >/dev/null 2>&1
 sudo systemctl mask apt-daily.timer >/dev/null 2>&1
 sudo systemctl mask apt-daily-upgrade.timer >/dev/null 2>&1
 
