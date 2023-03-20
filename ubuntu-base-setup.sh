@@ -312,8 +312,8 @@ sudo sed -i -e 's| errors=remount-ro| rw,lazytime,relatime,commit=600,nobarrier,
 
 # Optimize sysctl
 sudo sed -i -e '/^\/\/swappiness/d' /etc/sysctl.conf
-echo -e "vm.swappiness=1
-vm.vfs_cache_pressure=50
+echo -e "vm.swappiness = 1
+vm.vfs_cache_pressure = 50
 vm.overcommit_memory = 1
 vm.overcommit_ratio = 50
 vm.dirty_background_ratio = 5
@@ -332,6 +332,7 @@ vm.compaction_proactiveness = 0
 vm.page_lock_unfairness = 1
 vm.percpu_pagelist_high_fraction = 0
 vm.pagecache = 1
+vm.watermark_scale_factor = 1
 min_perf_pct = 100
 kernel.io_delay_type = 3
 kernel.task_delayacct = 0
