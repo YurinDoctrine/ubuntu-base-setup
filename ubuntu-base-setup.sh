@@ -693,14 +693,14 @@ sudo systemctl --global disable foo.service
 if ip -o link | egrep -q wlan ; then
     echo -e "options iwlwifi 11n_disable=8" | sudo tee /etc/modprobe.d/iwlwifi-speed.conf
     echo -e "options rfkill default_state=0 master_switch_mode=1" | sudo tee /etc/modprobe.d/wlanextra.conf
-	sudo ethtool -K wlan0 gro on
-	sudo ethtool -K wlan0 gso on
-	sudo iwconfig wlan0 txpower auto
+    sudo ethtool -K wlan0 gro on
+    sudo ethtool -K wlan0 gso on
+    sudo iwconfig wlan0 txpower auto
     sudo iwpriv wlan0 set_power 5
 else
     sudo ethtool -s eth0 wol d
-	sudo ethtool -K eth0 gro off
-	sudo ethtool -K eth0 gso off
+    sudo ethtool -K eth0 gro off
+    sudo ethtool -K eth0 gso off
 fi
 
 # ------------------------------------------------------------------------
