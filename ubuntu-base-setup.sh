@@ -729,6 +729,11 @@ sudo setpci -v -d *:* latency_timer=48 >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
+## Improve low memory
+echo -e "ulimit -l unlimited" | sudo tee /etc/profile.d/ulimit.sh
+
+# ------------------------------------------------------------------------
+
 echo -e "Disable journaling services"
 sudo systemctl mask dev-mqueue.mount >/dev/null 2>&1
 sudo systemctl mask syslog.service >/dev/null 2>&1
