@@ -620,6 +620,11 @@ sudo systemctl disable brltty.service
 sudo systemctl --global disable brltty.service
 sudo systemctl disable brltty-udev.service
 sudo systemctl --global disable brltty-udev.service
+echo -e "Disable man-db service/timer"
+sudo systemctl disable man-db.service
+sudo systemctl --global disable man-db.service
+sudo systemctl disable man-db.timer
+sudo systemctl --global disable man-db.timer
 
 # ------------------------------------------------------------------------
 
