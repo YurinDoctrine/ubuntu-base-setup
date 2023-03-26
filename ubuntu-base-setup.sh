@@ -701,12 +701,16 @@ if ip -o link | egrep -q wlan ; then
     echo -e "options rfkill default_state=0 master_switch_mode=1" | sudo tee /etc/modprobe.d/wlanextra.conf
     sudo ethtool -K wlan0 gro on
     sudo ethtool -K wlan0 gso on
+    sudo ethtool -c wlan0
     sudo iwconfig wlan0 txpower auto
     sudo iwpriv wlan0 set_power 5
 else
     sudo ethtool -s eth0 wol d
     sudo ethtool -K eth0 gro off
     sudo ethtool -K eth0 gso off
+    sudo ethtool -C eth0 adaptive-rx on
+    sudo ethtool -C eth0 adaptive-tx on
+    sudo ethtool -c eth0
 fi
 
 # ------------------------------------------------------------------------
