@@ -377,6 +377,7 @@ kernel.acpi_video_flags = 0
 kernel.unknown_nmi_panic = 0
 kernel.panic_on_unrecovered_nmi = 0
 dev.i915.perf_stream_paranoid = 0
+dev.scsi.logging_level = 0
 debug.exception-trace = 0
 debug.kprobes-optimization = 1
 fs.inotify.max_user_watches = 1048576
