@@ -336,7 +336,6 @@ vm.pagecache = 1
 vm.watermark_scale_factor = 1
 vm.memory_failure_recovery = 0
 min_perf_pct = 100
-kernel.vsyscall64 = 1
 kernel.io_delay_type = 3
 kernel.task_delayacct = 0
 kernel.sysrq = 0
