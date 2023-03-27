@@ -378,6 +378,7 @@ kernel.sched_latency_ns = 400000
 kernel.sched_min_granularity_ns = 400000
 kernel.sched_wakeup_granularity_ns = 500000
 kernel.sched_scaling_enable = 1
+kernel.sched_itmt_enabled = 1
 kernel.numa_balancing = 1
 kernel.panic = 0
 kernel.panic_on_oops = 0
@@ -385,6 +386,7 @@ kernel.perf_cpu_time_max_percent = 10
 kernel.printk_devkmsg = off
 kernel.compat-log = 0
 kernel.random.urandom_min_reseed_secs = 120
+kernel.unprivileged_bpf_disabled = 1
 kernel.perf_event_paranoid = -1
 kernel.kptr_restrict = 0
 kernel.randomize_va_space = 0
@@ -694,6 +696,7 @@ options libata allow_tpm=0
 options libata ignore_hpa=0
 options libahci ignore_sss=1
 options libahci skip_host_reset=1
+options snd_hda_intel power_save=1
 options snd_ac97_codec power_save=1
 options uhci-hcd debug=0
 options usbhid mousepoll=4
@@ -820,7 +823,7 @@ echo -e "Disable GPU polling"
 echo -e "options drm_kms_helper poll=0" | sudo tee /etc/modprobe.d/disable-gpu-polling.conf
 echo -e "Enable BFQ scheduler"
 echo -e "bfq" | sudo tee /etc/modules-load.d/bfq.conf
-echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*|mmcblk[0-9]*|nvme[0-9]*", ATTR{queue/rotational}=="1", ATTR{queue/iosched/front_merges}="1", ATTR{queue/iosched/writes_starved}="16", ATTR{queue/iosched/fifo_batch}="32", ATTR{queue/iosched/low_latency}="1", ATTR{queue/scheduler}="bfq"' | sudo tee /etc/udev/rules.d/60-scheduler.rules
+echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*|mmcblk[0-9]*|nvme[0-9]*", ATTR{queue/rotational}=="1", ATTR{queue/add_random}=="1", ATTR{queue/iosched/slice_idle}="0", ATTR{queue/iosched/front_merges}="1", ATTR{queue/iosched/writes_starved}="16", ATTR{queue/iosched/fifo_batch}="32", ATTR{queue/iosched/low_latency}="1", ATTR{queue/scheduler}="bfq"' | sudo tee /etc/udev/rules.d/60-scheduler.rules
 ## Enable lz4 compression
 sudo sed -i -e 's/MODULES=most/MODULES=dep/g' /etc/initramfs-tools/initramfs.conf
 sudo sed -i -e 's/COMPRESS=.*/COMPRESS=lz4/g' /etc/initramfs-tools/initramfs.conf
