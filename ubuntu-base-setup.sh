@@ -286,7 +286,16 @@ blacklist jffs2
 blacklist hfs
 blacklist hfsplus
 blacklist squashfs
-blacklist udf" | sudo tee /etc/modprobe.d/nomisc.conf
+blacklist udf
+blacklist wl
+blacklist ssb
+blacklist b43
+blacklist b43legacy
+blacklist bcma
+blacklist bcm43xx
+blacklist brcm80211
+blacklist brcmfmac
+blacklist brcmsmac" | sudo tee /etc/modprobe.d/nomisc.conf
 # Disable bios limit
 echo -e "options processor ignore_ppc=1" | sudo tee /etc/modprobe.d/ignore_ppc.conf
 
@@ -676,11 +685,15 @@ sudo systemctl mask remote-fs.target >/dev/null 2>&1
 # ------------------------------------------------------------------------
 
 ## Some powersavings
-echo "options cec debug=0
+echo "options vfio_pci disable_vga=1
+options cec debug=0
 options kvm mmu_audit=0
 options nfs enable_ino64=1
 options pstore backend=null
+options libata allow_tpm=0
+options libata ignore_hpa=0
 options libahci ignore_sss=1
+options libahci skip_host_reset=1
 options snd_ac97_codec power_save=1
 options uhci-hcd debug=0
 options usbhid mousepoll=4
@@ -807,7 +820,7 @@ echo -e "Disable GPU polling"
 echo -e "options drm_kms_helper poll=0" | sudo tee /etc/modprobe.d/disable-gpu-polling.conf
 echo -e "Enable BFQ scheduler"
 echo -e "bfq" | sudo tee /etc/modules-load.d/bfq.conf
-echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*|mmcblk[0-9]*|nvme[0-9]*", ATTR{queue/rotational}=="1", ATTR{queue/iosched/low_latency}="1", ATTR{queue/scheduler}="bfq"' | sudo tee /etc/udev/rules.d/60-scheduler.rules
+echo -e 'ACTION=="add|change", KERNEL=="sd*[!0-9]|sr*|mmcblk[0-9]*|nvme[0-9]*", ATTR{queue/rotational}=="1", ATTR{queue/iosched/front_merges}="1", ATTR{queue/iosched/writes_starved}="16", ATTR{queue/iosched/fifo_batch}="32", ATTR{queue/iosched/low_latency}="1", ATTR{queue/scheduler}="bfq"' | sudo tee /etc/udev/rules.d/60-scheduler.rules
 ## Enable lz4 compression
 sudo sed -i -e 's/MODULES=most/MODULES=dep/g' /etc/initramfs-tools/initramfs.conf
 sudo sed -i -e 's/COMPRESS=.*/COMPRESS=lz4/g' /etc/initramfs-tools/initramfs.conf
