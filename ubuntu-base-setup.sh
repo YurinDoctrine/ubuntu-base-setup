@@ -794,6 +794,13 @@ sudo setpci -v -d *:* latency_timer=48 >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
+echo -e "Disable fsck"
+sudo tune2fs -c 0 -i 0 /dev/sd*[!0-9]
+sudo tune2fs -c 0 -i 0 /dev/mmcblk*
+sudo tune2fs -c 0 -i 0 /dev/nvme*
+
+# ------------------------------------------------------------------------
+
 echo -e "Disable journaling services"
 sudo systemctl mask dev-mqueue.mount >/dev/null 2>&1
 sudo systemctl mask rsyslog.service >/dev/null 2>&1
