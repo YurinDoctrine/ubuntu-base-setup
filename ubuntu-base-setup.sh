@@ -735,6 +735,7 @@ upx ~/.local/bin/*
 
 echo -e "Improve I/O throughput"
 echo 32 | sudo tee /sys/block/sd*[!0-9]/queue/iosched/fifo_batch
+echo 32 | sudo tee /sys/block/mmcblk*/queue/iosched/fifo_batch
 echo 32 | sudo tee /sys/block/nvme*/queue/iosched/fifo_batch
 
 # ------------------------------------------------------------------------
