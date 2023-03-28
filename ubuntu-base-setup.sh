@@ -798,6 +798,11 @@ sudo setpci -v -d *:* latency_timer=48 >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
+## Improve preload
+sudo sed -i -e 's/sortstrategy =.*/sortstrategy = 0/' /etc/preload.conf
+
+# ------------------------------------------------------------------------
+
 echo -e "Disable fsck"
 sudo tune2fs -c 0 -i 0 /dev/sd*[!0-9]
 sudo tune2fs -c 0 -i 0 /dev/mmcblk*
