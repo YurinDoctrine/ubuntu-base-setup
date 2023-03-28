@@ -143,7 +143,7 @@ kwriteconfig5 --file kwalletrc --group Wallet --key "First Use" --type bool fals
 echo -e "LD_TRACE_LOADED_OBJECTS=0
 LD_DEBUG_OUTPUT=0
 LIBGL_DEBUG=0
-HISTCONTROL=ignoreboth
+HISTCONTROL=eraseboth
 HISTSIZE=0
 LESSHISTFILE=-
 LESSHISTSIZE=0
