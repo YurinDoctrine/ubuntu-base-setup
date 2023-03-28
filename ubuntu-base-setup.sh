@@ -704,9 +704,9 @@ options uhci-hcd debug=0
 options usbhid mousepoll=4
 options usb-storage quirks=p
 options usbcore usbfs_snoop=0
-options usbcore autosuspend=5" | tee /etc/modprobe.d/powersavings.conf
+options usbcore autosuspend=5" | sudo tee /etc/modprobe.d/powersavings.conf
 echo -e "min_power" | sudo tee /sys/class/scsi_host/*/link_power_management_policy
-echo -e "1" | sudo tee /sys/module/snd_hda_intel/parameters/power_save
+echo 1 | sudo tee /sys/module/snd_hda_intel/parameters/power_save
 echo -e "auto" | sudo tee /sys/bus/{i2c,pci}/devices/*/power/control
 sudo powertop --auto-tune && sudo powertop --auto-tune
 sudo cpupower frequency-set -g powersave
