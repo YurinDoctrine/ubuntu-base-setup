@@ -692,6 +692,9 @@ sudo systemctl mask remote-fs.target >/dev/null 2>&1
 echo "options vfio_pci disable_vga=1
 options cec debug=0
 options kvm mmu_audit=0
+options kvm ignore_msrs=1
+options kvm report_ignored_msrs=0
+options kvm kvmclock_periodic_sync=1
 options nfs enable_ino64=1
 options pstore backend=null
 options libata allow_tpm=0
