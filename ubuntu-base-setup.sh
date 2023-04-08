@@ -763,7 +763,7 @@ sudo systemctl --global disable foo.service
 ## Improve wifi and ethernet
 if ip -o link | egrep -q wlan; then
     echo -e "options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8" | sudo tee /etc/modprobe.d/wlan.conf
-    echo -e "options rfkill default_state=0 master_switch_mode=1" | sudo tee /etc/modprobe.d/wlanextra.conf
+    echo -e "options rfkill default_state=0 master_switch_mode=0" | sudo tee /etc/modprobe.d/wlanextra.conf
     sudo ethtool -K wlan0 gro on
     sudo ethtool -K wlan0 gso on
     sudo ethtool -c wlan0
