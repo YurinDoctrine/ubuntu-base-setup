@@ -729,12 +729,10 @@ sudo systemctl disable plasma-baloorunner
 
 echo -e "Enable write cache"
 echo -e "write back" | sudo tee /sys/block/*/queue/write_cache
-sudo tune2fs -o journal_data_writeback /dev/sd*[!0-9]
-sudo tune2fs -o journal_data_writeback /dev/mmcblk*
-sudo tune2fs -o journal_data_writeback /dev/nvme*
-sudo tune2fs -O ^has_journal /dev/sd*[!0-9]
-sudo tune2fs -O ^has_journal /dev/mmcblk*
-sudo tune2fs -O ^has_journal /dev/nvme*
+sudo tune2fs -o journal_data_writeback $(df / | grep / | awk '{print $1}')
+sudo tune2fs -O ^has_journal $(df / | grep / | awk '{print $1}')
+sudo tune2fs -o journal_data_writeback $(df /home | grep /home | awk '{print $1}')
+sudo tune2fs -O ^has_journal $(df /home | grep /home | awk '{print $1}')
 
 # ------------------------------------------------------------------------
 
