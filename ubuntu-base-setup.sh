@@ -140,9 +140,7 @@ kwriteconfig5 --file kwalletrc --group Wallet --key "First Use" --type bool fals
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "LD_TRACE_LOADED_OBJECTS=0
-LD_DEBUG_OUTPUT=0
-LIBGL_DEBUG=0
+echo -e "LIBGL_DEBUG=0
 HISTCONTROL=eraseboth
 HISTSIZE=0
 LESSHISTFILE=-
