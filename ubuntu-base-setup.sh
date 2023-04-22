@@ -339,6 +339,7 @@ vm.dirty_ratio = 20
 vm.stat_interval = 60
 vm.page-cluster = 0
 vm.dirty_expire_centisecs = 500
+vm.oom_dump_tasks = 1
 vm.oom_kill_allocating_task = 1
 vm.extfrag_threshold = 750
 vm.block_dump = 0
