@@ -822,6 +822,8 @@ sudo systemctl mask sys-kernel-config.mount >/dev/null 2>&1
 sudo systemctl mask systemd-update-utmp.service >/dev/null 2>&1
 sudo systemctl mask systemd-update-utmp-runlevel.service >/dev/null 2>&1
 sudo systemctl mask systemd-update-utmp-shutdown.service >/dev/null 2>&1
+sudo systemctl mask systemd-journal-flush.service >/dev/null 2>&1
+sudo systemctl mask systemd-journal-catalog-update.service >/dev/null 2>&1
 sudo systemctl mask logrotate.service >/dev/null 2>&1
 sudo systemctl mask logrotate.timer >/dev/null 2>&1
 sudo systemctl mask syslog.service >/dev/null 2>&1
