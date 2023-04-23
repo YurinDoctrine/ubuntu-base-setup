@@ -318,7 +318,7 @@ sudo btrfs filesystem defragment -r -v -clz4 /home
 sudo chattr +c /home
 sudo btrfs balance start -musage=0 -dusage=50 /
 sudo btrfs balance start -musage=0 -dusage=50 /home
-sudo chattr +C /swap/swapfile
+sudo chattr +C /swapfile
 
 # ------------------------------------------------------------------------
 
