@@ -535,6 +535,7 @@ tmpfs /var/lock tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /var/cache tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /var/volatile tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /var/spool tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
+tmpfs /mnt tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /media tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /dev/shm tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0" | sudo tee -a /etc/fstab
 
@@ -820,6 +821,7 @@ sudo systemctl mask sys-kernel-tracing.mount >/dev/null 2>&1
 sudo systemctl mask sys-kernel-debug.mount >/dev/null 2>&1
 sudo systemctl mask systemd-update-utmp.service >/dev/null 2>&1
 sudo systemctl mask systemd-update-utmp-runlevel.service >/dev/null 2>&1
+sudo systemctl mask systemd-update-utmp-shutdown.service >/dev/null 2>&1
 sudo systemctl mask systemd-journal-flush.service >/dev/null 2>&1
 sudo systemctl mask systemd-journal-catalog-update.service >/dev/null 2>&1
 sudo systemctl mask systemd-journald.service >/dev/null 2>&1
