@@ -528,13 +528,7 @@ sudo sed -i -e 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
 echo -e "Enable tmpfs ramdisk"
 sudo sed -i -e '/^\/\/tmpfs/d' /etc/fstab
-echo -e "tmpfs /var/tmp tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
-tmpfs /var/run tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
-tmpfs /var/lock tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
-tmpfs /var/cache tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
-tmpfs /var/volatile tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
-tmpfs /var/log tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
-tmpfs /var/spool tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
+echo -e "tmpfs /var tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /dev/shm tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0
 tmpfs /media tmpfs nodiratime,nodev,nosuid,mode=1777,size=300m 0 0" | sudo tee -a /etc/fstab
 
@@ -816,20 +810,22 @@ sudo tune2fs -c 0 -i 0 $(df /home | grep /home | awk '{print $1}')
 
 echo -e "Disable journaling services"
 sudo systemctl mask dev-mqueue.mount >/dev/null 2>&1
-sudo systemctl mask rsyslog.service >/dev/null 2>&1
-sudo systemctl mask syslog.service >/dev/null 2>&1
-sudo systemctl mask syslog.socket >/dev/null 2>&1
+sudo systemctl mask sys-kernel-tracing.mount >/dev/null 2>&1
+sudo systemctl mask sys-kernel-debug.mount >/dev/null 2>&1
+sudo systemctl mask systemd-update-utmp.service >/dev/null 2>&1
+sudo systemctl mask systemd-update-utmp-runlevel.service >/dev/null 2>&1
 sudo systemctl mask systemd-journal-flush.service >/dev/null 2>&1
 sudo systemctl mask systemd-journal-catalog-update.service >/dev/null 2>&1
 sudo systemctl mask systemd-journald.service >/dev/null 2>&1
 sudo systemctl mask systemd-journald.socket >/dev/null 2>&1
 sudo systemctl mask systemd-journald-dev-log.socket >/dev/null 2>&1
-sudo systemctl mask journald-audit.socket >/dev/null 2>&1
 sudo systemctl mask systemd-journald-audit.socket >/dev/null 2>&1
+sudo systemctl mask journald-audit.socket >/dev/null 2>&1
 sudo systemctl mask logrotate.service >/dev/null 2>&1
 sudo systemctl mask logrotate.timer >/dev/null 2>&1
-sudo systemctl mask sys-kernel-tracing.mount >/dev/null 2>&1
-sudo systemctl mask sys-kernel-debug.mount >/dev/null 2>&1
+sudo systemctl mask syslog.service >/dev/null 2>&1
+sudo systemctl mask syslog.socket >/dev/null 2>&1
+sudo systemctl mask rsyslog.service >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
