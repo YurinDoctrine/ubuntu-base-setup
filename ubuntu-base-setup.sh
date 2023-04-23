@@ -809,9 +809,7 @@ sudo sed -i -e 's/sortstrategy =.*/sortstrategy = 0/' /etc/preload.conf
 # ------------------------------------------------------------------------
 
 echo -e "Disable fsck"
-sudo tune2fs -c 0 -i 0 /dev/sd*[!0-9]
-sudo tune2fs -c 0 -i 0 /dev/mmcblk*
-sudo tune2fs -c 0 -i 0 /dev/nvme*
+sudo tune2fs -c 0 -i 0 $(df / | grep / | awk '{print $1}')
 
 # ------------------------------------------------------------------------
 
