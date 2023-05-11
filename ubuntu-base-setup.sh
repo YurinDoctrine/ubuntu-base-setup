@@ -143,7 +143,7 @@ kwriteconfig5 --file kwalletrc --group Wallet --key "First Use" --type bool fals
 echo -e "MALLOC_CHECK=0
 MALLOC_TRACE=0
 LIBGL_DEBUG=0
-HISTCONTROL=eraseboth
+HISTCONTROL=ignoreboth:eraseboth
 HISTSIZE=0
 LESSHISTFILE=-
 LESSHISTSIZE=0
