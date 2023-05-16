@@ -140,7 +140,8 @@ kwriteconfig5 --file kwalletrc --group Wallet --key "First Use" --type bool fals
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "MALLOC_CHECK=0
+echo -e "LD_PRELOAD=/usr/lib/libjemalloc.so
+MALLOC_CHECK=0
 MALLOC_TRACE=0
 LIBGL_DEBUG=0
 HISTCONTROL=ignoreboth:eraseboth
