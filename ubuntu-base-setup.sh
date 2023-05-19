@@ -362,6 +362,7 @@ kernel.task_delayacct = 0
 kernel.sysrq = 0
 kernel.watchdog_thresh = 60
 kernel.nmi_watchdog = 0
+kernel.seccomp = 0
 kernel.timer_migration = 0
 kernel.core_pipe_limit = 0
 kernel.core_uses_pid = 1
