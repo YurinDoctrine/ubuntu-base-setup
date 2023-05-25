@@ -144,6 +144,7 @@ echo -e "LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so
 MALLOC_CHECK=0
 MALLOC_TRACE=0
 LIBGL_DEBUG=0
+LIBC_FORCE_NOCHECK=1
 HISTCONTROL=ignoreboth:eraseboth
 HISTSIZE=0
 LESSHISTFILE=-
