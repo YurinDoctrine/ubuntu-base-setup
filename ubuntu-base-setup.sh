@@ -182,7 +182,8 @@ PKGS=(
     'woff2'                  # Web Open Font Format 2
 
     # DEVELOPMENT ---------------------------------------------------------
-    'clang' # C language family frontend for LLVM
+    'clang'          # C language family frontend for LLVM
+    'linux-libc-dev' # Linux support headers for userspace development
 
 )
 
