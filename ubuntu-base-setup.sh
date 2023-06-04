@@ -350,6 +350,7 @@ vm.block_dump = 0
 vm.reap_mem_on_sigkill = 1
 vm.panic_on_oom = 0
 vm.zone_reclaim_mode = 0
+vm.scan_unevictable_pages = 0
 vm.compact_unevictable_allowed = 1
 vm.compaction_proactiveness = 0
 vm.page_lock_unfairness = 1
