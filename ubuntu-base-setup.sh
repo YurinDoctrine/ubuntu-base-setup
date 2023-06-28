@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes 9base base-files binutils git gnupg haveged kmod libc-bin libelf-dev libfaudio-dev libglvnd-dev libinput-dev libjemalloc-dev libx11-dev lm-sensors lz4 pkgconf psmisc rtkit ufw va-driver-all wget xdg-utils xserver-xorg-video-vesa &&
-    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes software-properties-common ubuntu-drivers-common &&
-    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes kubuntu-restricted-addons
+    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes base-files binutils git gnupg haveged kmod libc-bin libelf-dev libfaudio-dev libglvnd-dev libinput-dev libjemalloc-dev libx11-dev lm-sensors lz4 pkgconf psmisc rtkit ufw va-driver-all wget xdg-utils xserver-xorg-video-vesa &&
+    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes software-properties-common &&
+    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes ubuntu-drivers-common ubuntu-restricted-addons ubuntu-restricted-extras
 
 # ------------------------------------------------------------------------
 
