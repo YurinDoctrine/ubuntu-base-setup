@@ -327,8 +327,8 @@ sudo chattr +C /swapfile
 # ------------------------------------------------------------------------
 
 echo -e "Apply disk tweaks"
-sudo sed -i -e 's| defaults| rw,lazytime,relatime,commit=3600,delalloc,noacl,nobarrier,nofail,discard|g' /etc/fstab
-sudo sed -i -e 's| errors=remount-ro| rw,lazytime,relatime,commit=3600,delalloc,noacl,nobarrier,nofail,discard,errors=remount-ro|g' /etc/fstab
+sudo sed -i -e 's| defaults| rw,lazytime,relatime,commit=3600,delalloc,nobarrier,nofail,discard|g' /etc/fstab
+sudo sed -i -e 's| errors=remount-ro| rw,lazytime,relatime,commit=3600,delalloc,nobarrier,nofail,discard,errors=remount-ro|g' /etc/fstab
 
 # ------------------------------------------------------------------------
 
