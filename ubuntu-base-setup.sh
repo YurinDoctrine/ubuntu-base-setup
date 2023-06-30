@@ -743,7 +743,7 @@ sudo tune2fs -O ^has_journal $(df /home | grep /home | awk '{print $1}')
 # ------------------------------------------------------------------------
 
 echo -e "Compress .local/bin"
-upx ~/.local/bin/*
+upx /home/$USER/.local/bin/*
 
 # ------------------------------------------------------------------------
 
@@ -792,8 +792,8 @@ sudo hdparm -A1 -W1 -B254 -S0 /dev/sd*[!0-9]
 
 echo -e "Enable compose cache on disk"
 sudo mkdir -p /var/cache/libx11/compose
-mkdir -p $HOME/.compose-cache
-touch $HOME/.XCompose
+mkdir -p /home/$USER/.compose-cache
+touch /home/$USER/.XCompose
 
 # ------------------------------------------------------------------------
 
@@ -928,14 +928,14 @@ sudo umount /run/snap/ns
 sudo snap remove $(snap list | awk '!/^Name|^bare|^core|^snapd/ {print $1}')
 sudo apt-get remove -yy --purge snapd *-snap
 sudo apt-mark hold snapd
-sudo rm -rfd $HOME/snap
+sudo rm -rfd /home/$USER/snap
 sudo rm -rfd /snap
 sudo rm -rfd /var/snap
 sudo rm -rfd /var/lib/snapd
 sudo rm -rfd /var/cache/snapd
 sudo rm -rfd /usr/lib/snapd
 echo -e "Flush flatpak database"
-flatpak uninstall --unused --delete-data -y
+sudo flatpak uninstall --unused --delete-data -y
 echo -e "Clear the caches"
 for n in $(find / -type d \( -name ".tmp" -o -name ".temp" -o -name ".cache" \) 2>/dev/null); do sudo find "$n" -type f -delete; done
 echo -e "Clear the patches"
