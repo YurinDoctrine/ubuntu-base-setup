@@ -936,6 +936,7 @@ sudo rm -rfd /var/cache/snapd
 sudo rm -rfd /usr/lib/snapd
 echo -e "Flush flatpak database"
 sudo flatpak uninstall --unused --delete-data -y
+sudo flatpak repair
 echo -e "Clear the caches"
 for n in $(find / -type d \( -name ".tmp" -o -name ".temp" -o -name ".cache" \) 2>/dev/null); do sudo find "$n" -type f -delete; done
 echo -e "Clear the patches"
