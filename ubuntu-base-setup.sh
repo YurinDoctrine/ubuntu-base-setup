@@ -176,7 +176,6 @@ PKGS=(
     'libwayland-dev'         # A computer display server protocol - development files
     'linux-cpupower'         # A tool to examine and tune power saving related features of your processor
     'numad'                  # Simple NUMA policy support
-    'pipewire-media-session' # Session Manager for PipeWire
     'unscd'                  # Micro Name Service Caching Daemon
     'upx-ucl'                # An advanced executable file compressor
     'woff2'                  # Web Open Font Format 2
