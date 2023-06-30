@@ -173,7 +173,6 @@ PKGS=(
     'acpid'                  # A daemon for delivering ACPI power management events with netlink support
     'ethtool'                # An utility for controlling network drivers and hardware
     'irqbalance'             # IRQ balancing daemon for SMP systems
-    'libwayland-dev'         # A computer display server protocol - development files
     'linux-cpupower'         # A tool to examine and tune power saving related features of your processor
     'numad'                  # Simple NUMA policy support
     'unscd'                  # Micro Name Service Caching Daemon
