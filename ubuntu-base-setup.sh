@@ -393,7 +393,6 @@ kernel.printk_devkmsg = off
 kernel.compat-log = 0
 kernel.stack_tracer_enabled = 0
 kernel.random.urandom_min_reseed_secs = 120
-kernel.unprivileged_bpf_disabled = 1
 kernel.perf_event_paranoid = -1
 kernel.kptr_restrict = 0
 kernel.randomize_va_space = 0
