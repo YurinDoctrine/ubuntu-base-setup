@@ -395,6 +395,7 @@ kernel.stack_tracer_enabled = 0
 kernel.random.urandom_min_reseed_secs = 120
 kernel.perf_event_paranoid = -1
 kernel.perf_event_max_contexts_per_stack = 2
+kernel.perf_event_max_sample_rate = 1
 kernel.kptr_restrict = 0
 kernel.randomize_va_space = 0
 kernel.exec-shield = 0
