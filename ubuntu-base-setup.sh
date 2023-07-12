@@ -848,7 +848,7 @@ sudo sed -i -e 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
 sudo sed -i -e 's/GRUB_RECORDFAIL_TIMEOUT=.*/GRUB_RECORDFAIL_TIMEOUT=0/' /etc/default/grub
 ## Change GRUB defaults
 sudo sed -i -e 's/GRUB_DISABLE_OS_PROBER=.*/GRUB_DISABLE_OS_PROBER=true/' /etc/default/grub
-sudo sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet rootfstype=ext4,btrfs,xfs,f2fs biosdevname=0 mitigations=off zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=zsmalloc plymouth.ignore-serial-consoles loglevel=0 rd.udev.log_level=0 udev.log_priority=3 audit=0 tsc=reliable nowatchdog noatime boot_delay=0 io_delay=none rootdelay=0 elevator=noop ftrace_enabled=0 fsck.repair=no fsck.mode=skip apparmor=0 cgroup_disable=memory cgroup_no_v1=all noautogroup noresume"/' /etc/default/grub
+sudo sed -i -e 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet rootfstype=ext4,btrfs,xfs,f2fs biosdevname=0 nowatchdog noautogroup noresume zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 zswap.zpool=zsmalloc plymouth.ignore-serial-consoles rd.systemd.show_status=auto loglevel=0 rd.udev.log_level=0 udev.log_priority=3 audit=0 tsc=reliable idle=nomwait noatime boot_delay=0 io_delay=none rootdelay=0 elevator=noop init_on_alloc=0 init_on_free=0 mitigations=off ftrace_enabled=0 fsck.repair=no fsck.mode=skip cgroup_disable=memory cgroup_no_v1=all"/' /etc/default/grub
 sudo update-grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 echo -e "Disable GPU polling"
