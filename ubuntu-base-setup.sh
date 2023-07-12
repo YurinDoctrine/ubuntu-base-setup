@@ -460,8 +460,8 @@ sudo fstrim -Av
 # ------------------------------------------------------------------------
 
 ## Remove floppy cdrom
-sudo sed -i -e '/^\/\/floppy/d' /etc/fstab
-sudo sed -i -e '/^\/\/sr/d' /etc/fstab
+sudo sed -i -e '/floppy/d' /etc/fstab
+sudo sed -i -e '/sr/d' /etc/fstab
 
 # ------------------------------------------------------------------------
 
