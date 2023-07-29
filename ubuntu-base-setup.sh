@@ -596,7 +596,7 @@ wifi.powersave = 1" | sudo tee /etc/NetworkManager/conf.d/default-wifi-powersave
 
 ## Suspend when lid is closed
 sudo sed -i -e 's/#HandleLidSwitch=.*/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
-sudo sed -i -e 's/#HandleLidSwitchExternalPower=.*/HandleLidSwitch=suspend/' /etc/systemd/logind.conf
+sudo sed -i -e 's/#HandleLidSwitchExternalPower=.*/HandleLidSwitchExternalPower=suspend/' /etc/systemd/logind.conf
 sudo sed -i -e 's/#HandleLidSwitchDocked=.*/HandleLidSwitchDocked=ignore/' /etc/systemd/logind.conf
 ## Reboot when long press power key
 sudo sed -i -e 's/#HandlePowerKeyLongPress=.*/HandlePowerKeyLongPress=reboot/' /etc/systemd/logind.conf
