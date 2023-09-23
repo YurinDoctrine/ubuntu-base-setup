@@ -513,6 +513,9 @@ root hard stack unlimited
 * hard data unlimited
 root soft data unlimited
 root hard data unlimited" | sudo tee /etc/security/limits.conf
+## Set realtime to unlimited
+echo -e "@realtime - rtprio 99
+@realtime - memlock unlimited" | sudo tee -a /etc/security/limits.conf
 
 # ------------------------------------------------------------------------
 
