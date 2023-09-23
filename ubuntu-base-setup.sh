@@ -439,6 +439,7 @@ net.ipv4.tcp_early_retrans=2
 net.ipv4.tcp_thin_dupack=1
 net.ipv4.tcp_autocorking=0
 net.ipv4.tcp_reordering=3
+net.ipv4.tcp_timestamps=0
 net.core.bpf_jit_enable=1
 net.core.bpf_jit_harden=0
 net.core.bpf_jit_kallsyms=0" | sudo tee /etc/sysctl.d/99-swappiness.conf
