@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Before hop in
 sudo apt update &&
-    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes base-files binutils git gnupg haveged kmod libc-bin libelf-dev libfaudio-dev libglvnd-dev libinput-dev libjemalloc-dev libx11-dev lm-sensors lz4 libpci-dev pkgconf psmisc rtkit ufw upower va-driver-all wget xdg-utils xserver-xorg-video-vesa &&
+    DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes base-files binutils git gnupg haveged kmod libc-bin libelf-dev libfaudio-dev libglvnd-dev libinput-dev libx11-dev lm-sensors lz4 libpci-dev pkgconf psmisc rtkit ufw upower va-driver-all wget xdg-utils xserver-xorg-video-vesa &&
     DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes software-properties-common &&
     DEBIAN_PRIORITY=critical sudo apt install -f --assume-yes ubuntu-drivers-common ubuntu-restricted-addons ubuntu-restricted-extras
 
@@ -140,7 +140,7 @@ kwriteconfig5 --file kwalletrc --group Wallet --key "First Use" --type bool fals
 # ------------------------------------------------------------------------
 
 # Set environment variables
-echo -e "LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2
+echo -e "LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libtcmalloc_minimal.so
 MALLOC_CHECK=0
 MALLOC_TRACE=0
 MESA_DEBUG=0
