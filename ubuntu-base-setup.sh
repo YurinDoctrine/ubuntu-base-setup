@@ -832,6 +832,9 @@ sudo tune2fs -c 0 -i 0 $(df /home | grep /home | awk '{print $1}')
 echo -e "Disable checksum"
 sudo tune2fs -O ^metadata_csum $(df / | grep / | awk '{print $1}')
 sudo tune2fs -O ^metadata_csum $(df /home | grep /home | awk '{print $1}')
+echo -e "Disable quota"
+sudo tune2fs -O ^quota $(df / | grep / | awk '{print $1}')
+sudo tune2fs -O ^quota $(df /home | grep /home | awk '{print $1}')
 
 # ------------------------------------------------------------------------
 
