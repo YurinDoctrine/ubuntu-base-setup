@@ -8,6 +8,7 @@ sudo apt update &&
 # ------------------------------------------------------------------------
 
 echo -e "path-exclude /usr/share/doc/*
+path-exclude /usr/share/help/*
 path-exclude /usr/share/man/*
 path-exclude /usr/share/groff/*
 path-exclude /usr/share/info/*
