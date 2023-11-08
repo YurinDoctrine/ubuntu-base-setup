@@ -659,7 +659,7 @@ sudo systemctl --global disable man-db.timer
 # ------------------------------------------------------------------------
 
 ## Fix connecting local devices
-sudo sed -i -e 's/resolve [!UNAVAIL=return]/mdns4_minimal [NOTFOUND=return] resolve [!UNAVAIL=return]/' /etc/nsswitch.conf
+sudo sed -i -e 's/hosts: .*/hosts: files mdns4_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] dns mdns4 mdns/' /etc/nsswitch.conf
 
 # ------------------------------------------------------------------------
 
