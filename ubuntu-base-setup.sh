@@ -144,6 +144,7 @@ kwriteconfig5 --file kwalletrc --group Wallet --key "First Use" --type bool fals
 echo -e "MALLOC_CONF=background_thread:true
 MALLOC_CHECK=0
 MALLOC_TRACE=0
+LD_DEBUG_OUTPUT=0
 MESA_DEBUG=0
 LIBGL_DEBUG=0
 LIBGL_NO_DRAWARRAYS=1
