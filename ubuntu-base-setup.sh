@@ -395,6 +395,7 @@ kernel.panic_on_oops = 0
 kernel.perf_cpu_time_max_percent = 1
 kernel.printk_devkmsg = off
 kernel.compat-log = 0
+kernel.yama.ptrace_scope = 1
 kernel.stack_tracer_enabled = 0
 kernel.random.urandom_min_reseed_secs = 120
 kernel.perf_event_paranoid = -1
