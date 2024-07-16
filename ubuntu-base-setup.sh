@@ -745,7 +745,7 @@ balooctl suspend
 balooctl disable
 balooctl purge
 sudo systemctl disable plasma-baloorunner
-for dir in $HOME $HOME/*/; do touch "$dir/.noindex" "$dir/.nomedia" "$dir/.trackerignore"; done
+for dir in $HOME $HOME/*/; do touch "$dir/.metadata_never_index" "$dir/.noindex" "$dir/.nomedia" "$dir/.trackerignore"; done
 
 # ------------------------------------------------------------------------
 
