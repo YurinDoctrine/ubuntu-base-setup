@@ -58,9 +58,9 @@ sudo systemctl mask time-sync.target >/dev/null 2>&1
 echo -e "Remove useless companies"
 sudo apt-get remove --purge *texlive* -yy
 find /usr/share/doc/ -depth -type f ! -name copyright | xargs sudo rm -f || true
-find /usr/share/doc/ | egrep '\.gz' | xargs sudo rm -f
-find /usr/share/doc/ | egrep '\.pdf' | xargs sudo rm -f
-find /usr/share/doc/ | egrep '\.tex' | xargs sudo rm -f
+find /usr/share/doc/ | grep '\.gz' | xargs sudo rm -f
+find /usr/share/doc/ | grep '\.pdf' | xargs sudo rm -f
+find /usr/share/doc/ | grep '\.tex' | xargs sudo rm -f
 find /usr/share/doc/ -empty | xargs sudo rmdir || true
 sudo rm -rfd /usr/share/groff/* /usr/share/info/* /usr/share/lintian/* \
     /usr/share/linda/* /var/cache/man/* /usr/share/man/* /usr/share/X11/locale/!\(en_GB\)
@@ -785,7 +785,7 @@ sudo systemctl --global disable foo.service
 # ------------------------------------------------------------------------
 
 ## Improve wifi and ethernet
-if ip -o link | egrep -q wlan; then
+if ip -o link | grep -q wlan; then
     echo -e "options iwlwifi bt_coex_active=0 swcrypto=1 11n_disable=8" | sudo tee /etc/modprobe.d/wlan.conf
     echo -e "options rfkill default_state=0 master_switch_mode=0" | sudo tee /etc/modprobe.d/wlanextra.conf
     sudo ethtool -K wlan0 gro on
@@ -817,7 +817,7 @@ touch /home/$USER/.XCompose
 # ------------------------------------------------------------------------
 
 ## Improve NVME
-if $(find /sys/block/nvme[0-9]* | egrep -q nvme); then
+if $(find /sys/block/nvme[0-9]* | grep -q nvme); then
     echo -e "options nvme_core default_ps_max_latency_us=0" | sudo tee /etc/modprobe.d/nvme.conf
 fi
 
@@ -973,7 +973,7 @@ rm -rfd /{tmp,var/tmp}/{.*,*}
 sudo rm -rfd /var/cache/apt/archives/*
 sudo rm -rfd /var/lib/dpkg/info/*.postinst
 sudo dpkg --configure -a
-sudo apt-get remove -yy --purge --ignore-missing $(/bin/dpkg -l | /bin/egrep "^rc" | /bin/awk '{print $2}')
+sudo apt-get remove -yy --purge --ignore-missing $(/bin/dpkg -l | /bin/grep "^rc" | /bin/awk '{print $2}')
 sudo apt-get autoremove -yy --purge --ignore-missing
 sudo apt-get clean -y
 sudo apt-get autoclean -y
