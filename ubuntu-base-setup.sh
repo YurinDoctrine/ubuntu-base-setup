@@ -142,6 +142,7 @@ kwriteconfig5 --file kwalletrc --group Wallet --key "First Use" --type bool fals
 
 # Set environment variables
 echo -e "CPU_LIMIT=0
+GPU_USE_SYNC_OBJECTS=1
 SHARED_MEMORY=1
 MALLOC_CONF=background_thread:true
 MALLOC_CHECK=0
