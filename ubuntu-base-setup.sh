@@ -83,7 +83,7 @@ gsettings set org.gnome.desktop.privacy report-technical-problems false
 gsettings set org.gnome.desktop.privacy send-software-usage-stats false
 
 # Security
-gsettings set org.gnome.login-screen allowed-failures 100
+gsettings set org.gnome.login-screen allowed-failures 5
 gsettings set org.gnome.desktop.screensaver user-switch-enabled false
 gsettings set org.gnome.SessionManager logout-prompt false
 gsettings set org.gnome.desktop.media-handling autorun-never true
