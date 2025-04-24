@@ -726,10 +726,10 @@ options libahci skip_host_reset=1
 options snd_hda_intel power_save=1
 options snd_ac97_codec power_save=1
 options uhci-hcd debug=0
-options usbhid mousepoll=4
+options usbhid mousepoll=5
 options usb-storage quirks=p
 options usbcore usbfs_snoop=0
-options usbcore autosuspend=5" | sudo tee /etc/modprobe.d/powersavings.conf
+options usbcore autosuspend=10" | sudo tee /etc/modprobe.d/misc.conf
 echo -e "min_power" | sudo tee /sys/class/scsi_host/*/link_power_management_policy
 echo 1 | sudo tee /sys/module/snd_hda_intel/parameters/power_save
 echo -e "auto" | sudo tee /sys/bus/{i2c,pci}/devices/*/power/control
