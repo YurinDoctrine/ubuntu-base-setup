@@ -826,7 +826,8 @@ fi
 # ------------------------------------------------------------------------
 
 ## Improve PCI latency
-sudo setpci -v -d *:* latency_timer=48 >/dev/null 2>&1
+sudo setpci -v -s '*:*' latency_timer=10 >/dev/null 2>&1
+sudo setpci -v -s '0:0' latency_timer=0 >/dev/null 2>&1
 
 # ------------------------------------------------------------------------
 
