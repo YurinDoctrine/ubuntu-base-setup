@@ -370,7 +370,6 @@ kernel.sysrq = 0
 kernel.nmi_watchdog = 0
 kernel.printk = 3 3 3 3
 kernel.printk_devkmsg = off
-kernel.yama.ptrace_scope = 1
 kernel.perf_event_paranoid = -1
 kernel.kptr_restrict = 2
 debug.exception-trace = 0
