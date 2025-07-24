@@ -395,7 +395,7 @@ net.core.bpf_jit_enable=1
 net.core.bpf_jit_harden=0
 net.core.bpf_jit_kallsyms=0" | sudo tee /etc/sysctl.d/99-swappiness.conf
 echo -e "Drop caches"
-sudo sysctl -w vm.compact_memory=1 && sudo sysctl -w vm.drop_caches=3 && sudo sysctl -w vm.drop_caches=2
+sudo sysctl -w vm.compact_memory=1 && sudo sysctl -w vm.drop_caches=3
 echo -e "Restart swap"
 sudo swapoff -av && sudo swapon -av
 
